@@ -1,0 +1,3280 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Replace: Meta Title -->
+<title>【ST30】ルフィ＆エースは強い？評価とおすすめ構築を解説 | TEA CARD</title>
+<!-- Replace: Meta Description -->
+<meta name="description" content="ワンピースカード最新スタートデッキST30「ルフィ＆エース」の評価、デッキ内容、基本的な回し方、相性の良いカード、おすすめ構築や改造方針を初心者向けに整理します。">
+<style>
+
+    :root{
+      --bg:#f4f3ef;
+      --surface:#ffffff;
+      --soft:#faf8f2;
+      --line:#d8d2c3;
+      --text:#2c2b2f;
+      --muted:#6d675c;
+      --heading:#1d2238;
+      --blue:#232b63;
+      --blue-deep:#101936;
+      --blue-soft:#eef1fb;
+      --blue-border:#d8def2;
+      --shadow:0 10px 24px rgba(18,24,48,.06);
+      --shadow-soft:0 8px 18px rgba(18,24,48,.05);
+      --r:16px;
+      --hero-start:#4b1d95;
+      --hero-mid:#6d28d9;
+      --hero-end:#8b5cf6;
+      --gold:#d1aa3d;
+      --gold-soft:#f5ecd2;
+      --win-bg:#ecfdf3;
+      --win-border:#b7ebc8;
+      --win-text:#166534;
+      --even-bg:#fff9eb;
+      --even-border:#f4df9e;
+      --even-text:#92400e;
+      --lose-bg:#fff1f2;
+      --lose-border:#f5c2c7;
+      --lose-text:#b42318;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,.55)),
+        radial-gradient(circle at top, rgba(209,170,61,.08), transparent 28%),
+        linear-gradient(180deg,#f6f7f3 0%, var(--bg) 100%);
+      color:var(--text);
+      font:500 16px/1.9 "Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic Medium","Yu Gothic","Meiryo",sans-serif;
+      letter-spacing:.015em;
+      text-rendering:optimizeLegibility;
+      -webkit-font-smoothing:antialiased;
+      font-feature-settings:"palt" 1;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+      transition:background-color .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease,transform .2s ease;
+    }
+    a:hover{color:var(--blue-deep)}
+    a:focus-visible{
+      outline:3px solid rgba(37,99,235,.22);
+      outline-offset:2px;
+      border-radius:10px;
+    }
+    img{display:block;max-width:100%}
+    [id]{scroll-margin-top:96px}
+
+    .wrap{width:min(1220px,calc(100% - 32px));margin:auto}
+    .page{padding:22px 0 56px}
+
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:20;
+      background:
+        radial-gradient(circle at 50% 35%, rgba(209,170,61,.14) 0, rgba(209,170,61,.05) 20%, rgba(209,170,61,0) 42%),
+        repeating-linear-gradient(135deg, rgba(209,170,61,.08) 0 2px, transparent 2px 34px),
+        linear-gradient(135deg, #232b63 0%, #1b224f 45%, #101936 100%);
+      border-bottom:1px solid rgba(209,170,61,.30);
+      box-shadow:0 4px 18px rgba(15,23,42,.05);
+    }
+    .site-header-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      padding:14px 0;
+    }
+
+    .brand{display:flex;align-items:center;gap:12px;min-width:0}
+    .logo{
+      width:44px;height:44px;border-radius:14px;
+      background:linear-gradient(135deg,#232b63,#101936);
+      color:#f2d07b;display:grid;place-items:center;
+      font-weight:900;font-size:18px;flex:0 0 44px;
+      border:1px solid rgba(209,170,61,.45);
+      box-shadow:0 6px 14px rgba(18,24,48,.14);
+    }
+    .brand-copy strong{
+      display:block;
+      color:#ffffff;
+      font-size:20px;
+      line-height:1.2;
+      letter-spacing:-.02em;
+      text-shadow:0 2px 10px rgba(0,0,0,.18);
+    }
+    .brand-copy span{
+      display:block;
+      color:rgba(255,255,255,.82);
+      font-size:12px;
+      margin-top:4px;
+    }
+
+    .header-nav{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end}
+    .header-nav a{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:10px 15px;border-radius:999px;
+      background:linear-gradient(180deg,#fffdf6 0%, #f3ead0 100%);
+      border:1px solid rgba(209,170,61,.42);
+      font-size:13px;font-weight:800;color:#1d2238;
+      box-shadow:0 4px 10px rgba(18,24,48,.05);
+    }
+    .header-nav a:hover{
+      background:#eef1fb;
+      border-color:#d8def2;
+      color:#232b63;
+      transform:translateY(-1px);
+    }
+    .header-nav a.is-active{
+      background:#eeeeee;
+      border-color:#d7d7d7;
+      color:#232b63;
+      box-shadow:none;
+    }
+
+    .breadcrumbs{
+      display:flex;flex-wrap:wrap;gap:8px;align-items:center;
+      color:var(--muted);font-size:13px;margin-bottom:18px
+    }
+    .breadcrumbs a:hover{color:var(--blue-deep)}
+    .breadcrumbs .sep{color:#94a3b8}
+
+    .hero{
+      overflow:hidden;
+      margin-bottom:16px;
+      position:relative;
+      border-radius:20px;
+      box-shadow:var(--shadow);
+    }
+    .hero{background:transparent;color:#fff;}
+    .hero:before,.hero:after{content:none;}
+    .hero-inner{
+      position:relative;z-index:1;
+      display:block;
+      padding:0;
+    }
+    .hero-copy{display:grid;gap:12px;align-content:start;
+      position:relative;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 50% 42%, rgba(209,170,61,0.18) 0, rgba(209,170,61,0.08) 18%, rgba(209,170,61,0) 36%),
+        repeating-linear-gradient(135deg, rgba(209,170,61,0.10) 0 2px, transparent 2px 34px),
+        linear-gradient(135deg, #232b63 0%, #1b224f 45%, #101936 100%);
+      color:#fff;
+      padding:34px 28px;
+      border-bottom:1px solid rgba(209,170,61,0.22);
+    }
+    .hero-copy::before{
+      content:"";
+      position:absolute;
+      width:320px;
+      height:320px;
+      left:50%;
+      top:50%;
+      transform:translate(-50%, -44%);
+      border-radius:50%;
+      border:2px solid rgba(209,170,61,0.38);
+      box-shadow:
+        0 0 0 16px rgba(209,170,61,0.10),
+        0 0 0 34px rgba(209,170,61,0.06),
+        inset 0 0 0 10px rgba(209,170,61,0.08);
+      pointer-events:none;
+      z-index:0;
+    }
+    .hero-copy::after{
+      content:"";
+      position:absolute;
+      inset:auto -60px -60px auto;
+      width:220px;
+      height:220px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(209,170,61,0.24), rgba(209,170,61,0));
+      pointer-events:none;
+      z-index:0;
+    }
+    .hero-copy > *{position:relative;z-index:1;}
+    .hero-meta,.hero-tags,.chips{display:flex;flex-wrap:wrap;gap:8px}
+
+    .pill,.hero-tag,.chips span,.label,.level,.badge{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:6px 10px;border-radius:999px;font-size:12px;font-weight:800
+    }
+    .pill,.hero-tag{
+      background:#eeeeee;
+      border:1px solid #d7d7d7;
+      color:#232b63;
+      box-shadow:none;
+    }
+    .hero-title{
+      margin:2px 0 0;
+      font-size:clamp(30px,4.4vw,44px);
+      line-height:1.14;
+      letter-spacing:-.04em;
+    }
+    .hero-summary{
+      margin:0;
+      max-width:62ch;
+      color:rgba(255,255,255,.97);
+      font-size:15.5px;
+      line-height:1.8;
+    }
+    .hero-side{
+      display:flex;align-items:center;justify-content:center;
+      align-self:stretch;padding-right:8px
+    }
+    .glass{
+      background:rgba(255,255,255,.13);
+      border:1px solid rgba(255,255,255,.2);
+      border-radius:20px;
+      box-shadow:0 10px 24px rgba(0,0,0,.14);
+      backdrop-filter:blur(12px);
+    }
+    .tier-card{
+      padding:20px;display:flex;flex-direction:column;justify-content:center;min-height:164px;
+      width:min(100%,360px);
+    }
+    .tier-top{display:flex;gap:14px;align-items:center;margin-bottom:0}
+    .tier-badge{
+      width:80px;
+      height:80px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(180deg,#1f2b4d 0%, #101936 100%);
+      color:#f2c95c;
+      flex:0 0 80px;
+      border:none;
+      box-shadow:none;
+    }
+    .tier-badge strong{
+      display:block;
+      font-size:34px;
+      line-height:1;
+      font-weight:900;
+      color:#f2c95c;
+    }
+    .tier-badge small{
+      display:block;
+      font-size:12px;
+      font-weight:800;
+      color:#ffffff;
+      margin-top:4px;
+    }
+    .tier-copy h2{margin:0 0 4px;font-size:20px;line-height:1.25}
+    .tier-copy p{margin:0;font-size:14px;color:rgba(255,255,255,.95);line-height:1.75}
+
+    .layout{
+      display:grid;
+      grid-template-columns:minmax(0,1fr);
+      gap:20px;
+      align-items:start
+    }
+    .main,.side{min-width:0}
+    .main{display:grid;gap:18px}
+    .side{
+      display:grid;gap:16px;
+      align-self:start;
+    }
+
+    .box{
+      background:linear-gradient(180deg,#ffffff 0%, #fffdfa 100%);
+      border:1px solid rgba(209,170,61,.22);
+      border-radius:20px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .box-head{
+      display:flex;justify-content:space-between;gap:16px;align-items:center;
+      padding:16px 18px;border-bottom:1px solid rgba(209,170,61,.28);
+      background:linear-gradient(135deg,#232b63 0%, #1b224f 45%, #101936 100%);
+    }
+    .box-head h2{
+      margin:0;font-size:23px;line-height:1.2;
+      color:#ffffff;letter-spacing:-.02em;
+      text-shadow:0 2px 10px rgba(0,0,0,.18)
+    }
+    .box-head span{
+      font-size:13px;
+      color:rgba(255,255,255,.78);
+      font-weight:700
+    }
+    .box-body{padding:18px}
+
+    .toc{
+      margin:0;
+      padding:0;
+      list-style:none;
+      color:var(--text);
+      font-size:15px;
+      line-height:1.85;
+      display:grid;
+      gap:10px;
+      counter-reset: toc;
+    }
+    .toc li+li{margin-top:0}
+    .toc a{
+      position:relative;
+      display:flex;
+      align-items:flex-start;
+      gap:12px;
+      padding:12px 14px;
+      border:1px solid #7ecf98;
+      border-radius:12px;
+      background:linear-gradient(180deg,#f1fff5 0%, #dff7e7 100%);
+      color:#134e2a;
+      text-decoration:none;
+      font-weight:800;
+      font-family:"Hiragino Sans","Yu Gothic UI","Yu Gothic Medium","Yu Gothic","Meiryo",sans-serif;
+      letter-spacing:.01em;
+      box-shadow:0 4px 10px rgba(18,24,48,.04);
+    }
+    .toc a:hover{
+      color:#0f3d21;
+      border-color:#56b77a;
+      background:#ecfff2;
+      text-decoration:none;
+      transform:translateY(-1px);
+    }
+
+    .article{padding:22px 22px 28px}
+    .article section+section{margin-top:40px}
+    .article h2{
+      margin:0 0 18px;
+      padding:13px 16px;
+      border:none;
+      border-radius:12px;
+      color:#ffffff;
+      font-size:24px;
+      line-height:1.24;
+      letter-spacing:-.03em;
+      background:linear-gradient(135deg,#232b63 0%, #1b224f 45%, #101936 100%);
+      text-shadow:0 2px 10px rgba(0,0,0,.18);
+    }
+    .article h3{
+      margin:28px 0 12px;
+      font-size:20px;
+      line-height:1.45;
+      color:var(--heading);
+      display:flex;gap:10px;align-items:center
+    }
+    .article h3:before{
+      content:"";width:4px;height:18px;border-radius:999px;
+      background:linear-gradient(180deg,var(--gold),#f3d98a)
+    }
+    .article h4{line-height:1.5}
+    .article p,.article ul,.article li{
+      font-size:15px;
+      font-weight:600;
+      line-height:1.92;
+      color:var(--text);
+      font-family:"Hiragino Sans","Yu Gothic UI","Yu Gothic Medium","Yu Gothic","Meiryo",sans-serif;
+      letter-spacing:.01em;
+    }
+    .article p{margin:0 0 15px}
+    .article ul{margin:0;padding-left:18px}
+    .article li+li{margin-top:8px}
+    .article section > p{max-width:74ch}
+
+    .note-box p,.leader-box p,.premium-box p,.tier-copy p,.card-item p,.build-card p,.detail-card p,.article-card p,.footer-brand p{
+      font-weight:600;
+      line-height:1.9;
+      font-family:"Hiragino Sans","Yu Gothic UI","Yu Gothic Medium","Yu Gothic","Meiryo",sans-serif;
+      letter-spacing:.01em;
+    }
+
+    .note,.leader,.premium,.tier-panel,.prio,.flow,.card-grid,.build-grid,.detail-grid,.related{display:grid;gap:14px}
+    .note-box,.leader-box,.premium-box,.tier-panel,.prio-item,.flow-item,.card-item,.build-card,.detail-card,.article-card{
+      border:1px solid rgba(209,170,61,.24);
+      border-radius:16px;
+      background:linear-gradient(180deg,#ffffff 0%, #fffdfa 100%);
+      box-shadow:var(--shadow-soft);
+    }
+    .note-box,.leader-box,.premium-box,.tier-panel,.detail-card,.article-card{padding:18px}
+    .note-box,.leader-box,.premium-box{
+      background:linear-gradient(180deg,#ffffff 0%, #fffdfa 100%);
+      border-color:rgba(209,170,61,.24);
+    }
+    .note-box strong,.leader-box strong,.premium-box strong,.tip strong{
+      display:block;margin-bottom:8px;
+      color:#232b63;font-size:15px
+    }
+
+    .tier-panel{
+      grid-template-columns:96px 1fr;
+      background:linear-gradient(180deg,#ffffff 0%, #fffdfa 100%);
+      border-color:rgba(209,170,61,.24);
+      align-items:center;
+    }
+    .tier-panel .tier-badge{
+      width:80px;
+      height:80px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(180deg,#1f2b4d 0%, #101936 100%);
+      color:#f2c95c;
+      box-shadow:none;
+      border:none;
+      flex:0 0 80px;
+    }
+    .stat{
+      display:flex;flex-wrap:wrap;gap:8px;margin-top:12px
+    }
+    .stat span{
+      padding:6px 11px;border-radius:999px;background:#fff;
+      border:1px solid #d5e5ff;color:var(--blue-deep);
+      font-size:12px;font-weight:800
+    }
+
+    .prio-item{
+      display:grid;grid-template-columns:122px 1fr;gap:16px;padding:18px;align-items:start
+    }
+    .rank{
+      display:inline-flex;align-items:center;justify-content:center;
+      min-height:36px;padding:8px 12px;border-radius:12px;
+      background:linear-gradient(135deg,#232b63,#101936);
+      color:#fff;font-size:12px;font-weight:800;
+      box-shadow:0 8px 18px rgba(18,24,48,.18);
+    }
+
+    .flow-item{
+      display:grid;grid-template-columns:44px 1fr;gap:14px;padding:18px
+    }
+    .flow-visuals{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:flex-start;
+  gap:36px;
+  margin:12px 0 14px;
+}
+.flow-visuals img{
+  display:block;
+  width:min(100%,180px);
+  max-width:180px;
+  height:auto;
+  border-radius:12px;
+  border:1px solid var(--line);
+  background:#fff;
+  box-shadow:0 6px 18px rgba(15,23,42,.08);
+}
+    .step{
+      width:44px;height:44px;border-radius:50%;display:grid;place-items:center;
+      background:linear-gradient(135deg,#232b63,#101936);
+      color:#fff;font-weight:900;
+      box-shadow:0 8px 18px rgba(18,24,48,.18);
+    }
+
+    .label{
+      background:#eeeeee;
+      border:1px solid #d7d7d7;
+      color:#232b63;
+      font-size:12px;
+      padding:4px 10px;
+      margin-bottom:8px;
+      width:max-content
+    }
+    .card-grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .card-item{padding:18px}
+    .card-item h4,.build-card h4,.detail-card h4,.article-card h3{
+      margin:0 0 8px;font-size:17px;color:var(--heading);line-height:1.45;letter-spacing:-.01em
+    }
+    .card-item p,.build-card p,.detail-card p,.article-card p{
+      margin:0;color:var(--text);font-size:14px;line-height:1.8
+    }
+
+    .card-item.has-side-thumb{
+      display:grid;
+      grid-template-columns:112px 1fr;
+      gap:16px;
+      align-items:start;
+    }
+    .card-item.has-side-thumb .card-thumb{
+      width:112px;
+      max-width:100%;
+      height:auto;
+      border-radius:10px;
+      box-shadow:0 6px 18px rgba(0,0,0,.08);
+    }
+    .card-item.has-side-thumb .card-copy{
+      min-width:0;
+    }
+
+
+    .matchup-media{
+      display:grid;
+      grid-template-columns:128px 1fr;
+      gap:18px;
+      align-items:start;
+      margin-top:2px;
+    }
+    .matchup-media + .matchup-media{
+      margin-top:14px;
+    }
+    .matchup-media .card-thumb{
+      width:128px;
+      max-width:100%;
+      height:auto;
+      border-radius:10px;
+      box-shadow:0 6px 18px rgba(0,0,0,.08);
+    }
+    .matchup-media .card-copy{
+      min-width:0;
+    }
+    .matchup-media .card-copy p{
+      margin:0;
+    }
+    .tip.matchup-media{
+      display:grid;
+      grid-template-columns:128px 1fr;
+      gap:18px;
+      align-items:start;
+    }
+    .tip.matchup-media strong{
+      display:block;
+      margin-bottom:8px;
+      color:var(--blue-deep);
+      font-size:15px;
+    }
+
+
+    .decklist-figure{
+      margin:14px 0 24px;
+      padding:18px;
+      border:1px solid rgba(209,170,61,.3);
+      border-radius:18px;
+      background:linear-gradient(180deg,#fffdfa 0%,#f7f3e8 100%);
+      box-shadow:0 6px 18px rgba(15,23,42,.06);
+      display:flex;
+      justify-content:center;
+    }
+    .decklist-figure img{
+      display:block;
+      width:min(100%,820px);
+      height:auto;
+      border-radius:14px;
+      box-shadow:0 10px 24px rgba(15,23,42,.1);
+      background:#fff;
+    }
+    .build-card{overflow:hidden}
+    .build-head{
+      display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center;
+      padding:15px 18px;border-bottom:1px solid rgba(209,170,61,.22);
+      background:linear-gradient(90deg,#fffdf6 0%, #f6eed9 100%);
+    }
+    .build-head .label{margin:0}
+    .level{
+      background:#eeeeee;
+      border:1px solid #d7d7d7;
+      color:#6d675c;
+      font-size:11px
+    }
+    .build-body{padding:18px}
+    .concept{
+      padding:14px 14px 14px 16px;
+      border-left:4px solid var(--gold);
+      border-radius:0 12px 12px 0;
+      background:#faf6ea;
+      font-size:13px;color:#7a5c11;font-weight:800;
+      margin-bottom:14px;line-height:1.8
+    }
+    .chips span{
+      background:#eeeeee;
+      border:1px solid #d7d7d7;
+      color:var(--text);
+      font-weight:700
+    }
+    .proscons{
+      display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px
+    }
+    .pros,.cons{
+      border-radius:12px;padding:13px 14px;font-size:13px
+    }
+    .pros{background:#f0fdf4;border:1px solid #b7ebc8}
+    .cons{background:#fff8f1;border:1px solid #f2d2a7}
+    .pros h5,.cons h5{margin:0 0 8px;font-size:12px}
+    .pros h5{color:#166534}
+    .cons h5{color:#9a3412}
+    .pros ul,.cons ul{margin:0;padding-left:16px}
+
+    .table{
+      width:100%;border-collapse:separate;border-spacing:0;
+      border:1px solid var(--line);border-radius:var(--r);overflow:hidden;
+      box-shadow:var(--shadow-soft);font-size:14px;margin-bottom:20px;
+      background:#fff;
+    }
+    .table thead tr{
+      background:linear-gradient(135deg,#232b63,#101936);
+      color:#fff
+    }
+    .table th,.table td{
+      text-align:left;padding:13px 14px;vertical-align:top;line-height:1.75;
+      font-weight:600;
+      font-family:"Hiragino Sans","Yu Gothic UI","Yu Gothic Medium","Yu Gothic","Meiryo",sans-serif;
+      letter-spacing:.01em;
+    }
+    .table th{font-size:13px;letter-spacing:.03em}
+    .table tbody tr:nth-child(even){background:#fffdfa}
+    .table tbody tr:hover{background:#f8f5eb}
+    .table tbody td{border-top:1px solid var(--line)}
+
+    .badge{
+      padding:4px 10px;font-size:11px;border-width:1px;border-style:solid
+    }
+    .win{background:var(--win-bg);border-color:var(--win-border);color:var(--win-text)}
+    .even{background:var(--even-bg);border-color:var(--even-border);color:var(--even-text)}
+    .lose{background:var(--lose-bg);border-color:var(--lose-border);color:var(--lose-text)}
+
+    .detail-card .head{
+      display:flex;gap:12px;align-items:center;margin-bottom:10px;flex-wrap:wrap
+    }
+    .tip{
+      margin-top:14px;padding:13px 14px;border-radius:12px;
+      background:#faf6ea;border:1px solid rgba(209,170,61,.28)
+    }
+
+    .article-card{
+      transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease
+    }
+    .article-card:hover{
+      transform:translateY(-2px);
+      box-shadow:0 14px 28px rgba(15,23,42,.1);
+      border-color:#c9d7ea;
+    }
+    .article-card small{
+      display:inline-block;margin-bottom:8px;
+      font-size:11px;color:var(--blue-deep);font-weight:800
+    }
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:12px 18px;border-radius:999px;
+      background:linear-gradient(135deg,#232b63,#101936);
+      color:#fff;font-size:14px;font-weight:800;margin-top:8px;
+      box-shadow:0 10px 20px rgba(18,24,48,.20);
+    }
+    .btn:hover{
+      color:#fff;
+      transform:translateY(-1px);
+      box-shadow:0 14px 24px rgba(18,24,48,.24);
+    }
+
+    .side-stack{display:grid;gap:16px}
+    .side-list{display:grid;gap:10px}
+    .side-list strong{
+      display:block;
+      margin:4px 2px 0;
+      color:var(--heading);
+      font-size:13px;
+      font-weight:800;
+      letter-spacing:.01em;
+    }
+    .side-list a{
+      display:block;
+      padding:11px 13px;
+      border:1px solid rgba(209,170,61,.26);
+      border-radius:12px;
+      background:linear-gradient(180deg,#fffdf7 0%, #f6edd6 100%);
+      color:var(--text);
+      font-size:13px;
+      line-height:1.65;
+      font-weight:700;
+      transition:background .18s ease,border-color .18s ease,color .18s ease,transform .18s ease;
+    }
+    .side-list a:hover{
+      background:#eef1fb;
+      border-color:#d8def2;
+      color:#232b63;
+      transform:translateY(-1px);
+    }
+
+    .site-footer{margin-top:36px;padding:24px 0 40px;color:var(--muted)}
+    .footer-box{
+      background:linear-gradient(180deg,#ffffff 0%, #fffdfa 100%);
+      border:1px solid rgba(209,170,61,.22);
+      border-radius:20px;box-shadow:var(--shadow);padding:22px
+    }
+    .footer-top{
+      display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:start
+    }
+    .footer-brand strong{
+      display:block;color:var(--heading);font-size:18px;margin-bottom:8px
+    }
+    .footer-brand p{
+      margin:0;font-size:13px;line-height:1.9;color:var(--muted)
+    }
+    .footer-links{
+      display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px
+    }
+    .footer-links a{
+      display:block;padding:10px 12px;border-radius:12px;
+      background:linear-gradient(180deg,#fffdf7 0%, #f6edd6 100%);
+      border:1px solid rgba(209,170,61,.26);
+      font-size:13px;font-weight:700;color:var(--text)
+    }
+    .footer-links a:hover{
+      background:#eef1fb;border-color:#d8def2;color:#232b63
+    }
+    .footer-note{
+      margin-top:16px;padding-top:14px;border-top:1px solid var(--line);
+      font-size:12px;color:var(--muted)
+    }
+
+    @media (max-width:1080px){
+      .layout,.footer-top{grid-template-columns:1fr}
+      .side{position:static;top:auto}
+      .side{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
+    @media (max-width:780px){
+      .hero-inner,.tier-panel,.prio-item,.proscons,.card-grid.two,.side,.footer-links,.matchup-media,.tip.matchup-media{grid-template-columns:1fr}
+      .hero-inner{padding:22px}
+      .hero-side{padding-right:0;justify-content:flex-start}
+      .tier-card{width:100%}
+    }
+    @media (max-width:640px){
+      .wrap{width:min(calc(100% - 16px),1220px)}
+      .page{padding-top:16px}
+      .site-header-inner{align-items:flex-start}
+      .hero-inner,.box-body,.article{padding:16px}
+      .article h2{font-size:25px}
+      .box-head{padding:14px 16px}
+      .box-head h2{font-size:21px}
+      .flow-item{grid-template-columns:1fr}
+      .table{display:block;overflow:auto;white-space:nowrap}
+      .header-nav{gap:8px}
+      .header-nav a{padding:9px 12px}
+    }
+  
+    body.deck-purple-enel{
+      --hero-start:#4b1d95;
+      --hero-mid:#6d28d9;
+      --hero-end:#8b5cf6;
+    }
+
+    body.deck-blue-yellow-nami{
+      --hero-start:#1e3a8a;
+      --hero-mid:#2563eb;
+      --hero-end:#eab308;
+    }
+
+    body.deck-blue-yellow-nami .hero:before{
+      content:"";position:absolute;inset:0;background:
+      radial-gradient(circle at 22% 24%, rgba(255,255,255,.18) 0, rgba(255,255,255,.08) 14%, rgba(255,255,255,0) 34%),
+      radial-gradient(circle at 78% 72%, rgba(234,179,8,.18) 0, rgba(234,179,8,.10) 16%, rgba(234,179,8,0) 36%),
+      repeating-linear-gradient(135deg, rgba(255,255,255,.08) 0 2px, transparent 2px 34px);
+      pointer-events:none;
+    }
+
+    body.deck-purple-enel .hero:before{
+      content:"";position:absolute;inset:0;background:
+      radial-gradient(circle at 50% 42%, rgba(255,255,255,.16) 0, rgba(255,255,255,.07) 18%, rgba(255,255,255,0) 36%),
+      repeating-linear-gradient(135deg, rgba(255,255,255,.08) 0 2px, transparent 2px 34px);
+      pointer-events:none;
+    }
+
+
+    .note-card-link{
+      display:block;
+      color:inherit;
+      text-decoration:none;
+    }
+    .note-card-link:hover{
+      color:inherit;
+      transform:none;
+    }
+    .note-card-thumb{
+      margin-bottom:14px;
+      border-radius:16px;
+      overflow:hidden;
+      background:#f3f3f3;
+      border:1px solid rgba(0,0,0,.06);
+    }
+    .note-card-thumb img{
+      display:block;
+      width:100%;
+      height:auto;
+    }
+    .note-card-content h3{
+      margin:0 0 10px;
+      font-size:16px;
+      line-height:1.65;
+      color:#1f2937;
+      font-weight:800;
+    }
+    .note-card-price{
+      margin:0 0 8px;
+      font-size:15px;
+      font-weight:700;
+      color:#10b981;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+    .note-card-price span{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:3px 10px;
+      border-radius:999px;
+      background:#e85b6a;
+      color:#fff;
+      font-size:12px;
+      font-weight:800;
+      line-height:1;
+    }
+    .note-card-meta{
+      font-size:13px;
+      color:#6b7280;
+    }
+    .premium-box .box-body{
+      padding:18px;
+    }
+
+
+    .note-image-link{
+      display:block;
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid rgba(0,0,0,.08);
+      background:#f3f3f3;
+      margin-bottom:14px;
+    }
+    .note-image-link img{
+      display:block;
+      width:100%;
+      height:auto;
+    }
+    .note-link-copy h3{
+      margin:0 0 8px;
+      font-size:18px;
+      line-height:1.55;
+      color:#1f2937;
+      font-weight:800;
+    }
+    .note-link-copy h3 a{
+      color:inherit;
+      text-decoration:none;
+    }
+    .note-link-copy h3 a:hover{
+      color:#232b63;
+    }
+    .note-link-copy p{
+      margin:0;
+      font-size:14px;
+      line-height:1.85;
+      color:#4b5563;
+    }
+
+
+.note-author{
+  margin-top:12px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.note-author-label{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:4px 10px;
+  border-radius:999px;
+  background:#eeeeee;
+  color:#6b7280;
+  border:1px solid #d7d7d7;
+  font-size:12px;
+  font-weight:800;
+  line-height:1;
+}
+.note-author a{
+  font-size:13px;
+  font-weight:700;
+  color:#6b7280;
+  text-decoration:none;
+}
+.note-author a:hover{
+  color:#232b63;
+  text-decoration:underline;
+}
+
+
+    .detail-card{
+      padding:18px;
+    }
+    .detail-card .head{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      margin-bottom:14px;
+      flex-wrap:wrap;
+    }
+    .detail-card .head h4{
+      margin:0;
+      font-size:17px;
+      line-height:1.4;
+      color:var(--heading);
+      letter-spacing:-.01em;
+    }
+    .matchup-media{
+      display:grid;
+      grid-template-columns:128px 1fr;
+      gap:18px;
+      align-items:start;
+      margin-top:2px;
+    }
+    .matchup-media .card-copy > p{
+      margin:0 0 14px;
+      line-height:1.9;
+    }
+    .detail-card .tip{
+      margin-top:0;
+      padding:14px 16px;
+      border-radius:14px;
+      background:#faf6ea;
+      border:1px solid rgba(209,170,61,.28);
+    }
+    .detail-card .tip strong{
+      display:block;
+      margin-bottom:8px;
+      color:#232b63;
+      font-size:15px;
+    }
+    @media (max-width:780px){
+      .matchup-media{
+        grid-template-columns:1fr;
+      }
+      .matchup-media .card-thumb{
+        width:140px;
+      }
+    }
+
+    .article section#matchups > p.matchups-intro,
+    .article .matchups-intro{
+      max-width: none;
+      width: 100%;
+      line-height: 1.9;
+      word-break: normal;
+      overflow-wrap: normal;
+      white-space: normal;
+    }
+
+
+    .toc li{
+      counter-increment: toc;
+    }
+    .toc li a::before{
+      content: counter(toc, decimal-leading-zero);
+      flex:0 0 auto;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:32px;
+      height:32px;
+      padding:0 8px;
+      border-radius:999px;
+      background:#24a148;
+      color:#ffffff;
+      border:1px solid #1e8a3d;
+      font-size:12px;
+      font-weight:800;
+      line-height:1;
+      margin-top:1px;
+    }
+
+
+
+    /* top-page shared parts */
+    .topbar{display:none}
+    .topbar-inner{display:none}
+    .brand-row{
+      position:relative;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 50% 35%, rgba(209,170,61,0.14) 0, rgba(209,170,61,0.05) 20%, rgba(209,170,61,0) 42%),
+        repeating-linear-gradient(135deg, rgba(209,170,61,0.08) 0 2px, transparent 2px 34px),
+        linear-gradient(135deg, #232b63 0%, #1b224f 45%, #101936 100%);
+      border-bottom:1px solid rgba(209,170,61,0.30);
+    }
+    .brand-row::before{
+      content:"";
+      position:absolute;
+      width:280px;
+      height:280px;
+      left:50%;
+      top:50%;
+      transform:translate(-50%, -50%);
+      border-radius:50%;
+      border:2px solid rgba(209,170,61,0.24);
+      box-shadow:0 0 0 14px rgba(209,170,61,0.08), 0 0 0 30px rgba(209,170,61,0.04);
+      pointer-events:none;
+      z-index:0;
+    }
+    .brand-row::after{
+      content:"";
+      position:absolute;
+      inset:auto -50px -50px auto;
+      width:180px;
+      height:180px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(209,170,61,0.18), rgba(209,170,61,0));
+      pointer-events:none;
+      z-index:0;
+    }
+    .brand-inner{
+      display:flex;
+      align-items:center;
+      justify-content:flex-start;
+      gap:20px;
+      padding:18px 0 16px;
+      position:relative;
+      z-index:1;
+    }
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:40;
+      box-shadow:0 8px 20px rgba(18, 24, 48, 0.10);
+      background:none;
+      border-bottom:none;
+    }
+    .category-nav{
+      background:linear-gradient(180deg, #ffffff 0%, #f8f4e8 100%);
+      border-bottom:1px solid rgba(209,170,61,0.28);
+    }
+    .category-scroll{
+      display:flex;
+      gap:10px;
+      overflow-x:auto;
+      padding:12px 0;
+      scrollbar-width:none;
+    }
+    .category-scroll::-webkit-scrollbar{display:none}
+    .category-scroll a{
+      white-space:nowrap;
+      padding:9px 14px;
+      border-radius:999px;
+      background:linear-gradient(180deg, #fffdf6 0%, #f3ead0 100%);
+      border:1px solid rgba(209,170,61,0.42);
+      color:#1d2238;
+      font-size:13px;
+      font-weight:700;
+      box-shadow:0 4px 10px rgba(18, 24, 48, 0.05);
+    }
+    .layout{grid-template-columns:minmax(0,1fr) 280px;gap:18px}
+    .sidebar,.main{min-width:0}
+    .sticky-box{position:static;top:auto}
+    .section{margin-bottom:16px;overflow:hidden}
+    .section-title{
+      display:flex;
+      align-items:center;
+      justify-content:flex-start;
+      gap:16px;
+      padding:14px 16px;
+      border-bottom:1px solid rgba(209,170,61,0.28);
+      background:linear-gradient(135deg, #232b63 0%, #1b224f 45%, #101936 100%);
+    }
+    .section-title h3{
+      margin:0;
+      font-size:18px;
+      line-height:1.2;
+      color:#ffffff;
+      letter-spacing:0.02em;
+      text-shadow:0 2px 10px rgba(0,0,0,0.18);
+    }
+    .section-body{padding:16px}
+    .footer{
+      margin-top:28px;
+      padding:0 0 28px;
+      color:var(--muted);
+      text-align:left;
+      font-size:13px;
+    }
+    .footer-site-map{
+      background:linear-gradient(135deg, #232b63 0%, #1b224f 45%, #101936 100%);
+      border:1px solid rgba(209,170,61,0.28);
+      border-radius:16px;
+      box-shadow:0 12px 28px rgba(18,24,48,0.14);
+      overflow:hidden;
+    }
+    .footer-site-map-inner{padding:28px 24px 22px}
+    .footer-head{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:16px;
+      padding-bottom:18px;
+      margin-bottom:20px;
+      border-bottom:1px solid rgba(255,255,255,0.10);
+    }
+    .footer-brand{min-width:0}
+    .footer-brand strong{
+      display:block;
+      margin-bottom:6px;
+      font-size:24px;
+      line-height:1.2;
+      color:#ffffff;
+      letter-spacing:0.03em;
+    }
+    .footer-brand p{
+      margin:0;
+      color:rgba(255,255,255,0.78);
+      font-size:13px;
+      line-height:1.8;
+      font-weight:600;
+    }
+    .footer-top-link{flex:0 0 auto}
+    .footer-top-link a{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:10px 16px;
+      border-radius:999px;
+      border:1px solid rgba(209,170,61,0.42);
+      background:linear-gradient(180deg, #fffdf6 0%, #f1e4bf 100%);
+      color:#1d2238;
+      font-size:13px;
+      font-weight:800;
+      box-shadow:0 6px 14px rgba(0,0,0,0.12);
+    }
+    .footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:16px}
+    .footer-column{
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:14px;
+      padding:16px 14px;
+    }
+    .footer-column h4{
+      margin:0 0 12px;
+      font-size:16px;
+      line-height:1.3;
+      color:#ffffff;
+      letter-spacing:0.02em;
+    }
+    .footer-subgroup + .footer-subgroup{
+      margin-top:14px;
+      padding-top:14px;
+      border-top:1px solid rgba(255,255,255,0.08);
+    }
+    .footer-subgroup-title{
+      margin:0 0 8px;
+      font-size:12px;
+      color:rgba(242,208,123,0.95);
+      font-weight:800;
+      letter-spacing:0.04em;
+    }
+    .footer-column-stack{display:grid;gap:16px}
+    .footer-bottom{
+      margin-top:18px;
+      padding-top:16px;
+      border-top:1px solid rgba(255,255,255,0.10);
+      text-align:center;
+      color:rgba(255,255,255,0.70);
+      font-size:12px;
+      line-height:1.7;
+    }
+    @media (max-width:980px){
+      .layout{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width:680px){
+      .brand-inner,.topbar-inner{flex-direction:column;align-items:flex-start}
+      .footer-site-map-inner{padding:22px 16px 18px}
+      .footer-head{flex-direction:column;align-items:flex-start}
+      .footer-grid{grid-template-columns:1fr}
+      .footer-brand strong{font-size:21px}
+      .section-title{align-items:flex-start;flex-direction:column}
+      .brand-copy strong{font-size:20px}
+    }
+
+
+
+    /* top page footer/sidebar overrides */
+    .sidebar .side-list > strong{
+      display:block;
+      margin:0 0 8px;
+      padding:0;
+      background:transparent;
+      color:#6d675c;
+      border:0;
+      border-radius:0;
+      font-size:13px;
+      font-weight:600;
+      line-height:1.75;
+      letter-spacing:.01em;
+      box-shadow:none;
+      font-family:"Hiragino Sans","Yu Gothic UI","Yu Gothic Medium","Yu Gothic","Meiryo",sans-serif;
+      white-space:nowrap;
+    }
+    .sidebar .side-list a{
+      font-size:14px;
+      color:var(--muted);
+      font-weight:600;
+      line-height:1.75;
+      letter-spacing:.01em;
+      font-family:"Hiragino Sans","Yu Gothic UI","Yu Gothic Medium","Yu Gothic","Meiryo",sans-serif;
+      word-break:keep-all;
+      overflow-wrap:normal;
+    }
+
+    .wrap.footer{
+      margin-top:28px;
+      padding:0 0 28px;
+      color:var(--muted);
+      text-align:left;
+      font-size:13px;
+    }
+    .wrap.footer .footer-site-map{
+      background:linear-gradient(135deg,#232b63 0%,#1b224f 45%,#101936 100%);
+      border:1px solid rgba(209,170,61,.28);
+      border-radius:16px;
+      box-shadow:0 12px 28px rgba(18,24,48,.14);
+      overflow:hidden;
+    }
+    .wrap.footer .footer-site-map-inner{padding:28px 24px 22px}
+    .wrap.footer .footer-head{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:16px;
+      padding-bottom:18px;
+      margin-bottom:20px;
+      border-bottom:1px solid rgba(255,255,255,.10);
+    }
+    .wrap.footer .footer-brand{min-width:0}
+    .wrap.footer .footer-brand strong{
+      display:block;
+      margin-bottom:6px;
+      font-size:24px;
+      line-height:1.2;
+      color:#fff;
+      letter-spacing:.03em;
+    }
+    .wrap.footer .footer-brand p{
+      margin:0;
+      color:rgba(255,255,255,.78);
+      font-size:13px;
+      line-height:1.8;
+      font-weight:600;
+    }
+    .wrap.footer .footer-top-link{flex:0 0 auto}
+    .wrap.footer .footer-top-link a{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:10px 16px;
+      border-radius:999px;
+      border:1px solid rgba(209,170,61,.42);
+      background:linear-gradient(180deg,#fffdf6 0%,#f1e4bf 100%);
+      color:#1d2238;
+      font-size:13px;
+      font-weight:800;
+      box-shadow:0 6px 14px rgba(0,0,0,.12);
+    }
+    .wrap.footer .footer-grid{
+      display:grid;
+      grid-template-columns:1.2fr 1fr 1fr 1fr;
+      gap:16px;
+    }
+    .wrap.footer .footer-column{
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:14px;
+      padding:16px 14px;
+    }
+    .wrap.footer .footer-column h4{
+      margin:0 0 12px;
+      font-size:16px;
+      line-height:1.3;
+      color:#fff;
+      letter-spacing:.02em;
+    }
+    .wrap.footer .footer-subgroup + .footer-subgroup{
+      margin-top:14px;
+      padding-top:14px;
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+    .wrap.footer .footer-subgroup-title{
+      margin:0 0 8px;
+      font-size:12px;
+      color:rgba(242,208,123,.95);
+      font-weight:800;
+      letter-spacing:.04em;
+    }
+    .wrap.footer .footer-links{
+      display:grid;
+      grid-template-columns:none;
+      gap:8px;
+    }
+    .wrap.footer .footer-links a{
+      display:block;
+      padding:9px 10px;
+      border-radius:10px;
+      background:rgba(255,255,255,.92);
+      color:#1d2238;
+      font-size:13px;
+      font-weight:700;
+      line-height:1.5;
+      border:none;
+      box-shadow:none;
+      transform:none;
+    }
+    .wrap.footer .footer-links a:hover{
+      transform:translateY(-1px);
+      background:#fff;
+      color:#1d2238;
+      border:none;
+    }
+    .wrap.footer .footer-column-stack{display:grid;gap:16px}
+    .wrap.footer .footer-bottom{
+      margin-top:18px;
+      padding-top:16px;
+      border-top:1px solid rgba(255,255,255,.10);
+      text-align:center;
+      color:rgba(255,255,255,.70);
+      font-size:12px;
+      line-height:1.7;
+    }
+    @media (max-width:680px){
+      .wrap.footer .footer-site-map-inner{padding:22px 16px 18px}
+      .wrap.footer .footer-head{flex-direction:column;align-items:flex-start}
+      .wrap.footer .footer-brand strong{font-size:21px}
+    }
+
+
+
+/* top page synced header / sidebar / footer */
+.site-header {
+  position: static;
+  top: auto;
+  z-index: auto;
+  background: none;
+  border-bottom: none;
+  box-shadow: none;
+}
+.brand-row {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #d61f28 0%, #bf1820 100%);
+  border-bottom: 1px solid rgba(0,0,0,0.18);
+}
+.brand-row::before,
+.brand-row::after {
+  content: none;
+}
+.brand-inner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  padding: 18px 0 16px;
+  position: relative;
+  z-index: 1;
+}
+.brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.16);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  flex: 0 0 44px;
+  box-shadow: 0 6px 14px rgba(18, 24, 48, 0.14);
+}
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.brand h1,
+.brand-copy strong {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.2;
+  color: #ffffff;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.18);
+}
+.brand p,
+.brand-copy span {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: rgba(255,255,255,0.82);
+  position: relative;
+  z-index: 1;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  font-family: "Hiragino Sans", "Yu Gothic UI", "Yu Gothic Medium", "Yu Gothic", "Meiryo", sans-serif;
+}
+.utility-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 0 0 auto;
+}
+.utility-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 108px;
+  padding: 10px 18px;
+  border: 1px solid rgba(209,170,61,0.40);
+  border-radius: 999px;
+  background: linear-gradient(180deg, #fffdf6 0%, #f1e4bf 100%);
+  color: #1d2238;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  box-shadow: 0 6px 14px rgba(18,24,48,0.08);
+}
+.category-nav {
+  background: linear-gradient(180deg, #151b27 0%, #090e17 100%);
+  border-bottom: 1px solid rgba(0,0,0,0.28);
+}
+.category-scroll {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 12px 0;
+  scrollbar-width: none;
+}
+.category-scroll::-webkit-scrollbar { display: none; }
+.category-scroll a {
+  white-space: nowrap;
+  padding: 9px 14px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #eee7d8 0%, #e2d7bf 100%);
+  border: 1px solid #d5bf8b;
+  color: #1f2333;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.16);
+}
+.category-scroll a:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.20);
+}
+.pv-ranking {
+  border: 1px solid rgba(209,170,61,0.24);
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #ffffff 0%, #fffdfa 100%);
+  box-shadow: 0 8px 18px rgba(18,24,48,0.05);
+}
+.pv-ranking-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(209,170,61,0.22);
+  background: linear-gradient(180deg, #fff7f7 0%, #f6efe8 100%);
+  flex-wrap: wrap;
+}
+.pv-ranking-head strong { font-size: 15px; color: var(--heading); }
+.pv-ranking-list { list-style: none; margin: 0; padding: 0; }
+.pv-ranking-list li + li { border-top: 1px solid rgba(209,170,61,0.18); }
+.pv-ranking-list a {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.pv-rank {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #243a68 0%, #162544 100%);
+  color: #fff;
+  font-weight: 900;
+  font-size: 12px;
+}
+.pv-title {
+  min-width: 0;
+  font-size: 14px;
+  color: var(--heading);
+  font-weight: 800;
+  line-height: 1.5;
+}
+.side-list-label {
+  display: block;
+  margin: 0 0 8px;
+  font-size: 12px;
+  color: #000000;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+}
+
+/* simple toc */
+.toc-box .box-body {
+  padding: 10px 12px;
+}
+.toc.toc-simple {
+  display: grid;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: toc;
+}
+.toc.toc-simple li {
+  counter-increment: toc;
+}
+.toc.toc-simple a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--heading);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+.toc.toc-simple a::before {
+  content: counter(toc, decimal-leading-zero);
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: #f3f4f6;
+  border: 1px solid #d7d7d7;
+  color: #232b63;
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1;
+}
+.toc.toc-simple a:hover {
+  color: #232b63;
+  transform: none;
+  text-decoration: underline;
+}
+
+@media (max-width: 680px) {
+  .brand-inner,
+  .topbar-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .utility-links {
+    justify-content: flex-start;
+  }
+}
+
+
+
+/* ===== 記事ページ：PCは [広告][広告][本編][メニュー][広告] ===== */
+.article-rails-layout{
+  display:grid;
+  grid-template-columns:minmax(110px, 1fr) minmax(110px, 1fr) minmax(560px, 860px) 280px minmax(110px, 1fr);
+  gap:18px;
+  align-items:start;
+}
+
+.article-rails-layout > .main{
+  grid-column:3;
+  width:100%;
+}
+
+.article-rails-layout > .sidebar{
+  grid-column:4;
+  display:block;
+}
+
+.article-rails-layout > .ad-rail-left-1{grid-column:1;}
+.article-rails-layout > .ad-rail-left-2{grid-column:2;}
+.article-rails-layout > .ad-rail-right{grid-column:5;}
+
+.ad-rail{
+  min-width:0;
+  align-self:start;
+}
+
+.ad-box{
+  position:sticky;
+  top:20px;
+  min-height:620px;
+  padding:16px 12px;
+  border:1px solid rgba(209,170,61,.22);
+  border-radius:20px;
+  background:linear-gradient(180deg,#ffffff 0%, #fffdfa 100%);
+  box-shadow:0 10px 24px rgba(18,24,48,.06);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  gap:12px;
+  text-align:center;
+}
+
+.ad-badge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:5px 10px;
+  border-radius:999px;
+  background:#eeeeee;
+  border:1px solid #d7d7d7;
+  color:#232b63;
+  font-size:12px;
+  font-weight:800;
+  line-height:1;
+}
+
+.ad-box strong{
+  font-size:16px;
+  line-height:1.35;
+  color:var(--heading);
+}
+
+.ad-box p{
+  margin:0;
+  font-size:13px;
+  line-height:1.8;
+  color:var(--muted);
+  font-weight:600;
+}
+
+/* 本編はスマホ幅相当に近い細めカラムで維持 */
+.article-rails-layout .main .hero-copy,
+.article-rails-layout .main .box-body,
+.article-rails-layout .main .article{
+  width:100%;
+}
+
+@media (max-width: 1180px){
+  .article-rails-layout{
+    grid-template-columns:minmax(0,1fr) 280px;
+  }
+  .article-rails-layout > .ad-rail{
+    display:none;
+  }
+  .article-rails-layout > .main{
+    grid-column:1;
+  }
+  .article-rails-layout > .sidebar{
+    grid-column:2;
+  }
+}
+
+@media (max-width: 980px){
+  .article-rails-layout{
+    grid-template-columns:1fr;
+  }
+  .article-rails-layout > .sidebar{
+    grid-column:auto;
+  }
+}
+
+
+/* ===== トップページ共通ヘッダー / メニュー / フッター移植後の優先スタイル ===== */
+.site-header {
+  position: static !important;
+  top: auto !important;
+  z-index: 40 !important;
+  background: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+.brand-row {
+  position: relative !important;
+  overflow: hidden !important;
+  background: linear-gradient(180deg, #d61f28 0%, #bf1820 100%) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.18) !important;
+}
+
+.brand-row::before,
+.brand-row::after {
+  content: none !important;
+}
+
+.brand-inner {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 20px !important;
+  padding: 18px 0 16px !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.brand {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  min-width: 0 !important;
+}
+
+.logo {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 10px !important;
+  background: rgba(255,255,255,0.08) !important;
+  border: 1px solid rgba(255,255,255,0.16) !important;
+  display: grid !important;
+  place-items: center !important;
+  overflow: hidden !important;
+  flex: 0 0 44px !important;
+  box-shadow: 0 6px 14px rgba(18, 24, 48, 0.14) !important;
+}
+
+.logo img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+.brand h1,
+.brand-copy strong {
+  margin: 0 !important;
+  font-size: 24px !important;
+  line-height: 1.2 !important;
+  color: #ffffff !important;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.18) !important;
+}
+
+.brand p,
+.brand-copy span {
+  margin: 4px 0 0 !important;
+  font-size: 13px !important;
+  color: rgba(255,255,255,0.82) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.01em !important;
+}
+
+.utility-links {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  flex: 0 0 auto !important;
+}
+
+.utility-links a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 108px !important;
+  padding: 10px 18px !important;
+  border: 1px solid rgba(209,170,61,0.40) !important;
+  border-radius: 999px !important;
+  background: linear-gradient(180deg, #fffdf6 0%, #f1e4bf 100%) !important;
+  color: #1d2238 !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.02em !important;
+  box-shadow: 0 6px 14px rgba(18,24,48,0.08) !important;
+}
+
+.category-nav {
+  background: linear-gradient(180deg, #151b27 0%, #090e17 100%) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.28) !important;
+  overflow: hidden !important;
+}
+
+.category-scroll {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  gap: 10px !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  -webkit-overflow-scrolling: touch !important;
+  scrollbar-width: none !important;
+  padding: 12px 0 !important;
+}
+
+.category-scroll::-webkit-scrollbar {
+  display: none !important;
+}
+
+.category-scroll a {
+  flex: 0 0 auto !important;
+  width: auto !important;
+  min-width: max-content !important;
+  white-space: nowrap !important;
+  padding: 9px 14px !important;
+  border-radius: 999px !important;
+  background: linear-gradient(180deg, #eee7d8 0%, #e2d7bf 100%) !important;
+  border: 1px solid #d5bf8b !important;
+  color: #1f2333 !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.16) !important;
+}
+
+.wrap.footer {
+  margin-top: 28px !important;
+  padding: 0 0 28px !important;
+  color: var(--muted) !important;
+  text-align: left !important;
+  font-size: 13px !important;
+}
+
+.wrap.footer .footer-site-map {
+  background: linear-gradient(135deg, #232b63 0%, #1b224f 45%, #101936 100%) !important;
+  border: 1px solid rgba(209,170,61,0.28) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 12px 28px rgba(18,24,48,0.14) !important;
+  overflow: hidden !important;
+}
+
+.wrap.footer .footer-site-map-inner {
+  padding: 28px 24px 22px !important;
+}
+
+.wrap.footer .footer-head {
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+  padding-bottom: 18px !important;
+  margin-bottom: 20px !important;
+  border-bottom: 1px solid rgba(255,255,255,0.10) !important;
+}
+
+.wrap.footer .footer-grid {
+  display: grid !important;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr !important;
+  gap: 16px !important;
+}
+
+.wrap.footer .footer-column {
+  background: rgba(255,255,255,0.06) !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  border-radius: 14px !important;
+  padding: 16px 14px !important;
+}
+
+.wrap.footer .footer-links {
+  display: grid !important;
+  gap: 8px !important;
+}
+
+.wrap.footer .footer-links a {
+  display: block !important;
+  padding: 9px 10px !important;
+  border-radius: 10px !important;
+  background: rgba(255,255,255,0.92) !important;
+  color: #1d2238 !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  line-height: 1.5 !important;
+}
+
+@media (max-width: 900px) {
+  .wrap.footer .footer-grid {
+    grid-template-columns: 1fr 1fr !important;
+    align-items: start !important;
+  }
+
+  .footer-column-latest { order: 1 !important; }
+  .footer-column-deck-new { order: 2 !important; }
+  .footer-column-special { order: 3 !important; }
+  .footer-column-deck-meta { order: 4 !important; }
+}
+
+@media (max-width: 680px) {
+  .brand-inner,
+  .topbar-inner {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .utility-links {
+    justify-content: flex-start !important;
+  }
+
+  .category-scroll a {
+    width: auto !important;
+    min-width: max-content !important;
+    padding: 9px 14px !important;
+    font-size: 13px !important;
+  }
+
+  .wrap.footer .footer-site-map-inner {
+    padding: 22px 16px 18px !important;
+  }
+
+  .wrap.footer .footer-head {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .wrap.footer .footer-brand strong {
+    font-size: 21px !important;
+  }
+}
+
+
+/* ===== 記事ページ：広告列を段階的に消し、最後にメニュー列を消す ===== */
+/* 既存の中間幅でメニューが移動する挙動を上書き */
+.article-rails-layout{
+  display:grid !important;
+  grid-template-columns:minmax(110px, 1fr) minmax(110px, 1fr) minmax(560px, 860px) 280px minmax(110px, 1fr) !important;
+  gap:18px !important;
+  align-items:start !important;
+}
+
+.article-rails-layout > .ad-rail-left-1{ grid-column:1 !important; display:block; }
+.article-rails-layout > .ad-rail-left-2{ grid-column:2 !important; display:block; }
+.article-rails-layout > .main{ grid-column:3 !important; width:100%; min-width:0; }
+.article-rails-layout > .sidebar{ grid-column:4 !important; display:block !important; min-width:0; }
+.article-rails-layout > .ad-rail-right{ grid-column:5 !important; display:block; }
+
+/* 1段階目：右広告を消す */
+@media (max-width: 1480px){
+  .article-rails-layout{
+    grid-template-columns:minmax(96px, 1fr) minmax(96px, 1fr) minmax(360px, 430px) 280px !important;
+  }
+  .article-rails-layout > .ad-rail-right{
+    display:none !important;
+  }
+}
+
+/* 2段階目：左2本目の広告を消す */
+@media (max-width: 1280px){
+  .article-rails-layout{
+    grid-template-columns:minmax(90px, 1fr) minmax(340px, 430px) 260px !important;
+  }
+  .article-rails-layout > .ad-rail-left-2{
+    display:none !important;
+  }
+  .article-rails-layout > .ad-rail-left-1{ grid-column:1 !important; }
+  .article-rails-layout > .main{ grid-column:2 !important; }
+  .article-rails-layout > .sidebar{ grid-column:3 !important; }
+}
+
+/* 3段階目：左1本目の広告も消す → 本編＋メニューの2カラム維持 */
+@media (max-width: 1080px){
+  .article-rails-layout{
+    grid-template-columns:minmax(320px, 430px) 248px !important;
+    justify-content:center !important;
+  }
+  .article-rails-layout > .ad-rail-left-1{
+    display:none !important;
+  }
+  .article-rails-layout > .main{ grid-column:1 !important; }
+  .article-rails-layout > .sidebar{ grid-column:2 !important; display:block !important; }
+}
+
+/* 最後にメニュー列を消す */
+@media (max-width: 860px){
+  .article-rails-layout{
+    grid-template-columns:minmax(0, 430px) !important;
+    justify-content:center !important;
+  }
+  .article-rails-layout > .sidebar{
+    display:none !important;
+  }
+  .article-rails-layout > .main{
+    grid-column:1 !important;
+  }
+}
+
+/* 旧ルールの再移動を防ぐ */
+@media (max-width: 1180px){
+  .article-rails-layout > .sidebar{
+    grid-column:auto;
+  }
+}
+@media (max-width: 980px){
+  .article-rails-layout > .sidebar{
+    grid-column:auto;
+  }
+}
+
+
+/* ===== 中央カラム：最初から幅狭前提で可読性固定 ===== */
+
+/* 本編カラムは最初から細めの読み幅に寄せる */
+.article-rails-layout > .main{
+  max-width: 430px;
+}
+
+.article-rails-layout > .main .hero,
+.article-rails-layout > .main .box,
+.article-rails-layout > .main .article,
+.article-rails-layout > .main .toc-box{
+  width: 100%;
+}
+
+/* ヒーロー見出し：改行をなくす */
+.article-rails-layout > .main .hero-title{
+  font-size: clamp(24px, 2.1vw, 32px) !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.03em !important;
+  white-space: nowrap !important;
+}
+
+.article-rails-layout > .main .hero-summary{
+  font-size: 14px !important;
+  line-height: 1.8 !important;
+}
+
+/* 幅を狭めても中央カラム内の段組を変えない */
+@media (max-width: 860px){
+  .article-rails-layout > .main .tier-panel{
+    grid-template-columns: 96px 1fr !important;
+  }
+
+  .article-rails-layout > .main .prio-item{
+    grid-template-columns: 122px 1fr !important;
+  }
+
+  .article-rails-layout > .main .flow-item{
+    grid-template-columns: 44px 1fr !important;
+  }
+
+  .article-rails-layout > .main .card-grid.two{
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .article-rails-layout > .main .proscons{
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .article-rails-layout > .main .matchup-media,
+  .article-rails-layout > .main .tip.matchup-media{
+    grid-template-columns: 112px 1fr !important;
+    gap: 14px !important;
+  }
+
+  .article-rails-layout > .main .matchup-media .card-thumb{
+    width: 112px !important;
+  }
+}
+
+/* テーブル：崩れにくく、改行が多すぎない見た目へ */
+.article-rails-layout > .main .table{
+  width: 100% !important;
+  table-layout: fixed !important;
+  white-space: normal !important;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  font-size: 13px !important;
+}
+
+.article-rails-layout > .main .table th,
+.article-rails-layout > .main .table td{
+  padding: 10px 10px !important;
+  white-space: normal !important;
+  line-height: 1.65 !important;
+  vertical-align: top !important;
+}
+
+.article-rails-layout > .main .table th{
+  font-size: 12px !important;
+}
+
+@media (max-width: 640px){
+  .article-rails-layout > .main .table{
+    display: table !important;
+    overflow: visible !important;
+  }
+}
+
+/* 中央カラム本文：行間と余白を少し締めて読みやすく */
+.article-rails-layout > .main .article{
+  padding: 18px 18px 24px !important;
+}
+
+.article-rails-layout > .main .article section + section{
+  margin-top: 30px !important;
+}
+
+.article-rails-layout > .main .article p,
+.article-rails-layout > .main .article li{
+  font-size: 14px !important;
+  line-height: 1.82 !important;
+}
+
+.article-rails-layout > .main .article p{
+  margin: 0 0 12px !important;
+}
+
+.article-rails-layout > .main .article h2{
+  font-size: 22px !important;
+  margin-bottom: 14px !important;
+  padding: 12px 14px !important;
+}
+
+.article-rails-layout > .main .article h3{
+  font-size: 18px !important;
+  margin: 24px 0 10px !important;
+}
+
+.article-rails-layout > .main .box-body,
+.article-rails-layout > .main .detail-card,
+.article-rails-layout > .main .note-box,
+.article-rails-layout > .main .leader-box,
+.article-rails-layout > .main .premium-box,
+.article-rails-layout > .main .card-item,
+.article-rails-layout > .main .build-body{
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+
+/* 長文の見え方を少しコンパクトに */
+.article-rails-layout > .main .matchups-intro,
+.article-rails-layout > .main .hero-summary,
+.article-rails-layout > .main .note-link-copy p,
+.article-rails-layout > .main .detail-card p,
+.article-rails-layout > .main .card-item p,
+.article-rails-layout > .main .build-card p{
+  text-wrap: pretty;
+}
+
+/* さらに狭いときは段組維持のまま文字だけ少し縮小 */
+@media (max-width: 520px){
+  .article-rails-layout > .main{
+    max-width: 400px;
+  }
+
+  .article-rails-layout > .main .hero-title{
+    font-size: 22px !important;
+  }
+
+  .article-rails-layout > .main .tier-panel{
+    grid-template-columns: 84px 1fr !important;
+  }
+
+  .article-rails-layout > .main .prio-item{
+    grid-template-columns: 104px 1fr !important;
+    gap: 12px !important;
+  }
+
+  .article-rails-layout > .main .matchup-media,
+  .article-rails-layout > .main .tip.matchup-media{
+    grid-template-columns: 96px 1fr !important;
+    gap: 12px !important;
+  }
+
+  .article-rails-layout > .main .matchup-media .card-thumb{
+    width: 96px !important;
+  }
+
+  .article-rails-layout > .main .article p,
+  .article-rails-layout > .main .article li{
+    font-size: 13px !important;
+  }
+
+  .article-rails-layout > .main .table{
+    font-size: 12px !important;
+  }
+
+  .article-rails-layout > .main .table th,
+  .article-rails-layout > .main .table td{
+    padding: 8px 8px !important;
+  }
+}
+
+
+/* ===== 中央カラムを最初から固定幅前提にして、幅を狭めても内部レイアウトを変えない ===== */
+
+/* 本編幅を最初から固定寄りにする */
+.article-rails-layout > .main{
+  width: 100% !important;
+  max-width: 430px !important;
+  min-width: 430px !important;
+}
+
+/* 本編内の各ブロックは常にこの幅前提 */
+.article-rails-layout > .main .hero,
+.article-rails-layout > .main .toc-box,
+.article-rails-layout > .main .box,
+.article-rails-layout > .main .article{
+  width: 100% !important;
+}
+
+/* ヒーローは最初から狭幅前提の見た目に固定 */
+.article-rails-layout > .main .hero-copy{
+  padding: 26px 22px !important;
+}
+.article-rails-layout > .main .hero-title{
+  font-size: 30px !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.03em !important;
+  white-space: nowrap !important;
+}
+.article-rails-layout > .main .hero-summary{
+  font-size: 14px !important;
+  line-height: 1.8 !important;
+}
+
+/* 中央カラム内部レイアウトを常に固定 */
+.article-rails-layout > .main .tier-panel{
+  display: grid !important;
+  grid-template-columns: 96px 1fr !important;
+}
+.article-rails-layout > .main .prio-item{
+  display: grid !important;
+  grid-template-columns: 122px 1fr !important;
+  gap: 16px !important;
+}
+.article-rails-layout > .main .flow-item{
+  display: grid !important;
+  grid-template-columns: 44px 1fr !important;
+  gap: 14px !important;
+}
+.article-rails-layout > .main .card-grid.two{
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+.article-rails-layout > .main .proscons{
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 12px !important;
+}
+.article-rails-layout > .main .matchup-media,
+.article-rails-layout > .main .tip.matchup-media{
+  display: grid !important;
+  grid-template-columns: 112px 1fr !important;
+  gap: 14px !important;
+}
+.article-rails-layout > .main .matchup-media .card-thumb{
+  width: 112px !important;
+}
+
+/* テーブルも常に同じ表示 */
+.article-rails-layout > .main .table{
+  width: 100% !important;
+  table-layout: fixed !important;
+  display: table !important;
+  overflow: visible !important;
+  white-space: normal !important;
+  font-size: 13px !important;
+}
+.article-rails-layout > .main .table th,
+.article-rails-layout > .main .table td{
+  white-space: normal !important;
+  padding: 10px 10px !important;
+  line-height: 1.65 !important;
+  overflow-wrap: anywhere !important;
+  word-break: keep-all !important;
+}
+.article-rails-layout > .main .table th{
+  font-size: 12px !important;
+}
+
+/* 本文の余白・見出しも固定 */
+.article-rails-layout > .main .article{
+  padding: 18px 18px 24px !important;
+}
+.article-rails-layout > .main .article section + section{
+  margin-top: 30px !important;
+}
+.article-rails-layout > .main .article h2{
+  font-size: 22px !important;
+  margin-bottom: 14px !important;
+  padding: 12px 14px !important;
+}
+.article-rails-layout > .main .article h3{
+  font-size: 18px !important;
+  margin: 24px 0 10px !important;
+}
+.article-rails-layout > .main .article p,
+.article-rails-layout > .main .article li{
+  font-size: 14px !important;
+  line-height: 1.82 !important;
+}
+.article-rails-layout > .main .article p{
+  margin: 0 0 12px !important;
+}
+
+/* 既存のレスポンシブ変形を本編内だけ無効化 */
+@media (max-width: 860px){
+  .article-rails-layout > .main{
+    max-width: 430px !important;
+    min-width: 430px !important;
+  }
+  .article-rails-layout > .main .tier-panel{ grid-template-columns: 96px 1fr !important; }
+  .article-rails-layout > .main .prio-item{ grid-template-columns: 122px 1fr !important; }
+  .article-rails-layout > .main .flow-item{ grid-template-columns: 44px 1fr !important; }
+  .article-rails-layout > .main .card-grid.two{ grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .article-rails-layout > .main .proscons{ grid-template-columns: 1fr 1fr !important; }
+  .article-rails-layout > .main .matchup-media,
+  .article-rails-layout > .main .tip.matchup-media{ grid-template-columns: 112px 1fr !important; }
+  .article-rails-layout > .main .table{ display: table !important; }
+}
+
+@media (max-width: 780px){
+  .article-rails-layout > .main{
+    max-width: 430px !important;
+    min-width: 430px !important;
+  }
+  .article-rails-layout > .main .hero-inner,
+  .article-rails-layout > .main .tier-panel,
+  .article-rails-layout > .main .prio-item,
+  .article-rails-layout > .main .proscons,
+  .article-rails-layout > .main .card-grid.two,
+  .article-rails-layout > .main .matchup-media,
+  .article-rails-layout > .main .tip.matchup-media{
+    grid-template-columns: inherit !important;
+  }
+}
+
+@media (max-width: 640px){
+  .article-rails-layout > .main{
+    max-width: 430px !important;
+    min-width: 430px !important;
+  }
+  .article-rails-layout > .main .table{
+    display: table !important;
+    overflow: visible !important;
+    white-space: normal !important;
+  }
+}
+
+/* 画面がそれ未満になったら、ページ全体を横スクロールで見せる */
+@media (max-width: 430px){
+  body{
+    overflow-x: auto !important;
+  }
+  .page,
+  .wrap{
+    min-width: 446px !important;
+  }
+}
+
+
+/* ===== ヒーロー完全固定：幅を狭めても初期レイアウトを維持 ===== */
+
+/* 中央カラムのヒーロー外枠を固定 */
+.article-rails-layout > .main .hero{
+  width: 100% !important;
+  min-width: 0 !important;
+  margin-bottom: 16px !important;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  box-shadow: 0 10px 24px rgba(18,24,48,.06) !important;
+}
+
+.article-rails-layout > .main .hero-inner{
+  display: block !important;
+  padding: 0 !important;
+}
+
+.article-rails-layout > .main .hero-copy{
+  position: relative !important;
+  display: grid !important;
+  align-content: start !important;
+  gap: 12px !important;
+  padding: 26px 22px !important;
+  min-height: 318px !important;
+  overflow: hidden !important;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(209,170,61,0.18) 0, rgba(209,170,61,0.08) 18%, rgba(209,170,61,0) 36%),
+    repeating-linear-gradient(135deg, rgba(209,170,61,0.10) 0 2px, transparent 2px 34px),
+    linear-gradient(135deg, #232b63 0%, #1b224f 45%, #101936 100%) !important;
+  color: #fff !important;
+  border-bottom: 1px solid rgba(209,170,61,0.22) !important;
+}
+
+.article-rails-layout > .main .hero-copy::before{
+  content: "" !important;
+  position: absolute !important;
+  width: 300px !important;
+  height: 300px !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -44%) !important;
+  border-radius: 50% !important;
+  border: 2px solid rgba(209,170,61,0.38) !important;
+  box-shadow:
+    0 0 0 16px rgba(209,170,61,0.10),
+    0 0 0 34px rgba(209,170,61,0.06),
+    inset 0 0 0 10px rgba(209,170,61,0.08) !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+.article-rails-layout > .main .hero-copy::after{
+  content: "" !important;
+  position: absolute !important;
+  inset: auto -60px -60px auto !important;
+  width: 220px !important;
+  height: 220px !important;
+  border-radius: 50% !important;
+  background: radial-gradient(circle, rgba(209,170,61,0.24), rgba(209,170,61,0)) !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+.article-rails-layout > .main .hero-copy > *{
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* 上部メタ・タグの並び固定 */
+.article-rails-layout > .main .hero-meta,
+.article-rails-layout > .main .hero-tags{
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  align-items: center !important;
+}
+
+.article-rails-layout > .main .pill,
+.article-rails-layout > .main .hero-tag{
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 6px 10px !important;
+  border-radius: 999px !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+  background: #eeeeee !important;
+  border: 1px solid #d7d7d7 !important;
+  color: #232b63 !important;
+  box-shadow: none !important;
+  white-space: nowrap !important;
+}
+
+.article-rails-layout > .main .hero-title{
+  margin: 2px 0 0 !important;
+  font-size: 30px !important;
+  line-height: 1.14 !important;
+  letter-spacing: -0.04em !important;
+  white-space: nowrap !important;
+}
+
+.article-rails-layout > .main .hero-summary{
+  margin: 0 !important;
+  max-width: none !important;
+  width: 100% !important;
+  font-size: 14px !important;
+  line-height: 1.85 !important;
+  color: rgba(255,255,255,.97) !important;
+}
+
+.article-rails-layout > .main .hero-tags{
+  margin-top: 2px !important;
+}
+
+/* 幅を狭めてもヒーローだけは一切変えない */
+@media (max-width: 980px){
+  .article-rails-layout > .main .hero-inner{
+    padding: 0 !important;
+  }
+  .article-rails-layout > .main .hero-copy{
+    padding: 26px 22px !important;
+    min-height: 318px !important;
+    gap: 12px !important;
+  }
+  .article-rails-layout > .main .hero-title{
+    font-size: 30px !important;
+    white-space: nowrap !important;
+  }
+  .article-rails-layout > .main .hero-summary{
+    font-size: 14px !important;
+    line-height: 1.85 !important;
+  }
+  .article-rails-layout > .main .hero-meta,
+  .article-rails-layout > .main .hero-tags{
+    gap: 8px !important;
+  }
+  .article-rails-layout > .main .pill,
+  .article-rails-layout > .main .hero-tag{
+    font-size: 12px !important;
+    padding: 6px 10px !important;
+  }
+}
+
+@media (max-width: 780px){
+  .article-rails-layout > .main .hero-inner{
+    padding: 0 !important;
+  }
+  .article-rails-layout > .main .hero-copy{
+    padding: 26px 22px !important;
+    min-height: 318px !important;
+  }
+}
+
+@media (max-width: 640px){
+  .article-rails-layout > .main .hero-inner{
+    padding: 0 !important;
+  }
+  .article-rails-layout > .main .hero-copy{
+    padding: 26px 22px !important;
+    min-height: 318px !important;
+  }
+  .article-rails-layout > .main .hero-title{
+    font-size: 30px !important;
+  }
+}
+
+
+/* ===== 本編内2カラム要素も完全固定 ===== */
+
+/* 2カラムカード群を常に2カラム維持 */
+.article-rails-layout > .main .card-grid.two{
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 14px !important;
+}
+
+/* 既存のモバイル用1カラム化を完全に打ち消す */
+@media (max-width: 980px){
+  .article-rails-layout > .main .card-grid.two{
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+  }
+}
+
+@media (max-width: 780px){
+  .article-rails-layout > .main .card-grid.two{
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+  }
+}
+
+@media (max-width: 640px){
+  .article-rails-layout > .main .card-grid.two{
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+  }
+}
+
+/* カード内の見た目も固定寄りに調整 */
+.article-rails-layout > .main .card-item{
+  padding: 16px !important;
+  border-radius: 16px !important;
+}
+
+.article-rails-layout > .main .card-item h4{
+  font-size: 16px !important;
+  line-height: 1.45 !important;
+  margin: 0 0 8px !important;
+}
+
+.article-rails-layout > .main .card-item p{
+  font-size: 13px !important;
+  line-height: 1.85 !important;
+  margin: 0 !important;
+}
+
+
+/* ===== 最新弾ページ向け微調整 ===== */
+.article-rails-layout > .main .hero-title{
+  font-size: 28px !important;
+}
+
+.article-rails-layout > .main .hero-summary{
+  font-size: 14px !important;
+}
+
+.article-rails-layout > .main .toc-box .box-head h2{
+  font-size: 20px !important;
+}
+
+.article-rails-layout > .main .note{
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 14px !important;
+}
+
+.article-rails-layout > .main .table{
+  margin-bottom: 18px !important;
+}
+
+@media (max-width: 980px){
+  .article-rails-layout > .main .note{
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* このテンプレ方針では中央カラムは固定維持 */
+@media (max-width: 430px){
+  .page,
+  .wrap{
+    min-width: 446px !important;
+  }
+}
+
+
+/* ===== 中央カラムのみ再調整（ベースは最新仕様最適化版のまま） ===== */
+
+/* 共通パーツ・構成は触らず、main配下だけ調整 */
+.article-rails-layout > .main{
+  max-width: none !important;
+  width: 100% !important;
+}
+
+/* ヒーロー */
+.article-rails-layout > .main .hero{
+  margin-bottom: 14px !important;
+}
+.article-rails-layout > .main .hero-copy{
+  padding: 24px 22px 20px !important;
+  min-height: 300px !important;
+  gap: 10px !important;
+}
+.article-rails-layout > .main .hero-title{
+  font-size: 27px !important;
+  line-height: 1.16 !important;
+  letter-spacing: -0.03em !important;
+  white-space: normal !important;
+  text-wrap: balance !important;
+}
+.article-rails-layout > .main .hero-summary{
+  font-size: 14px !important;
+  line-height: 1.76 !important;
+  max-width: none !important;
+}
+.article-rails-layout > .main .hero-meta,
+.article-rails-layout > .main .hero-tags{
+  gap: 8px !important;
+}
+
+/* 目次 */
+.article-rails-layout > .main .toc-box .box-head{
+  padding: 14px 16px !important;
+}
+.article-rails-layout > .main .toc-box .box-head h2{
+  font-size: 20px !important;
+}
+.article-rails-layout > .main .toc-box .box-body{
+  padding: 10px 12px !important;
+}
+.article-rails-layout > .main .toc.toc-simple a{
+  padding: 7px 0 !important;
+  font-size: 13px !important;
+  line-height: 1.45 !important;
+}
+
+/* 本文 */
+.article-rails-layout > .main .article{
+  padding: 18px 18px 24px !important;
+}
+.article-rails-layout > .main .article section + section{
+  margin-top: 30px !important;
+}
+.article-rails-layout > .main .article h2{
+  font-size: 21px !important;
+  line-height: 1.25 !important;
+  padding: 12px 14px !important;
+  margin-bottom: 14px !important;
+}
+.article-rails-layout > .main .article h3{
+  font-size: 18px !important;
+  line-height: 1.45 !important;
+  margin: 24px 0 10px !important;
+}
+.article-rails-layout > .main .article p,
+.article-rails-layout > .main .article li{
+  font-size: 14px !important;
+  line-height: 1.82 !important;
+  text-wrap: pretty !important;
+}
+.article-rails-layout > .main .article p{
+  margin: 0 0 12px !important;
+}
+
+/* 情報カード */
+.article-rails-layout > .main .note,
+.article-rails-layout > .main .leader,
+.article-rails-layout > .main .premium,
+.article-rails-layout > .main .detail-grid,
+.article-rails-layout > .main .related{
+  gap: 12px !important;
+}
+.article-rails-layout > .main .note-box,
+.article-rails-layout > .main .leader-box,
+.article-rails-layout > .main .premium-box,
+.article-rails-layout > .main .detail-card,
+.article-rails-layout > .main .article-card{
+  padding: 16px !important;
+  border-radius: 16px !important;
+}
+.article-rails-layout > .main .note-box strong,
+.article-rails-layout > .main .leader-box strong,
+.article-rails-layout > .main .premium-box strong,
+.article-rails-layout > .main .tip strong{
+  font-size: 14px !important;
+  margin-bottom: 6px !important;
+}
+
+/* 2カラムは維持 */
+.article-rails-layout > .main .card-grid.two{
+  gap: 12px !important;
+}
+.article-rails-layout > .main .card-item{
+  padding: 16px !important;
+}
+.article-rails-layout > .main .card-item h4{
+  font-size: 16px !important;
+  line-height: 1.45 !important;
+}
+.article-rails-layout > .main .card-item p{
+  font-size: 13px !important;
+  line-height: 1.82 !important;
+}
+
+/* 画像＋本文 */
+.article-rails-layout > .main .matchup-media,
+.article-rails-layout > .main .tip.matchup-media{
+  grid-template-columns: 104px 1fr !important;
+  gap: 14px !important;
+}
+.article-rails-layout > .main .matchup-media .card-thumb{
+  width: 104px !important;
+}
+
+/* テーブル */
+.article-rails-layout > .main .table{
+  table-layout: fixed !important;
+  font-size: 13px !important;
+  margin-bottom: 18px !important;
+}
+.article-rails-layout > .main .table th,
+.article-rails-layout > .main .table td{
+  padding: 10px 10px !important;
+  line-height: 1.62 !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+}
+.article-rails-layout > .main .table th{
+  font-size: 12px !important;
+}
+
+
+/* ===== まとめテーブル修正 ===== */
+/* まとめセクションなどの2列表は左列を細く固定して崩れ防止 */
+.article-rails-layout > .main .table{
+  table-layout: fixed !important;
+}
+
+.article-rails-layout > .main .table th:first-child,
+.article-rails-layout > .main .table td:first-child{
+  width: 110px !important;
+  min-width: 110px !important;
+  white-space: nowrap !important;
+}
+
+.article-rails-layout > .main .table th:last-child,
+.article-rails-layout > .main .table td:last-child{
+  width: auto !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  word-break: normal !important;
+}
+
+/* 2列テーブル用にセル余白も少し最適化 */
+.article-rails-layout > .main .table th,
+.article-rails-layout > .main .table td{
+  padding: 10px 12px !important;
+  vertical-align: top !important;
+  line-height: 1.65 !important;
+}
+
+
+/* ===== まとめテーブル余白修正 ===== */
+/* 表全体を中央カラムいっぱいに使う */
+.article-rails-layout > .main .table-wrap{
+  width: 100% !important;
+}
+
+.article-rails-layout > .main .table{
+  width: 100% !important;
+  table-layout: auto !important;
+}
+
+/* 左列は固定しすぎず、必要最小限に */
+.article-rails-layout > .main .table th:first-child,
+.article-rails-layout > .main .table td:first-child{
+  width: 92px !important;
+  min-width: 92px !important;
+  white-space: nowrap !important;
+}
+
+/* 右列が残り幅をしっかり使う */
+.article-rails-layout > .main .table th:last-child,
+.article-rails-layout > .main .table td:last-child{
+  width: auto !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+}
+
+/* 行全体の見た目を自然に */
+.article-rails-layout > .main .table th,
+.article-rails-layout > .main .table td{
+  padding: 10px 12px !important;
+}
+
+
+/* ===== 「この記事の要点」が左半分しか使わない問題の修正 ===== */
+/* 1つしか要素がない quick-grid は 1カラムで全幅使用 */
+.article-rails-layout > .main .quick-grid{
+  grid-template-columns: 1fr !important;
+}
+
+.article-rails-layout > .main .quick-grid > *{
+  width: 100% !important;
+  max-width: none !important;
+}
+
+/* 念のため、要点ボックス自体も全幅に */
+.article-rails-layout > .main .quick-box{
+  width: 100% !important;
+}
+
+
+/* ===== 「まとめ」見出し内テーブル専用修正 ===== */
+.article-rails-layout > .main .summary-section-fix{
+  width: 100% !important;
+}
+
+.article-rails-layout > .main .summary-section-fix .table-wrap{
+  width: 100% !important;
+  display: block !important;
+}
+
+.article-rails-layout > .main .summary-section-fix .table{
+  width: 100% !important;
+  max-width: none !important;
+  table-layout: fixed !important;
+  margin: 0 !important;
+}
+
+.article-rails-layout > .main .summary-section-fix .table th,
+.article-rails-layout > .main .summary-section-fix .table td{
+  width: auto !important;
+}
+
+.article-rails-layout > .main .summary-section-fix .table th:first-child,
+.article-rails-layout > .main .summary-section-fix .table td:first-child{
+  width: 108px !important;
+  min-width: 108px !important;
+  white-space: nowrap !important;
+}
+
+.article-rails-layout > .main .summary-section-fix .table th:last-child,
+.article-rails-layout > .main .summary-section-fix .table td:last-child{
+  width: calc(100% - 108px) !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+}
+
+/* もし「まとめ」内の親グリッドが2カラム指定でも、ここだけ全幅にする */
+.article-rails-layout > .main .summary-section-fix .quick-grid,
+.article-rails-layout > .main .summary-section-fix .split-grid{
+  grid-template-columns: 1fr !important;
+}
+
+.article-rails-layout > .main .summary-section-fix > *{
+  max-width: none !important;
+}
+
+    /* Latest starter deck article components */
+    body.latest-starter-deck{
+      --hero-start:#4b1d95;
+      --hero-mid:#6d28d9;
+      --hero-end:#8b5cf6;
+    }
+
+    body.latest-starter-deck .hero:before{
+      content:"";position:absolute;inset:0;background:
+      radial-gradient(circle at 50% 42%, rgba(255,255,255,.16) 0, rgba(255,255,255,.07) 18%, rgba(255,255,255,0) 36%),
+      repeating-linear-gradient(135deg, rgba(255,255,255,.08) 0 2px, transparent 2px 34px);
+      pointer-events:none;
+    }
+
+    .article .article-highlight{padding:18px;border:1px solid rgba(209,170,61,.38);border-radius:16px;background:linear-gradient(180deg,#fbf7ea 0%, #f8f1dc 100%);box-shadow:0 6px 16px rgba(18,24,48,.04);line-height:1.95;}
+    .article .article-highlight strong{display:block;margin-bottom:8px;color:#232b63;font-size:15px;}
+    .article .article-list{display:grid;gap:8px;margin:0;padding-left:18px;list-style:disc;}
+    .article .article-list li{padding-left:0;}
+    .article .article-list li::before{content:none;}
+    .article .article-table-wrap{width:100%;overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow-soft);font-size:14px;margin-bottom:20px;background:#fff;}
+    .article .article-table{width:100%;border-collapse:separate;border-spacing:0;min-width:680px;}
+    .article .article-table thead tr{background:linear-gradient(135deg,#232b63,#101936);color:#fff;}
+    .article .article-table th,.article .article-table td{text-align:left;padding:13px 14px;vertical-align:top;line-height:1.75;font-weight:600;font-family:"Hiragino Sans","Yu Gothic UI","Yu Gothic Medium","Yu Gothic","Meiryo",sans-serif;letter-spacing:.01em;border-bottom:1px solid var(--line);}
+    .article .article-table th{font-size:13px;letter-spacing:.03em;white-space:nowrap;}
+    .article .article-table tbody tr:nth-child(even){background:#fffdfa;}
+    .article .article-table tbody tr:last-child td{border-bottom:none;}
+    .article .card-collection{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:18px;}
+    .article .card-collection-item{display:grid;grid-template-columns:118px 1fr;gap:16px;padding:16px;border:1px solid rgba(209,170,61,.24);border-radius:16px;background:linear-gradient(180deg,#fff 0%,#fffdfa 100%);box-shadow:var(--shadow-soft);}
+    .article .card-thumb-link{display:block;color:inherit;text-decoration:none;}
+    .article .card-thumb-fallback{position:relative;min-height:168px;border-radius:14px;overflow:hidden;border:1px solid rgba(209,170,61,.28);background:linear-gradient(180deg,#f7f0dc 0%,#ece3c7 100%);display:flex;flex-direction:column;justify-content:space-between;padding:12px;box-shadow:inset 0 1px 0 rgba(255,255,255,.5);}
+    .article .card-thumb-fallback::before{content:"";position:absolute;inset:10px;border-radius:10px;border:1px solid rgba(35,43,99,.12);pointer-events:none;}
+    .article .card-thumb-top{display:flex;justify-content:space-between;gap:8px;align-items:flex-start;position:relative;z-index:1;}
+    .article .rarity-chip{display:inline-flex;align-items:center;justify-content:center;padding:5px 9px;border-radius:999px;background:#232b63;color:#fff;font-size:11px;font-weight:800;letter-spacing:.04em;}
+    .article .code-chip{display:inline-flex;align-items:center;justify-content:center;padding:5px 9px;border-radius:999px;background:#fff;border:1px solid rgba(35,43,99,.16);color:#232b63;font-size:11px;font-weight:800;}
+    .article .card-thumb-name{position:relative;z-index:1;font-size:18px;line-height:1.4;font-weight:900;color:#1d2238;letter-spacing:-.01em;word-break:break-word;}
+    .article .card-thumb-action{position:relative;z-index:1;font-size:12px;font-weight:800;color:#232b63;display:inline-flex;align-items:center;gap:6px;}
+    .article .card-thumb-action::after{content:"↗";font-size:12px;}
+    .article .card-copy h4{margin:0 0 8px;font-size:17px;line-height:1.45;color:var(--heading);}
+    .article .card-copy-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;}
+    .article .card-copy-meta span{display:inline-flex;align-items:center;justify-content:center;padding:5px 9px;border-radius:999px;background:#eeeeee;border:1px solid #d7d7d7;color:#232b63;font-size:11px;font-weight:800;}
+    .article .card-copy p{margin:0;font-size:14px;line-height:1.85;color:var(--text);}
+    .deck-rating-section > h2{margin-bottom:18px;}
+    .deck-rating-compact{display:grid;gap:18px;}
+    .deck-rating-head{display:grid;grid-template-columns:86px minmax(0,1fr);gap:18px;align-items:start;}
+    .deck-rating-rank{width:78px;min-height:78px;border-radius:16px;background:linear-gradient(180deg,#23315f 0%, #101936 100%);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 8px 18px rgba(18,24,48,.12);}
+    .deck-rating-rank strong{font-size:34px;line-height:1;color:#f2c95c;font-weight:900;}
+    .deck-rating-copy h3{margin:0 0 10px;font-size:22px;line-height:1.45;color:var(--heading);}
+    .deck-rating-copy h3:before{content:none;}
+    .deck-rating-copy p{margin:0;font-size:15px;line-height:1.95;}
+    .deck-rating-pills{display:flex;flex-wrap:wrap;gap:10px;}
+    .rating-pill{display:inline-flex;align-items:center;gap:6px;padding:10px 14px;border-radius:999px;border:1px solid #cfd7e8;background:#f7f8fc;color:#2e3448;font-size:14px;font-weight:800;line-height:1.3;}
+    .deck-rating-pointbox{padding:20px 18px;border:1px solid rgba(209,170,61,.45);border-radius:16px;background:linear-gradient(180deg,#fbf7ea 0%, #f8f1dc 100%);margin-top:16px;}
+    .deck-rating-pointbox strong{display:block;margin-bottom:12px;font-size:15px;color:#232b63;}
+    .deck-rating-pointbox p{margin:0;line-height:2;}
+    .flow{display:grid;gap:14px;}
+    .flow-item{display:grid;grid-template-columns:44px 1fr;gap:14px;padding:18px;border:1px solid rgba(209,170,61,.24);border-radius:16px;background:linear-gradient(180deg,#ffffff 0%, #fffdfa 100%);box-shadow:0 8px 18px rgba(18,24,48,.05);}
+    .step{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#232b63,#101936);color:#fff;font-weight:900;box-shadow:0 8px 18px rgba(18,24,48,.18);}
+    @media (max-width:980px){.article .card-collection{grid-template-columns:1fr;}}
+    @media (max-width:780px){.deck-rating-head{grid-template-columns:1fr;}.deck-rating-rank{width:84px;}}
+    @media (max-width:640px){.article .card-collection-item,.flow-item{grid-template-columns:1fr;}.article .card-thumb-fallback{min-height:150px;}}
+</style>
+</head>
+<body class="latest-starter-deck">
+<!-- Common Header Start -->
+<header class="topbar">
+<div class="wrap topbar-inner"></div>
+</header>
+<header class="site-header">
+<div class="brand-row">
+<div class="wrap brand-inner">
+<div class="brand">
+<div class="logo"><img alt="13OSTON CARDロゴ" src="data:image/png;base64,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"/></div>
+<div>
+<h1>13OSTON CARD</h1>
+<p>ワンピースカードの最新情報、環境デッキ、初心者向けガイドをまとめた総合攻略メディア</p>
+</div>
+</div>
+</div>
+</div>
+<nav aria-label="カテゴリナビゲーション" class="category-nav">
+<div class="wrap category-scroll">
+<a href="#top">トップページ</a>
+<a href="#meta">最強デッキ</a>
+<a href="#news">新弾デッキ</a>
+<a href="/decks">デッキ一覧</a>
+</div>
+</nav>
+</header>
+<!-- Common Header End -->
+<div class="wrap page" id="top">
+<!-- Replace: Breadcrumbs -->
+<div class="breadcrumbs">
+<a href="/">トップページ</a><span class="sep">›</span>
+<span>最新ST情報</span>
+</div>
+<div class="layout article-rails-layout"><aside class="ad-rail ad-rail-left-1"><div class="ad-box"><div class="ad-badge">広告</div><strong>広告枠</strong><p>PC表示では本編を中央の細いカラムに寄せるための広告枠です。</p></div></aside><aside class="ad-rail ad-rail-left-2"><div class="ad-box"><div class="ad-badge">広告</div><strong>広告枠</strong><p>PC表示では本編を中央の細いカラムに寄せるための広告枠です。</p></div></aside><main class="main"><section class="box hero">
+<div class="hero-inner">
+<div class="hero-copy">
+<!-- Article Hero Start -->
+<div class="hero-meta">
+<!-- Replace: Hero Category -->
+<span class="pill">最新ST</span><span class="pill">更新日: 2026年4月15日</span></div>
+<!-- Replace: Hero Title -->
+<h1 class="hero-title">【ST30】ルフィ＆エースは強い？評価とおすすめ構築を解説</h1>
+<!-- Replace: Hero Summary -->
+<p class="hero-summary">初心者でも回しやすい完成度の高いスタートデッキ。環境トップ級というよりは、6000ラインを押しつけて戦う中堅〜準上位の安定型リーダーとして、評価・デッキ内容・回し方・改造方針を整理します。</p>
+<div class="hero-tags"><span class="hero-tag">🃏 ST-30</span><span class="hero-tag">📅 2026年4月11日発売</span><span class="hero-tag">⭐ 評価：B（暫定）</span><span class="hero-tag">📘 スタートデッキ</span></div></div>
+</div>
+</section><section class="box toc-box"><div class="box-head"><h2>目次</h2></div><div class="box-body"><!-- Replace: TOC Items -->
+<ol class="toc toc-simple"><li><a href="#evaluation">デッキ評価</a></li><li><a href="#recipe">デッキ内容</a></li><li><a href="#howto">基本的な回し方</a></li><li><a href="#upgrade">相性の良いカード</a></li><li><a href="#summary">まとめ</a></li></ol></div></section><article class="box">
+<!-- Article Section Start -->
+<div class="article"><section id="evaluation" class="deck-rating-section"><h2>デッキ評価</h2>
+<!-- Replace: ST Rating Block -->
+<div class="deck-rating-compact">
+  <div class="deck-rating-head">
+    <div class="deck-rating-rank"><strong>B</strong></div>
+    <div class="deck-rating-copy">
+      <h3>中堅〜準上位の安定型リーダー</h3>
+      <p>4ターン目前後の速攻と、相手ターン中の+3000付与でテンポを作るデッキです。環境トップ級の爆発力までは見えない一方、開封そのままでも動きが分かりやすく、初心者が握りやすい完成度があります。</p>
+    </div>
+  </div>
+
+  <div class="deck-rating-pills">
+    <span class="rating-pill">🧩 難易度: ★★☆☆☆ やさしめ</span>
+    <span class="rating-pill">⚡ デッキの速さ: ★★★★☆ 速め</span>
+    <span class="rating-pill">🛡️ 安定感: ★★★★☆ 高め</span>
+  </div>
+
+  <div class="deck-rating-pointbox">
+    <strong>評価のポイント</strong>
+    <p>元々のパワー6000を軸に組まれているため、カード同士の噛み合いは良好です。相手ターン中に「ポートガス・D・エース」と「モンキー・D・ルフィ」が+3000されるので、速攻で出した主役が返しで残りやすいのが最大の魅力です。一方で、元々のパワー7000以上を置くとリーダーが弱体化するため、構築の自由度は少し狭めです。</p>
+  </div>
+</div>
+</section><section id="recipe"><h2>デッキ内容</h2>
+<p class="content-intro">まずは開封そのままの内容をベースにした基本形です。収録カードは<strong>リーダー1種・スーパーレア2種・コモン14種</strong>で構成されており、ここではレアリティ順（上がSR）で並べています。</p>
+<div class="article-table-wrap">
+<table class="article-table">
+<thead>
+<tr><th>カード名</th><th>枚数</th><th>軽い採用理由</th></tr>
+</thead>
+<tbody>
+<tr><td>イナズマ</td><td>2</td><td>元々のパワー6000キャラを探しにいける初動。序盤の安定感を作る役。</td></tr>
+<tr><td>エドワード・ニューゲート</td><td>4</td><td>終盤の全体打点アップ担当。横並びした盤面の押し込み性能を上げる。</td></tr>
+<tr><td>エンポリオ・イワンコフ</td><td>2</td><td>手札の質を整える役。欲しい主役札に触りやすくなる。</td></tr>
+<tr><td>ジョズ</td><td>4</td><td>6000ラインの枚数確保。シンプルだが役割は分かりやすい。</td></tr>
+<tr><td>ジンベエ</td><td>4</td><td>中盤以降の手札補充役。長期戦での息切れを少し補える。</td></tr>
+<tr><td>ポートガス・D・エース</td><td>2</td><td>主役の速攻札。攻めながら相手キャラのラインを下げられる。</td></tr>
+<tr><td>マルコ</td><td>4</td><td>ブロッカー兼盤面維持の核。倒されても戻りやすいのが強い。</td></tr>
+<tr><td>リトルオーズJr.</td><td>4</td><td>除去対策。6000キャラを守りながらドローも狙える。</td></tr>
+<tr><td>クロコダイル</td><td>4</td><td>ブロッカー兼ロック要員。相手の返しを遅らせやすい。</td></tr>
+<tr><td>バギー</td><td>2</td><td>小回りの利く守り札。6000キャラを守る補助として優秀。</td></tr>
+<tr><td>モンキー・D・ルフィ</td><td>2</td><td>もう1枚の主役速攻札。ブロッカーを寝かせて通しやすい。</td></tr>
+<tr><td>Mr.2・ボン・クレー</td><td>4</td><td>6000ラインの枚数確保。デッキ全体の安定感に貢献する。</td></tr>
+<tr><td>Mr.3</td><td>2</td><td>ドン!!を乗せ替えて打点調整。細かい詰めに便利。</td></tr>
+<tr><td>この時代の名が!!!“白ひげ”だァ!!!</td><td>4</td><td>条件を満たせば強力なカウンター。トリガー除去も優秀。</td></tr>
+<tr><td>戦えるかルフィ!!!勿論だ!!!</td><td>2</td><td>受けながらドローも狙えるイベント。守りの厚みを増やす。</td></tr>
+<tr><td>無茶ばっかりしやがって!!!</td><td>4</td><td>上5枚から6000キャラを回収しやすく、序盤〜中盤の安定に直結。</td></tr>
+</tbody>
+</table>
+</div>
+<p class="content-note">※ リーダーは「ルフィ＆エース」で固定。基本形の枚数は添付リサーチをベースに整理しています。収録カード一覧は公式カードリスト準拠で、レアリティ順に並べています。</p>
+<h4>収録カード一覧</h4>
+<p>画像については、公式カードリストの各カードページへ直接飛べるようにしています。現在の公式カードリストは画像URLを安定した形式で取得しづらいため、この一覧では<strong>公式カードリストへワンクリックで確認できるカードパネル</strong>としてまとめました。</p>
+<div class="card-collection"><article class="card-collection-item"><a class="card-thumb-link" href="https://www.onepiece-cardgame.com/cardlist/?freewords=ST30-001" rel="noopener noreferrer" target="_blank"><div class="card-thumb-fallback"><div class="card-thumb-top"><span class="rarity-chip">L</span><span class="code-chip">ST30-001</span></div><div class="card-thumb-name">ルフィ＆エース</div><div class="card-thumb-action">公式カードリストで確認</div></div></a><div class="card-copy"><h4>ルフィ＆エース</h4><div class="card-copy-meta"><span>L</span><span>ST30-001</span><span>リーダー</span><span>赤/緑</span><span>ライフ4 / パワー6000</span></div><p>自分の元々のパワー7000以上がいると弱体化する代わりに、相手ターン中は「ポートガス・D・エース」と「モンキー・D・ルフィ」を+3000して盤面維持を支える。</p></div></article>
+<article class="card-collection-item"><a class="card-thumb-link" href="https://www.onepiece-cardgame.com/cardlist/?freewords=ST30-007" rel="noopener noreferrer" target="_blank"><div class="card-thumb-fallback"><div class="card-thumb-top"><span class="rarity-chip">SR</span><span class="code-chip">ST30-007</span></div><div class="card-thumb-name">ポートガス・D・エース</div><div class="card-thumb-action">公式カードリストで確認</div></div></a><div class="card-copy"><h4>ポートガス・D・エース</h4><div class="card-copy-meta"><span>SR</span><span>ST30-007</span><span>キャラ</span><span>赤</span><span>コスト4 / パワー6000</span></div><p>登場時にドン!!をレストして速攻を得る主役カード。アタック時の-1000で盤面処理の補助もできる。</p></div></article>
+<article class="card-collection-item"><a class="card-thumb-link" href="https://www.onepiece-cardgame.com/cardlist/?freewords=ST30-012" rel="noopener noreferrer" target="_blank"><div class="card-thumb-fallback"><div class="card-thumb-top"><span class="rarity-chip">SR</span><span class="code-chip">ST30-012</span></div><div class="card-thumb-name">モンキー・D・ルフィ</div><div class="card-thumb-action">公式カードリストで確認</div></div></a><div class="card-copy"><h4>モンキー・D・ルフィ</h4><div class="card-copy-meta"><span>SR</span><span>ST30-012</span><span>キャラ</span><span>緑</span><span>コスト4 / パワー6000</span></div><p>もう1枚の主役速攻札。アタック時にブロッカーをレストにできるので、ライフを通しやすい。</p></div></article>
+<article class="card-collection-item"><a class="card-thumb-link" href="https://www.onepiece-cardgame.com/cardlist/?freewords=ST30-002" rel="noopener noreferrer" target="_blank"><div class="card-thumb-fallback"><div class="card-thumb-top"><span class="rarity-chip">C</span><span class="code-chip">ST30-002</span></div><div class="card-thumb-name">イナズマ</div><div class="card-thumb-action">公式カードリストで確認</div></div></a><div class="card-copy"><h4>イナズマ</h4><div class="card-copy-meta"><span>C</span><span>ST30-002</span><span>キャラ</span><span>赤</span><span>コスト1 / パワー2000</span></div><p>上5枚からパワー6000キャラを探せる初動サーチ。序盤の安定感を作る。</p></div></article>
+<article class="card-collection-item"><a class="card-thumb-link" href="https://www.onepiece-cardgame.com/cardlist/?freewords=ST30-003" rel="noopener noreferrer" target="_blank"><div class="card-thumb-fallback"><div class="card-thumb-top"><span class="rarity-chip">C</span><span class="code-chip">ST30-003</span></div><div class="card-thumb-name">エドワード・ニューゲート</div><div class="card-thumb-action">公式カードリストで確認</div></div></a><div class="card-copy"><h4>エドワード・ニューゲート</h4><div class="card-copy-meta"><span>C</span><span>ST30-003</span><span>キャラ</span><span>赤</span><span>コスト8 / パワー6000</span></div><p>自分のターン中、元々のパワー6000キャラ全体を+1000。終盤の押し込み役。</p></div></article>
+<article class="card-collection-item"><a class="card-thumb-link" href="https://www.onepiece-cardgame.com/cardlist/?freewords=ST30-004" rel="noopener noreferrer" target="_blank"><div class="card-thumb-fallback"><div class="card-thumb-top"><span class="rarity-chip">C</span><span class="code-chip">ST30-004</span></div><div class="card-thumb-name">エンポリオ・イワンコフ</div><div class="card-thumb-action">公式カードリストで確認</div></div></a><div class="card-copy"><h4>エンポリオ・イワンコフ</h4><div class="card-copy-meta"><span>C</span><span>ST30-004</span><span>キャラ</span><span>赤</span><span>コスト1 / パワー2000</span></div><p>手札の6000キャラ2枚公開で手札を整える。中盤以降の主役札探しを補助。</p></div></article>
+<article class="card-collection-item"><a class="card-thumb-link" href="https://www.onepiece-cardgame.com/cardlist/?freewords=ST30-005" rel="noopener noreferrer" target="_blank"><div class="card-thumb-fallback"><div class="card-thumb-top"><span class="rarity-chip">C</span><span class="code-chip">ST30-005</span></div><div class="card-thumb-name">ジョズ</div><div class="card-thumb-action">公式カードリストで確認</div></div></a><div class="card-copy"><h4>ジョズ</h4><div class="card-copy-meta"><span>C</span><span>ST30-005</span><span>キャラ</span><span>赤</span><span>コスト5 / パワー6000</span></div><p>高カウンターを持つシンプルな6000ライン要員。デッキ全体の安定感を支える。</p></div></article>
+<article class="card-collection-item"><a class="card-thumb-link" href="https://www.onepiece-cardgame.com/cardlist/?freewords=ST30-006" rel="noopener noreferrer" target="_blank"><div class="card-thumb-fallback"><div class="card-thumb-top"><span class="rarity-chip">C</span><span class="code-chip">ST30-006</span></div><div class="card-thumb-name">ジンベエ</div><div class="card-thumb-action">公式カードリストで確認</div></div></a><div class="card-copy"><h4>ジンベエ</h4><div class="card-copy-meta"><span>C</span><span>ST30-006</span><span>キャラ</span><span>赤</span><span>コスト5 / パワー6000</span></div><p>パワー6000キャラを捨てて2ドロー。中盤以降の手札回復を担う。</p></div></article>
+<article class="card-collection-item"><a class="card-thumb-link" href="https://www.onepiece-cardgame.com/cardlist/?freewords=ST30-008" rel="noopener noreferrer" target="_blank"><div class="card-thumb-fallback"><div class="card-thumb-top"><span class="rarity-chip">C</span><span class="code-chip">ST30-008</span></div><div class="card-thumb-name">マルコ</div><div class="card-thumb-action">公式カードリストで確認</div></div></a><div class="card-copy"><h4>マルコ</h4><div class="card-copy-meta"><span>C</span><span>ST30-008</span><span>キャラ</span><span>赤</span><span>コスト5 / パワー6000</span></div><p>ブロッカーかつ、KOされても自己再登場を狙える盤面維持の核。</p></div></article>
+<article class="card-collection-item"><a class="card-thumb-link" href="https://www.onepiece-cardgame.com/cardlist/?freewords=ST30-009" rel="noopener noreferrer" target="_blank"><div class="card-thumb-fallback"><div class="card-thumb-top"><span class="rarity-chip">C</span><span class="code-chip">ST30-009</span></div><div class="card-thumb-name">リトルオーズJr.</div><div class="card-thumb-action">公式カードリストで確認</div></div></a><div class="card-copy"><h4>リトルオーズJr.</h4><div class="card-copy-meta"><span>C</span><span>ST30-009</span><span>キャラ</span><span>赤</span><span>コスト1 / パワー2000</span></div><p>6000キャラが効果で離れる時に身代わりになりつつ1ドロー。除去ケア枠。</p></div></article>
+<article class="card-collection-item"><a class="card-thumb-link" href="https://www.onepiece-cardgame.com/cardlist/?freewords=ST30-010" rel="noopener noreferrer" target="_blank"><div class="card-thumb-fallback"><div class="card-thumb-top"><span class="rarity-chip">C</span><span class="code-chip">ST30-010</span></div><div class="card-thumb-name">クロコダイル</div><div class="card-thumb-action">公式カードリストで確認</div></div></a><div class="card-copy"><h4>クロコダイル</h4><div class="card-copy-meta"><span>C</span><span>ST30-010</span><span>キャラ</span><span>緑</span><span>コスト6 / パワー6000</span></div><p>ブロッカー兼ロック要員。相手のレストキャラを次のリフレッシュで起こさせない。</p></div></article>
+<article class="card-collection-item"><a class="card-thumb-link" href="https://www.onepiece-cardgame.com/cardlist/?freewords=ST30-011" rel="noopener noreferrer" target="_blank"><div class="card-thumb-fallback"><div class="card-thumb-top"><span class="rarity-chip">C</span><span class="code-chip">ST30-011</span></div><div class="card-thumb-name">バギー</div><div class="card-thumb-action">公式カードリストで確認</div></div></a><div class="card-copy"><h4>バギー</h4><div class="card-copy-meta"><span>C</span><span>ST30-011</span><span>キャラ</span><span>緑</span><span>コスト2 / パワー1000</span></div><p>6000キャラを守る小回りの利くブロッカー。守りの補助として使いやすい。</p></div></article>
+<article class="card-collection-item"><a class="card-thumb-link" href="https://www.onepiece-cardgame.com/cardlist/?freewords=ST30-013" rel="noopener noreferrer" target="_blank"><div class="card-thumb-fallback"><div class="card-thumb-top"><span class="rarity-chip">C</span><span class="code-chip">ST30-013</span></div><div class="card-thumb-name">Mr.2・ボン・クレー(ベンサム)</div><div class="card-thumb-action">公式カードリストで確認</div></div></a><div class="card-copy"><h4>Mr.2・ボン・クレー(ベンサム)</h4><div class="card-copy-meta"><span>C</span><span>ST30-013</span><span>キャラ</span><span>緑</span><span>コスト4 / パワー6000</span></div><p>シンプルな6000ライン要員。主役札を支える土台として採用される。</p></div></article>
+<article class="card-collection-item"><a class="card-thumb-link" href="https://www.onepiece-cardgame.com/cardlist/?freewords=ST30-014" rel="noopener noreferrer" target="_blank"><div class="card-thumb-fallback"><div class="card-thumb-top"><span class="rarity-chip">C</span><span class="code-chip">ST30-014</span></div><div class="card-thumb-name">Mr.3(ギャルディーノ)</div><div class="card-thumb-action">公式カードリストで確認</div></div></a><div class="card-copy"><h4>Mr.3(ギャルディーノ)</h4><div class="card-copy-meta"><span>C</span><span>ST30-014</span><span>キャラ</span><span>緑</span><span>コスト2 / パワー3000</span></div><p>レストのドン!!を元々のパワー6000キャラへ移せる。打点調整に便利。</p></div></article>
+<article class="card-collection-item"><a class="card-thumb-link" href="https://www.onepiece-cardgame.com/cardlist/?freewords=ST30-015" rel="noopener noreferrer" target="_blank"><div class="card-thumb-fallback"><div class="card-thumb-top"><span class="rarity-chip">C</span><span class="code-chip">ST30-015</span></div><div class="card-thumb-name">この時代の名が!!!“白ひげ”だァ!!!</div><div class="card-thumb-action">公式カードリストで確認</div></div></a><div class="card-copy"><h4>この時代の名が!!!“白ひげ”だァ!!!</h4><div class="card-copy-meta"><span>C</span><span>ST30-015</span><span>イベント</span><span>赤</span><span>コスト1</span></div><p>元6000キャラが2枚以上いれば+4000カウンター。トリガーで6000以下KOも狙える。</p></div></article>
+<article class="card-collection-item"><a class="card-thumb-link" href="https://www.onepiece-cardgame.com/cardlist/?freewords=ST30-016" rel="noopener noreferrer" target="_blank"><div class="card-thumb-fallback"><div class="card-thumb-top"><span class="rarity-chip">C</span><span class="code-chip">ST30-016</span></div><div class="card-thumb-name">戦えるかルフィ!!!勿論だ!!!</div><div class="card-thumb-action">公式カードリストで確認</div></div></a><div class="card-copy"><h4>戦えるかルフィ!!!勿論だ!!!</h4><div class="card-copy-meta"><span>C</span><span>ST30-016</span><span>イベント</span><span>赤</span><span>コスト1</span></div><p>+3000カウンター後、条件を満たせば1ドロー。守りと補給を両立する。</p></div></article>
+<article class="card-collection-item"><a class="card-thumb-link" href="https://www.onepiece-cardgame.com/cardlist/?freewords=ST30-017" rel="noopener noreferrer" target="_blank"><div class="card-thumb-fallback"><div class="card-thumb-top"><span class="rarity-chip">C</span><span class="code-chip">ST30-017</span></div><div class="card-thumb-name">無茶ばっかりしやがって!!!</div><div class="card-thumb-action">公式カードリストで確認</div></div></a><div class="card-copy"><h4>無茶ばっかりしやがって!!!</h4><div class="card-copy-meta"><span>C</span><span>ST30-017</span><span>イベント</span><span>赤</span><span>コスト1</span></div><p>上5枚からパワー6000キャラを確保できるサーチイベント。序盤〜中盤の安定化に直結。</p></div></article></div>
+</section><section id="upgrade"><h2>相性の良いカード</h2>
+<h4>まず優先したい2枚</h4>
+<p>まず相性が良いのは、ST30の主役である<strong>ポートガス・D・エース</strong>と<strong>モンキー・D・ルフィ</strong>です。リーダー効果で相手ターン中に+3000される対象なので、この2枚を厚くするだけでデッキの強みを一番素直に伸ばせます。</p>
+<div class="article-columns">
+<div class="article-mini-card">
+<strong>ポートガス・D・エース</strong>
+<p>4コスト6000で速攻を持てる主役カードです。アタック時の-1000修正もあり、中盤の押し込みと盤面処理を同時にこなせます。リーダーで守られるため、返しのターンも場に残りやすいのが魅力です。</p>
+</div>
+<div class="article-mini-card">
+<strong>モンキー・D・ルフィ</strong>
+<p>こちらも4コスト6000の速攻枠です。ブロッカーを寝かせて攻撃を通しやすくできるので、ライフを詰める動きがかなり分かりやすくなります。エースと並んで最優先で厚くしたいカードです。</p>
+</div>
+</div>
+<h4>相性の良い追加候補</h4>
+<p>リサーチでは、ロック寄りに強化する候補として<strong>クロコダイル</strong>、<strong>キャロット（OP08-023）</strong>、<strong>アイン（OP07-002）</strong>が挙がっていました。どれも「6000ラインを活かしながら、押し込みだけで足りない場面を補う」方向のカードです。</p>
+<ul class="article-list">
+<li><strong>クロコダイル</strong>：相手のレストキャラを次のリフレッシュで起こさせず、反撃テンポを遅らせやすい。</li>
+<li><strong>キャロット（OP08-023）</strong>：登場時/アタック時のロック要素があり、クロコダイルと同じ方向で盤面を固めやすい。</li>
+<li><strong>アイン（OP07-002）</strong>：相手キャラのパワーを0にでき、処理しにくい盤面への回答になりやすい。</li>
+</ul>
+<h4>採用するときの注意点</h4>
+<p>このデッキで一番大事なのは、<strong>元々のパワー7000以上を安易に混ぜないこと</strong>です。強いカードを入れても、リーダーが弱体化するとデッキ全体の強みが薄れます。相性の良いカードを選ぶときは、「6000ラインを維持できるか」を最優先で見るのがおすすめです。</p>
+<div class="article-highlight"><strong>カード選びの基準</strong>「強いカード」よりも「このリーダーで強く使えるカード」を優先すると、ST30ルフィ＆エースはかなり組みやすくなります。まずはエース4枚・ルフィ4枚を目標にし、そのあとにロック札や処理札を足していく形が分かりやすいです。</div>
+</section><section id="howto"><h2>基本的な回し方</h2>
+<p class="content-intro">このデッキは「4ターン目前後の速攻でテンポを取り、そのまま盤面を維持して押し切る」動きが基本になります。</p>
+<div class="flow">
+  <div class="flow-item">
+    <div class="step">1</div>
+    <div>
+      <h3>序盤：6000ラインを切らさず準備する</h3>
+      <p>序盤はとにかく<strong>元々のパワー6000キャラを切らさないこと</strong>が大事です。イナズマや「無茶ばっかりしやがって!!!」で必要札を探し、4ターン目のエース・ルフィ着地に備えます。相手の除去が見えているなら、リトルオーズJr.やバギーで守りの準備もしておきたいところです。</p>
+    </div>
+  </div>
+
+  <div class="flow-item">
+    <div class="step">2</div>
+    <div>
+      <h3>中盤：エースかルフィで主導権を握る</h3>
+      <p>このデッキの山場は4〜5ターン目です。エースかルフィを登場させ、ドン!!をレストして速攻を付けてすぐ攻撃します。エースは相手キャラのパワーを下げて処理しやすくし、ルフィはブロッカーを寝かせてライフを通しにいけます。</p>
+    </div>
+  </div>
+
+  <div class="flow-item">
+    <div class="step">3</div>
+    <div>
+      <h3>終盤：横並びと打点強化で押し切る</h3>
+      <p>終盤は、盤面が残っているならニューゲートで全体の打点を上げて押し切る形が理想です。受けはイベントに頼る場面が多くなるので、ドン!!を使い切りすぎないことも重要です。返しで負けないラインを常に意識しておくと安定します。</p>
+    </div>
+  </div>
+</div>
+<div class="article-highlight">
+<strong>初心者が意識したいポイント</strong>
+「元々のパワー7000以上」を場に出すとリーダーが弱くなるので、強そうだからといって大型を雑に足さないこと。まずは6000ラインを守って、速攻2種でテンポを取る動きを覚えるのが最優先です。
+</div>
+</section><section id="summary"><h2>まとめ</h2>
+<div class="article-highlight">
+<strong>最終結論</strong>
+      ST30「ルフィ＆エース」は、<strong>初心者でも扱いやすい完成度の高い速攻寄りミッドレンジ</strong>です。環境最上位を狙うデッキというより、まず安定して勝ちたい人、分かりやすいシナジーで遊びたい人に向いています。
+    </div>
+<ul class="article-list">
+<li>まず1個買って始めたい人</li>
+<li>難しいコンボよりテンポよく殴るデッキが好きな人</li>
+<li>将来的に低コスト改造からガチ構築まで育てていきたい人</li>
+</ul>
+<p>逆に、環境トップを最短で握りたい人や、一撃の爆発力を求める人には少し物足りないかもしれません。それでも、スタートデッキとしての完成度はかなり高く、記事を量産していく起点としても非常に扱いやすいテーマです。</p>
+</section></div>
+</article></main>
+<!-- Related Articles Start -->
+<!-- Sidebar Start -->
+<aside class="sidebar">
+<div class="sticky-box">
+<section class="box section">
+<div class="section-title">
+<h3>人気記事</h3>
+</div>
+<div class="section-body">
+<div aria-label="PV上位5記事" class="pv-ranking">
+<div class="pv-ranking-head">
+<strong>PVランキング TOP5</strong>
+</div>
+<ol class="pv-ranking-list">
+<li><a href="#"><span class="pv-rank">1</span><span class="pv-title">最強デッキランキング｜Tier表</span></a></li>
+<li><a href="#"><span class="pv-rank">2</span><span class="pv-title">最新弾デッキ評価</span></a></li>
+<li><a href="#"><span class="pv-rank">3</span><span class="pv-title">初心者おすすめデッキ</span></a></li>
+<li><a href="#"><span class="pv-rank">4</span><span class="pv-title">大会応募のやり方</span></a></li>
+<li><a href="#"><span class="pv-rank">5</span><span class="pv-title">高騰カードランキング</span></a></li>
+</ol>
+</div>
+</div>
+</section>
+<section class="box section">
+<div class="section-title">
+<h3>デッキ一覧</h3>
+</div>
+<div class="section-body">
+<div class="side-list">
+<div class="side-list-label">&lt;最新弾&gt;</div>
+<a href="#">紫エネル</a>
+<a href="#">赤青ルーシー</a>
+<a href="#">黄ルフィ(空島)</a>
+<a href="#">赤緑クリーク</a>
+<a href="#">緑黒ブルック</a>
+<a href="#">青レベッカ</a>
+<div class="side-list-label">&lt;環境デッキ&gt;</div>
+<a href="#">青黄ハンコック</a>
+<a href="#">青黄ナミ</a>
+<a href="#">黒クロコダイル</a>
+<a href="#">緑ミホーク</a>
+<a href="#">赤青エース</a>
+</div>
+</div>
+</section>
+</div>
+</aside><aside class="ad-rail ad-rail-right"><div class="ad-box"><div class="ad-badge">広告</div><strong>広告枠</strong><p>PC表示では本編を中央の細いカラムに寄せるための広告枠です。</p></div></aside></div>
+</div>
+<!-- Common Footer Start -->
+<footer class="wrap footer">
+<div class="footer-site-map">
+<div class="footer-site-map-inner">
+<div class="footer-head">
+<div class="footer-brand">
+<strong>ワンピースカード攻略</strong>
+<p>
+            ワンピースカードの最新情報・環境デッキ・各デッキ解説を
+            すぐ辿れるサイトマップ
+          </p>
+</div>
+<div class="footer-top-link">
+<a href="#top">トップへ戻る</a>
+</div>
+</div>
+<div class="footer-grid">
+<section class="footer-column footer-column-latest">
+<div class="footer-subgroup">
+<h4>最新情報</h4>
+<div class="footer-links">
+<a href="latest-booster.html">最新弾</a>
+<a href="latest-starter-deck.html">最新ST</a>
+<a href="banned-restricted-2026-05.html">制限禁止</a>
+</div>
+</div>
+<div class="footer-subgroup">
+<h4>最強・環境</h4>
+<div class="footer-links">
+<a href="../meta/tier-list.html">最強デッキ</a>
+<a href="../meta/new-set-deck-review.html">最新弾デッキ</a>
+<a href="../meta/decks/index.html">デッキ一覧</a>
+</div>
+</div>
+</section>
+<section class="footer-column footer-column-deck-new">
+<h4>デッキ個別（最新弾）</h4>
+<div class="footer-links">
+<a href="/decks/purple-ener">紫エネル</a>
+<a href="/decks/red-blue-lucy">赤青ルーシー</a>
+<a href="/decks/yellow-luffy-skypia">黄ルフィ(空島)</a>
+<a href="/decks/red-green-krieg">赤緑クリーク</a>
+<a href="/decks/green-black-brook">緑黒ブルック</a>
+<a href="/decks/blue-rebecca">青レベッカ</a>
+</div>
+</section>
+<section class="footer-column footer-column-deck-meta">
+<h4>デッキ個別（環境）</h4>
+<div class="footer-links">
+<a href="/decks/blue-yellow-hancock">青黄ハンコック</a>
+<a href="/decks/blue-yellow-nami">青黄ナミ</a>
+<a href="/decks/black-crocodile">黒クロコダイル</a>
+<a href="/decks/green-mihawk">緑ミホーク</a>
+<a href="/decks/red-blue-ace">赤青エース</a>
+</div>
+</section>
+<section class="footer-column footer-column-special">
+<h4>特集・初心者</h4>
+<div class="footer-subgroup">
+<p class="footer-subgroup-title">注目記事</p>
+<div class="footer-links">
+<a href="../guides/featured/expensive-card-ranking.html">高騰カードランキング</a>
+<a href="../guides/featured/influencer-list.html">注目インフルエンサー</a>
+<a href="../guides/featured/tournament-watch.html">注目の大会</a>
+</div>
+</div>
+<div class="footer-subgroup">
+<p class="footer-subgroup-title">初心者おすすめ</p>
+<div class="footer-links">
+<a href="../guides/beginners/how-to-start.html">ワンピカードの始め方</a>
+<a href="../guides/beginners/beginner-recommended-decks.html">初心者おすすめデッキ</a>
+<a href="../guides/beginners/deckbuilding-basics.html">デッキの組み方と考え方</a>
+<a href="../guides/beginners/tournament-entry-guide.html">大会への応募方法</a>
+</div>
+</div>
+</section>
+</div>
+<div class="footer-bottom">
+        © 13OSTON CARD
+      </div>
+</div>
+</div>
+</footer>
+</body>
+</html>
+
