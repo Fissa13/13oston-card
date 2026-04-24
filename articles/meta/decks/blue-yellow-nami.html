@@ -1,15 +1,3702 @@
 <!DOCTYPE html>
+
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blue Yellow Nami</title>
-  <meta name="description" content="Placeholder page for the Blue Yellow Nami deck article.">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>【OP-15】青黄ナミ 完全攻略ガイド｜デッキ解説・構築・対面立ち回り</title>
+<meta content="青黄ナミのデッキ評価、デッキ構築、基本的な回し方、対面の考え方を整理した完成プレビューです。" name="description"/>
+<style>
+
+    :root{
+      --bg:#f4f3ef;
+      --surface:#ffffff;
+      --soft:#faf8f2;
+      --line:#d8d2c3;
+      --text:#2c2b2f;
+      --muted:#6d675c;
+      --heading:#1d2238;
+      --blue:#232b63;
+      --blue-deep:#101936;
+      --blue-soft:#eef1fb;
+      --blue-border:#d8def2;
+      --shadow:0 10px 24px rgba(18,24,48,.06);
+      --shadow-soft:0 8px 18px rgba(18,24,48,.05);
+      --r:16px;
+      --hero-start:#4b1d95;
+      --hero-mid:#6d28d9;
+      --hero-end:#8b5cf6;
+      --gold:#d1aa3d;
+      --gold-soft:#f5ecd2;
+      --win-bg:#ecfdf3;
+      --win-border:#b7ebc8;
+      --win-text:#166534;
+      --even-bg:#fff9eb;
+      --even-border:#f4df9e;
+      --even-text:#92400e;
+      --lose-bg:#fff1f2;
+      --lose-border:#f5c2c7;
+      --lose-text:#b42318;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,.55)),
+        radial-gradient(circle at top, rgba(209,170,61,.08), transparent 28%),
+        linear-gradient(180deg,#f6f7f3 0%, var(--bg) 100%);
+      color:var(--text);
+      font:500 16px/1.9 "Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic Medium","Yu Gothic","Meiryo",sans-serif;
+      letter-spacing:.015em;
+      text-rendering:optimizeLegibility;
+      -webkit-font-smoothing:antialiased;
+      font-feature-settings:"palt" 1;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+      transition:background-color .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease,transform .2s ease;
+    }
+    a:hover{color:var(--blue-deep)}
+    a:focus-visible{
+      outline:3px solid rgba(37,99,235,.22);
+      outline-offset:2px;
+      border-radius:10px;
+    }
+    img{display:block;max-width:100%}
+    [id]{scroll-margin-top:96px}
+
+    .wrap{width:min(1220px,calc(100% - 32px));margin:auto}
+    .page{padding:22px 0 56px}
+
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:20;
+      background:
+        radial-gradient(circle at 50% 35%, rgba(209,170,61,.14) 0, rgba(209,170,61,.05) 20%, rgba(209,170,61,0) 42%),
+        repeating-linear-gradient(135deg, rgba(209,170,61,.08) 0 2px, transparent 2px 34px),
+        linear-gradient(135deg, #232b63 0%, #1b224f 45%, #101936 100%);
+      border-bottom:1px solid rgba(209,170,61,.30);
+      box-shadow:0 4px 18px rgba(15,23,42,.05);
+    }
+    .site-header-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      padding:14px 0;
+    }
+
+    .brand{display:flex;align-items:center;gap:12px;min-width:0}
+    .logo{
+      width:44px;height:44px;border-radius:14px;
+      background:linear-gradient(135deg,#232b63,#101936);
+      color:#f2d07b;display:grid;place-items:center;
+      font-weight:900;font-size:18px;flex:0 0 44px;
+      border:1px solid rgba(209,170,61,.45);
+      box-shadow:0 6px 14px rgba(18,24,48,.14);
+    }
+    .brand-copy strong{
+      display:block;
+      color:#ffffff;
+      font-size:20px;
+      line-height:1.2;
+      letter-spacing:-.02em;
+      text-shadow:0 2px 10px rgba(0,0,0,.18);
+    }
+    .brand-copy span{
+      display:block;
+      color:rgba(255,255,255,.82);
+      font-size:12px;
+      margin-top:4px;
+    }
+
+    .header-nav{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end}
+    .header-nav a{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:10px 15px;border-radius:999px;
+      background:linear-gradient(180deg,#fffdf6 0%, #f3ead0 100%);
+      border:1px solid rgba(209,170,61,.42);
+      font-size:13px;font-weight:800;color:#1d2238;
+      box-shadow:0 4px 10px rgba(18,24,48,.05);
+    }
+    .header-nav a:hover{
+      background:#eef1fb;
+      border-color:#d8def2;
+      color:#232b63;
+      transform:translateY(-1px);
+    }
+    .header-nav a.is-active{
+      background:#eeeeee;
+      border-color:#d7d7d7;
+      color:#232b63;
+      box-shadow:none;
+    }
+
+    .breadcrumbs{
+      display:flex;flex-wrap:wrap;gap:8px;align-items:center;
+      color:var(--muted);font-size:13px;margin-bottom:18px
+    }
+    .breadcrumbs a:hover{color:var(--blue-deep)}
+    .breadcrumbs .sep{color:#94a3b8}
+
+    .hero{
+      overflow:hidden;
+      margin-bottom:16px;
+      position:relative;
+      border-radius:20px;
+      box-shadow:var(--shadow);
+    }
+    .hero{background:transparent;color:#fff;}
+    .hero:before,.hero:after{content:none;}
+    .hero-inner{
+      position:relative;z-index:1;
+      display:block;
+      padding:0;
+    }
+    .hero-copy{display:grid;gap:12px;align-content:start;
+      position:relative;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 50% 42%, rgba(209,170,61,0.18) 0, rgba(209,170,61,0.08) 18%, rgba(209,170,61,0) 36%),
+        repeating-linear-gradient(135deg, rgba(209,170,61,0.10) 0 2px, transparent 2px 34px),
+        linear-gradient(135deg, #232b63 0%, #1b224f 45%, #101936 100%);
+      color:#fff;
+      padding:34px 28px;
+      border-bottom:1px solid rgba(209,170,61,0.22);
+    }
+    .hero-copy::before{
+      content:"";
+      position:absolute;
+      width:320px;
+      height:320px;
+      left:50%;
+      top:50%;
+      transform:translate(-50%, -44%);
+      border-radius:50%;
+      border:2px solid rgba(209,170,61,0.38);
+      box-shadow:
+        0 0 0 16px rgba(209,170,61,0.10),
+        0 0 0 34px rgba(209,170,61,0.06),
+        inset 0 0 0 10px rgba(209,170,61,0.08);
+      pointer-events:none;
+      z-index:0;
+    }
+    .hero-copy::after{
+      content:"";
+      position:absolute;
+      inset:auto -60px -60px auto;
+      width:220px;
+      height:220px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(209,170,61,0.24), rgba(209,170,61,0));
+      pointer-events:none;
+      z-index:0;
+    }
+    .hero-copy > *{position:relative;z-index:1;}
+    .hero-meta,.hero-tags,.chips{display:flex;flex-wrap:wrap;gap:8px}
+
+    .pill,.hero-tag,.chips span,.label,.level,.badge{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:6px 10px;border-radius:999px;font-size:12px;font-weight:800
+    }
+    .pill,.hero-tag{
+      background:#eeeeee;
+      border:1px solid #d7d7d7;
+      color:#232b63;
+      box-shadow:none;
+    }
+    .hero-title{
+      margin:2px 0 0;
+      font-size:clamp(30px,4.4vw,44px);
+      line-height:1.14;
+      letter-spacing:-.04em;
+    }
+    .hero-summary{
+      margin:0;
+      max-width:62ch;
+      color:rgba(255,255,255,.97);
+      font-size:15.5px;
+      line-height:1.8;
+    }
+    .hero-side{
+      display:flex;align-items:center;justify-content:center;
+      align-self:stretch;padding-right:8px
+    }
+    .glass{
+      background:rgba(255,255,255,.13);
+      border:1px solid rgba(255,255,255,.2);
+      border-radius:20px;
+      box-shadow:0 10px 24px rgba(0,0,0,.14);
+      backdrop-filter:blur(12px);
+    }
+    .tier-card{
+      padding:20px;display:flex;flex-direction:column;justify-content:center;min-height:164px;
+      width:min(100%,360px);
+    }
+    .tier-top{display:flex;gap:14px;align-items:center;margin-bottom:0}
+    .tier-badge{
+      width:80px;
+      height:80px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(180deg,#1f2b4d 0%, #101936 100%);
+      color:#f2c95c;
+      flex:0 0 80px;
+      border:none;
+      box-shadow:none;
+    }
+    .tier-badge strong{
+      display:block;
+      font-size:34px;
+      line-height:1;
+      font-weight:900;
+      color:#f2c95c;
+    }
+    .tier-badge small{
+      display:block;
+      font-size:12px;
+      font-weight:800;
+      color:#ffffff;
+      margin-top:4px;
+    }
+    .tier-copy h2{margin:0 0 4px;font-size:20px;line-height:1.25}
+    .tier-copy p{margin:0;font-size:14px;color:rgba(255,255,255,.95);line-height:1.75}
+
+    .layout{
+      display:grid;
+      grid-template-columns:minmax(0,1fr);
+      gap:20px;
+      align-items:start
+    }
+    .main,.side{min-width:0}
+    .main{display:grid;gap:18px}
+    .side{
+      display:grid;gap:16px;
+      align-self:start;
+    }
+
+    .box{
+      background:linear-gradient(180deg,#ffffff 0%, #fffdfa 100%);
+      border:1px solid rgba(209,170,61,.22);
+      border-radius:20px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .box-head{
+      display:flex;justify-content:space-between;gap:16px;align-items:center;
+      padding:16px 18px;border-bottom:1px solid rgba(209,170,61,.28);
+      background:linear-gradient(135deg,#232b63 0%, #1b224f 45%, #101936 100%);
+    }
+    .box-head h2{
+      margin:0;font-size:23px;line-height:1.2;
+      color:#ffffff;letter-spacing:-.02em;
+      text-shadow:0 2px 10px rgba(0,0,0,.18)
+    }
+    .box-head span{
+      font-size:13px;
+      color:rgba(255,255,255,.78);
+      font-weight:700
+    }
+    .box-body{padding:18px}
+
+    .toc{
+      margin:0;
+      padding:0;
+      list-style:none;
+      color:var(--text);
+      font-size:15px;
+      line-height:1.85;
+      display:grid;
+      gap:10px;
+      counter-reset: toc;
+    }
+    .toc li+li{margin-top:0}
+    .toc a{
+      position:relative;
+      display:flex;
+      align-items:flex-start;
+      gap:12px;
+      padding:12px 14px;
+      border:1px solid #7ecf98;
+      border-radius:12px;
+      background:linear-gradient(180deg,#f1fff5 0%, #dff7e7 100%);
+      color:#134e2a;
+      text-decoration:none;
+      font-weight:800;
+      font-family:"Hiragino Sans","Yu Gothic UI","Yu Gothic Medium","Yu Gothic","Meiryo",sans-serif;
+      letter-spacing:.01em;
+      box-shadow:0 4px 10px rgba(18,24,48,.04);
+    }
+    .toc a:hover{
+      color:#0f3d21;
+      border-color:#56b77a;
+      background:#ecfff2;
+      text-decoration:none;
+      transform:translateY(-1px);
+    }
+
+    .article{padding:22px 22px 28px}
+    .article section+section{margin-top:40px}
+    .article h2{
+      margin:0 0 18px;
+      padding:13px 16px;
+      border:none;
+      border-radius:12px;
+      color:#ffffff;
+      font-size:24px;
+      line-height:1.24;
+      letter-spacing:-.03em;
+      background:linear-gradient(135deg,#232b63 0%, #1b224f 45%, #101936 100%);
+      text-shadow:0 2px 10px rgba(0,0,0,.18);
+    }
+    .article h3{
+      margin:28px 0 12px;
+      font-size:20px;
+      line-height:1.45;
+      color:var(--heading);
+      display:flex;gap:10px;align-items:center
+    }
+    .article h3:before{
+      content:"";width:4px;height:18px;border-radius:999px;
+      background:linear-gradient(180deg,var(--gold),#f3d98a)
+    }
+    .article h4{line-height:1.5}
+    .article p,.article ul,.article li{
+      font-size:15px;
+      font-weight:600;
+      line-height:1.92;
+      color:var(--text);
+      font-family:"Hiragino Sans","Yu Gothic UI","Yu Gothic Medium","Yu Gothic","Meiryo",sans-serif;
+      letter-spacing:.01em;
+    }
+    .article p{margin:0 0 15px}
+    .article ul{margin:0;padding-left:18px}
+    .article li+li{margin-top:8px}
+    .article section > p{max-width:74ch}
+
+    .note-box p,.leader-box p,.premium-box p,.tier-copy p,.card-item p,.build-card p,.detail-card p,.article-card p,.footer-brand p{
+      font-weight:600;
+      line-height:1.9;
+      font-family:"Hiragino Sans","Yu Gothic UI","Yu Gothic Medium","Yu Gothic","Meiryo",sans-serif;
+      letter-spacing:.01em;
+    }
+
+    .note,.leader,.premium,.tier-panel,.prio,.flow,.card-grid,.build-grid,.detail-grid,.related{display:grid;gap:14px}
+    .note-box,.leader-box,.premium-box,.tier-panel,.prio-item,.flow-item,.card-item,.build-card,.detail-card,.article-card{
+      border:1px solid rgba(209,170,61,.24);
+      border-radius:16px;
+      background:linear-gradient(180deg,#ffffff 0%, #fffdfa 100%);
+      box-shadow:var(--shadow-soft);
+    }
+    .note-box,.leader-box,.premium-box,.tier-panel,.detail-card,.article-card{padding:18px}
+    .note-box,.leader-box,.premium-box{
+      background:linear-gradient(180deg,#ffffff 0%, #fffdfa 100%);
+      border-color:rgba(209,170,61,.24);
+    }
+    .note-box strong,.leader-box strong,.premium-box strong,.tip strong{
+      display:block;margin-bottom:8px;
+      color:#232b63;font-size:15px
+    }
+
+    .tier-panel{
+      grid-template-columns:96px 1fr;
+      background:linear-gradient(180deg,#ffffff 0%, #fffdfa 100%);
+      border-color:rgba(209,170,61,.24);
+      align-items:center;
+    }
+    .tier-panel .tier-badge{
+      width:80px;
+      height:80px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(180deg,#1f2b4d 0%, #101936 100%);
+      color:#f2c95c;
+      box-shadow:none;
+      border:none;
+      flex:0 0 80px;
+    }
+    .stat{
+      display:flex;flex-wrap:wrap;gap:8px;margin-top:12px
+    }
+    .stat span{
+      padding:6px 11px;border-radius:999px;background:#fff;
+      border:1px solid #d5e5ff;color:var(--blue-deep);
+      font-size:12px;font-weight:800
+    }
+
+    .prio-item{
+      display:grid;grid-template-columns:122px 1fr;gap:16px;padding:18px;align-items:start
+    }
+    .rank{
+      display:inline-flex;align-items:center;justify-content:center;
+      min-height:36px;padding:8px 12px;border-radius:12px;
+      background:linear-gradient(135deg,#232b63,#101936);
+      color:#fff;font-size:12px;font-weight:800;
+      box-shadow:0 8px 18px rgba(18,24,48,.18);
+    }
+
+    .flow-item{
+      display:grid;grid-template-columns:44px 1fr;gap:14px;padding:18px
+    }
+    .flow-visuals{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:flex-start;
+  gap:36px;
+  margin:12px 0 14px;
+}
+.flow-visuals img{
+  display:block;
+  width:min(100%,180px);
+  max-width:180px;
+  height:auto;
+  border-radius:12px;
+  border:1px solid var(--line);
+  background:#fff;
+  box-shadow:0 6px 18px rgba(15,23,42,.08);
+}
+    .step{
+      width:44px;height:44px;border-radius:50%;display:grid;place-items:center;
+      background:linear-gradient(135deg,#232b63,#101936);
+      color:#fff;font-weight:900;
+      box-shadow:0 8px 18px rgba(18,24,48,.18);
+    }
+
+    .label{
+      background:#eeeeee;
+      border:1px solid #d7d7d7;
+      color:#232b63;
+      font-size:12px;
+      padding:4px 10px;
+      margin-bottom:8px;
+      width:max-content
+    }
+    .card-grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .card-item{padding:18px}
+    .card-item h4,.build-card h4,.detail-card h4,.article-card h3{
+      margin:0 0 8px;font-size:17px;color:var(--heading);line-height:1.45;letter-spacing:-.01em
+    }
+    .card-item p,.build-card p,.detail-card p,.article-card p{
+      margin:0;color:var(--text);font-size:14px;line-height:1.8
+    }
+
+    .card-item.has-side-thumb{
+      display:grid;
+      grid-template-columns:112px 1fr;
+      gap:16px;
+      align-items:start;
+    }
+    .card-item.has-side-thumb .card-thumb{
+      width:112px;
+      max-width:100%;
+      height:auto;
+      border-radius:10px;
+      box-shadow:0 6px 18px rgba(0,0,0,.08);
+    }
+    .card-item.has-side-thumb .card-copy{
+      min-width:0;
+    }
+
+
+    .matchup-media{
+      display:grid;
+      grid-template-columns:128px 1fr;
+      gap:18px;
+      align-items:start;
+      margin-top:2px;
+    }
+    .matchup-media + .matchup-media{
+      margin-top:14px;
+    }
+    .matchup-media .card-thumb{
+      width:128px;
+      max-width:100%;
+      height:auto;
+      border-radius:10px;
+      box-shadow:0 6px 18px rgba(0,0,0,.08);
+    }
+    .matchup-media .card-copy{
+      min-width:0;
+    }
+    .matchup-media .card-copy p{
+      margin:0;
+    }
+    .tip.matchup-media{
+      display:grid;
+      grid-template-columns:128px 1fr;
+      gap:18px;
+      align-items:start;
+    }
+    .tip.matchup-media strong{
+      display:block;
+      margin-bottom:8px;
+      color:var(--blue-deep);
+      font-size:15px;
+    }
+
+
+    .decklist-figure{
+      margin:14px 0 24px;
+      padding:18px;
+      border:1px solid rgba(209,170,61,.3);
+      border-radius:18px;
+      background:linear-gradient(180deg,#fffdfa 0%,#f7f3e8 100%);
+      box-shadow:0 6px 18px rgba(15,23,42,.06);
+      display:flex;
+      justify-content:center;
+    }
+    .decklist-figure img{
+      display:block;
+      width:min(100%,820px);
+      height:auto;
+      border-radius:14px;
+      box-shadow:0 10px 24px rgba(15,23,42,.1);
+      background:#fff;
+    }
+    .build-card{overflow:hidden}
+    .build-head{
+      display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center;
+      padding:15px 18px;border-bottom:1px solid rgba(209,170,61,.22);
+      background:linear-gradient(90deg,#fffdf6 0%, #f6eed9 100%);
+    }
+    .build-head .label{margin:0}
+    .level{
+      background:#eeeeee;
+      border:1px solid #d7d7d7;
+      color:#6d675c;
+      font-size:11px
+    }
+    .build-body{padding:18px}
+    .concept{
+      padding:14px 14px 14px 16px;
+      border-left:4px solid var(--gold);
+      border-radius:0 12px 12px 0;
+      background:#faf6ea;
+      font-size:13px;color:#7a5c11;font-weight:800;
+      margin-bottom:14px;line-height:1.8
+    }
+    .chips span{
+      background:#eeeeee;
+      border:1px solid #d7d7d7;
+      color:var(--text);
+      font-weight:700
+    }
+    .proscons{
+      display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px
+    }
+    .pros,.cons{
+      border-radius:12px;padding:13px 14px;font-size:13px
+    }
+    .pros{background:#f0fdf4;border:1px solid #b7ebc8}
+    .cons{background:#fff8f1;border:1px solid #f2d2a7}
+    .pros h5,.cons h5{margin:0 0 8px;font-size:12px}
+    .pros h5{color:#166534}
+    .cons h5{color:#9a3412}
+    .pros ul,.cons ul{margin:0;padding-left:16px}
+
+    .table{
+      width:100%;border-collapse:separate;border-spacing:0;
+      border:1px solid var(--line);border-radius:var(--r);overflow:hidden;
+      box-shadow:var(--shadow-soft);font-size:14px;margin-bottom:20px;
+      background:#fff;
+    }
+    .table thead tr{
+      background:linear-gradient(135deg,#232b63,#101936);
+      color:#fff
+    }
+    .table th,.table td{
+      text-align:left;padding:13px 14px;vertical-align:top;line-height:1.75;
+      font-weight:600;
+      font-family:"Hiragino Sans","Yu Gothic UI","Yu Gothic Medium","Yu Gothic","Meiryo",sans-serif;
+      letter-spacing:.01em;
+    }
+    .table th{font-size:13px;letter-spacing:.03em}
+    .table tbody tr:nth-child(even){background:#fffdfa}
+    .table tbody tr:hover{background:#f8f5eb}
+    .table tbody td{border-top:1px solid var(--line)}
+
+    .badge{
+      padding:4px 10px;font-size:11px;border-width:1px;border-style:solid
+    }
+    .win{background:var(--win-bg);border-color:var(--win-border);color:var(--win-text)}
+    .even{background:var(--even-bg);border-color:var(--even-border);color:var(--even-text)}
+    .lose{background:var(--lose-bg);border-color:var(--lose-border);color:var(--lose-text)}
+
+    .detail-card .head{
+      display:flex;gap:12px;align-items:center;margin-bottom:10px;flex-wrap:wrap
+    }
+    .tip{
+      margin-top:14px;padding:13px 14px;border-radius:12px;
+      background:#faf6ea;border:1px solid rgba(209,170,61,.28)
+    }
+
+    .article-card{
+      transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease
+    }
+    .article-card:hover{
+      transform:translateY(-2px);
+      box-shadow:0 14px 28px rgba(15,23,42,.1);
+      border-color:#c9d7ea;
+    }
+    .article-card small{
+      display:inline-block;margin-bottom:8px;
+      font-size:11px;color:var(--blue-deep);font-weight:800
+    }
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:12px 18px;border-radius:999px;
+      background:linear-gradient(135deg,#232b63,#101936);
+      color:#fff;font-size:14px;font-weight:800;margin-top:8px;
+      box-shadow:0 10px 20px rgba(18,24,48,.20);
+    }
+    .btn:hover{
+      color:#fff;
+      transform:translateY(-1px);
+      box-shadow:0 14px 24px rgba(18,24,48,.24);
+    }
+
+    .side-stack{display:grid;gap:16px}
+    .side-list{display:grid;gap:10px}
+    .side-list strong{
+      display:block;
+      margin:4px 2px 0;
+      color:var(--heading);
+      font-size:13px;
+      font-weight:800;
+      letter-spacing:.01em;
+    }
+    .side-list a{
+      display:block;
+      padding:11px 13px;
+      border:1px solid rgba(209,170,61,.26);
+      border-radius:12px;
+      background:linear-gradient(180deg,#fffdf7 0%, #f6edd6 100%);
+      color:var(--text);
+      font-size:13px;
+      line-height:1.65;
+      font-weight:700;
+      transition:background .18s ease,border-color .18s ease,color .18s ease,transform .18s ease;
+    }
+    .side-list a:hover{
+      background:#eef1fb;
+      border-color:#d8def2;
+      color:#232b63;
+      transform:translateY(-1px);
+    }
+
+    .site-footer{margin-top:36px;padding:24px 0 40px;color:var(--muted)}
+    .footer-box{
+      background:linear-gradient(180deg,#ffffff 0%, #fffdfa 100%);
+      border:1px solid rgba(209,170,61,.22);
+      border-radius:20px;box-shadow:var(--shadow);padding:22px
+    }
+    .footer-top{
+      display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:start
+    }
+    .footer-brand strong{
+      display:block;color:var(--heading);font-size:18px;margin-bottom:8px
+    }
+    .footer-brand p{
+      margin:0;font-size:13px;line-height:1.9;color:var(--muted)
+    }
+    .footer-links{
+      display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px
+    }
+    .footer-links a{
+      display:block;padding:10px 12px;border-radius:12px;
+      background:linear-gradient(180deg,#fffdf7 0%, #f6edd6 100%);
+      border:1px solid rgba(209,170,61,.26);
+      font-size:13px;font-weight:700;color:var(--text)
+    }
+    .footer-links a:hover{
+      background:#eef1fb;border-color:#d8def2;color:#232b63
+    }
+    .footer-note{
+      margin-top:16px;padding-top:14px;border-top:1px solid var(--line);
+      font-size:12px;color:var(--muted)
+    }
+
+    @media (max-width:1080px){
+      .layout,.footer-top{grid-template-columns:1fr}
+      .side{position:static;top:auto}
+      .side{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
+    @media (max-width:780px){
+      .hero-inner,.tier-panel,.prio-item,.proscons,.card-grid.two,.side,.footer-links,.matchup-media,.tip.matchup-media{grid-template-columns:1fr}
+      .hero-inner{padding:22px}
+      .hero-side{padding-right:0;justify-content:flex-start}
+      .tier-card{width:100%}
+    }
+    @media (max-width:640px){
+      .wrap{width:min(calc(100% - 16px),1220px)}
+      .page{padding-top:16px}
+      .site-header-inner{align-items:flex-start}
+      .hero-inner,.box-body,.article{padding:16px}
+      .article h2{font-size:25px}
+      .box-head{padding:14px 16px}
+      .box-head h2{font-size:21px}
+      .flow-item{grid-template-columns:1fr}
+      .table{display:block;overflow:auto;white-space:nowrap}
+      .header-nav{gap:8px}
+      .header-nav a{padding:9px 12px}
+    }
+  
+    body.deck-blue-yellow-nami{
+      --hero-start:#4b1d95;
+      --hero-mid:#6d28d9;
+      --hero-end:#8b5cf6;
+    }
+
+    body.deck-blue-yellow-nami{
+      --hero-start:#1e3a8a;
+      --hero-mid:#2563eb;
+      --hero-end:#eab308;
+    }
+
+    body.deck-blue-yellow-nami .hero:before{
+      content:"";position:absolute;inset:0;background:
+      radial-gradient(circle at 22% 24%, rgba(255,255,255,.18) 0, rgba(255,255,255,.08) 14%, rgba(255,255,255,0) 34%),
+      radial-gradient(circle at 78% 72%, rgba(234,179,8,.18) 0, rgba(234,179,8,.10) 16%, rgba(234,179,8,0) 36%),
+      repeating-linear-gradient(135deg, rgba(255,255,255,.08) 0 2px, transparent 2px 34px);
+      pointer-events:none;
+    }
+
+    body.deck-blue-yellow-nami .hero:before{
+      content:"";position:absolute;inset:0;background:
+      radial-gradient(circle at 50% 42%, rgba(255,255,255,.16) 0, rgba(255,255,255,.07) 18%, rgba(255,255,255,0) 36%),
+      repeating-linear-gradient(135deg, rgba(255,255,255,.08) 0 2px, transparent 2px 34px);
+      pointer-events:none;
+    }
+
+
+    .note-card-link{
+      display:block;
+      color:inherit;
+      text-decoration:none;
+    }
+    .note-card-link:hover{
+      color:inherit;
+      transform:none;
+    }
+    .note-card-thumb{
+      margin-bottom:14px;
+      border-radius:16px;
+      overflow:hidden;
+      background:#f3f3f3;
+      border:1px solid rgba(0,0,0,.06);
+    }
+    .note-card-thumb img{
+      display:block;
+      width:100%;
+      height:auto;
+    }
+    .note-card-content h3{
+      margin:0 0 10px;
+      font-size:16px;
+      line-height:1.65;
+      color:#1f2937;
+      font-weight:800;
+    }
+    .note-card-price{
+      margin:0 0 8px;
+      font-size:15px;
+      font-weight:700;
+      color:#10b981;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+    .note-card-price span{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:3px 10px;
+      border-radius:999px;
+      background:#e85b6a;
+      color:#fff;
+      font-size:12px;
+      font-weight:800;
+      line-height:1;
+    }
+    .note-card-meta{
+      font-size:13px;
+      color:#6b7280;
+    }
+    .premium-box .box-body{
+      padding:18px;
+    }
+
+
+    .note-image-link{
+      display:block;
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid rgba(0,0,0,.08);
+      background:#f3f3f3;
+      margin-bottom:14px;
+    }
+    .note-image-link img{
+      display:block;
+      width:100%;
+      height:auto;
+    }
+    .note-link-copy h3{
+      margin:0 0 8px;
+      font-size:18px;
+      line-height:1.55;
+      color:#1f2937;
+      font-weight:800;
+    }
+    .note-link-copy h3 a{
+      color:inherit;
+      text-decoration:none;
+    }
+    .note-link-copy h3 a:hover{
+      color:#232b63;
+    }
+    .note-link-copy p{
+      margin:0;
+      font-size:14px;
+      line-height:1.85;
+      color:#4b5563;
+    }
+
+
+.note-author{
+  margin-top:12px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.note-author-label{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:4px 10px;
+  border-radius:999px;
+  background:#eeeeee;
+  color:#6b7280;
+  border:1px solid #d7d7d7;
+  font-size:12px;
+  font-weight:800;
+  line-height:1;
+}
+.note-author a{
+  font-size:13px;
+  font-weight:700;
+  color:#6b7280;
+  text-decoration:none;
+}
+.note-author a:hover{
+  color:#232b63;
+  text-decoration:underline;
+}
+
+
+    .detail-card{
+      padding:18px;
+    }
+    .detail-card .head{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      margin-bottom:14px;
+      flex-wrap:wrap;
+    }
+    .detail-card .head h4{
+      margin:0;
+      font-size:17px;
+      line-height:1.4;
+      color:var(--heading);
+      letter-spacing:-.01em;
+    }
+    .matchup-media{
+      display:grid;
+      grid-template-columns:128px 1fr;
+      gap:18px;
+      align-items:start;
+      margin-top:2px;
+    }
+    .matchup-media .card-copy > p{
+      margin:0 0 14px;
+      line-height:1.9;
+    }
+    .detail-card .tip{
+      margin-top:0;
+      padding:14px 16px;
+      border-radius:14px;
+      background:#faf6ea;
+      border:1px solid rgba(209,170,61,.28);
+    }
+    .detail-card .tip strong{
+      display:block;
+      margin-bottom:8px;
+      color:#232b63;
+      font-size:15px;
+    }
+    @media (max-width:780px){
+      .matchup-media{
+        grid-template-columns:1fr;
+      }
+      .matchup-media .card-thumb{
+        width:140px;
+      }
+    }
+
+    .article section#matchups > p.matchups-intro,
+    .article .matchups-intro{
+      max-width: none;
+      width: 100%;
+      line-height: 1.9;
+      word-break: normal;
+      overflow-wrap: normal;
+      white-space: normal;
+    }
+
+
+    .toc li{
+      counter-increment: toc;
+    }
+    .toc li a::before{
+      content: counter(toc, decimal-leading-zero);
+      flex:0 0 auto;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:32px;
+      height:32px;
+      padding:0 8px;
+      border-radius:999px;
+      background:#24a148;
+      color:#ffffff;
+      border:1px solid #1e8a3d;
+      font-size:12px;
+      font-weight:800;
+      line-height:1;
+      margin-top:1px;
+    }
+
+
+
+    /* top-page shared parts */
+    .topbar{display:none}
+    .topbar-inner{display:none}
+    .brand-row{
+      position:relative;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 50% 35%, rgba(209,170,61,0.14) 0, rgba(209,170,61,0.05) 20%, rgba(209,170,61,0) 42%),
+        repeating-linear-gradient(135deg, rgba(209,170,61,0.08) 0 2px, transparent 2px 34px),
+        linear-gradient(135deg, #232b63 0%, #1b224f 45%, #101936 100%);
+      border-bottom:1px solid rgba(209,170,61,0.30);
+    }
+    .brand-row::before{
+      content:"";
+      position:absolute;
+      width:280px;
+      height:280px;
+      left:50%;
+      top:50%;
+      transform:translate(-50%, -50%);
+      border-radius:50%;
+      border:2px solid rgba(209,170,61,0.24);
+      box-shadow:0 0 0 14px rgba(209,170,61,0.08), 0 0 0 30px rgba(209,170,61,0.04);
+      pointer-events:none;
+      z-index:0;
+    }
+    .brand-row::after{
+      content:"";
+      position:absolute;
+      inset:auto -50px -50px auto;
+      width:180px;
+      height:180px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(209,170,61,0.18), rgba(209,170,61,0));
+      pointer-events:none;
+      z-index:0;
+    }
+    .brand-inner{
+      display:flex;
+      align-items:center;
+      justify-content:flex-start;
+      gap:20px;
+      padding:18px 0 16px;
+      position:relative;
+      z-index:1;
+    }
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:40;
+      box-shadow:0 8px 20px rgba(18, 24, 48, 0.10);
+      background:none;
+      border-bottom:none;
+    }
+    .category-nav{
+      background:linear-gradient(180deg, #ffffff 0%, #f8f4e8 100%);
+      border-bottom:1px solid rgba(209,170,61,0.28);
+    }
+    .category-scroll{
+      display:flex;
+      gap:10px;
+      overflow-x:auto;
+      padding:12px 0;
+      scrollbar-width:none;
+    }
+    .category-scroll::-webkit-scrollbar{display:none}
+    .category-scroll a{
+      white-space:nowrap;
+      padding:9px 14px;
+      border-radius:999px;
+      background:linear-gradient(180deg, #fffdf6 0%, #f3ead0 100%);
+      border:1px solid rgba(209,170,61,0.42);
+      color:#1d2238;
+      font-size:13px;
+      font-weight:700;
+      box-shadow:0 4px 10px rgba(18, 24, 48, 0.05);
+    }
+    .layout{grid-template-columns:minmax(0,1fr) 280px;gap:18px}
+    .sidebar,.main{min-width:0}
+    .sticky-box{position:static;top:auto}
+    .section{margin-bottom:16px;overflow:hidden}
+    .section-title{
+      display:flex;
+      align-items:center;
+      justify-content:flex-start;
+      gap:16px;
+      padding:14px 16px;
+      border-bottom:1px solid rgba(209,170,61,0.28);
+      background:linear-gradient(135deg, #232b63 0%, #1b224f 45%, #101936 100%);
+    }
+    .section-title h3{
+      margin:0;
+      font-size:18px;
+      line-height:1.2;
+      color:#ffffff;
+      letter-spacing:0.02em;
+      text-shadow:0 2px 10px rgba(0,0,0,0.18);
+    }
+    .section-body{padding:16px}
+    .footer{
+      margin-top:28px;
+      padding:0 0 28px;
+      color:var(--muted);
+      text-align:left;
+      font-size:13px;
+    }
+    .footer-site-map{
+      background:linear-gradient(135deg, #232b63 0%, #1b224f 45%, #101936 100%);
+      border:1px solid rgba(209,170,61,0.28);
+      border-radius:16px;
+      box-shadow:0 12px 28px rgba(18,24,48,0.14);
+      overflow:hidden;
+    }
+    .footer-site-map-inner{padding:28px 24px 22px}
+    .footer-head{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:16px;
+      padding-bottom:18px;
+      margin-bottom:20px;
+      border-bottom:1px solid rgba(255,255,255,0.10);
+    }
+    .footer-brand{min-width:0}
+    .footer-brand strong{
+      display:block;
+      margin-bottom:6px;
+      font-size:24px;
+      line-height:1.2;
+      color:#ffffff;
+      letter-spacing:0.03em;
+    }
+    .footer-brand p{
+      margin:0;
+      color:rgba(255,255,255,0.78);
+      font-size:13px;
+      line-height:1.8;
+      font-weight:600;
+    }
+    .footer-top-link{flex:0 0 auto}
+    .footer-top-link a{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:10px 16px;
+      border-radius:999px;
+      border:1px solid rgba(209,170,61,0.42);
+      background:linear-gradient(180deg, #fffdf6 0%, #f1e4bf 100%);
+      color:#1d2238;
+      font-size:13px;
+      font-weight:800;
+      box-shadow:0 6px 14px rgba(0,0,0,0.12);
+    }
+    .footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:16px}
+    .footer-column{
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:14px;
+      padding:16px 14px;
+    }
+    .footer-column h4{
+      margin:0 0 12px;
+      font-size:16px;
+      line-height:1.3;
+      color:#ffffff;
+      letter-spacing:0.02em;
+    }
+    .footer-subgroup + .footer-subgroup{
+      margin-top:14px;
+      padding-top:14px;
+      border-top:1px solid rgba(255,255,255,0.08);
+    }
+    .footer-subgroup-title{
+      margin:0 0 8px;
+      font-size:12px;
+      color:rgba(242,208,123,0.95);
+      font-weight:800;
+      letter-spacing:0.04em;
+    }
+    .footer-column-stack{display:grid;gap:16px}
+    .footer-bottom{
+      margin-top:18px;
+      padding-top:16px;
+      border-top:1px solid rgba(255,255,255,0.10);
+      text-align:center;
+      color:rgba(255,255,255,0.70);
+      font-size:12px;
+      line-height:1.7;
+    }
+    @media (max-width:980px){
+      .layout{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width:680px){
+      .brand-inner,.topbar-inner{flex-direction:column;align-items:flex-start}
+      .footer-site-map-inner{padding:22px 16px 18px}
+      .footer-head{flex-direction:column;align-items:flex-start}
+      .footer-grid{grid-template-columns:1fr}
+      .footer-brand strong{font-size:21px}
+      .section-title{align-items:flex-start;flex-direction:column}
+      .brand-copy strong{font-size:20px}
+    }
+
+
+
+    /* top page footer/sidebar overrides */
+    .sidebar .side-list > strong{
+      display:block;
+      margin:0 0 8px;
+      padding:0;
+      background:transparent;
+      color:#6d675c;
+      border:0;
+      border-radius:0;
+      font-size:13px;
+      font-weight:600;
+      line-height:1.75;
+      letter-spacing:.01em;
+      box-shadow:none;
+      font-family:"Hiragino Sans","Yu Gothic UI","Yu Gothic Medium","Yu Gothic","Meiryo",sans-serif;
+      white-space:nowrap;
+    }
+    .sidebar .side-list a{
+      font-size:14px;
+      color:var(--muted);
+      font-weight:600;
+      line-height:1.75;
+      letter-spacing:.01em;
+      font-family:"Hiragino Sans","Yu Gothic UI","Yu Gothic Medium","Yu Gothic","Meiryo",sans-serif;
+      word-break:keep-all;
+      overflow-wrap:normal;
+    }
+
+    .wrap.footer{
+      margin-top:28px;
+      padding:0 0 28px;
+      color:var(--muted);
+      text-align:left;
+      font-size:13px;
+    }
+    .wrap.footer .footer-site-map{
+      background:linear-gradient(135deg,#232b63 0%,#1b224f 45%,#101936 100%);
+      border:1px solid rgba(209,170,61,.28);
+      border-radius:16px;
+      box-shadow:0 12px 28px rgba(18,24,48,.14);
+      overflow:hidden;
+    }
+    .wrap.footer .footer-site-map-inner{padding:28px 24px 22px}
+    .wrap.footer .footer-head{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:16px;
+      padding-bottom:18px;
+      margin-bottom:20px;
+      border-bottom:1px solid rgba(255,255,255,.10);
+    }
+    .wrap.footer .footer-brand{min-width:0}
+    .wrap.footer .footer-brand strong{
+      display:block;
+      margin-bottom:6px;
+      font-size:24px;
+      line-height:1.2;
+      color:#fff;
+      letter-spacing:.03em;
+    }
+    .wrap.footer .footer-brand p{
+      margin:0;
+      color:rgba(255,255,255,.78);
+      font-size:13px;
+      line-height:1.8;
+      font-weight:600;
+    }
+    .wrap.footer .footer-top-link{flex:0 0 auto}
+    .wrap.footer .footer-top-link a{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:10px 16px;
+      border-radius:999px;
+      border:1px solid rgba(209,170,61,.42);
+      background:linear-gradient(180deg,#fffdf6 0%,#f1e4bf 100%);
+      color:#1d2238;
+      font-size:13px;
+      font-weight:800;
+      box-shadow:0 6px 14px rgba(0,0,0,.12);
+    }
+    .wrap.footer .footer-grid{
+      display:grid;
+      grid-template-columns:1.2fr 1fr 1fr 1fr;
+      gap:16px;
+    }
+    .wrap.footer .footer-column{
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:14px;
+      padding:16px 14px;
+    }
+    .wrap.footer .footer-column h4{
+      margin:0 0 12px;
+      font-size:16px;
+      line-height:1.3;
+      color:#fff;
+      letter-spacing:.02em;
+    }
+    .wrap.footer .footer-subgroup + .footer-subgroup{
+      margin-top:14px;
+      padding-top:14px;
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+    .wrap.footer .footer-subgroup-title{
+      margin:0 0 8px;
+      font-size:12px;
+      color:rgba(242,208,123,.95);
+      font-weight:800;
+      letter-spacing:.04em;
+    }
+    .wrap.footer .footer-links{
+      display:grid;
+      grid-template-columns:none;
+      gap:8px;
+    }
+    .wrap.footer .footer-links a{
+      display:block;
+      padding:9px 10px;
+      border-radius:10px;
+      background:rgba(255,255,255,.92);
+      color:#1d2238;
+      font-size:13px;
+      font-weight:700;
+      line-height:1.5;
+      border:none;
+      box-shadow:none;
+      transform:none;
+    }
+    .wrap.footer .footer-links a:hover{
+      transform:translateY(-1px);
+      background:#fff;
+      color:#1d2238;
+      border:none;
+    }
+    .wrap.footer .footer-column-stack{display:grid;gap:16px}
+    .wrap.footer .footer-bottom{
+      margin-top:18px;
+      padding-top:16px;
+      border-top:1px solid rgba(255,255,255,.10);
+      text-align:center;
+      color:rgba(255,255,255,.70);
+      font-size:12px;
+      line-height:1.7;
+    }
+    @media (max-width:680px){
+      .wrap.footer .footer-site-map-inner{padding:22px 16px 18px}
+      .wrap.footer .footer-head{flex-direction:column;align-items:flex-start}
+      .wrap.footer .footer-brand strong{font-size:21px}
+    }
+
+
+
+/* top page synced header / sidebar / footer */
+.site-header {
+  position: static;
+  top: auto;
+  z-index: auto;
+  background: none;
+  border-bottom: none;
+  box-shadow: none;
+}
+.brand-row {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #d61f28 0%, #bf1820 100%);
+  border-bottom: 1px solid rgba(0,0,0,0.18);
+}
+.brand-row::before,
+.brand-row::after {
+  content: none;
+}
+.brand-inner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  padding: 18px 0 16px;
+  position: relative;
+  z-index: 1;
+}
+.brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.16);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  flex: 0 0 44px;
+  box-shadow: 0 6px 14px rgba(18, 24, 48, 0.14);
+}
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.brand h1,
+.brand-copy strong {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.2;
+  color: #ffffff;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.18);
+}
+.brand p,
+.brand-copy span {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: rgba(255,255,255,0.82);
+  position: relative;
+  z-index: 1;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  font-family: "Hiragino Sans", "Yu Gothic UI", "Yu Gothic Medium", "Yu Gothic", "Meiryo", sans-serif;
+}
+.utility-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 0 0 auto;
+}
+.utility-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 108px;
+  padding: 10px 18px;
+  border: 1px solid rgba(209,170,61,0.40);
+  border-radius: 999px;
+  background: linear-gradient(180deg, #fffdf6 0%, #f1e4bf 100%);
+  color: #1d2238;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  box-shadow: 0 6px 14px rgba(18,24,48,0.08);
+}
+.category-nav {
+  background: linear-gradient(180deg, #151b27 0%, #090e17 100%);
+  border-bottom: 1px solid rgba(0,0,0,0.28);
+}
+.category-scroll {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 12px 0;
+  scrollbar-width: none;
+}
+.category-scroll::-webkit-scrollbar { display: none; }
+.category-scroll a {
+  white-space: nowrap;
+  padding: 9px 14px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #eee7d8 0%, #e2d7bf 100%);
+  border: 1px solid #d5bf8b;
+  color: #1f2333;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.16);
+}
+.category-scroll a:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.20);
+}
+.pv-ranking {
+  border: 1px solid rgba(209,170,61,0.24);
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #ffffff 0%, #fffdfa 100%);
+  box-shadow: 0 8px 18px rgba(18,24,48,0.05);
+}
+.pv-ranking-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(209,170,61,0.22);
+  background: linear-gradient(180deg, #fff7f7 0%, #f6efe8 100%);
+  flex-wrap: wrap;
+}
+.pv-ranking-head strong { font-size: 15px; color: var(--heading); }
+.pv-ranking-list { list-style: none; margin: 0; padding: 0; }
+.pv-ranking-list li + li { border-top: 1px solid rgba(209,170,61,0.18); }
+.pv-ranking-list a {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.pv-rank {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #243a68 0%, #162544 100%);
+  color: #fff;
+  font-weight: 900;
+  font-size: 12px;
+}
+.pv-title {
+  min-width: 0;
+  font-size: 14px;
+  color: var(--heading);
+  font-weight: 800;
+  line-height: 1.5;
+}
+.side-list-label {
+  display: block;
+  margin: 0 0 8px;
+  font-size: 12px;
+  color: #000000;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+}
+
+/* simple toc */
+.toc-box .box-body {
+  padding: 10px 12px;
+}
+.toc.toc-simple {
+  display: grid;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: toc;
+}
+.toc.toc-simple li {
+  counter-increment: toc;
+}
+.toc.toc-simple a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--heading);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+.toc.toc-simple a::before {
+  content: counter(toc, decimal-leading-zero);
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: #f3f4f6;
+  border: 1px solid #d7d7d7;
+  color: #232b63;
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1;
+}
+.toc.toc-simple a:hover {
+  color: #232b63;
+  transform: none;
+  text-decoration: underline;
+}
+
+@media (max-width: 680px) {
+  .brand-inner,
+  .topbar-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .utility-links {
+    justify-content: flex-start;
+  }
+}
+
+
+
+/* ===== 記事ページ：PCは [広告][広告][本編][メニュー][広告] ===== */
+.article-rails-layout{
+  display:grid;
+  grid-template-columns:minmax(110px, 1fr) minmax(110px, 1fr) minmax(560px, 860px) 280px minmax(110px, 1fr);
+  gap:18px;
+  align-items:start;
+}
+
+.article-rails-layout > .main{
+  grid-column:3;
+  width:100%;
+}
+
+.article-rails-layout > .sidebar{
+  grid-column:4;
+  display:block;
+}
+
+.article-rails-layout > .ad-rail-left-1{grid-column:1;}
+.article-rails-layout > .ad-rail-left-2{grid-column:2;}
+.article-rails-layout > .ad-rail-right{grid-column:5;}
+
+.ad-rail{
+  min-width:0;
+  align-self:start;
+}
+
+.ad-box{
+  position:sticky;
+  top:20px;
+  min-height:620px;
+  padding:16px 12px;
+  border:1px solid rgba(209,170,61,.22);
+  border-radius:20px;
+  background:linear-gradient(180deg,#ffffff 0%, #fffdfa 100%);
+  box-shadow:0 10px 24px rgba(18,24,48,.06);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  gap:12px;
+  text-align:center;
+}
+
+.ad-badge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:5px 10px;
+  border-radius:999px;
+  background:#eeeeee;
+  border:1px solid #d7d7d7;
+  color:#232b63;
+  font-size:12px;
+  font-weight:800;
+  line-height:1;
+}
+
+.ad-box strong{
+  font-size:16px;
+  line-height:1.35;
+  color:var(--heading);
+}
+
+.ad-box p{
+  margin:0;
+  font-size:13px;
+  line-height:1.8;
+  color:var(--muted);
+  font-weight:600;
+}
+
+/* 本編はスマホ幅相当に近い細めカラムで維持 */
+.article-rails-layout .main .hero-copy,
+.article-rails-layout .main .box-body,
+.article-rails-layout .main .article{
+  width:100%;
+}
+
+@media (max-width: 1180px){
+  .article-rails-layout{
+    grid-template-columns:minmax(0,1fr) 280px;
+  }
+  .article-rails-layout > .ad-rail{
+    display:none;
+  }
+  .article-rails-layout > .main{
+    grid-column:1;
+  }
+  .article-rails-layout > .sidebar{
+    grid-column:2;
+  }
+}
+
+@media (max-width: 980px){
+  .article-rails-layout{
+    grid-template-columns:1fr;
+  }
+  .article-rails-layout > .sidebar{
+    grid-column:auto;
+  }
+}
+
+
+/* ===== トップページ共通ヘッダー / メニュー / フッター移植後の優先スタイル ===== */
+.site-header {
+  position: static !important;
+  top: auto !important;
+  z-index: 40 !important;
+  background: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+.brand-row {
+  position: relative !important;
+  overflow: hidden !important;
+  background: linear-gradient(180deg, #d61f28 0%, #bf1820 100%) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.18) !important;
+}
+
+.brand-row::before,
+.brand-row::after {
+  content: none !important;
+}
+
+.brand-inner {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 20px !important;
+  padding: 18px 0 16px !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.brand {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  min-width: 0 !important;
+}
+
+.logo {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 10px !important;
+  background: rgba(255,255,255,0.08) !important;
+  border: 1px solid rgba(255,255,255,0.16) !important;
+  display: grid !important;
+  place-items: center !important;
+  overflow: hidden !important;
+  flex: 0 0 44px !important;
+  box-shadow: 0 6px 14px rgba(18, 24, 48, 0.14) !important;
+}
+
+.logo img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+.brand h1,
+.brand-copy strong {
+  margin: 0 !important;
+  font-size: 24px !important;
+  line-height: 1.2 !important;
+  color: #ffffff !important;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.18) !important;
+}
+
+.brand p,
+.brand-copy span {
+  margin: 4px 0 0 !important;
+  font-size: 13px !important;
+  color: rgba(255,255,255,0.82) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.01em !important;
+}
+
+.utility-links {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  flex: 0 0 auto !important;
+}
+
+.utility-links a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 108px !important;
+  padding: 10px 18px !important;
+  border: 1px solid rgba(209,170,61,0.40) !important;
+  border-radius: 999px !important;
+  background: linear-gradient(180deg, #fffdf6 0%, #f1e4bf 100%) !important;
+  color: #1d2238 !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.02em !important;
+  box-shadow: 0 6px 14px rgba(18,24,48,0.08) !important;
+}
+
+.category-nav {
+  background: linear-gradient(180deg, #151b27 0%, #090e17 100%) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.28) !important;
+  overflow: hidden !important;
+}
+
+.category-scroll {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  gap: 10px !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  -webkit-overflow-scrolling: touch !important;
+  scrollbar-width: none !important;
+  padding: 12px 0 !important;
+}
+
+.category-scroll::-webkit-scrollbar {
+  display: none !important;
+}
+
+.category-scroll a {
+  flex: 0 0 auto !important;
+  width: auto !important;
+  min-width: max-content !important;
+  white-space: nowrap !important;
+  padding: 9px 14px !important;
+  border-radius: 999px !important;
+  background: linear-gradient(180deg, #eee7d8 0%, #e2d7bf 100%) !important;
+  border: 1px solid #d5bf8b !important;
+  color: #1f2333 !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.16) !important;
+}
+
+.wrap.footer {
+  margin-top: 28px !important;
+  padding: 0 0 28px !important;
+  color: var(--muted) !important;
+  text-align: left !important;
+  font-size: 13px !important;
+}
+
+.wrap.footer .footer-site-map {
+  background: linear-gradient(135deg, #232b63 0%, #1b224f 45%, #101936 100%) !important;
+  border: 1px solid rgba(209,170,61,0.28) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 12px 28px rgba(18,24,48,0.14) !important;
+  overflow: hidden !important;
+}
+
+.wrap.footer .footer-site-map-inner {
+  padding: 28px 24px 22px !important;
+}
+
+.wrap.footer .footer-head {
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+  padding-bottom: 18px !important;
+  margin-bottom: 20px !important;
+  border-bottom: 1px solid rgba(255,255,255,0.10) !important;
+}
+
+.wrap.footer .footer-grid {
+  display: grid !important;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr !important;
+  gap: 16px !important;
+}
+
+.wrap.footer .footer-column {
+  background: rgba(255,255,255,0.06) !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  border-radius: 14px !important;
+  padding: 16px 14px !important;
+}
+
+.wrap.footer .footer-links {
+  display: grid !important;
+  gap: 8px !important;
+}
+
+.wrap.footer .footer-links a {
+  display: block !important;
+  padding: 9px 10px !important;
+  border-radius: 10px !important;
+  background: rgba(255,255,255,0.92) !important;
+  color: #1d2238 !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  line-height: 1.5 !important;
+}
+
+@media (max-width: 900px) {
+  .wrap.footer .footer-grid {
+    grid-template-columns: 1fr 1fr !important;
+    align-items: start !important;
+  }
+
+  .footer-column-latest { order: 1 !important; }
+  .footer-column-deck-new { order: 2 !important; }
+  .footer-column-special { order: 3 !important; }
+  .footer-column-deck-meta { order: 4 !important; }
+}
+
+@media (max-width: 680px) {
+  .brand-inner,
+  .topbar-inner {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .utility-links {
+    justify-content: flex-start !important;
+  }
+
+  .category-scroll a {
+    width: auto !important;
+    min-width: max-content !important;
+    padding: 9px 14px !important;
+    font-size: 13px !important;
+  }
+
+  .wrap.footer .footer-site-map-inner {
+    padding: 22px 16px 18px !important;
+  }
+
+  .wrap.footer .footer-head {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .wrap.footer .footer-brand strong {
+    font-size: 21px !important;
+  }
+}
+
+
+/* ===== 記事ページ：広告列を段階的に消し、最後にメニュー列を消す ===== */
+/* 既存の中間幅でメニューが移動する挙動を上書き */
+.article-rails-layout{
+  display:grid !important;
+  grid-template-columns:minmax(110px, 1fr) minmax(110px, 1fr) minmax(560px, 860px) 280px minmax(110px, 1fr) !important;
+  gap:18px !important;
+  align-items:start !important;
+}
+
+.article-rails-layout > .ad-rail-left-1{ grid-column:1 !important; display:block; }
+.article-rails-layout > .ad-rail-left-2{ grid-column:2 !important; display:block; }
+.article-rails-layout > .main{ grid-column:3 !important; width:100%; min-width:0; }
+.article-rails-layout > .sidebar{ grid-column:4 !important; display:block !important; min-width:0; }
+.article-rails-layout > .ad-rail-right{ grid-column:5 !important; display:block; }
+
+/* 1段階目：右広告を消す */
+@media (max-width: 1480px){
+  .article-rails-layout{
+    grid-template-columns:minmax(96px, 1fr) minmax(96px, 1fr) minmax(360px, 430px) 280px !important;
+  }
+  .article-rails-layout > .ad-rail-right{
+    display:none !important;
+  }
+}
+
+/* 2段階目：左2本目の広告を消す */
+@media (max-width: 1280px){
+  .article-rails-layout{
+    grid-template-columns:minmax(90px, 1fr) minmax(340px, 430px) 260px !important;
+  }
+  .article-rails-layout > .ad-rail-left-2{
+    display:none !important;
+  }
+  .article-rails-layout > .ad-rail-left-1{ grid-column:1 !important; }
+  .article-rails-layout > .main{ grid-column:2 !important; }
+  .article-rails-layout > .sidebar{ grid-column:3 !important; }
+}
+
+/* 3段階目：左1本目の広告も消す → 本編＋メニューの2カラム維持 */
+@media (max-width: 1080px){
+  .article-rails-layout{
+    grid-template-columns:minmax(320px, 430px) 248px !important;
+    justify-content:center !important;
+  }
+  .article-rails-layout > .ad-rail-left-1{
+    display:none !important;
+  }
+  .article-rails-layout > .main{ grid-column:1 !important; }
+  .article-rails-layout > .sidebar{ grid-column:2 !important; display:block !important; }
+}
+
+/* 最後にメニュー列を消す */
+@media (max-width: 860px){
+  .article-rails-layout{
+    grid-template-columns:minmax(0, 430px) !important;
+    justify-content:center !important;
+  }
+  .article-rails-layout > .sidebar{
+    display:none !important;
+  }
+  .article-rails-layout > .main{
+    grid-column:1 !important;
+  }
+}
+
+/* 旧ルールの再移動を防ぐ */
+@media (max-width: 1180px){
+  .article-rails-layout > .sidebar{
+    grid-column:auto;
+  }
+}
+@media (max-width: 980px){
+  .article-rails-layout > .sidebar{
+    grid-column:auto;
+  }
+}
+
+
+/* ===== 中央カラム：最初から幅狭前提で可読性固定 ===== */
+
+/* 本編カラムは最初から細めの読み幅に寄せる */
+.article-rails-layout > .main{
+  max-width: 430px;
+}
+
+.article-rails-layout > .main .hero,
+.article-rails-layout > .main .box,
+.article-rails-layout > .main .article,
+.article-rails-layout > .main .toc-box{
+  width: 100%;
+}
+
+/* ヒーロー見出し：改行をなくす */
+.article-rails-layout > .main .hero-title{
+  font-size: clamp(24px, 2.1vw, 32px) !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.03em !important;
+  white-space: nowrap !important;
+}
+
+.article-rails-layout > .main .hero-summary{
+  font-size: 14px !important;
+  line-height: 1.8 !important;
+}
+
+/* 幅を狭めても中央カラム内の段組を変えない */
+@media (max-width: 860px){
+  .article-rails-layout > .main .tier-panel{
+    grid-template-columns: 96px 1fr !important;
+  }
+
+  .article-rails-layout > .main .prio-item{
+    grid-template-columns: 122px 1fr !important;
+  }
+
+  .article-rails-layout > .main .flow-item{
+    grid-template-columns: 44px 1fr !important;
+  }
+
+  .article-rails-layout > .main .card-grid.two{
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .article-rails-layout > .main .proscons{
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .article-rails-layout > .main .matchup-media,
+  .article-rails-layout > .main .tip.matchup-media{
+    grid-template-columns: 112px 1fr !important;
+    gap: 14px !important;
+  }
+
+  .article-rails-layout > .main .matchup-media .card-thumb{
+    width: 112px !important;
+  }
+}
+
+/* テーブル：崩れにくく、改行が多すぎない見た目へ */
+.article-rails-layout > .main .table{
+  width: 100% !important;
+  table-layout: fixed !important;
+  white-space: normal !important;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  font-size: 13px !important;
+}
+
+.article-rails-layout > .main .table th,
+.article-rails-layout > .main .table td{
+  padding: 10px 10px !important;
+  white-space: normal !important;
+  line-height: 1.65 !important;
+  vertical-align: top !important;
+}
+
+.article-rails-layout > .main .table th{
+  font-size: 12px !important;
+}
+
+@media (max-width: 640px){
+  .article-rails-layout > .main .table{
+    display: table !important;
+    overflow: visible !important;
+  }
+}
+
+/* 中央カラム本文：行間と余白を少し締めて読みやすく */
+.article-rails-layout > .main .article{
+  padding: 18px 18px 24px !important;
+}
+
+.article-rails-layout > .main .article section + section{
+  margin-top: 30px !important;
+}
+
+.article-rails-layout > .main .article p,
+.article-rails-layout > .main .article li{
+  font-size: 14px !important;
+  line-height: 1.82 !important;
+}
+
+.article-rails-layout > .main .article p{
+  margin: 0 0 12px !important;
+}
+
+.article-rails-layout > .main .article h2{
+  font-size: 22px !important;
+  margin-bottom: 14px !important;
+  padding: 12px 14px !important;
+}
+
+.article-rails-layout > .main .article h3{
+  font-size: 18px !important;
+  margin: 24px 0 10px !important;
+}
+
+.article-rails-layout > .main .box-body,
+.article-rails-layout > .main .detail-card,
+.article-rails-layout > .main .note-box,
+.article-rails-layout > .main .leader-box,
+.article-rails-layout > .main .premium-box,
+.article-rails-layout > .main .card-item,
+.article-rails-layout > .main .build-body{
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+
+/* 長文の見え方を少しコンパクトに */
+.article-rails-layout > .main .matchups-intro,
+.article-rails-layout > .main .hero-summary,
+.article-rails-layout > .main .note-link-copy p,
+.article-rails-layout > .main .detail-card p,
+.article-rails-layout > .main .card-item p,
+.article-rails-layout > .main .build-card p{
+  text-wrap: pretty;
+}
+
+/* さらに狭いときは段組維持のまま文字だけ少し縮小 */
+@media (max-width: 520px){
+  .article-rails-layout > .main{
+    max-width: 400px;
+  }
+
+  .article-rails-layout > .main .hero-title{
+    font-size: 22px !important;
+  }
+
+  .article-rails-layout > .main .tier-panel{
+    grid-template-columns: 84px 1fr !important;
+  }
+
+  .article-rails-layout > .main .prio-item{
+    grid-template-columns: 104px 1fr !important;
+    gap: 12px !important;
+  }
+
+  .article-rails-layout > .main .matchup-media,
+  .article-rails-layout > .main .tip.matchup-media{
+    grid-template-columns: 96px 1fr !important;
+    gap: 12px !important;
+  }
+
+  .article-rails-layout > .main .matchup-media .card-thumb{
+    width: 96px !important;
+  }
+
+  .article-rails-layout > .main .article p,
+  .article-rails-layout > .main .article li{
+    font-size: 13px !important;
+  }
+
+  .article-rails-layout > .main .table{
+    font-size: 12px !important;
+  }
+
+  .article-rails-layout > .main .table th,
+  .article-rails-layout > .main .table td{
+    padding: 8px 8px !important;
+  }
+}
+
+
+/* ===== 中央カラムを最初から固定幅前提にして、幅を狭めても内部レイアウトを変えない ===== */
+
+/* 本編幅を最初から固定寄りにする */
+.article-rails-layout > .main{
+  width: 100% !important;
+  max-width: 430px !important;
+  min-width: 430px !important;
+}
+
+/* 本編内の各ブロックは常にこの幅前提 */
+.article-rails-layout > .main .hero,
+.article-rails-layout > .main .toc-box,
+.article-rails-layout > .main .box,
+.article-rails-layout > .main .article{
+  width: 100% !important;
+}
+
+/* ヒーローは最初から狭幅前提の見た目に固定 */
+.article-rails-layout > .main .hero-copy{
+  padding: 26px 22px !important;
+}
+.article-rails-layout > .main .hero-title{
+  font-size: 30px !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.03em !important;
+  white-space: nowrap !important;
+}
+.article-rails-layout > .main .hero-summary{
+  font-size: 14px !important;
+  line-height: 1.8 !important;
+}
+
+/* 中央カラム内部レイアウトを常に固定 */
+.article-rails-layout > .main .tier-panel{
+  display: grid !important;
+  grid-template-columns: 96px 1fr !important;
+}
+.article-rails-layout > .main .prio-item{
+  display: grid !important;
+  grid-template-columns: 122px 1fr !important;
+  gap: 16px !important;
+}
+.article-rails-layout > .main .flow-item{
+  display: grid !important;
+  grid-template-columns: 44px 1fr !important;
+  gap: 14px !important;
+}
+.article-rails-layout > .main .card-grid.two{
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+.article-rails-layout > .main .proscons{
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 12px !important;
+}
+.article-rails-layout > .main .matchup-media,
+.article-rails-layout > .main .tip.matchup-media{
+  display: grid !important;
+  grid-template-columns: 112px 1fr !important;
+  gap: 14px !important;
+}
+.article-rails-layout > .main .matchup-media .card-thumb{
+  width: 112px !important;
+}
+
+/* テーブルも常に同じ表示 */
+.article-rails-layout > .main .table{
+  width: 100% !important;
+  table-layout: fixed !important;
+  display: table !important;
+  overflow: visible !important;
+  white-space: normal !important;
+  font-size: 13px !important;
+}
+.article-rails-layout > .main .table th,
+.article-rails-layout > .main .table td{
+  white-space: normal !important;
+  padding: 10px 10px !important;
+  line-height: 1.65 !important;
+  overflow-wrap: anywhere !important;
+  word-break: keep-all !important;
+}
+.article-rails-layout > .main .table th{
+  font-size: 12px !important;
+}
+
+/* 本文の余白・見出しも固定 */
+.article-rails-layout > .main .article{
+  padding: 18px 18px 24px !important;
+}
+.article-rails-layout > .main .article section + section{
+  margin-top: 30px !important;
+}
+.article-rails-layout > .main .article h2{
+  font-size: 22px !important;
+  margin-bottom: 14px !important;
+  padding: 12px 14px !important;
+}
+.article-rails-layout > .main .article h3{
+  font-size: 18px !important;
+  margin: 24px 0 10px !important;
+}
+.article-rails-layout > .main .article p,
+.article-rails-layout > .main .article li{
+  font-size: 14px !important;
+  line-height: 1.82 !important;
+}
+.article-rails-layout > .main .article p{
+  margin: 0 0 12px !important;
+}
+
+/* 既存のレスポンシブ変形を本編内だけ無効化 */
+@media (max-width: 860px){
+  .article-rails-layout > .main{
+    max-width: 430px !important;
+    min-width: 430px !important;
+  }
+  .article-rails-layout > .main .tier-panel{ grid-template-columns: 96px 1fr !important; }
+  .article-rails-layout > .main .prio-item{ grid-template-columns: 122px 1fr !important; }
+  .article-rails-layout > .main .flow-item{ grid-template-columns: 44px 1fr !important; }
+  .article-rails-layout > .main .card-grid.two{ grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .article-rails-layout > .main .proscons{ grid-template-columns: 1fr 1fr !important; }
+  .article-rails-layout > .main .matchup-media,
+  .article-rails-layout > .main .tip.matchup-media{ grid-template-columns: 112px 1fr !important; }
+  .article-rails-layout > .main .table{ display: table !important; }
+}
+
+@media (max-width: 780px){
+  .article-rails-layout > .main{
+    max-width: 430px !important;
+    min-width: 430px !important;
+  }
+  .article-rails-layout > .main .hero-inner,
+  .article-rails-layout > .main .tier-panel,
+  .article-rails-layout > .main .prio-item,
+  .article-rails-layout > .main .proscons,
+  .article-rails-layout > .main .card-grid.two,
+  .article-rails-layout > .main .matchup-media,
+  .article-rails-layout > .main .tip.matchup-media{
+    grid-template-columns: inherit !important;
+  }
+}
+
+@media (max-width: 640px){
+  .article-rails-layout > .main{
+    max-width: 430px !important;
+    min-width: 430px !important;
+  }
+  .article-rails-layout > .main .table{
+    display: table !important;
+    overflow: visible !important;
+    white-space: normal !important;
+  }
+}
+
+/* 画面がそれ未満になったら、ページ全体を横スクロールで見せる */
+@media (max-width: 430px){
+  body{
+    overflow-x: auto !important;
+  }
+  .page,
+  .wrap{
+    min-width: 446px !important;
+  }
+}
+
+
+/* ===== ヒーロー完全固定：幅を狭めても初期レイアウトを維持 ===== */
+
+/* 中央カラムのヒーロー外枠を固定 */
+.article-rails-layout > .main .hero{
+  width: 100% !important;
+  min-width: 0 !important;
+  margin-bottom: 16px !important;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  box-shadow: 0 10px 24px rgba(18,24,48,.06) !important;
+}
+
+.article-rails-layout > .main .hero-inner{
+  display: block !important;
+  padding: 0 !important;
+}
+
+.article-rails-layout > .main .hero-copy{
+  position: relative !important;
+  display: grid !important;
+  align-content: start !important;
+  gap: 12px !important;
+  padding: 26px 22px !important;
+  min-height: 318px !important;
+  overflow: hidden !important;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(209,170,61,0.18) 0, rgba(209,170,61,0.08) 18%, rgba(209,170,61,0) 36%),
+    repeating-linear-gradient(135deg, rgba(209,170,61,0.10) 0 2px, transparent 2px 34px),
+    linear-gradient(135deg, #232b63 0%, #1b224f 45%, #101936 100%) !important;
+  color: #fff !important;
+  border-bottom: 1px solid rgba(209,170,61,0.22) !important;
+}
+
+.article-rails-layout > .main .hero-copy::before{
+  content: "" !important;
+  position: absolute !important;
+  width: 300px !important;
+  height: 300px !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -44%) !important;
+  border-radius: 50% !important;
+  border: 2px solid rgba(209,170,61,0.38) !important;
+  box-shadow:
+    0 0 0 16px rgba(209,170,61,0.10),
+    0 0 0 34px rgba(209,170,61,0.06),
+    inset 0 0 0 10px rgba(209,170,61,0.08) !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+.article-rails-layout > .main .hero-copy::after{
+  content: "" !important;
+  position: absolute !important;
+  inset: auto -60px -60px auto !important;
+  width: 220px !important;
+  height: 220px !important;
+  border-radius: 50% !important;
+  background: radial-gradient(circle, rgba(209,170,61,0.24), rgba(209,170,61,0)) !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+.article-rails-layout > .main .hero-copy > *{
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* 上部メタ・タグの並び固定 */
+.article-rails-layout > .main .hero-meta,
+.article-rails-layout > .main .hero-tags{
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  align-items: center !important;
+}
+
+.article-rails-layout > .main .pill,
+.article-rails-layout > .main .hero-tag{
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 6px 10px !important;
+  border-radius: 999px !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+  background: #eeeeee !important;
+  border: 1px solid #d7d7d7 !important;
+  color: #232b63 !important;
+  box-shadow: none !important;
+  white-space: nowrap !important;
+}
+
+.article-rails-layout > .main .hero-title{
+  margin: 2px 0 0 !important;
+  font-size: 30px !important;
+  line-height: 1.14 !important;
+  letter-spacing: -0.04em !important;
+  white-space: nowrap !important;
+}
+
+.article-rails-layout > .main .hero-summary{
+  margin: 0 !important;
+  max-width: none !important;
+  width: 100% !important;
+  font-size: 14px !important;
+  line-height: 1.85 !important;
+  color: rgba(255,255,255,.97) !important;
+}
+
+.article-rails-layout > .main .hero-tags{
+  margin-top: 2px !important;
+}
+
+/* 幅を狭めてもヒーローだけは一切変えない */
+@media (max-width: 980px){
+  .article-rails-layout > .main .hero-inner{
+    padding: 0 !important;
+  }
+  .article-rails-layout > .main .hero-copy{
+    padding: 26px 22px !important;
+    min-height: 318px !important;
+    gap: 12px !important;
+  }
+  .article-rails-layout > .main .hero-title{
+    font-size: 30px !important;
+    white-space: nowrap !important;
+  }
+  .article-rails-layout > .main .hero-summary{
+    font-size: 14px !important;
+    line-height: 1.85 !important;
+  }
+  .article-rails-layout > .main .hero-meta,
+  .article-rails-layout > .main .hero-tags{
+    gap: 8px !important;
+  }
+  .article-rails-layout > .main .pill,
+  .article-rails-layout > .main .hero-tag{
+    font-size: 12px !important;
+    padding: 6px 10px !important;
+  }
+}
+
+@media (max-width: 780px){
+  .article-rails-layout > .main .hero-inner{
+    padding: 0 !important;
+  }
+  .article-rails-layout > .main .hero-copy{
+    padding: 26px 22px !important;
+    min-height: 318px !important;
+  }
+}
+
+@media (max-width: 640px){
+  .article-rails-layout > .main .hero-inner{
+    padding: 0 !important;
+  }
+  .article-rails-layout > .main .hero-copy{
+    padding: 26px 22px !important;
+    min-height: 318px !important;
+  }
+  .article-rails-layout > .main .hero-title{
+    font-size: 30px !important;
+  }
+}
+
+
+/* ===== 本編内2カラム要素も完全固定 ===== */
+
+/* 2カラムカード群を常に2カラム維持 */
+.article-rails-layout > .main .card-grid.two{
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 14px !important;
+}
+
+/* 既存のモバイル用1カラム化を完全に打ち消す */
+@media (max-width: 980px){
+  .article-rails-layout > .main .card-grid.two{
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+  }
+}
+
+@media (max-width: 780px){
+  .article-rails-layout > .main .card-grid.two{
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+  }
+}
+
+@media (max-width: 640px){
+  .article-rails-layout > .main .card-grid.two{
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+  }
+}
+
+/* カード内の見た目も固定寄りに調整 */
+.article-rails-layout > .main .card-item{
+  padding: 16px !important;
+  border-radius: 16px !important;
+}
+
+.article-rails-layout > .main .card-item h4{
+  font-size: 16px !important;
+  line-height: 1.45 !important;
+  margin: 0 0 8px !important;
+}
+
+.article-rails-layout > .main .card-item p{
+  font-size: 13px !important;
+  line-height: 1.85 !important;
+  margin: 0 !important;
+}
+
+
+/* ===== 最新弾ページ向け微調整 ===== */
+.article-rails-layout > .main .hero-title{
+  font-size: 28px !important;
+}
+
+.article-rails-layout > .main .hero-summary{
+  font-size: 14px !important;
+}
+
+.article-rails-layout > .main .toc-box .box-head h2{
+  font-size: 20px !important;
+}
+
+.article-rails-layout > .main .note{
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 14px !important;
+}
+
+.article-rails-layout > .main .table{
+  margin-bottom: 18px !important;
+}
+
+@media (max-width: 980px){
+  .article-rails-layout > .main .note{
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* このテンプレ方針では中央カラムは固定維持 */
+@media (max-width: 430px){
+  .page,
+  .wrap{
+    min-width: 446px !important;
+  }
+}
+
+
+/* ===== 中央カラムのみ再調整（ベースは最新仕様最適化版のまま） ===== */
+
+/* 共通パーツ・構成は触らず、main配下だけ調整 */
+.article-rails-layout > .main{
+  max-width: none !important;
+  width: 100% !important;
+}
+
+/* ヒーロー */
+.article-rails-layout > .main .hero{
+  margin-bottom: 14px !important;
+}
+.article-rails-layout > .main .hero-copy{
+  padding: 24px 22px 20px !important;
+  min-height: 300px !important;
+  gap: 10px !important;
+}
+.article-rails-layout > .main .hero-title{
+  font-size: 27px !important;
+  line-height: 1.16 !important;
+  letter-spacing: -0.03em !important;
+  white-space: normal !important;
+  text-wrap: balance !important;
+}
+.article-rails-layout > .main .hero-summary{
+  font-size: 14px !important;
+  line-height: 1.76 !important;
+  max-width: none !important;
+}
+.article-rails-layout > .main .hero-meta,
+.article-rails-layout > .main .hero-tags{
+  gap: 8px !important;
+}
+
+/* 目次 */
+.article-rails-layout > .main .toc-box .box-head{
+  padding: 14px 16px !important;
+}
+.article-rails-layout > .main .toc-box .box-head h2{
+  font-size: 20px !important;
+}
+.article-rails-layout > .main .toc-box .box-body{
+  padding: 10px 12px !important;
+}
+.article-rails-layout > .main .toc.toc-simple a{
+  padding: 7px 0 !important;
+  font-size: 13px !important;
+  line-height: 1.45 !important;
+}
+
+/* 本文 */
+.article-rails-layout > .main .article{
+  padding: 18px 18px 24px !important;
+}
+.article-rails-layout > .main .article section + section{
+  margin-top: 30px !important;
+}
+.article-rails-layout > .main .article h2{
+  font-size: 21px !important;
+  line-height: 1.25 !important;
+  padding: 12px 14px !important;
+  margin-bottom: 14px !important;
+}
+.article-rails-layout > .main .article h3{
+  font-size: 18px !important;
+  line-height: 1.45 !important;
+  margin: 24px 0 10px !important;
+}
+.article-rails-layout > .main .article p,
+.article-rails-layout > .main .article li{
+  font-size: 14px !important;
+  line-height: 1.82 !important;
+  text-wrap: pretty !important;
+}
+.article-rails-layout > .main .article p{
+  margin: 0 0 12px !important;
+}
+
+/* 情報カード */
+.article-rails-layout > .main .note,
+.article-rails-layout > .main .leader,
+.article-rails-layout > .main .premium,
+.article-rails-layout > .main .detail-grid,
+.article-rails-layout > .main .related{
+  gap: 12px !important;
+}
+.article-rails-layout > .main .note-box,
+.article-rails-layout > .main .leader-box,
+.article-rails-layout > .main .premium-box,
+.article-rails-layout > .main .detail-card,
+.article-rails-layout > .main .article-card{
+  padding: 16px !important;
+  border-radius: 16px !important;
+}
+.article-rails-layout > .main .note-box strong,
+.article-rails-layout > .main .leader-box strong,
+.article-rails-layout > .main .premium-box strong,
+.article-rails-layout > .main .tip strong{
+  font-size: 14px !important;
+  margin-bottom: 6px !important;
+}
+
+/* 2カラムは維持 */
+.article-rails-layout > .main .card-grid.two{
+  gap: 12px !important;
+}
+.article-rails-layout > .main .card-item{
+  padding: 16px !important;
+}
+.article-rails-layout > .main .card-item h4{
+  font-size: 16px !important;
+  line-height: 1.45 !important;
+}
+.article-rails-layout > .main .card-item p{
+  font-size: 13px !important;
+  line-height: 1.82 !important;
+}
+
+/* 画像＋本文 */
+.article-rails-layout > .main .matchup-media,
+.article-rails-layout > .main .tip.matchup-media{
+  grid-template-columns: 104px 1fr !important;
+  gap: 14px !important;
+}
+.article-rails-layout > .main .matchup-media .card-thumb{
+  width: 104px !important;
+}
+
+/* テーブル */
+.article-rails-layout > .main .table{
+  table-layout: fixed !important;
+  font-size: 13px !important;
+  margin-bottom: 18px !important;
+}
+.article-rails-layout > .main .table th,
+.article-rails-layout > .main .table td{
+  padding: 10px 10px !important;
+  line-height: 1.62 !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+}
+.article-rails-layout > .main .table th{
+  font-size: 12px !important;
+}
+
+
+/* ===== まとめテーブル修正 ===== */
+/* まとめセクションなどの2列表は左列を細く固定して崩れ防止 */
+.article-rails-layout > .main .table{
+  table-layout: fixed !important;
+}
+
+.article-rails-layout > .main .table th:first-child,
+.article-rails-layout > .main .table td:first-child{
+  width: 110px !important;
+  min-width: 110px !important;
+  white-space: nowrap !important;
+}
+
+.article-rails-layout > .main .table th:last-child,
+.article-rails-layout > .main .table td:last-child{
+  width: auto !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  word-break: normal !important;
+}
+
+/* 2列テーブル用にセル余白も少し最適化 */
+.article-rails-layout > .main .table th,
+.article-rails-layout > .main .table td{
+  padding: 10px 12px !important;
+  vertical-align: top !important;
+  line-height: 1.65 !important;
+}
+
+
+/* ===== まとめテーブル余白修正 ===== */
+/* 表全体を中央カラムいっぱいに使う */
+.article-rails-layout > .main .table-wrap{
+  width: 100% !important;
+}
+
+.article-rails-layout > .main .table{
+  width: 100% !important;
+  table-layout: auto !important;
+}
+
+/* 左列は固定しすぎず、必要最小限に */
+.article-rails-layout > .main .table th:first-child,
+.article-rails-layout > .main .table td:first-child{
+  width: 92px !important;
+  min-width: 92px !important;
+  white-space: nowrap !important;
+}
+
+/* 右列が残り幅をしっかり使う */
+.article-rails-layout > .main .table th:last-child,
+.article-rails-layout > .main .table td:last-child{
+  width: auto !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+}
+
+/* 行全体の見た目を自然に */
+.article-rails-layout > .main .table th,
+.article-rails-layout > .main .table td{
+  padding: 10px 12px !important;
+}
+
+
+/* ===== 「この記事の要点」が左半分しか使わない問題の修正 ===== */
+/* 1つしか要素がない quick-grid は 1カラムで全幅使用 */
+.article-rails-layout > .main .quick-grid{
+  grid-template-columns: 1fr !important;
+}
+
+.article-rails-layout > .main .quick-grid > *{
+  width: 100% !important;
+  max-width: none !important;
+}
+
+/* 念のため、要点ボックス自体も全幅に */
+.article-rails-layout > .main .quick-box{
+  width: 100% !important;
+}
+
+
+/* ===== 「まとめ」見出し内テーブル専用修正 ===== */
+.article-rails-layout > .main .summary-section-fix{
+  width: 100% !important;
+}
+
+.article-rails-layout > .main .summary-section-fix .table-wrap{
+  width: 100% !important;
+  display: block !important;
+}
+
+.article-rails-layout > .main .summary-section-fix .table{
+  width: 100% !important;
+  max-width: none !important;
+  table-layout: fixed !important;
+  margin: 0 !important;
+}
+
+.article-rails-layout > .main .summary-section-fix .table th,
+.article-rails-layout > .main .summary-section-fix .table td{
+  width: auto !important;
+}
+
+.article-rails-layout > .main .summary-section-fix .table th:first-child,
+.article-rails-layout > .main .summary-section-fix .table td:first-child{
+  width: 108px !important;
+  min-width: 108px !important;
+  white-space: nowrap !important;
+}
+
+.article-rails-layout > .main .summary-section-fix .table th:last-child,
+.article-rails-layout > .main .summary-section-fix .table td:last-child{
+  width: calc(100% - 108px) !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+}
+
+/* もし「まとめ」内の親グリッドが2カラム指定でも、ここだけ全幅にする */
+.article-rails-layout > .main .summary-section-fix .quick-grid,
+.article-rails-layout > .main .summary-section-fix .split-grid{
+  grid-template-columns: 1fr !important;
+}
+
+.article-rails-layout > .main .summary-section-fix > *{
+  max-width: none !important;
+}
+
+
+  /* ===== mobile one-column override ===== */
+  @media (max-width: 860px) {
+    .article-rails-layout {
+      display: grid !important;
+      grid-template-columns: minmax(0, 1fr) !important;
+      justify-content: stretch !important;
+      gap: 0 !important;
+    }
+
+    .article-rails-layout > .ad-rail-left-1,
+    .article-rails-layout > .ad-rail-left-2,
+    .article-rails-layout > .ad-rail-right,
+    .article-rails-layout > .sidebar {
+      display: none !important;
+    }
+
+    .article-rails-layout > .main {
+      grid-column: 1 !important;
+      width: 100% !important;
+      max-width: none !important;
+      min-width: 0 !important;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .article-rails-layout > .main {
+      width: 100% !important;
+      max-width: none !important;
+      min-width: 0 !important;
+    }
+
+    .wrap {
+      width: min(100% - 16px, 1220px) !important;
+    }
+  }
+
+
+
+/* final mobile one-column fix */
+@media (max-width: 860px) {
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .page,
+  .wrap {
+    min-width: 0 !important;
+    width: min(100% - 16px, 1220px) !important;
+  }
+
+  .article-rails-layout {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 0 !important;
+    justify-content: stretch !important;
+  }
+
+  .article-rails-layout > .ad-rail-left-1,
+  .article-rails-layout > .ad-rail-left-2,
+  .article-rails-layout > .ad-rail-right,
+  .article-rails-layout > .sidebar {
+    display: none !important;
+  }
+
+  .article-rails-layout > .main {
+    grid-column: 1 !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+  }
+
+  .article-rails-layout > .main .hero,
+  .article-rails-layout > .main .toc-box,
+  .article-rails-layout > .main .box,
+  .article-rails-layout > .main .article {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .article-rails-layout > .main .table {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+  }
+}
+
+@media (max-width: 430px) {
+  html, body {
+    overflow-x: hidden !important;
+  }
+
+  .page,
+  .wrap,
+  .article-rails-layout > .main,
+  .article-rails-layout > .main .hero,
+  .article-rails-layout > .main .toc-box,
+  .article-rails-layout > .main .box,
+  .article-rails-layout > .main .article {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+}
+
+
+
+/* compact deck rating block */
+.deck-rating-section > h2{
+  margin-bottom:18px;
+}
+.deck-rating-compact{
+  display:grid;
+  gap:18px;
+}
+.deck-rating-head{
+  display:grid;
+  grid-template-columns:86px minmax(0,1fr);
+  gap:18px;
+  align-items:start;
+}
+.deck-rating-rank{
+  width:78px;
+  min-height:78px;
+  border-radius:16px;
+  background:linear-gradient(180deg,#23315f 0%, #101936 100%);
+  color:#fff;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  box-shadow:0 8px 18px rgba(18,24,48,.12);
+}
+.deck-rating-rank strong{
+  font-size:34px;
+  line-height:1;
+  color:#f2c95c;
+  font-weight:900;
+}
+.deck-rating-rank small{
+  margin-top:6px;
+  font-size:12px;
+  font-weight:800;
+  color:#ffffff;
+}
+.deck-rating-copy h3{
+  margin:0 0 10px;
+  font-size:22px;
+  line-height:1.45;
+  color:var(--heading);
+}
+.deck-rating-copy h3:before{
+  content:none;
+}
+.deck-rating-copy p{
+  margin:0;
+  font-size:15px;
+  line-height:1.95;
+}
+.deck-rating-pills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+.rating-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:10px 14px;
+  border-radius:999px;
+  border:1px solid #cfd7e8;
+  background:#f7f8fc;
+  color:#2e3448;
+  font-size:14px;
+  font-weight:800;
+  line-height:1.3;
+}
+.deck-rating-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+}
+.deck-rating-card{
+  border:1px solid rgba(209,170,61,.38);
+  border-radius:18px;
+  background:linear-gradient(180deg,#fffefa 0%, #fffdfa 100%);
+  padding:18px 18px 16px;
+  box-shadow:0 6px 16px rgba(18,24,48,.04);
+}
+.deck-rating-card h4{
+  margin:0 0 14px;
+  font-size:16px;
+  color:#232b63;
+}
+.deck-rating-card ul{
+  margin:0;
+  padding-left:20px;
+}
+.deck-rating-card li + li{
+  margin-top:10px;
+}
+.deck-rating-pointbox{
+  padding:20px 18px;
+  border:1px solid rgba(209,170,61,.45);
+  border-radius:16px;
+  background:linear-gradient(180deg,#fbf7ea 0%, #f8f1dc 100%);
+}
+.deck-rating-pointbox strong{
+  display:block;
+  margin-bottom:12px;
+  font-size:15px;
+  color:#232b63;
+}
+.deck-rating-pointbox p{
+  margin:0;
+  line-height:2;
+}
+@media (max-width:780px){
+  .deck-rating-head,
+  .deck-rating-grid{
+    grid-template-columns:1fr;
+  }
+  .deck-rating-rank{
+    width:84px;
+  }
+}
+
+
+
+/* ===== article rails layout final spec ===== */
+html,
+body{
+  overflow-x:hidden !important;
+}
+.article-rails-layout{
+  display:grid !important;
+  grid-template-columns:300px 860px 280px 300px !important;
+  gap:18px !important;
+  align-items:start !important;
+  justify-content:center !important;
+  max-width:100% !important;
+  min-width:0 !important;
+}
+.article-rails-layout > .ad-rail{
+  width:300px !important;
+  max-width:300px !important;
+  min-width:300px !important;
+}
+.article-rails-layout > .ad-rail-left-2{
+  display:none !important;
+}
+.article-rails-layout > .ad-rail-left-1{
+  grid-column:1 !important;
+  display:block !important;
+}
+.article-rails-layout > .main{
+  grid-column:2 !important;
+  width:860px !important;
+  max-width:860px !important;
+  min-width:860px !important;
+}
+.article-rails-layout > .sidebar{
+  grid-column:3 !important;
+  display:block !important;
+  width:280px !important;
+  max-width:280px !important;
+  min-width:280px !important;
+}
+.article-rails-layout > .ad-rail-right{
+  grid-column:4 !important;
+  display:block !important;
+}
+.article-rails-layout .ad-box{
+  width:300px !important;
+  max-width:300px !important;
+  min-height:600px !important;
+}
+.article-rails-layout > .main .hero,
+.article-rails-layout > .main .toc-box,
+.article-rails-layout > .main .box,
+.article-rails-layout > .main .article{
+  width:100% !important;
+  max-width:100% !important;
+  min-width:0 !important;
+}
+
+@media (max-width:1810px){
+  .article-rails-layout{
+    grid-template-columns:300px 860px 280px !important;
+  }
+  .article-rails-layout > .ad-rail-left-1{
+    grid-column:1 !important;
+    display:block !important;
+  }
+  .article-rails-layout > .main{
+    grid-column:2 !important;
+    width:860px !important;
+    max-width:860px !important;
+    min-width:860px !important;
+  }
+  .article-rails-layout > .sidebar{
+    grid-column:3 !important;
+    display:block !important;
+    width:280px !important;
+    max-width:280px !important;
+    min-width:280px !important;
+  }
+  .article-rails-layout > .ad-rail-right{
+    display:none !important;
+  }
+}
+
+@media (max-width:1480px){
+  .article-rails-layout{
+    grid-template-columns:860px 280px !important;
+    justify-content:center !important;
+  }
+  .article-rails-layout > .ad-rail-left-1,
+  .article-rails-layout > .ad-rail-left-2,
+  .article-rails-layout > .ad-rail-right{
+    display:none !important;
+  }
+  .article-rails-layout > .main{
+    grid-column:1 !important;
+    width:860px !important;
+    max-width:860px !important;
+    min-width:860px !important;
+  }
+  .article-rails-layout > .sidebar{
+    grid-column:2 !important;
+    display:block !important;
+    width:280px !important;
+    max-width:280px !important;
+    min-width:280px !important;
+  }
+}
+
+@media (max-width:1160px){
+  .page,
+  .wrap{
+    min-width:0 !important;
+    max-width:100% !important;
+  }
+  .article-rails-layout{
+    grid-template-columns:minmax(0, 860px) !important;
+    gap:0 !important;
+    justify-content:center !important;
+    justify-items:center !important;
+  }
+  .article-rails-layout > .ad-rail-left-1,
+  .article-rails-layout > .ad-rail-left-2,
+  .article-rails-layout > .ad-rail-right,
+  .article-rails-layout > .sidebar{
+    display:none !important;
+  }
+  .article-rails-layout > .main{
+    grid-column:1 !important;
+    width:100% !important;
+    max-width:860px !important;
+    min-width:0 !important;
+    justify-self:center !important;
+  }
+}
+
+@media (max-width:860px){
+  .article-rails-layout{
+    grid-template-columns:minmax(0, 1fr) !important;
+    justify-content:stretch !important;
+    justify-items:stretch !important;
+  }
+  .article-rails-layout > .main{
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+  }
+}
+/* ===== /article rails layout final spec ===== */
+</style>
 </head>
-<body>
-  <main>
-    <h1>Blue Yellow Nami</h1>
-    <p>Replace this placeholder with the Blue Yellow Nami deck article.</p>
-  </main>
+<body class="deck-blue-yellow-nami">
+<!-- Common Header Start -->
+<header class="topbar">
+<div class="wrap topbar-inner"></div>
+</header>
+<header class="site-header">
+<div class="brand-row">
+<div class="wrap brand-inner">
+<div class="brand">
+<div class="logo"><img alt="13OSTON CARDロゴ" src="https://ik.imagekit.io/opcard/onepiece/decks/deck-black-imu-01.png"/></div>
+<div>
+<h1>13OSTON CARD</h1>
+<p>ワンピースカードの最新情報、環境デッキ、初心者向けガイドをまとめた総合攻略メディア</p>
+</div>
+</div>
+</div>
+</div>
+<nav aria-label="カテゴリナビゲーション" class="category-nav">
+<div class="wrap category-scroll">
+<a href="../../../index.html">トップページ</a>
+<a href="../../../articles/meta/tier-list.html">最強デッキ</a>
+<a href="../../../articles/meta/new-set-deck-review.html">新弾デッキ</a>
+<a href="../../../articles/meta/decks/index.html">デッキ一覧</a>
+</div>
+</nav>
+</header>
+<!-- Common Header End -->
+<div class="wrap page" id="top">
+<!-- Replace: Breadcrumbs -->
+<div class="breadcrumbs">
+<a href="../../../index.html">トップページ</a><span class="sep">›</span>
+<span>デッキ解説</span><span class="sep">›</span>
+<span>青黄ナミ</span>
+</div><div class="layout article-rails-layout"><aside class="ad-rail ad-rail-left-1"><div class="ad-box"><div class="ad-badge">広告</div><strong>広告枠</strong><p>PC表示では本編を中央の細いカラムに寄せるための広告枠です。</p></div></aside><aside class="ad-rail ad-rail-left-2"><div class="ad-box"><div class="ad-badge">広告</div><strong>広告枠</strong><p>PC表示では本編を中央の細いカラムに寄せるための広告枠です。</p></div></aside><main class="main"><section class="box hero">
+<div class="hero-inner">
+<div class="hero-copy">
+<div class="hero-meta">
+<span class="pill">各デッキ個別記事</span>
+<span class="pill">更新日: 2026年4月14日</span>
+</div>
+<h1 class="hero-title">青黄ナミ 完全攻略ガイド</h1>
+<p class="hero-summary">毎ターン大型連打＋神官ドローで相手を圧倒する環境最強クラスリーダー。回し方、構築、主要対面の立ち回りを初心者にも追いやすい順番で整理しました。</p>
+<div class="hero-tags">
+<span class="hero-tag">🔵🟡 青黄</span><span class="hero-tag">👑 Tier 1</span><span class="hero-tag">🃏 OP-15</span><span class="hero-tag">⚡ 空島</span><span class="hero-tag">✨ 難易度: 高</span>
+</div>
+</div>
+</div>
+</section><section class="box toc-box"><div class="box-head"><h2>目次</h2></div><div class="box-body"><ol class="toc toc-simple"><li><a href="#overview">デッキ評価</a></li><li><a href="#builds">デッキ構築</a></li><li><a href="#play">基本的な回し方</a></li><li><a href="#matchups">対面の有利不利と立ち回り</a></li></ol></div></section><article class="box"><div class="article">
+<section id="overview" class="deck-rating-section">
+  <h2>デッキ評価</h2>
+
+  <div class="deck-rating-compact">
+    <div class="deck-rating-head">
+      <div class="deck-rating-rank">
+        <strong>SS</strong>
+      </div>
+      <div class="deck-rating-copy">
+        <h3>中盤以降の粘り強さと高い出力で押し切れる安定寄りのパワーデッキ</h3>
+        <p>
+          青黄ナミは、リソースを回復しながら高打点の展開を押し付けられるのが強みです。序盤から最速で勝ち切るタイプではないものの、
+          中盤以降に盤面と手札の両面で優位を築きやすく、長いゲームになっても戦いやすい完成度があります。
+        </p>
+      </div>
+    </div>
+
+    <div class="deck-rating-pills">
+      <span class="rating-pill">🧩 難易度: ★★★★☆ 高め</span>
+      <span class="rating-pill">⚡ デッキの速さ: ★★★☆☆ 中速</span>
+      <span class="rating-pill">🛡️ 安定感: ★★★★☆ 高い</span>
+    </div>
+
+    <div class="deck-rating-grid">
+      <article class="deck-rating-card">
+        <h4>強み</h4>
+        <ul>
+          <li>リソース回復が絡むため、中盤以降も動きの質を保ちやすい</li>
+          <li>大型キャラの着地から一気に盤面を取り返しやすい</li>
+          <li>長期戦になっても手札と打点の両面で勝ち筋を作りやすい</li>
+        </ul>
+      </article>
+
+      <article class="deck-rating-card">
+        <h4>弱み</h4>
+        <ul>
+          <li>序盤のテンポは控えめで、速攻寄りの相手には押し込まれやすい</li>
+          <li>リソース管理を誤ると、反撃のターンが弱くなりやすい</li>
+          <li>扱いに慣れていないと、勝ち筋の切り替え判断が難しい</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="deck-rating-pointbox">
+      <strong>評価のポイント</strong>
+      <p>
+        青黄ナミは「一度ゲームを落ち着かせてから勝つ」性能が高いデッキです。爆発力だけで見ると最上位級に見えにくいものの、
+        実際はリソース差と打点差を同時に作りやすく、使いこなせるほど勝率が安定しやすいのが魅力です。
+        その一方で、序盤の受け方や大型を出すタイミングを誤ると強みを活かしにくいため、プレイ精度はある程度求められます。
+      </p>
+    </div>
+  </div>
+</section>
+<section id="builds">
+<h2>デッキ構築</h2>
+<h3>デッキリスト</h3>
+<figure class="decklist-figure">
+<img alt="青黄ナミのデッキリスト" src="https://ik.imagekit.io/opcard/onepiece/decks/deck-black-imu-02.png"/>
+</figure>
+<h3>キーカード解説</h3>
+<div class="card-grid two">
+<div class="card-item has-side-thumb">
+<img alt="オームのカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/decks/deck-black-imu-03.png"/>
+<div class="card-copy">
+<h4>オーム（神官）</h4>
+<p>アタック時に相手キャラ-1000。5ルフィを6000以下に下げて雷龍の範囲に入れるなど、高度な応用が可能な最重要神官です。</p>
+</div>
+</div>
+<div class="card-item has-side-thumb">
+<img alt="オームのカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/decks/deck-black-imu-03.png"/>
+<div class="card-copy">
+<h4>サトリ（神官）</h4>
+<p>アタック時にデッキトップ2枚を操作。エネルやイベントを引き込みやすく、序盤から中盤まで安定感を支える神官です。</p>
+</div>
+</div>
+<div class="card-item has-side-thumb">
+<img alt="オームのカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/decks/deck-black-imu-03.png"/>
+<div class="card-copy">
+<h4>シュラ（神官）</h4>
+<p>速攻持ち。プリンと合わせた5000×3回攻撃ムーブの起点になり、先攻時の圧を一気に高められます。</p>
+</div>
+</div>
+<div class="card-item has-side-thumb">
+<img alt="オームのカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/decks/deck-black-imu-03.png"/>
+<div class="card-copy">
+<h4>雷龍 / 万雷</h4>
+<p>雷龍はレスト固定、万雷はドロー兼リーサル補助。終盤の詰め性能を大きく上げるイベント軸です。</p>
+</div>
+</div>
+<div class="card-item has-side-thumb">
+<img alt="オームのカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/decks/deck-black-imu-03.png"/>
+<div class="card-copy">
+<h4>雷獣 / 毒竜</h4>
+<p>細かいパワー調整と盤面処理を担うイベント群。小さい差を積み重ねながらテンポを取れます。</p>
+</div>
+</div>
+<div class="card-item has-side-thumb">
+<img alt="オームのカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/decks/deck-black-imu-03.png"/>
+<div class="card-copy">
+<h4>神避 / 神の裁き</h4>
+<p>大型処理と打点補助を担当。ミラーや赤青エース、緑ミホークのような対面で勝率に直結しやすい枠です。</p>
+</div>
+</div>
+</div>
+<h3>入れ替え候補</h3>
+<div class="card-grid two">
+<div class="card-item has-side-thumb">
+<img alt="オームのカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/decks/deck-black-imu-03.png"/>
+<div class="card-copy">
+<h4>差し替え候補A</h4>
+<p>ここに後で入れ替え候補カードの解説を追加予定です。環境に応じて採用理由を書ける枠として残しています。</p>
+</div>
+</div>
+<div class="card-item has-side-thumb">
+<img alt="オームのカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/decks/deck-black-imu-03.png"/>
+<div class="card-copy">
+<h4>差し替え候補B</h4>
+<p>対面意識のメタカードや枚数調整の候補をここに追加予定です。役割が伝わる短い説明を入れやすい形にしています。</p>
+</div>
+</div>
+<div class="card-item has-side-thumb">
+<img alt="オームのカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/decks/deck-black-imu-03.png"/>
+<div class="card-copy">
+<h4>差し替え候補C</h4>
+<p>入れ替え先の候補が増えても並べやすいよう、キーカード解説と同じレイアウトで整理しています。</p>
+</div>
+</div>
+</div>
+</section>
+<section id="play">
+<h2>基本的な回し方</h2>
+<div class="prio">
+<h3>マリガン基準</h3>
+<div class="prio-item"><span class="rank">最優先キープ</span><p>サーチ6エネル（シクエネル）+ ドロー神官（サトリ / ゲダツ）。全対面共通で「シクエネルがなければ基本マリガン」。例外はサトリが2枚ある場合のみキープ可。</p></div>
+<div class="prio-item"><span class="rank">妥協キープ</span><p>シクエネル単体 or ドロー神官3枚。6エネルへの到達ルートが見えていればOKです。</p></div>
+<div class="prio-item"><span class="rank">先後選択</span><p>黒イム対面のみ後攻、それ以外は全て先攻。基本は先攻で6000連打の主導権を取りにいきます。</p></div>
+</div>
+<div class="flow">
+<div class="flow-item">
+<div class="step">1</div>
+<div>
+<span class="label">1ターン目</span>
+<h4>プリン or サトリを展開してドロー加速</h4>
+<div class="flow-visuals">
+<img alt="シャーロット・プリンのカード画像" src="https://ik.imagekit.io/opcard/onepiece/decks/deck-black-imu-04.png"/>
+<img alt="サトリのカード画像" src="https://ik.imagekit.io/opcard/onepiece/decks/deck-black-imu-05.png"/>
+</div>
+<p>プリンはイベントをサーチしながら1コスト要員として機能。先攻時は「プリン → 2ターン目シュラ」の動きで2ターン目から5000×3回攻撃が可能になります。サトリはデッキトップ2枚を操作してエネルを引き込みやすくします。</p>
+</div>
+</div>
+<div class="flow-item">
+<div class="step">2</div>
+<div>
+<span class="label">2ターン目</span>
+<h4>リーダー効果＋神官で6000連打スタート</h4>
+<div class="flow-visuals">
+<img alt="シュラのカード画像" src="https://ik.imagekit.io/opcard/onepiece/decks/deck-black-imu-06.png"/>
+</div>
+<p>リーダー効果を起動し、アクティブ1ドン追加 + レスト4ドンを神官に乗せて6000アタッカーを作ります。シュラがあればプリンと合わせて5000×3回攻撃が実現し、序盤からライフと手札を同時に削れます。</p>
+</div>
+</div>
+<div class="flow-item">
+<div class="step">3</div>
+<div>
+<span class="label">3〜5ターン目</span>
+<h4>シクエネル連打で盤面を制圧</h4>
+<div class="flow-visuals">
+<img alt="エネルのカード画像" src="https://ik.imagekit.io/opcard/onepiece/decks/deck-black-imu-07.png"/>
+</div>
+<p>6ドン到達後は毎ターンシクエネルを着地させ、登場時サーチで次のエネルやイベントを確保します。3ターン連続でエネルを並べるのが理想ラインで、4〜5ターン目にブロッカーエネルも追加して盤面を固めます。</p>
+</div>
+</div>
+<div class="flow-item">
+<div class="step">4</div>
+<div>
+<span class="label">終盤〜リーサル</span>
+<h4>11ドンを最大活用してリーサルを組む</h4>
+<div class="flow-visuals">
+<img alt="万雷のカード画像" src="https://ik.imagekit.io/opcard/onepiece/decks/deck-black-imu-08.png"/>
+</div>
+<p>盤面のエネル複数体 + 神官 + イベントで11ドンを振り分けてリーサルを計算します。神の裁きは終盤まで温存して打点を底上げし、万雷で相手ブロッカーをレストにしてから通すのが基本です。</p>
+</div>
+</div>
+</div>
+</section>
+<section id="matchups">
+<h2>対面の有利不利と立ち回り</h2>
+<p class="matchups-intro">青黄ナミは多くの対面で五分以上を取りやすい一方、青黄ナミのように神官連打の強みを消してくる相手には明確な対策が必要です。まずは一覧で相性を把握し、そのあと主要対面の考え方を押さえると読みやすいです。</p>
+<table class="table">
+<thead><tr><th>対面リーダー</th><th>相性</th><th>主な理由</th></tr></thead>
+<tbody>
+<tr><td><a href="#croco">黒クロコダイル</a></td><td><span class="badge win">有利</span></td><td>6000連打への対抗手段が薄く、エネルの10000耐性も突破されにくい。</td></tr>
+<tr><td><a href="#mihawk">緑ミホーク</a></td><td><span class="badge win">有利</span></td><td>2000カウンターが少なく、マイナスイベントが全て有効に機能する。</td></tr>
+<tr><td><a href="#dofla">紫ドフラミンゴ</a></td><td><span class="badge win">有利</span></td><td>10コストドフラは放電でケア可能。大型が揃う前に押し切りやすい。</td></tr>
+<tr><td><a href="#hancock">青黄ハンコック</a></td><td><span class="badge even">五分</span></td><td>先攻は有利寄りだが、後攻ではトリガー展開に押されるゲームもある。</td></tr>
+<tr><td><a href="#lucy">赤青ルーシー</a></td><td><span class="badge even">五分</span></td><td>イベント連打で盤面を崩されやすい。先攻で手札差をつけたい。</td></tr>
+<tr><td><a href="#kalgara">黄カルガラ</a></td><td><span class="badge even">五分</span></td><td>速度が速く先後差が大きい。神の裁きの使い方が重要。</td></tr>
+<tr><td><a href="#ace">赤青エース</a></td><td><span class="badge even">五分</span></td><td>序盤は有利でも長期戦に入ると互角。大型処理ルートの理解が鍵。</td></tr>
+<tr><td><a href="#enel">青黄ナミ対面</a></td><td><span class="badge even">五分（先攻微有利）</span></td><td>6エネルの取り合いとイベント枚数で決まる練度勝負。</td></tr>
+<tr><td><a href="#nami">青黄ナミ</a></td><td><span class="badge lose">不利</span></td><td>相手ターン7000になる効果が神官連打プランを根本から崩す。</td></tr>
+</tbody>
+</table>
+<div class="detail-grid">
+
+
+
+
+
+
+
+
+</div>
+<article class="detail-card" id="croco"><div class="head"><span class="badge win">有利</span><h4>黒クロコダイル対面</h4></div><div class="matchup-media"><img alt="黒クロコダイルのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/decks/deck-black-imu-09.png"/><div class="card-copy"><p>6000連打への対抗手段が薄く、エネルの10000耐性も突破されにくい対面です。中盤以降に6エネルを連打できれば、相手は盤面処理とライフ受けの両立が難しくなります。</p><div class="tip"><strong>対面のポイント</strong><p>序盤から神官連打でテンポを取り、6エネルを着地させた後はオールサンデーや8クロコ着地前にリーサルを狙います。7〜8ドンターンまでにライフ差を2以上つける意識が大切です。</p></div></div></div></article><article class="detail-card" id="mihawk"><div class="head"><span class="badge win">有利</span><h4>緑ミホーク対面</h4></div><div class="matchup-media"><img alt="緑ミホークのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/decks/deck-black-imu-10.png"/><div class="card-copy"><p>2000カウンター総数が少なく、青黄ナミの6000連打が通りやすい対面です。さらにレストで返ってくるキャラに対して、雷獣・毒竜・神避といったマイナスイベントがすべて有効に働きます。</p><div class="tip"><strong>対面のポイント</strong><p>序盤は神官で先にライフを詰めつつ、相手の中型が着地したターンをイベントで丁寧にさばく形が基本です。レストで返ってきたキャラを処理してテンポを渡さず、6エネル着地後は打点差で押し切ります。</p></div></div></div></article><article class="detail-card" id="dofla"><div class="head"><span class="badge win">有利</span><h4>紫ドフラミンゴ対面</h4></div><div class="matchup-media"><img alt="紫ドフラミンゴのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/decks/deck-black-imu-11.png"/><div class="card-copy"><p>10コストドフラミンゴは放電でケア可能で、大型が並ぶ前に押し切りやすい対面です。ドン加速とアクティブドンの強みはありますが、こちらの10000ラインを触りづらいのが弱点です。</p><div class="tip"><strong>対面のポイント</strong><p>ドフラミンゴ側が大型に入る前の5〜7ドン帯で先にライフを削っておくのが重要です。終盤は放電を意識して構え、10ドフラの着地ターンを丸ごと弱くできると勝ち切りやすくなります。</p></div></div></div></article><article class="detail-card" id="hancock"><div class="head"><span class="badge even">五分</span><h4>青黄ハンコック対面</h4></div><div class="matchup-media"><img alt="青黄ハンコックのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/decks/deck-black-imu-12.png"/><div class="card-copy"><p>先攻は有利寄りですが、後攻ではトリガー展開に押されるゲームもある五分対面です。相手のライフ操作や登場時展開でテンポを返されやすく、雑に詰めると押し返されます。</p><div class="tip"><strong>対面のポイント</strong><p>先攻時は神官連打からテンポを取り、相手のトリガー受けを見越して盤面を残しながら攻めるのが基本です。後攻時はライフを詰め急がず、イベントを絡めた盤面処理で主導権を取り返してからリーサルに向かいます。</p></div></div></div></article><article class="detail-card" id="lucy"><div class="head"><span class="badge even">五分</span><h4>赤青ルーシー対面</h4></div><div class="matchup-media"><img alt="赤青ルーシーのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/decks/deck-black-imu-13.png"/><div class="card-copy"><p>イベント連打で盤面を崩されやすく、先攻で手札差をつけたい対面です。こちらの神官プランに対して細かく干渉してくるため、雑な横展開だけでは押し切れません。</p><div class="tip"><strong>対面のポイント</strong><p>序盤は無理に盤面を広げすぎず、6エネルの着地を基準にゲームを組み立てるのが安定します。相手のイベント枚数を意識して、返しに盤面を失いにくい打点の通し方を選ぶのが重要です。</p></div></div></div></article><article class="detail-card" id="kalgara"><div class="head"><span class="badge even">五分</span><h4>黄カルガラ対面</h4></div><div class="matchup-media"><img alt="黄カルガラのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/decks/deck-black-imu-14.png"/><div class="card-copy"><p>速度が速く先後差が大きい五分対面です。序盤から一気にライフを詰められるため、受け方を間違えると6エネル着地前に押し切られることがあります。</p><div class="tip"><strong>対面のポイント</strong><p>神の裁きやマイナスイベントの使いどころが勝敗を分けます。相手の展開ターンを1回止める意識で盤面をさばき、6エネル到達後に10000ラインを押し付けて主導権を奪い返すのが基本です。</p></div></div></div></article><article class="detail-card" id="ace"><div class="head"><span class="badge even">五分</span><h4>赤青エース対面</h4></div><div class="matchup-media"><img alt="赤青エースのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/decks/deck-black-imu-15.png"/><div class="card-copy"><p>序盤は有利でも長期戦に入ると互角になりやすく、大型処理ルートの理解が重要な対面です。相手のパワーマイナスとドロー継続で、後半ほどリソース差が縮まりやすくなります。</p><div class="tip"><strong>対面のポイント</strong><p>序盤の優位をそのまま押し切る意識で、ライフを先行して詰める展開を目指します。長引くとエース側の継続力が上がるため、6エネルとイベントの使い分けで中盤のテンポを落とさないことが大切です。</p></div></div></div></article><article class="detail-card" id="enel"><div class="head"><span class="badge even">五分（先攻微有利）</span><h4>青黄ナミ対面</h4></div><div class="matchup-media"><img alt="青黄ナミのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/decks/deck-black-imu-16.png"/><div class="card-copy"><p>6エネルの取り合いとイベント枚数で決まる練度勝負です。先攻側が先に6エネルへ触れられる分だけやや有利ですが、後攻側もドンを乗せてバトルKOできるため差は小さいです。</p><div class="tip"><strong>対面のポイント</strong><p>プリンでは雷獣・毒竜・神避を優先サーチして、レスト状態の6エネルをバトルKOできる形を意識します。先に1体目を出して終わりではなく、2体並ぶターンに一気に優位を取るプランが重要です。</p></div></div></div></article><article class="detail-card" id="nami"><div class="head"><span class="badge lose">不利</span><h4>青黄ナミ対面</h4></div><div class="matchup-media"><img alt="青黄ナミのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/decks/deck-black-imu-17.png"/><div class="card-copy"><p>現環境における青黄ナミ最大の天敵です。神官に4ドンをつけて6000にしても、相手がリーダーにドンを付けていれば手札1枚で7000にされ、序盤の主力プランが根本から崩れます。</p><div class="tip"><strong>対面のポイント</strong><p>序盤は無理に神官連パンを通しに行かず、6エネル着地を最優先にします。プリンでは雷龍・万雷を優先して拾い、中盤以降は6エネル複数体の10000打点で盤面差を作ってから詰めにいく意識が必要です。</p></div></div></div></article></section>
+</div></article>
+<section class="box premium-box">
+<div class="box-head">
+<h2>さらに詳しく知りたい方はこちら</h2>
+</div>
+<div class="box-body">
+<a class="note-image-link" href="https://note.com/nansu/n/n4375b06889e1" rel="noopener" target="_blank">
+<img alt="青黄ナミの有料note" src="https://ik.imagekit.io/opcard/onepiece/decks/deck-black-imu-18.webp"/>
+</a>
+<div class="note-link-copy">
+<h3><a href="https://note.com/nansu/n/n4375b06889e1" rel="noopener" target="_blank">企業対抗戦・個人7-1準優勝帯の青黄ナミ解説</a></h3>
+<p>構築の考え方、採用理由、対面ごとの立ち回りまで含めて整理した実戦向けの有料noteです。無料記事より一歩踏み込んで学びたい人向けにまとめています。</p>
+<div class="note-author">
+<span class="note-author-label">作成者</span>
+<a href="https://x.com/you_god1996" rel="noopener" target="_blank">@you_god1996 のXを見る</a>
+</div>
+</div>
+</div>
+</section>
+</main></main>
+<!-- Related Articles Start -->
+<!-- Sidebar Start -->
+<aside class="sidebar">
+<div class="sticky-box">
+<section class="box section">
+<div class="section-title">
+<h3>人気記事</h3>
+</div>
+<div class="section-body">
+<div aria-label="PV上位5記事" class="pv-ranking">
+<div class="pv-ranking-head">
+<strong>PVランキング TOP5</strong>
+</div>
+<ol class="pv-ranking-list">
+<li><a href="purple-enel.html"><span class="pv-rank">1</span><span class="pv-title">&#x7D2B;&#x30A8;&#x30CD;&#x30EB; &#x5B8C;&#x5168;&#x653B;&#x7565;&#x30AC;&#x30A4;&#x30C9;</span></a></li>
+<li><a href="blue-green-luffy.html"><span class="pv-rank">2</span><span class="pv-title">&#x9752;&#x7DD1;&#x30EB;&#x30D5;&#x30A3; &#x5B8C;&#x5168;&#x653B;&#x7565;&#x30AC;&#x30A4;&#x30C9;</span></a></li>
+<li><a href="red-ace.html"><span class="pv-rank">3</span><span class="pv-title">&#x8D64;&#x30A8;&#x30FC;&#x30B9; &#x5B8C;&#x5168;&#x653B;&#x7565;&#x30AC;&#x30A4;&#x30C9;</span></a></li>
+<li><a href="blue-yellow-nami.html"><span class="pv-rank">4</span><span class="pv-title">&#x9752;&#x9EC4;&#x30CA;&#x30DF; &#x5B8C;&#x5168;&#x653B;&#x7565;&#x30AC;&#x30A4;&#x30C9;</span></a></li>
+<li><a href="red-blue-lucy.html"><span class="pv-rank">5</span><span class="pv-title">&#x8D64;&#x9752;&#x30EB;&#x30FC;&#x30B7;&#x30FC; &#x5B8C;&#x5168;&#x653B;&#x7565;&#x30AC;&#x30A4;&#x30C9;</span></a></li>
+</ol>
+</div>
+</div>
+</section>
+<section class="box section">
+<div class="section-title">
+<h3>&#x30C7;&#x30C3;&#x30AD;&#x4E00;&#x89A7;</h3>
+</div>
+<div class="section-body">
+<div class="side-list">
+<div class="side-list-label">&lt;&#x6700;&#x65B0;&#x5F3E;&gt;</div>
+<a href="blue-green-luffy.html">&#x9752;&#x7DD1;&#x30EB;&#x30D5;&#x30A3;</a>
+<a href="red-ace.html">&#x8D64;&#x30A8;&#x30FC;&#x30B9;</a>
+<a href="blue-buggy.html">&#x9752;&#x30D0;&#x30AE;&#x30FC;</a>
+<a href="purple-sengoku.html">&#x7D2B;&#x30BB;&#x30F3;&#x30B4;&#x30AF;</a>
+<a href="black-yamato.html">&#x9ED2;&#x30E4;&#x30DE;&#x30C8;</a>
+<a href="black-yellow-teach.html">&#x9ED2;&#x9EC4;&#x30C6;&#x30A3;&#x30FC;&#x30C1;</a>
+<div class="side-list-label">&lt;&#x74B0;&#x5883;&#x30C7;&#x30C3;&#x30AD;&gt;</div>
+<a href="purple-enel.html">&#x7D2B;&#x30A8;&#x30CD;&#x30EB;</a>
+<a href="red-blue-lucy.html">&#x8D64;&#x9752;&#x30EB;&#x30FC;&#x30B7;&#x30FC;</a>
+<a href="blue-yellow-nami.html">&#x9752;&#x9EC4;&#x30CA;&#x30DF;</a>
+<a href="yellow-luffy-skypiea.html">&#x9EC4;&#x30EB;&#x30D5;&#x30A3;(&#x7A7A;&#x5CF6;)</a>
+<a href="red-blue-ace.html">&#x8D64;&#x9752;&#x30A8;&#x30FC;&#x30B9;</a>
+<a href="blue-yellow-hancock.html">&#x9752;&#x9EC4;&#x30CF;&#x30F3;&#x30B3;&#x30C3;&#x30AF;</a>
+<a href="green-mihawk.html">&#x7DD1;&#x30DF;&#x30DB;&#x30FC;&#x30AF;</a>
+<a href="black-imu.html">&#x9ED2;&#x30A4;&#x30E0;</a>
+</div>
+</div>
+</section>
+</div>
+</aside><aside class="ad-rail ad-rail-right"><div class="ad-box"><div class="ad-badge">広告</div><strong>広告枠</strong><p>PC表示では本編を中央の細いカラムに寄せるための広告枠です。</p></div></aside></div>
+</div>
+<!-- Common Footer Start -->
+<footer class="wrap footer">
+<div class="footer-site-map">
+<div class="footer-site-map-inner">
+<div class="footer-head">
+<div class="footer-brand">
+<strong>ワンピースカード攻略</strong>
+<p>
+            ワンピースカードの最新情報・環境デッキ・各デッキ解説を
+            すぐ辿れるサイトマップ
+          </p>
+</div>
+<div class="footer-top-link">
+<a href="../../../index.html">トップへ戻る</a>
+</div>
+</div>
+<div class="footer-grid">
+<section class="footer-column footer-column-latest">
+<div class="footer-subgroup">
+<h4>最新情報</h4>
+<div class="footer-links">
+<a href="../../../articles/latest/latest-booster.html">最新弾</a>
+<a href="../../../articles/latest/latest-starter-deck.html">最新ST</a>
+<a href="../../../articles/latest/banned-restricted-2026-05.html">制限禁止</a>
+</div>
+</div>
+<div class="footer-subgroup">
+<h4>最強・環境</h4>
+<div class="footer-links">
+<a href="../../../articles/meta/tier-list.html">最強デッキ</a>
+<a href="../../../articles/meta/new-set-deck-review.html">最新弾デッキ</a>
+<a href="../../../articles/meta/decks/index.html">デッキ一覧</a>
+</div>
+</div>
+</section>
+<section class="footer-column footer-column-deck-new">
+<h4>&#x30C7;&#x30C3;&#x30AD;&#x500B;&#x5225;&#xFF08;&#x6700;&#x65B0;&#x5F3E;&#xFF09;</h4>
+<div class="footer-links">
+<a href="blue-green-luffy.html">&#x9752;&#x7DD1;&#x30EB;&#x30D5;&#x30A3;</a>
+<a href="red-ace.html">&#x8D64;&#x30A8;&#x30FC;&#x30B9;</a>
+<a href="blue-buggy.html">&#x9752;&#x30D0;&#x30AE;&#x30FC;</a>
+<a href="purple-sengoku.html">&#x7D2B;&#x30BB;&#x30F3;&#x30B4;&#x30AF;</a>
+<a href="black-yamato.html">&#x9ED2;&#x30E4;&#x30DE;&#x30C8;</a>
+<a href="black-yellow-teach.html">&#x9ED2;&#x9EC4;&#x30C6;&#x30A3;&#x30FC;&#x30C1;</a>
+</div>
+</section>
+<section class="footer-column footer-column-deck-meta">
+<h4>&#x30C7;&#x30C3;&#x30AD;&#x500B;&#x5225;&#xFF08;&#x74B0;&#x5883;&#x30C7;&#x30C3;&#x30AD;&#xFF09;</h4>
+<div class="footer-links">
+<a href="purple-enel.html">&#x7D2B;&#x30A8;&#x30CD;&#x30EB;</a>
+<a href="red-blue-lucy.html">&#x8D64;&#x9752;&#x30EB;&#x30FC;&#x30B7;&#x30FC;</a>
+<a href="blue-yellow-nami.html">&#x9752;&#x9EC4;&#x30CA;&#x30DF;</a>
+<a href="yellow-luffy-skypiea.html">&#x9EC4;&#x30EB;&#x30D5;&#x30A3;(&#x7A7A;&#x5CF6;)</a>
+<a href="red-blue-ace.html">&#x8D64;&#x9752;&#x30A8;&#x30FC;&#x30B9;</a>
+<a href="blue-yellow-hancock.html">&#x9752;&#x9EC4;&#x30CF;&#x30F3;&#x30B3;&#x30C3;&#x30AF;</a>
+<a href="green-mihawk.html">&#x7DD1;&#x30DF;&#x30DB;&#x30FC;&#x30AF;</a>
+<a href="black-imu.html">&#x9ED2;&#x30A4;&#x30E0;</a>
+</div>
+</section>
+<section class="footer-column footer-column-special">
+<h4>特集・初心者</h4>
+<div class="footer-subgroup">
+<p class="footer-subgroup-title">注目記事</p>
+<div class="footer-links">
+<a href="../../../articles/guides/featured/expensive-card-ranking.html">高騰カードランキング</a>
+<a href="../../../articles/guides/featured/influencer-list.html">注目インフルエンサー</a>
+<a href="../../../articles/guides/featured/tournament-watch.html">注目の大会</a>
+</div>
+</div>
+<div class="footer-subgroup">
+<p class="footer-subgroup-title">初心者おすすめ</p>
+<div class="footer-links">
+<a href="../../../articles/guides/beginners/how-to-start.html">ワンピカードの始め方</a>
+<a href="../../../articles/guides/beginners/beginner-recommended-decks.html">初心者おすすめデッキ</a>
+<a href="../../../articles/guides/beginners/deckbuilding-basics.html">デッキの組み方と考え方</a>
+<a href="../../../articles/guides/beginners/tournament-entry-guide.html">大会への応募方法</a>
+</div>
+</div>
+</section>
+</div>
+<div class="footer-bottom">
+        © 13OSTON CARD
+      </div>
+</div>
+</div>
+</footer>
 </body>
 </html>

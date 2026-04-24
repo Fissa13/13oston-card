@@ -3007,10 +3007,301 @@
   }
 }
 
+
+/* ===== override: カラム数の4段階可変：広告幅を一般的な300pxに調整 ===== */
+/*
+  1) 左広告300px / 本文860px / 右メニュー280px / 右広告300px
+  2) 左広告300px / 本文860px / 右メニュー280px
+  3) 本文860px / 右メニュー280px
+  4) 本文100%
+*/
+.article-rails-layout{
+  display:grid !important;
+  grid-template-columns:300px 860px 280px 300px !important;
+  gap:18px !important;
+  align-items:start !important;
+  justify-content:center !important;
+}
+.article-rails-layout > .ad-rail{
+  width:300px !important;
+  max-width:300px !important;
+  min-width:300px !important;
+}
+.article-rails-layout > .ad-rail-left-2{ display:none !important; }
+.article-rails-layout > .ad-rail-left-1{ grid-column:1 !important; display:block !important; }
+.article-rails-layout > .main{
+  grid-column:2 !important;
+  width:860px !important;
+  max-width:860px !important;
+  min-width:860px !important;
+}
+.article-rails-layout > .sidebar{
+  grid-column:3 !important;
+  display:block !important;
+  width:280px !important;
+  max-width:280px !important;
+  min-width:280px !important;
+}
+.article-rails-layout > .ad-rail-right{ grid-column:4 !important; display:block !important; }
+.article-rails-layout .ad-box{
+  width:300px !important;
+  max-width:300px !important;
+  min-height:600px !important;
+  padding:16px 14px !important;
+}
+.article-rails-layout > .main .hero,
+.article-rails-layout > .main .toc-box,
+.article-rails-layout > .main .box,
+.article-rails-layout > .main .article{
+  width:100% !important;
+  max-width:100% !important;
+  min-width:0 !important;
+}
+
+/* ② 右広告を消す：左広告 / 本文 / 右メニュー */
+@media (max-width:1810px){
+  .article-rails-layout{ grid-template-columns:300px 860px 280px !important; }
+  .article-rails-layout > .ad-rail-left-1{ grid-column:1 !important; display:block !important; }
+  .article-rails-layout > .main{ grid-column:2 !important; width:860px !important; max-width:860px !important; min-width:860px !important; }
+  .article-rails-layout > .sidebar{ grid-column:3 !important; display:block !important; width:280px !important; max-width:280px !important; min-width:280px !important; }
+  .article-rails-layout > .ad-rail-right{ display:none !important; }
+}
+
+/* ③ 左広告も消す：本文 / 右メニュー */
+@media (max-width:1480px){
+  .article-rails-layout{ grid-template-columns:860px 280px !important; justify-content:center !important; }
+  .article-rails-layout > .ad-rail-left-1,
+  .article-rails-layout > .ad-rail-left-2,
+  .article-rails-layout > .ad-rail-right{ display:none !important; }
+  .article-rails-layout > .main{ grid-column:1 !important; width:860px !important; max-width:860px !important; min-width:860px !important; }
+  .article-rails-layout > .sidebar{ grid-column:2 !important; display:block !important; width:280px !important; max-width:280px !important; min-width:280px !important; }
+}
+
+/* ④ 右メニューを消す：本文100% */
+@media (max-width:1180px){
+  html, body{ overflow-x:hidden !important; width:100% !important; max-width:100% !important; }
+  .page,
+  .wrap{ min-width:0 !important; width:min(100% - 16px, 1220px) !important; max-width:100% !important; }
+  .article-rails-layout{ grid-template-columns:minmax(0,1fr) !important; gap:0 !important; justify-content:stretch !important; }
+  .article-rails-layout > .ad-rail-left-1,
+  .article-rails-layout > .ad-rail-left-2,
+  .article-rails-layout > .ad-rail-right,
+  .article-rails-layout > .sidebar{ display:none !important; }
+  .article-rails-layout > .main{ grid-column:1 !important; width:100% !important; max-width:100% !important; min-width:0 !important; }
+  .article-rails-layout > .main .hero,
+  .article-rails-layout > .main .toc-box,
+  .article-rails-layout > .main .box,
+  .article-rails-layout > .main .article{ width:100% !important; max-width:100% !important; min-width:0 !important; }
+  .article-rails-layout > .main .hero-title{ white-space:normal !important; }
+  .article-rails-layout > .main .table{ display:block !important; width:100% !important; max-width:100% !important; overflow-x:auto !important; white-space:nowrap !important; }
+}
+
+
+
+/* ===== final override: 右メニュー消失後も本文は最大860px ===== */
+@media (max-width:1180px){
+  html, body{ overflow-x:hidden !important; width:100% !important; max-width:100% !important; }
+  .page,
+  .wrap{ min-width:0 !important; width:min(100% - 16px, 1220px) !important; max-width:1220px !important; }
+  .article-rails-layout{ grid-template-columns:minmax(0, 860px) !important; gap:0 !important; justify-content:center !important; justify-items:center !important; }
+  .article-rails-layout > .ad-rail-left-1,
+  .article-rails-layout > .ad-rail-left-2,
+  .article-rails-layout > .ad-rail-right,
+  .article-rails-layout > .sidebar{ display:none !important; }
+  .article-rails-layout > .main{ grid-column:1 !important; width:100% !important; max-width:860px !important; min-width:0 !important; justify-self:center !important; }
+  .article-rails-layout > .main .hero,
+  .article-rails-layout > .main .toc-box,
+  .article-rails-layout > .main .box,
+  .article-rails-layout > .main .article{ width:100% !important; max-width:100% !important; min-width:0 !important; }
+}
+@media (max-width:860px){
+  .article-rails-layout{ grid-template-columns:minmax(0, 1fr) !important; }
+  .article-rails-layout > .main{ width:100% !important; max-width:860px !important; min-width:0 !important; }
+}
+@media (max-width:430px){
+  .article-rails-layout > .main{ width:100% !important; max-width:100% !important; min-width:0 !important; }
+}
+
+
+
+/* ===== table layout fix after right menu disappears ===== */
+/* 右メニューが消えた直後は本文860pxを維持するため、表はPC表示のままにする */
+@media (max-width: 900px){
+  .article-rails-layout > .main .table{
+    display: table !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+    white-space: normal !important;
+    table-layout: auto !important;
+  }
+}
+
+/* 画面幅が本当に狭いスマホだけ、表を横スクロールに戻す */
+@media (max-width: 640px){
+  .article-rails-layout > .main .table{
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+  }
+}
+
+
+
+
+/* ===== article rails layout final spec ===== */
+html,
+body{
+  overflow-x:hidden !important;
+}
+.article-rails-layout{
+  display:grid !important;
+  grid-template-columns:300px 860px 280px 300px !important;
+  gap:18px !important;
+  align-items:start !important;
+  justify-content:center !important;
+  max-width:100% !important;
+  min-width:0 !important;
+}
+.article-rails-layout > .ad-rail{
+  width:300px !important;
+  max-width:300px !important;
+  min-width:300px !important;
+}
+.article-rails-layout > .ad-rail-left-2{
+  display:none !important;
+}
+.article-rails-layout > .ad-rail-left-1{
+  grid-column:1 !important;
+  display:block !important;
+}
+.article-rails-layout > .main{
+  grid-column:2 !important;
+  width:860px !important;
+  max-width:860px !important;
+  min-width:860px !important;
+}
+.article-rails-layout > .sidebar{
+  grid-column:3 !important;
+  display:block !important;
+  width:280px !important;
+  max-width:280px !important;
+  min-width:280px !important;
+}
+.article-rails-layout > .ad-rail-right{
+  grid-column:4 !important;
+  display:block !important;
+}
+.article-rails-layout .ad-box{
+  width:300px !important;
+  max-width:300px !important;
+  min-height:600px !important;
+}
+.article-rails-layout > .main .hero,
+.article-rails-layout > .main .toc-box,
+.article-rails-layout > .main .box,
+.article-rails-layout > .main .article{
+  width:100% !important;
+  max-width:100% !important;
+  min-width:0 !important;
+}
+
+@media (max-width:1810px){
+  .article-rails-layout{
+    grid-template-columns:300px 860px 280px !important;
+  }
+  .article-rails-layout > .ad-rail-left-1{
+    grid-column:1 !important;
+    display:block !important;
+  }
+  .article-rails-layout > .main{
+    grid-column:2 !important;
+    width:860px !important;
+    max-width:860px !important;
+    min-width:860px !important;
+  }
+  .article-rails-layout > .sidebar{
+    grid-column:3 !important;
+    display:block !important;
+    width:280px !important;
+    max-width:280px !important;
+    min-width:280px !important;
+  }
+  .article-rails-layout > .ad-rail-right{
+    display:none !important;
+  }
+}
+
+@media (max-width:1480px){
+  .article-rails-layout{
+    grid-template-columns:860px 280px !important;
+    justify-content:center !important;
+  }
+  .article-rails-layout > .ad-rail-left-1,
+  .article-rails-layout > .ad-rail-left-2,
+  .article-rails-layout > .ad-rail-right{
+    display:none !important;
+  }
+  .article-rails-layout > .main{
+    grid-column:1 !important;
+    width:860px !important;
+    max-width:860px !important;
+    min-width:860px !important;
+  }
+  .article-rails-layout > .sidebar{
+    grid-column:2 !important;
+    display:block !important;
+    width:280px !important;
+    max-width:280px !important;
+    min-width:280px !important;
+  }
+}
+
+@media (max-width:1160px){
+  .page,
+  .wrap{
+    min-width:0 !important;
+    max-width:100% !important;
+  }
+  .article-rails-layout{
+    grid-template-columns:minmax(0, 860px) !important;
+    gap:0 !important;
+    justify-content:center !important;
+    justify-items:center !important;
+  }
+  .article-rails-layout > .ad-rail-left-1,
+  .article-rails-layout > .ad-rail-left-2,
+  .article-rails-layout > .ad-rail-right,
+  .article-rails-layout > .sidebar{
+    display:none !important;
+  }
+  .article-rails-layout > .main{
+    grid-column:1 !important;
+    width:100% !important;
+    max-width:860px !important;
+    min-width:0 !important;
+    justify-self:center !important;
+  }
+}
+
+@media (max-width:860px){
+  .article-rails-layout{
+    grid-template-columns:minmax(0, 1fr) !important;
+    justify-content:stretch !important;
+    justify-items:stretch !important;
+  }
+  .article-rails-layout > .main{
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+  }
+}
+/* ===== /article rails layout final spec ===== */
 </style>
 </head>
-<body class="deck-purple-enel">
-<!-- Common Header Start -->
+<body>
 <header class="topbar">
 <div class="wrap topbar-inner"></div>
 </header>
@@ -3220,34 +3511,37 @@
 <strong>PVランキング TOP5</strong>
 </div>
 <ol class="pv-ranking-list">
-<li><a href="#"><span class="pv-rank">1</span><span class="pv-title">最強デッキランキング｜Tier表</span></a></li>
-<li><a href="#"><span class="pv-rank">2</span><span class="pv-title">最新弾デッキ評価</span></a></li>
-<li><a href="#"><span class="pv-rank">3</span><span class="pv-title">初心者おすすめデッキ</span></a></li>
-<li><a href="#"><span class="pv-rank">4</span><span class="pv-title">大会応募のやり方</span></a></li>
-<li><a href="#"><span class="pv-rank">5</span><span class="pv-title">高騰カードランキング</span></a></li>
+<li><a href="../meta/decks/purple-enel.html"><span class="pv-rank">1</span><span class="pv-title">&#x7D2B;&#x30A8;&#x30CD;&#x30EB; &#x5B8C;&#x5168;&#x653B;&#x7565;&#x30AC;&#x30A4;&#x30C9;</span></a></li>
+<li><a href="../meta/decks/blue-green-luffy.html"><span class="pv-rank">2</span><span class="pv-title">&#x9752;&#x7DD1;&#x30EB;&#x30D5;&#x30A3; &#x5B8C;&#x5168;&#x653B;&#x7565;&#x30AC;&#x30A4;&#x30C9;</span></a></li>
+<li><a href="../meta/decks/red-ace.html"><span class="pv-rank">3</span><span class="pv-title">&#x8D64;&#x30A8;&#x30FC;&#x30B9; &#x5B8C;&#x5168;&#x653B;&#x7565;&#x30AC;&#x30A4;&#x30C9;</span></a></li>
+<li><a href="../meta/decks/blue-yellow-nami.html"><span class="pv-rank">4</span><span class="pv-title">&#x9752;&#x9EC4;&#x30CA;&#x30DF; &#x5B8C;&#x5168;&#x653B;&#x7565;&#x30AC;&#x30A4;&#x30C9;</span></a></li>
+<li><a href="../meta/decks/red-blue-lucy.html"><span class="pv-rank">5</span><span class="pv-title">&#x8D64;&#x9752;&#x30EB;&#x30FC;&#x30B7;&#x30FC; &#x5B8C;&#x5168;&#x653B;&#x7565;&#x30AC;&#x30A4;&#x30C9;</span></a></li>
 </ol>
 </div>
 </div>
 </section>
 <section class="box section">
 <div class="section-title">
-<h3>デッキ一覧</h3>
+<h3>&#x30C7;&#x30C3;&#x30AD;&#x4E00;&#x89A7;</h3>
 </div>
 <div class="section-body">
 <div class="side-list">
-<div class="side-list-label">&lt;最新弾&gt;</div>
-<a href="#">紫エネル</a>
-<a href="#">赤青ルーシー</a>
-<a href="#">黄ルフィ(空島)</a>
-<a href="#">赤緑クリーク</a>
-<a href="#">緑黒ブルック</a>
-<a href="#">青レベッカ</a>
-<div class="side-list-label">&lt;環境デッキ&gt;</div>
-<a href="#">青黄ハンコック</a>
-<a href="#">青黄ナミ</a>
-<a href="#">黒クロコダイル</a>
-<a href="#">緑ミホーク</a>
-<a href="#">赤青エース</a>
+<div class="side-list-label">&lt;&#x6700;&#x65B0;&#x5F3E;&gt;</div>
+<a href="../meta/decks/blue-green-luffy.html">&#x9752;&#x7DD1;&#x30EB;&#x30D5;&#x30A3;</a>
+<a href="../meta/decks/red-ace.html">&#x8D64;&#x30A8;&#x30FC;&#x30B9;</a>
+<a href="../meta/decks/blue-buggy.html">&#x9752;&#x30D0;&#x30AE;&#x30FC;</a>
+<a href="../meta/decks/purple-sengoku.html">&#x7D2B;&#x30BB;&#x30F3;&#x30B4;&#x30AF;</a>
+<a href="../meta/decks/black-yamato.html">&#x9ED2;&#x30E4;&#x30DE;&#x30C8;</a>
+<a href="../meta/decks/black-yellow-teach.html">&#x9ED2;&#x9EC4;&#x30C6;&#x30A3;&#x30FC;&#x30C1;</a>
+<div class="side-list-label">&lt;&#x74B0;&#x5883;&#x30C7;&#x30C3;&#x30AD;&gt;</div>
+<a href="../meta/decks/purple-enel.html">&#x7D2B;&#x30A8;&#x30CD;&#x30EB;</a>
+<a href="../meta/decks/red-blue-lucy.html">&#x8D64;&#x9752;&#x30EB;&#x30FC;&#x30B7;&#x30FC;</a>
+<a href="../meta/decks/blue-yellow-nami.html">&#x9752;&#x9EC4;&#x30CA;&#x30DF;</a>
+<a href="../meta/decks/yellow-luffy-skypiea.html">&#x9EC4;&#x30EB;&#x30D5;&#x30A3;(&#x7A7A;&#x5CF6;)</a>
+<a href="../meta/decks/red-blue-ace.html">&#x8D64;&#x9752;&#x30A8;&#x30FC;&#x30B9;</a>
+<a href="../meta/decks/blue-yellow-hancock.html">&#x9752;&#x9EC4;&#x30CF;&#x30F3;&#x30B3;&#x30C3;&#x30AF;</a>
+<a href="../meta/decks/green-mihawk.html">&#x7DD1;&#x30DF;&#x30DB;&#x30FC;&#x30AF;</a>
+<a href="../meta/decks/black-imu.html">&#x9ED2;&#x30A4;&#x30E0;</a>
 </div>
 </div>
 </section>
@@ -3290,24 +3584,27 @@
 </div>
 </section>
 <section class="footer-column footer-column-deck-new">
-<h4>デッキ個別（最新弾）</h4>
+<h4>&#x30C7;&#x30C3;&#x30AD;&#x500B;&#x5225;&#xFF08;&#x6700;&#x65B0;&#x5F3E;&#xFF09;</h4>
 <div class="footer-links">
-<a href="/decks/purple-ener">紫エネル</a>
-<a href="/decks/red-blue-lucy">赤青ルーシー</a>
-<a href="/decks/yellow-luffy-skypia">黄ルフィ(空島)</a>
-<a href="/decks/red-green-krieg">赤緑クリーク</a>
-<a href="/decks/green-black-brook">緑黒ブルック</a>
-<a href="/decks/blue-rebecca">青レベッカ</a>
+<a href="../meta/decks/blue-green-luffy.html">&#x9752;&#x7DD1;&#x30EB;&#x30D5;&#x30A3;</a>
+<a href="../meta/decks/red-ace.html">&#x8D64;&#x30A8;&#x30FC;&#x30B9;</a>
+<a href="../meta/decks/blue-buggy.html">&#x9752;&#x30D0;&#x30AE;&#x30FC;</a>
+<a href="../meta/decks/purple-sengoku.html">&#x7D2B;&#x30BB;&#x30F3;&#x30B4;&#x30AF;</a>
+<a href="../meta/decks/black-yamato.html">&#x9ED2;&#x30E4;&#x30DE;&#x30C8;</a>
+<a href="../meta/decks/black-yellow-teach.html">&#x9ED2;&#x9EC4;&#x30C6;&#x30A3;&#x30FC;&#x30C1;</a>
 </div>
 </section>
 <section class="footer-column footer-column-deck-meta">
-<h4>デッキ個別（環境）</h4>
+<h4>&#x30C7;&#x30C3;&#x30AD;&#x500B;&#x5225;&#xFF08;&#x74B0;&#x5883;&#x30C7;&#x30C3;&#x30AD;&#xFF09;</h4>
 <div class="footer-links">
-<a href="/decks/blue-yellow-hancock">青黄ハンコック</a>
-<a href="/decks/blue-yellow-nami">青黄ナミ</a>
-<a href="/decks/black-crocodile">黒クロコダイル</a>
-<a href="/decks/green-mihawk">緑ミホーク</a>
-<a href="/decks/red-blue-ace">赤青エース</a>
+<a href="../meta/decks/purple-enel.html">&#x7D2B;&#x30A8;&#x30CD;&#x30EB;</a>
+<a href="../meta/decks/red-blue-lucy.html">&#x8D64;&#x9752;&#x30EB;&#x30FC;&#x30B7;&#x30FC;</a>
+<a href="../meta/decks/blue-yellow-nami.html">&#x9752;&#x9EC4;&#x30CA;&#x30DF;</a>
+<a href="../meta/decks/yellow-luffy-skypiea.html">&#x9EC4;&#x30EB;&#x30D5;&#x30A3;(&#x7A7A;&#x5CF6;)</a>
+<a href="../meta/decks/red-blue-ace.html">&#x8D64;&#x9752;&#x30A8;&#x30FC;&#x30B9;</a>
+<a href="../meta/decks/blue-yellow-hancock.html">&#x9752;&#x9EC4;&#x30CF;&#x30F3;&#x30B3;&#x30C3;&#x30AF;</a>
+<a href="../meta/decks/green-mihawk.html">&#x7DD1;&#x30DF;&#x30DB;&#x30FC;&#x30AF;</a>
+<a href="../meta/decks/black-imu.html">&#x9ED2;&#x30A4;&#x30E0;</a>
 </div>
 </section>
 <section class="footer-column footer-column-special">
