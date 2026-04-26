@@ -3558,6 +3558,42 @@ body{
   width:auto !important;
 }
 
+.leader-table-scroll{
+  width:100%;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+  margin-bottom:20px;
+}
+.article-rails-layout > .main .leader-table{
+  display:table !important;
+  width:100% !important;
+  min-width:720px;
+  max-width:none !important;
+  table-layout:fixed !important;
+  white-space:normal !important;
+}
+.article-rails-layout > .main .leader-table th,
+.article-rails-layout > .main .leader-table td{
+  word-break:normal !important;
+  overflow-wrap:break-word !important;
+  white-space:normal !important;
+}
+.article-rails-layout > .main .leader-table th:nth-child(1),
+.article-rails-layout > .main .leader-table td:nth-child(1){
+  width:24% !important;
+  white-space:nowrap !important;
+}
+.article-rails-layout > .main .leader-table th:nth-child(2),
+.article-rails-layout > .main .leader-table td:nth-child(2){
+  width:12% !important;
+  white-space:nowrap !important;
+  text-align:center;
+}
+.article-rails-layout > .main .leader-table th:nth-child(3),
+.article-rails-layout > .main .leader-table td:nth-child(3){
+  width:64% !important;
+}
+
 
 /* 注目カード：コミックパラレル3枚横並び */
 .comic-parallel-gallery{
@@ -3662,15 +3698,15 @@ body{
 <section id="notable">
 <h2>注目の収録カード</h2>
 <h3>リーダー一覧</h3>
-<table class="table card-table"><thead><tr><th>リーダー名</th><th>色</th><th>効果</th></tr></thead><tbody><tr><td>モンキー・D・ルフィ</td><td>緑/青</td><td>【起動メイン】【ターン1回】自分のキャラが特徴《インペルダウン》を持つキャラのみの場合、自分のドン!!2枚までを、アクティブにする。</td></tr><tr><td>ポートガス・D・エース</td><td>赤</td><td>【起動メイン】【ターン1回】自分のパワー8000以上の「モンキー・D・ルフィ」か『白ひげ海賊団』を含む特徴を持つキャラ1枚までは、このターン中【速攻】を得る。</td></tr><tr><td>バギー</td><td>青</td><td>【ドン!!×1】【ターン1回】自分の特徴《インペルダウン》を持つキャラが場を離れた時、自分の手札から「インペルダウンの囚人」1枚までを登場させる。</td></tr><tr><td>センゴク</td><td>紫</td><td>【起動メイン】自分のアクティブのドン!!8枚をドン!!デッキに戻す：手札からカード名の異なる特徴《大将》を持つキャラ3枚まで登場させる。</td></tr><tr><td>ヤマト</td><td>黒</td><td>自分のトラッシュから特徴《ワノ国》を持つキャラが登場した時、そのキャラはこのターン中【速攻】を得る。</td></tr><tr><td>マーシャル・D・ティーチ</td><td>黒/黄</td><td>【相手ターン中】自分のキャラすべてをコスト+1。【相手のアタック時】【ターン1回】手札のトリガーカード1枚を捨てることで攻撃対象を変更できる。</td></tr></tbody></table>
+<div class="leader-table-scroll"><table class="table card-table leader-table"><thead><tr><th>リーダー名</th><th>色</th><th>効果</th></tr></thead><tbody><tr><td>モンキー・D・ルフィ</td><td>緑/青</td><td>【起動メイン】【ターン1回】自分のキャラが特徴《インペルダウン》を持つキャラのみの場合、自分のドン!!2枚までを、アクティブにする。</td></tr><tr><td>ポートガス・D・エース</td><td>赤</td><td>【起動メイン】【ターン1回】自分のパワー8000以上の「モンキー・D・ルフィ」か『白ひげ海賊団』を含む特徴を持つキャラ1枚までは、このターン中【速攻】を得る。</td></tr><tr><td>バギー</td><td>青</td><td>【ドン!!×1】【ターン1回】自分の特徴《インペルダウン》を持つキャラが場を離れた時、自分の手札から「インペルダウンの囚人」1枚までを登場させる。</td></tr><tr><td>センゴク</td><td>紫</td><td>【起動メイン】自分のアクティブのドン!!8枚をドン!!デッキに戻す：手札からカード名の異なる特徴《大将》を持つキャラ3枚まで登場させる。</td></tr><tr><td>ヤマト</td><td>黒</td><td>自分のトラッシュから特徴《ワノ国》を持つキャラが登場した時、そのキャラはこのターン中【速攻】を得る。</td></tr><tr><td>マーシャル・D・ティーチ</td><td>黒/黄</td><td>【相手ターン中】自分のキャラすべてをコスト+1。【相手のアタック時】【ターン1回】手札のトリガーカード1枚を捨てることで攻撃対象を変更できる。</td></tr></tbody></table></div>
 <p>リーダーは発売前情報のため、色や効果の詳細が変わる可能性があります。記事内では断定しすぎず、公開済み情報に合わせて更新できる形にしておくのがおすすめです。</p>
 <div class="deck-rating-link-wrap">
-<a class="deck-rating-link" href="#">新弾デッキ評価</a>
+<a class="deck-rating-link" href="../meta/new-set-deck-review.html">新弾デッキ評価</a>
 </div>
 <h3>注目カード</h3>
 <h4>コミックパラレル</h4><div class="comic-parallel-gallery"><figure class="comic-parallel-card"><img alt="サカズキ コミックパラレル" loading="lazy" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-booster/latest-booster-sakazuki-comic-parallel.png"/></figure><figure class="comic-parallel-card"><img alt="クザン コミックパラレル" loading="lazy" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-booster/latest-booster-kuzan-comic-parallel.png"/></figure><figure class="comic-parallel-card"><img alt="ボルサリーノ コミックパラレル" loading="lazy" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-booster/latest-booster-borsalino-comic-parallel.png"/></figure></div>
 <div class="price-ranking-link-wrap">
-<p>注目カードは、現時点では高レアリティ枠とテーマ強化カードを中心に見るのが分かりやすいです。特に三大将関連は見た目のインパクトが強く、発売前から話題になりやすいため、記事内でも優先して取り上げたいポイントです。</p><a class="price-ranking-link" href="#">高額カードランキング</a>
+<p>注目カードは、現時点では高レアリティ枠とテーマ強化カードを中心に見るのが分かりやすいです。特に三大将関連は見た目のインパクトが強く、発売前から話題になりやすいため、記事内でも優先して取り上げたいポイントです。</p><a class="price-ranking-link" href="../guides/featured/expensive-card-ranking.html">高額カードランキング</a>
 </div>
 </section>
 <section class="summary-section-fix" id="summary">
