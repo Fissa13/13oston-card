@@ -7,7 +7,7 @@
 <!-- Replace: Meta Title -->
 <title>【ST30】ルフィ＆エースは強い？評価とおすすめ構築を解説 | TEA CARD</title>
 <!-- Replace: Meta Description -->
-<meta name="description" content="ワンピースカード最新スタートデッキST30「ルフィ＆エース」の評価、デッキ内容、基本的な回し方、相性の良いカード、おすすめ構築や改造方針を初心者向けに整理します。">
+<meta content="ワンピースカード最新スタートデッキST30「ルフィ＆エース」の評価、デッキ内容、基本的な回し方、相性の良いカード、おすすめ構築や改造方針を初心者向けに整理します。" name="description"/>
 <style>
 
     :root{
@@ -963,6 +963,12 @@
       word-break: normal;
       overflow-wrap: normal;
       white-space: normal;
+    }
+
+    .article .no-wrap-paragraph{
+      max-width: none;
+      overflow-x: auto;
+      white-space: nowrap;
     }
 
 
@@ -2926,6 +2932,20 @@
     .article .card-collection{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:18px;}
     .article .card-collection-item{display:grid;grid-template-columns:118px 1fr;gap:16px;padding:16px;border:1px solid rgba(209,170,61,.24);border-radius:16px;background:linear-gradient(180deg,#fff 0%,#fffdfa 100%);box-shadow:var(--shadow-soft);}
     .article .card-thumb-link{display:block;color:inherit;text-decoration:none;}
+
+    .article .card-thumb-image{
+      width:100%;
+      height:auto;
+      border-radius:14px;
+      border:1px solid rgba(209,170,61,.28);
+      background:#fff;
+      box-shadow:0 8px 18px rgba(18,24,48,.08);
+      transition:transform .18s ease,box-shadow .18s ease;
+    }
+    .article .card-thumb-link:hover .card-thumb-image{
+      transform:translateY(-2px);
+      box-shadow:0 12px 24px rgba(18,24,48,.13);
+    }
     .article .card-thumb-fallback{position:relative;min-height:168px;border-radius:14px;overflow:hidden;border:1px solid rgba(209,170,61,.28);background:linear-gradient(180deg,#f7f0dc 0%,#ece3c7 100%);display:flex;flex-direction:column;justify-content:space-between;padding:12px;box-shadow:inset 0 1px 0 rgba(255,255,255,.5);}
     .article .card-thumb-fallback::before{content:"";position:absolute;inset:10px;border-radius:10px;border:1px solid rgba(35,43,99,.12);pointer-events:none;}
     .article .card-thumb-top{display:flex;justify-content:space-between;gap:8px;align-items:flex-start;position:relative;z-index:1;}
@@ -3192,7 +3212,7 @@ body{
 <div class="brand-row">
 <div class="wrap brand-inner">
 <div class="brand">
-<div class="logo"><img alt="13OSTON CARDロゴ" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-starter-deck/latest-starter-deck-site-logo.png"/></div>
+<div class="logo"><img alt="13OSTON CARDロゴ" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-starter-deck/latest-starter-deck-site-logo.webp"/></div>
 <div>
 <h1>13OSTON CARD</h1>
 <p>ワンピースカードの最新情報、環境デッキ、初心者向けガイドをまとめた総合攻略メディア</p>
@@ -3230,142 +3250,80 @@ body{
 <div class="hero-tags"><span class="hero-tag">🃏 ST-30</span><span class="hero-tag">📅 2026年4月11日発売</span><span class="hero-tag">⭐ 評価：B（暫定）</span><span class="hero-tag">📘 スタートデッキ</span></div></div>
 </div>
 </section><section class="box toc-box"><div class="box-head"><h2>目次</h2></div><div class="box-body"><!-- Replace: TOC Items -->
-<ol class="toc toc-simple"><li><a href="#evaluation">デッキ評価</a></li><li><a href="#recipe">デッキ内容</a></li><li><a href="#howto">基本的な回し方</a></li><li><a href="#upgrade">相性の良いカード</a></li><li><a href="#summary">まとめ</a></li></ol></div></section><article class="box">
+<ol class="toc toc-simple"><li><a href="#evaluation">デッキ評価</a></li><li><a href="#howto">基本的な回し方</a></li><li><a href="#recipe">収録カード一覧</a></li><li><a href="#summary">まとめ</a></li></ol></div></section><article class="box">
 <!-- Article Section Start -->
-<div class="article"><section id="evaluation" class="deck-rating-section"><h2>デッキ評価</h2>
+<div class="article"><section class="deck-rating-section" id="evaluation"><h2>デッキ評価</h2>
 <!-- Replace: ST Rating Block -->
 <div class="deck-rating-compact">
-  <div class="deck-rating-head">
-    <div class="deck-rating-rank"><strong>B</strong></div>
-    <div class="deck-rating-copy">
-      <h3>中堅〜準上位の安定型リーダー</h3>
-      <p>4ターン目前後の速攻と、相手ターン中の+3000付与でテンポを作るデッキです。環境トップ級の爆発力までは見えない一方、開封そのままでも動きが分かりやすく、初心者が握りやすい完成度があります。</p>
-    </div>
-  </div>
-
-  <div class="deck-rating-pills">
-    <span class="rating-pill">🧩 難易度: ★★☆☆☆ やさしめ</span>
-    <span class="rating-pill">⚡ デッキの速さ: ★★★★☆ 速め</span>
-    <span class="rating-pill">🛡️ 安定感: ★★★★☆ 高め</span>
-  </div>
-
-  <div class="deck-rating-pointbox">
-    <strong>評価のポイント</strong>
-    <p>元々のパワー6000を軸に組まれているため、カード同士の噛み合いは良好です。相手ターン中に「ポートガス・D・エース」と「モンキー・D・ルフィ」が+3000されるので、速攻で出した主役が返しで残りやすいのが最大の魅力です。一方で、元々のパワー7000以上を置くとリーダーが弱体化するため、構築の自由度は少し狭めです。</p>
-  </div>
-</div>
-</section><section id="recipe"><h2>デッキ内容</h2>
-<p class="content-intro">まずは開封そのままの内容をベースにした基本形です。収録カードは<strong>リーダー1種・スーパーレア2種・コモン14種</strong>で構成されており、ここではレアリティ順（上がSR）で並べています。</p>
-<div class="article-table-wrap">
-<table class="article-table">
-<thead>
-<tr><th>カード名</th><th>枚数</th><th>軽い採用理由</th></tr>
-</thead>
-<tbody>
-<tr><td>イナズマ</td><td>2</td><td>元々のパワー6000キャラを探しにいける初動。序盤の安定感を作る役。</td></tr>
-<tr><td>エドワード・ニューゲート</td><td>4</td><td>終盤の全体打点アップ担当。横並びした盤面の押し込み性能を上げる。</td></tr>
-<tr><td>エンポリオ・イワンコフ</td><td>2</td><td>手札の質を整える役。欲しい主役札に触りやすくなる。</td></tr>
-<tr><td>ジョズ</td><td>4</td><td>6000ラインの枚数確保。シンプルだが役割は分かりやすい。</td></tr>
-<tr><td>ジンベエ</td><td>4</td><td>中盤以降の手札補充役。長期戦での息切れを少し補える。</td></tr>
-<tr><td>ポートガス・D・エース</td><td>2</td><td>主役の速攻札。攻めながら相手キャラのラインを下げられる。</td></tr>
-<tr><td>マルコ</td><td>4</td><td>ブロッカー兼盤面維持の核。倒されても戻りやすいのが強い。</td></tr>
-<tr><td>リトルオーズJr.</td><td>4</td><td>除去対策。6000キャラを守りながらドローも狙える。</td></tr>
-<tr><td>クロコダイル</td><td>4</td><td>ブロッカー兼ロック要員。相手の返しを遅らせやすい。</td></tr>
-<tr><td>バギー</td><td>2</td><td>小回りの利く守り札。6000キャラを守る補助として優秀。</td></tr>
-<tr><td>モンキー・D・ルフィ</td><td>2</td><td>もう1枚の主役速攻札。ブロッカーを寝かせて通しやすい。</td></tr>
-<tr><td>Mr.2・ボン・クレー</td><td>4</td><td>6000ラインの枚数確保。デッキ全体の安定感に貢献する。</td></tr>
-<tr><td>Mr.3</td><td>2</td><td>ドン!!を乗せ替えて打点調整。細かい詰めに便利。</td></tr>
-<tr><td>この時代の名が!!!“白ひげ”だァ!!!</td><td>4</td><td>条件を満たせば強力なカウンター。トリガー除去も優秀。</td></tr>
-<tr><td>戦えるかルフィ!!!勿論だ!!!</td><td>2</td><td>受けながらドローも狙えるイベント。守りの厚みを増やす。</td></tr>
-<tr><td>無茶ばっかりしやがって!!!</td><td>4</td><td>上5枚から6000キャラを回収しやすく、序盤〜中盤の安定に直結。</td></tr>
-</tbody>
-</table>
-</div>
-<p class="content-note">※ リーダーは「ルフィ＆エース」で固定。基本形の枚数は添付リサーチをベースに整理しています。収録カード一覧は公式カードリスト準拠で、レアリティ順に並べています。</p>
-<h4>収録カード一覧</h4>
-<p>画像については、公式カードリストの各カードページへ直接飛べるようにしています。現在の公式カードリストは画像URLを安定した形式で取得しづらいため、この一覧では<strong>公式カードリストへワンクリックで確認できるカードパネル</strong>としてまとめました。</p>
-<div class="card-collection"><article class="card-collection-item"><a class="card-thumb-link" href="https://www.onepiece-cardgame.com/cardlist/?freewords=ST30-001" rel="noopener noreferrer" target="_blank"><div class="card-thumb-fallback"><div class="card-thumb-top"><span class="rarity-chip">L</span><span class="code-chip">ST30-001</span></div><div class="card-thumb-name">ルフィ＆エース</div><div class="card-thumb-action">公式カードリストで確認</div></div></a><div class="card-copy"><h4>ルフィ＆エース</h4><div class="card-copy-meta"><span>L</span><span>ST30-001</span><span>リーダー</span><span>赤/緑</span><span>ライフ4 / パワー6000</span></div><p>自分の元々のパワー7000以上がいると弱体化する代わりに、相手ターン中は「ポートガス・D・エース」と「モンキー・D・ルフィ」を+3000して盤面維持を支える。</p></div></article>
-<article class="card-collection-item"><a class="card-thumb-link" href="https://www.onepiece-cardgame.com/cardlist/?freewords=ST30-007" rel="noopener noreferrer" target="_blank"><div class="card-thumb-fallback"><div class="card-thumb-top"><span class="rarity-chip">SR</span><span class="code-chip">ST30-007</span></div><div class="card-thumb-name">ポートガス・D・エース</div><div class="card-thumb-action">公式カードリストで確認</div></div></a><div class="card-copy"><h4>ポートガス・D・エース</h4><div class="card-copy-meta"><span>SR</span><span>ST30-007</span><span>キャラ</span><span>赤</span><span>コスト4 / パワー6000</span></div><p>登場時にドン!!をレストして速攻を得る主役カード。アタック時の-1000で盤面処理の補助もできる。</p></div></article>
-<article class="card-collection-item"><a class="card-thumb-link" href="https://www.onepiece-cardgame.com/cardlist/?freewords=ST30-012" rel="noopener noreferrer" target="_blank"><div class="card-thumb-fallback"><div class="card-thumb-top"><span class="rarity-chip">SR</span><span class="code-chip">ST30-012</span></div><div class="card-thumb-name">モンキー・D・ルフィ</div><div class="card-thumb-action">公式カードリストで確認</div></div></a><div class="card-copy"><h4>モンキー・D・ルフィ</h4><div class="card-copy-meta"><span>SR</span><span>ST30-012</span><span>キャラ</span><span>緑</span><span>コスト4 / パワー6000</span></div><p>もう1枚の主役速攻札。アタック時にブロッカーをレストにできるので、ライフを通しやすい。</p></div></article>
-<article class="card-collection-item"><a class="card-thumb-link" href="https://www.onepiece-cardgame.com/cardlist/?freewords=ST30-002" rel="noopener noreferrer" target="_blank"><div class="card-thumb-fallback"><div class="card-thumb-top"><span class="rarity-chip">C</span><span class="code-chip">ST30-002</span></div><div class="card-thumb-name">イナズマ</div><div class="card-thumb-action">公式カードリストで確認</div></div></a><div class="card-copy"><h4>イナズマ</h4><div class="card-copy-meta"><span>C</span><span>ST30-002</span><span>キャラ</span><span>赤</span><span>コスト1 / パワー2000</span></div><p>上5枚からパワー6000キャラを探せる初動サーチ。序盤の安定感を作る。</p></div></article>
-<article class="card-collection-item"><a class="card-thumb-link" href="https://www.onepiece-cardgame.com/cardlist/?freewords=ST30-003" rel="noopener noreferrer" target="_blank"><div class="card-thumb-fallback"><div class="card-thumb-top"><span class="rarity-chip">C</span><span class="code-chip">ST30-003</span></div><div class="card-thumb-name">エドワード・ニューゲート</div><div class="card-thumb-action">公式カードリストで確認</div></div></a><div class="card-copy"><h4>エドワード・ニューゲート</h4><div class="card-copy-meta"><span>C</span><span>ST30-003</span><span>キャラ</span><span>赤</span><span>コスト8 / パワー6000</span></div><p>自分のターン中、元々のパワー6000キャラ全体を+1000。終盤の押し込み役。</p></div></article>
-<article class="card-collection-item"><a class="card-thumb-link" href="https://www.onepiece-cardgame.com/cardlist/?freewords=ST30-004" rel="noopener noreferrer" target="_blank"><div class="card-thumb-fallback"><div class="card-thumb-top"><span class="rarity-chip">C</span><span class="code-chip">ST30-004</span></div><div class="card-thumb-name">エンポリオ・イワンコフ</div><div class="card-thumb-action">公式カードリストで確認</div></div></a><div class="card-copy"><h4>エンポリオ・イワンコフ</h4><div class="card-copy-meta"><span>C</span><span>ST30-004</span><span>キャラ</span><span>赤</span><span>コスト1 / パワー2000</span></div><p>手札の6000キャラ2枚公開で手札を整える。中盤以降の主役札探しを補助。</p></div></article>
-<article class="card-collection-item"><a class="card-thumb-link" href="https://www.onepiece-cardgame.com/cardlist/?freewords=ST30-005" rel="noopener noreferrer" target="_blank"><div class="card-thumb-fallback"><div class="card-thumb-top"><span class="rarity-chip">C</span><span class="code-chip">ST30-005</span></div><div class="card-thumb-name">ジョズ</div><div class="card-thumb-action">公式カードリストで確認</div></div></a><div class="card-copy"><h4>ジョズ</h4><div class="card-copy-meta"><span>C</span><span>ST30-005</span><span>キャラ</span><span>赤</span><span>コスト5 / パワー6000</span></div><p>高カウンターを持つシンプルな6000ライン要員。デッキ全体の安定感を支える。</p></div></article>
-<article class="card-collection-item"><a class="card-thumb-link" href="https://www.onepiece-cardgame.com/cardlist/?freewords=ST30-006" rel="noopener noreferrer" target="_blank"><div class="card-thumb-fallback"><div class="card-thumb-top"><span class="rarity-chip">C</span><span class="code-chip">ST30-006</span></div><div class="card-thumb-name">ジンベエ</div><div class="card-thumb-action">公式カードリストで確認</div></div></a><div class="card-copy"><h4>ジンベエ</h4><div class="card-copy-meta"><span>C</span><span>ST30-006</span><span>キャラ</span><span>赤</span><span>コスト5 / パワー6000</span></div><p>パワー6000キャラを捨てて2ドロー。中盤以降の手札回復を担う。</p></div></article>
-<article class="card-collection-item"><a class="card-thumb-link" href="https://www.onepiece-cardgame.com/cardlist/?freewords=ST30-008" rel="noopener noreferrer" target="_blank"><div class="card-thumb-fallback"><div class="card-thumb-top"><span class="rarity-chip">C</span><span class="code-chip">ST30-008</span></div><div class="card-thumb-name">マルコ</div><div class="card-thumb-action">公式カードリストで確認</div></div></a><div class="card-copy"><h4>マルコ</h4><div class="card-copy-meta"><span>C</span><span>ST30-008</span><span>キャラ</span><span>赤</span><span>コスト5 / パワー6000</span></div><p>ブロッカーかつ、KOされても自己再登場を狙える盤面維持の核。</p></div></article>
-<article class="card-collection-item"><a class="card-thumb-link" href="https://www.onepiece-cardgame.com/cardlist/?freewords=ST30-009" rel="noopener noreferrer" target="_blank"><div class="card-thumb-fallback"><div class="card-thumb-top"><span class="rarity-chip">C</span><span class="code-chip">ST30-009</span></div><div class="card-thumb-name">リトルオーズJr.</div><div class="card-thumb-action">公式カードリストで確認</div></div></a><div class="card-copy"><h4>リトルオーズJr.</h4><div class="card-copy-meta"><span>C</span><span>ST30-009</span><span>キャラ</span><span>赤</span><span>コスト1 / パワー2000</span></div><p>6000キャラが効果で離れる時に身代わりになりつつ1ドロー。除去ケア枠。</p></div></article>
-<article class="card-collection-item"><a class="card-thumb-link" href="https://www.onepiece-cardgame.com/cardlist/?freewords=ST30-010" rel="noopener noreferrer" target="_blank"><div class="card-thumb-fallback"><div class="card-thumb-top"><span class="rarity-chip">C</span><span class="code-chip">ST30-010</span></div><div class="card-thumb-name">クロコダイル</div><div class="card-thumb-action">公式カードリストで確認</div></div></a><div class="card-copy"><h4>クロコダイル</h4><div class="card-copy-meta"><span>C</span><span>ST30-010</span><span>キャラ</span><span>緑</span><span>コスト6 / パワー6000</span></div><p>ブロッカー兼ロック要員。相手のレストキャラを次のリフレッシュで起こさせない。</p></div></article>
-<article class="card-collection-item"><a class="card-thumb-link" href="https://www.onepiece-cardgame.com/cardlist/?freewords=ST30-011" rel="noopener noreferrer" target="_blank"><div class="card-thumb-fallback"><div class="card-thumb-top"><span class="rarity-chip">C</span><span class="code-chip">ST30-011</span></div><div class="card-thumb-name">バギー</div><div class="card-thumb-action">公式カードリストで確認</div></div></a><div class="card-copy"><h4>バギー</h4><div class="card-copy-meta"><span>C</span><span>ST30-011</span><span>キャラ</span><span>緑</span><span>コスト2 / パワー1000</span></div><p>6000キャラを守る小回りの利くブロッカー。守りの補助として使いやすい。</p></div></article>
-<article class="card-collection-item"><a class="card-thumb-link" href="https://www.onepiece-cardgame.com/cardlist/?freewords=ST30-013" rel="noopener noreferrer" target="_blank"><div class="card-thumb-fallback"><div class="card-thumb-top"><span class="rarity-chip">C</span><span class="code-chip">ST30-013</span></div><div class="card-thumb-name">Mr.2・ボン・クレー(ベンサム)</div><div class="card-thumb-action">公式カードリストで確認</div></div></a><div class="card-copy"><h4>Mr.2・ボン・クレー(ベンサム)</h4><div class="card-copy-meta"><span>C</span><span>ST30-013</span><span>キャラ</span><span>緑</span><span>コスト4 / パワー6000</span></div><p>シンプルな6000ライン要員。主役札を支える土台として採用される。</p></div></article>
-<article class="card-collection-item"><a class="card-thumb-link" href="https://www.onepiece-cardgame.com/cardlist/?freewords=ST30-014" rel="noopener noreferrer" target="_blank"><div class="card-thumb-fallback"><div class="card-thumb-top"><span class="rarity-chip">C</span><span class="code-chip">ST30-014</span></div><div class="card-thumb-name">Mr.3(ギャルディーノ)</div><div class="card-thumb-action">公式カードリストで確認</div></div></a><div class="card-copy"><h4>Mr.3(ギャルディーノ)</h4><div class="card-copy-meta"><span>C</span><span>ST30-014</span><span>キャラ</span><span>緑</span><span>コスト2 / パワー3000</span></div><p>レストのドン!!を元々のパワー6000キャラへ移せる。打点調整に便利。</p></div></article>
-<article class="card-collection-item"><a class="card-thumb-link" href="https://www.onepiece-cardgame.com/cardlist/?freewords=ST30-015" rel="noopener noreferrer" target="_blank"><div class="card-thumb-fallback"><div class="card-thumb-top"><span class="rarity-chip">C</span><span class="code-chip">ST30-015</span></div><div class="card-thumb-name">この時代の名が!!!“白ひげ”だァ!!!</div><div class="card-thumb-action">公式カードリストで確認</div></div></a><div class="card-copy"><h4>この時代の名が!!!“白ひげ”だァ!!!</h4><div class="card-copy-meta"><span>C</span><span>ST30-015</span><span>イベント</span><span>赤</span><span>コスト1</span></div><p>元6000キャラが2枚以上いれば+4000カウンター。トリガーで6000以下KOも狙える。</p></div></article>
-<article class="card-collection-item"><a class="card-thumb-link" href="https://www.onepiece-cardgame.com/cardlist/?freewords=ST30-016" rel="noopener noreferrer" target="_blank"><div class="card-thumb-fallback"><div class="card-thumb-top"><span class="rarity-chip">C</span><span class="code-chip">ST30-016</span></div><div class="card-thumb-name">戦えるかルフィ!!!勿論だ!!!</div><div class="card-thumb-action">公式カードリストで確認</div></div></a><div class="card-copy"><h4>戦えるかルフィ!!!勿論だ!!!</h4><div class="card-copy-meta"><span>C</span><span>ST30-016</span><span>イベント</span><span>赤</span><span>コスト1</span></div><p>+3000カウンター後、条件を満たせば1ドロー。守りと補給を両立する。</p></div></article>
-<article class="card-collection-item"><a class="card-thumb-link" href="https://www.onepiece-cardgame.com/cardlist/?freewords=ST30-017" rel="noopener noreferrer" target="_blank"><div class="card-thumb-fallback"><div class="card-thumb-top"><span class="rarity-chip">C</span><span class="code-chip">ST30-017</span></div><div class="card-thumb-name">無茶ばっかりしやがって!!!</div><div class="card-thumb-action">公式カードリストで確認</div></div></a><div class="card-copy"><h4>無茶ばっかりしやがって!!!</h4><div class="card-copy-meta"><span>C</span><span>ST30-017</span><span>イベント</span><span>赤</span><span>コスト1</span></div><p>上5枚からパワー6000キャラを確保できるサーチイベント。序盤〜中盤の安定化に直結。</p></div></article></div>
-</section><section id="upgrade"><h2>相性の良いカード</h2>
-<h4>まず優先したい2枚</h4>
-<p>まず相性が良いのは、ST30の主役である<strong>ポートガス・D・エース</strong>と<strong>モンキー・D・ルフィ</strong>です。リーダー効果で相手ターン中に+3000される対象なので、この2枚を厚くするだけでデッキの強みを一番素直に伸ばせます。</p>
-<div class="article-columns">
-<div class="article-mini-card">
-<strong>ポートガス・D・エース</strong>
-<p>4コスト6000で速攻を持てる主役カードです。アタック時の-1000修正もあり、中盤の押し込みと盤面処理を同時にこなせます。リーダーで守られるため、返しのターンも場に残りやすいのが魅力です。</p>
-</div>
-<div class="article-mini-card">
-<strong>モンキー・D・ルフィ</strong>
-<p>こちらも4コスト6000の速攻枠です。ブロッカーを寝かせて攻撃を通しやすくできるので、ライフを詰める動きがかなり分かりやすくなります。エースと並んで最優先で厚くしたいカードです。</p>
+<div class="deck-rating-head">
+<div class="deck-rating-rank"><strong>B</strong></div>
+<div class="deck-rating-copy">
+<h3>中堅〜準上位の安定型リーダー</h3>
+<p>4ターン目前後の速攻と、相手ターン中の+3000付与でテンポを作るデッキです。環境トップ級の爆発力までは見えない一方、開封そのままでも動きが分かりやすく、初心者が握りやすい完成度があります。</p>
 </div>
 </div>
-<h4>相性の良い追加候補</h4>
-<p>リサーチでは、ロック寄りに強化する候補として<strong>クロコダイル</strong>、<strong>キャロット（OP08-023）</strong>、<strong>アイン（OP07-002）</strong>が挙がっていました。どれも「6000ラインを活かしながら、押し込みだけで足りない場面を補う」方向のカードです。</p>
-<ul class="article-list">
-<li><strong>クロコダイル</strong>：相手のレストキャラを次のリフレッシュで起こさせず、反撃テンポを遅らせやすい。</li>
-<li><strong>キャロット（OP08-023）</strong>：登場時/アタック時のロック要素があり、クロコダイルと同じ方向で盤面を固めやすい。</li>
-<li><strong>アイン（OP07-002）</strong>：相手キャラのパワーを0にでき、処理しにくい盤面への回答になりやすい。</li>
-</ul>
-<h4>採用するときの注意点</h4>
-<p>このデッキで一番大事なのは、<strong>元々のパワー7000以上を安易に混ぜないこと</strong>です。強いカードを入れても、リーダーが弱体化するとデッキ全体の強みが薄れます。相性の良いカードを選ぶときは、「6000ラインを維持できるか」を最優先で見るのがおすすめです。</p>
-<div class="article-highlight"><strong>カード選びの基準</strong>「強いカード」よりも「このリーダーで強く使えるカード」を優先すると、ST30ルフィ＆エースはかなり組みやすくなります。まずはエース4枚・ルフィ4枚を目標にし、そのあとにロック札や処理札を足していく形が分かりやすいです。</div>
+<div class="deck-rating-pills">
+<span class="rating-pill">🧩 難易度: ★★☆☆☆ やさしめ</span>
+<span class="rating-pill">⚡ デッキの速さ: ★★★★☆ 速め</span>
+<span class="rating-pill">🛡️ 安定感: ★★★★☆ 高め</span>
+</div>
+<div class="deck-rating-pointbox">
+<strong>評価のポイント</strong>
+<p>元々のパワー6000を軸に組まれているため、カード同士の噛み合いは良好です。相手ターン中に「ポートガス・D・エース」と「モンキー・D・ルフィ」が+3000されるので、速攻で出した主役が返しで残りやすいのが最大の魅力です。一方で、元々のパワー7000以上を置くとリーダーが弱体化するため、構築の自由度は少し狭めです。</p>
+</div>
+</div>
 </section><section id="howto"><h2>基本的な回し方</h2>
-<p class="content-intro">このデッキは「4ターン目前後の速攻でテンポを取り、そのまま盤面を維持して押し切る」動きが基本になります。</p>
 <div class="flow">
-  <div class="flow-item">
-    <div class="step">1</div>
-    <div>
-      <h3>序盤：6000ラインを切らさず準備する</h3>
-      <p>序盤はとにかく<strong>元々のパワー6000キャラを切らさないこと</strong>が大事です。イナズマや「無茶ばっかりしやがって!!!」で必要札を探し、4ターン目のエース・ルフィ着地に備えます。相手の除去が見えているなら、リトルオーズJr.やバギーで守りの準備もしておきたいところです。</p>
-    </div>
-  </div>
-
-  <div class="flow-item">
-    <div class="step">2</div>
-    <div>
-      <h3>中盤：エースかルフィで主導権を握る</h3>
-      <p>このデッキの山場は4〜5ターン目です。エースかルフィを登場させ、ドン!!をレストして速攻を付けてすぐ攻撃します。エースは相手キャラのパワーを下げて処理しやすくし、ルフィはブロッカーを寝かせてライフを通しにいけます。</p>
-    </div>
-  </div>
-
-  <div class="flow-item">
-    <div class="step">3</div>
-    <div>
-      <h3>終盤：横並びと打点強化で押し切る</h3>
-      <p>終盤は、盤面が残っているならニューゲートで全体の打点を上げて押し切る形が理想です。受けはイベントに頼る場面が多くなるので、ドン!!を使い切りすぎないことも重要です。返しで負けないラインを常に意識しておくと安定します。</p>
-    </div>
-  </div>
+<div class="flow-item">
+<div class="step">1</div>
+<div>
+<h3>序盤：6000ラインを切らさず準備する</h3>
+<p>序盤はとにかく<strong>元々のパワー6000キャラを切らさないこと</strong>が大事です。イナズマや「無茶ばっかりしやがって!!!」で必要札を探し、4ターン目のエース・ルフィ着地に備えます。相手の除去が見えているなら、リトルオーズJr.やバギーで守りの準備もしておきたいところです。</p>
+</div>
+</div>
+<div class="flow-item">
+<div class="step">2</div>
+<div>
+<h3>中盤：エースかルフィで主導権を握る</h3>
+<p>このデッキの山場は4〜5ターン目です。エースかルフィを登場させ、ドン!!をレストして速攻を付けてすぐ攻撃します。エースは相手キャラのパワーを下げて処理しやすくし、ルフィはブロッカーを寝かせてライフを通しにいけます。</p>
+</div>
+</div>
+<div class="flow-item">
+<div class="step">3</div>
+<div>
+<h3>終盤：横並びと打点強化で押し切る</h3>
+<p>終盤は、盤面が残っているならニューゲートで全体の打点を上げて押し切る形が理想です。受けはイベントに頼る場面が多くなるので、ドン!!を使い切りすぎないことも重要です。返しで負けないラインを常に意識しておくと安定します。</p>
+</div>
+</div>
 </div>
 <div class="article-highlight">
 <strong>初心者が意識したいポイント</strong>
 「元々のパワー7000以上」を場に出すとリーダーが弱くなるので、強そうだからといって大型を雑に足さないこと。まずは6000ラインを守って、速攻2種でテンポを取る動きを覚えるのが最優先です。
 </div>
+</section><section id="recipe"><h2>収録カード一覧</h2>
+<div class="card-collection"><article class="card-collection-item"><img alt="ルフィ＆エース（ST30-001）の公式カード画像" class="card-thumb-image" decoding="async" loading="lazy" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-starter-deck/latest-starter-deck-st30-001.webp"/><div class="card-copy"><h4>ルフィ＆エース</h4><div class="card-copy-meta"><span>L</span><span>ST30-001</span><span>リーダー</span><span>赤/緑</span><span>ライフ4 / パワー6000</span></div><p>自分の元々のパワー7000以上がいると弱体化する代わりに、相手ターン中は「ポートガス・D・エース」と「モンキー・D・ルフィ」を+3000して盤面維持を支える。</p></div></article>
+<article class="card-collection-item"><img alt="ポートガス・D・エース（ST30-007）の公式カード画像" class="card-thumb-image" decoding="async" loading="lazy" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-starter-deck/latest-starter-deck-st30-007.webp"/><div class="card-copy"><h4>ポートガス・D・エース</h4><div class="card-copy-meta"><span>SR</span><span>ST30-007</span><span>キャラ</span><span>赤</span><span>コスト4 / パワー6000</span></div><p>登場時にドン!!をレストして速攻を得る主役カード。アタック時の-1000で盤面処理の補助もできる。</p></div></article>
+<article class="card-collection-item"><img alt="モンキー・D・ルフィ（ST30-012）の公式カード画像" class="card-thumb-image" decoding="async" loading="lazy" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-starter-deck/latest-starter-deck-st30-012.webp"/><div class="card-copy"><h4>モンキー・D・ルフィ</h4><div class="card-copy-meta"><span>SR</span><span>ST30-012</span><span>キャラ</span><span>緑</span><span>コスト4 / パワー6000</span></div><p>もう1枚の主役速攻札。アタック時にブロッカーをレストにできるので、ライフを通しやすい。</p></div></article>
+<article class="card-collection-item"><img alt="イナズマ（ST30-002）の公式カード画像" class="card-thumb-image" decoding="async" loading="lazy" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-starter-deck/latest-starter-deck-st30-002.png"/><div class="card-copy"><h4>イナズマ</h4><div class="card-copy-meta"><span>C</span><span>ST30-002</span><span>キャラ</span><span>赤</span><span>コスト1 / パワー2000</span></div><p>上5枚からパワー6000キャラを探せる初動サーチ。序盤の安定感を作る。</p></div></article>
+<article class="card-collection-item"><img alt="エドワード・ニューゲート（ST30-003）の公式カード画像" class="card-thumb-image" decoding="async" loading="lazy" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-starter-deck/latest-starter-deck-st30-003.png"/><div class="card-copy"><h4>エドワード・ニューゲート</h4><div class="card-copy-meta"><span>C</span><span>ST30-003</span><span>キャラ</span><span>赤</span><span>コスト8 / パワー6000</span></div><p>自分のターン中、元々のパワー6000キャラ全体を+1000。終盤の押し込み役。</p></div></article>
+<article class="card-collection-item"><img alt="エンポリオ・イワンコフ（ST30-004）の公式カード画像" class="card-thumb-image" decoding="async" loading="lazy" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-starter-deck/latest-starter-deck-st30-004.png"/><div class="card-copy"><h4>エンポリオ・イワンコフ</h4><div class="card-copy-meta"><span>C</span><span>ST30-004</span><span>キャラ</span><span>赤</span><span>コスト1 / パワー2000</span></div><p>手札の6000キャラ2枚公開で手札を整える。中盤以降の主役札探しを補助。</p></div></article>
+<article class="card-collection-item"><img alt="ジョズ（ST30-005）の公式カード画像" class="card-thumb-image" decoding="async" loading="lazy" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-starter-deck/latest-starter-deck-st30-005.png"/><div class="card-copy"><h4>ジョズ</h4><div class="card-copy-meta"><span>C</span><span>ST30-005</span><span>キャラ</span><span>赤</span><span>コスト5 / パワー6000</span></div><p>高カウンターを持つシンプルな6000ライン要員。デッキ全体の安定感を支える。</p></div></article>
+<article class="card-collection-item"><img alt="ジンベエ（ST30-006）の公式カード画像" class="card-thumb-image" decoding="async" loading="lazy" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-starter-deck/latest-starter-deck-st30-006.png"/><div class="card-copy"><h4>ジンベエ</h4><div class="card-copy-meta"><span>C</span><span>ST30-006</span><span>キャラ</span><span>赤</span><span>コスト5 / パワー6000</span></div><p>パワー6000キャラを捨てて2ドロー。中盤以降の手札回復を担う。</p></div></article>
+<article class="card-collection-item"><img alt="マルコ（ST30-008）の公式カード画像" class="card-thumb-image" decoding="async" loading="lazy" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-starter-deck/latest-starter-deck-st30-008.png"/><div class="card-copy"><h4>マルコ</h4><div class="card-copy-meta"><span>C</span><span>ST30-008</span><span>キャラ</span><span>赤</span><span>コスト5 / パワー6000</span></div><p>ブロッカーかつ、KOされても自己再登場を狙える盤面維持の核。</p></div></article>
+<article class="card-collection-item"><img alt="リトルオーズJr.（ST30-009）の公式カード画像" class="card-thumb-image" decoding="async" loading="lazy" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-starter-deck/latest-starter-deck-st30-009.png"/><div class="card-copy"><h4>リトルオーズJr.</h4><div class="card-copy-meta"><span>C</span><span>ST30-009</span><span>キャラ</span><span>赤</span><span>コスト1 / パワー2000</span></div><p>6000キャラが効果で離れる時に身代わりになりつつ1ドロー。除去ケア枠。</p></div></article>
+<article class="card-collection-item"><img alt="クロコダイル（ST30-010）の公式カード画像" class="card-thumb-image" decoding="async" loading="lazy" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-starter-deck/latest-starter-deck-st30-010.png"/><div class="card-copy"><h4>クロコダイル</h4><div class="card-copy-meta"><span>C</span><span>ST30-010</span><span>キャラ</span><span>緑</span><span>コスト6 / パワー6000</span></div><p>ブロッカー兼ロック要員。相手のレストキャラを次のリフレッシュで起こさせない。</p></div></article>
+<article class="card-collection-item"><img alt="バギー（ST30-011）の公式カード画像" class="card-thumb-image" decoding="async" loading="lazy" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-starter-deck/latest-starter-deck-st30-011.png"/><div class="card-copy"><h4>バギー</h4><div class="card-copy-meta"><span>C</span><span>ST30-011</span><span>キャラ</span><span>緑</span><span>コスト2 / パワー1000</span></div><p>6000キャラを守る小回りの利くブロッカー。守りの補助として使いやすい。</p></div></article>
+<article class="card-collection-item"><img alt="Mr.2・ボン・クレー(ベンサム)（ST30-013）の公式カード画像" class="card-thumb-image" decoding="async" loading="lazy" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-starter-deck/latest-starter-deck-st30-013.png"/><div class="card-copy"><h4>Mr.2・ボン・クレー(ベンサム)</h4><div class="card-copy-meta"><span>C</span><span>ST30-013</span><span>キャラ</span><span>緑</span><span>コスト4 / パワー6000</span></div><p>シンプルな6000ライン要員。主役札を支える土台として採用される。</p></div></article>
+<article class="card-collection-item"><img alt="Mr.3(ギャルディーノ)（ST30-014）の公式カード画像" class="card-thumb-image" decoding="async" loading="lazy" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-starter-deck/latest-starter-deck-st30-014.png"/><div class="card-copy"><h4>Mr.3(ギャルディーノ)</h4><div class="card-copy-meta"><span>C</span><span>ST30-014</span><span>キャラ</span><span>緑</span><span>コスト2 / パワー3000</span></div><p>レストのドン!!を元々のパワー6000キャラへ移せる。打点調整に便利。</p></div></article>
+<article class="card-collection-item"><img alt="この時代の名が!!!“白ひげ”だァ!!!（ST30-015）の公式カード画像" class="card-thumb-image" decoding="async" loading="lazy" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-starter-deck/latest-starter-deck-st30-015.webp"/><div class="card-copy"><h4>この時代の名が!!!“白ひげ”だァ!!!</h4><div class="card-copy-meta"><span>C</span><span>ST30-015</span><span>イベント</span><span>赤</span><span>コスト1</span></div><p>元6000キャラが2枚以上いれば+4000カウンター。トリガーで6000以下KOも狙える。</p></div></article>
+<article class="card-collection-item"><img alt="戦えるかルフィ!!!勿論だ!!!（ST30-016）の公式カード画像" class="card-thumb-image" decoding="async" loading="lazy" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-starter-deck/latest-starter-deck-st30-016.webp"/><div class="card-copy"><h4>戦えるかルフィ!!!勿論だ!!!</h4><div class="card-copy-meta"><span>C</span><span>ST30-016</span><span>イベント</span><span>赤</span><span>コスト1</span></div><p>+3000カウンター後、条件を満たせば1ドロー。守りと補給を両立する。</p></div></article>
+<article class="card-collection-item"><img alt="無茶ばっかりしやがって!!!（ST30-017）の公式カード画像" class="card-thumb-image" decoding="async" loading="lazy" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-starter-deck/latest-starter-deck-st30-017.webp"/><div class="card-copy"><h4>無茶ばっかりしやがって!!!</h4><div class="card-copy-meta"><span>C</span><span>ST30-017</span><span>イベント</span><span>赤</span><span>コスト1</span></div><p>上5枚からパワー6000キャラを確保できるサーチイベント。序盤〜中盤の安定化に直結。</p></div></article></div>
 </section><section id="summary"><h2>まとめ</h2>
 <div class="article-highlight">
 <strong>最終結論</strong>
       ST30「ルフィ＆エース」は、<strong>初心者でも扱いやすい完成度の高い速攻寄りミッドレンジ</strong>です。環境最上位を狙うデッキというより、まず安定して勝ちたい人、分かりやすいシナジーで遊びたい人に向いています。
     </div>
-<ul class="article-list">
-<li>まず1個買って始めたい人</li>
-<li>難しいコンボよりテンポよく殴るデッキが好きな人</li>
-<li>将来的に低コスト改造からガチ構築まで育てていきたい人</li>
-</ul>
-<p>逆に、環境トップを最短で握りたい人や、一撃の爆発力を求める人には少し物足りないかもしれません。それでも、スタートデッキとしての完成度はかなり高く、記事を量産していく起点としても非常に扱いやすいテーマです。</p>
+<p class="no-wrap-paragraph">環境トップを最短で握りたい人や、一撃の爆発力を求める人には少し物足りないかもしれません。それでも、スタートデッキとしての完成度はかなり高く、初心者の方にとっては非常に扱いやすいテーマです。</p>
 </section></div>
 </article></main>
 <!-- Related Articles Start -->
@@ -3382,37 +3340,37 @@ body{
 <strong>PVランキング TOP5</strong>
 </div>
 <ol class="pv-ranking-list">
-<li><a href="../meta/decks/purple-enel.html"><span class="pv-rank">1</span><span class="pv-title">&#x7D2B;&#x30A8;&#x30CD;&#x30EB; &#x5B8C;&#x5168;&#x653B;&#x7565;&#x30AC;&#x30A4;&#x30C9;</span></a></li>
-<li><a href="../meta/decks/blue-green-luffy.html"><span class="pv-rank">2</span><span class="pv-title">&#x9752;&#x7DD1;&#x30EB;&#x30D5;&#x30A3; &#x5B8C;&#x5168;&#x653B;&#x7565;&#x30AC;&#x30A4;&#x30C9;</span></a></li>
-<li><a href="../meta/decks/red-ace.html"><span class="pv-rank">3</span><span class="pv-title">&#x8D64;&#x30A8;&#x30FC;&#x30B9; &#x5B8C;&#x5168;&#x653B;&#x7565;&#x30AC;&#x30A4;&#x30C9;</span></a></li>
-<li><a href="../meta/decks/blue-yellow-nami.html"><span class="pv-rank">4</span><span class="pv-title">&#x9752;&#x9EC4;&#x30CA;&#x30DF; &#x5B8C;&#x5168;&#x653B;&#x7565;&#x30AC;&#x30A4;&#x30C9;</span></a></li>
-<li><a href="../meta/decks/red-blue-lucy.html"><span class="pv-rank">5</span><span class="pv-title">&#x8D64;&#x9752;&#x30EB;&#x30FC;&#x30B7;&#x30FC; &#x5B8C;&#x5168;&#x653B;&#x7565;&#x30AC;&#x30A4;&#x30C9;</span></a></li>
+<li><a href="../meta/decks/purple-enel.html"><span class="pv-rank">1</span><span class="pv-title">紫エネル 完全攻略ガイド</span></a></li>
+<li><a href="../meta/decks/blue-green-luffy.html"><span class="pv-rank">2</span><span class="pv-title">青緑ルフィ 完全攻略ガイド</span></a></li>
+<li><a href="../meta/decks/red-ace.html"><span class="pv-rank">3</span><span class="pv-title">赤エース 完全攻略ガイド</span></a></li>
+<li><a href="../meta/decks/blue-yellow-nami.html"><span class="pv-rank">4</span><span class="pv-title">青黄ナミ 完全攻略ガイド</span></a></li>
+<li><a href="../meta/decks/red-blue-lucy.html"><span class="pv-rank">5</span><span class="pv-title">赤青ルーシー 完全攻略ガイド</span></a></li>
 </ol>
 </div>
 </div>
 </section>
 <section class="box section">
 <div class="section-title">
-<h3>&#x30C7;&#x30C3;&#x30AD;&#x4E00;&#x89A7;</h3>
+<h3>デッキ一覧</h3>
 </div>
 <div class="section-body">
 <div class="side-list">
-<div class="side-list-label">&lt;&#x6700;&#x65B0;&#x5F3E;&gt;</div>
-<a href="../meta/decks/blue-green-luffy.html">&#x9752;&#x7DD1;&#x30EB;&#x30D5;&#x30A3;</a>
-<a href="../meta/decks/red-ace.html">&#x8D64;&#x30A8;&#x30FC;&#x30B9;</a>
-<a href="../meta/decks/blue-buggy.html">&#x9752;&#x30D0;&#x30AE;&#x30FC;</a>
-<a href="../meta/decks/purple-sengoku.html">&#x7D2B;&#x30BB;&#x30F3;&#x30B4;&#x30AF;</a>
-<a href="../meta/decks/black-yamato.html">&#x9ED2;&#x30E4;&#x30DE;&#x30C8;</a>
-<a href="../meta/decks/black-yellow-teach.html">&#x9ED2;&#x9EC4;&#x30C6;&#x30A3;&#x30FC;&#x30C1;</a>
-<div class="side-list-label">&lt;&#x74B0;&#x5883;&#x30C7;&#x30C3;&#x30AD;&gt;</div>
-<a href="../meta/decks/purple-enel.html">&#x7D2B;&#x30A8;&#x30CD;&#x30EB;</a>
-<a href="../meta/decks/red-blue-lucy.html">&#x8D64;&#x9752;&#x30EB;&#x30FC;&#x30B7;&#x30FC;</a>
-<a href="../meta/decks/blue-yellow-nami.html">&#x9752;&#x9EC4;&#x30CA;&#x30DF;</a>
-<a href="../meta/decks/yellow-luffy-skypiea.html">&#x9EC4;&#x30EB;&#x30D5;&#x30A3;(&#x7A7A;&#x5CF6;)</a>
-<a href="../meta/decks/red-blue-ace.html">&#x8D64;&#x9752;&#x30A8;&#x30FC;&#x30B9;</a>
-<a href="../meta/decks/blue-yellow-hancock.html">&#x9752;&#x9EC4;&#x30CF;&#x30F3;&#x30B3;&#x30C3;&#x30AF;</a>
-<a href="../meta/decks/green-mihawk.html">&#x7DD1;&#x30DF;&#x30DB;&#x30FC;&#x30AF;</a>
-<a href="../meta/decks/black-imu.html">&#x9ED2;&#x30A4;&#x30E0;</a>
+<div class="side-list-label">&lt;最新弾&gt;</div>
+<a href="../meta/decks/blue-green-luffy.html">青緑ルフィ</a>
+<a href="../meta/decks/red-ace.html">赤エース</a>
+<a href="../meta/decks/blue-buggy.html">青バギー</a>
+<a href="../meta/decks/purple-sengoku.html">紫センゴク</a>
+<a href="../meta/decks/black-yamato.html">黒ヤマト</a>
+<a href="../meta/decks/black-yellow-teach.html">黒黄ティーチ</a>
+<div class="side-list-label">&lt;環境デッキ&gt;</div>
+<a href="../meta/decks/purple-enel.html">紫エネル</a>
+<a href="../meta/decks/red-blue-lucy.html">赤青ルーシー</a>
+<a href="../meta/decks/blue-yellow-nami.html">青黄ナミ</a>
+<a href="../meta/decks/yellow-luffy-skypiea.html">黄ルフィ(空島)</a>
+<a href="../meta/decks/red-blue-ace.html">赤青エース</a>
+<a href="../meta/decks/blue-yellow-hancock.html">青黄ハンコック</a>
+<a href="../meta/decks/green-mihawk.html">緑ミホーク</a>
+<a href="../meta/decks/black-imu.html">黒イム</a>
 </div>
 </div>
 </section>
@@ -3455,27 +3413,27 @@ body{
 </div>
 </section>
 <section class="footer-column footer-column-deck-new">
-<h4>&#x30C7;&#x30C3;&#x30AD;&#x500B;&#x5225;&#xFF08;&#x6700;&#x65B0;&#x5F3E;&#xFF09;</h4>
+<h4>デッキ個別（最新弾）</h4>
 <div class="footer-links">
-<a href="../meta/decks/blue-green-luffy.html">&#x9752;&#x7DD1;&#x30EB;&#x30D5;&#x30A3;</a>
-<a href="../meta/decks/red-ace.html">&#x8D64;&#x30A8;&#x30FC;&#x30B9;</a>
-<a href="../meta/decks/blue-buggy.html">&#x9752;&#x30D0;&#x30AE;&#x30FC;</a>
-<a href="../meta/decks/purple-sengoku.html">&#x7D2B;&#x30BB;&#x30F3;&#x30B4;&#x30AF;</a>
-<a href="../meta/decks/black-yamato.html">&#x9ED2;&#x30E4;&#x30DE;&#x30C8;</a>
-<a href="../meta/decks/black-yellow-teach.html">&#x9ED2;&#x9EC4;&#x30C6;&#x30A3;&#x30FC;&#x30C1;</a>
+<a href="../meta/decks/blue-green-luffy.html">青緑ルフィ</a>
+<a href="../meta/decks/red-ace.html">赤エース</a>
+<a href="../meta/decks/blue-buggy.html">青バギー</a>
+<a href="../meta/decks/purple-sengoku.html">紫センゴク</a>
+<a href="../meta/decks/black-yamato.html">黒ヤマト</a>
+<a href="../meta/decks/black-yellow-teach.html">黒黄ティーチ</a>
 </div>
 </section>
 <section class="footer-column footer-column-deck-meta">
-<h4>&#x30C7;&#x30C3;&#x30AD;&#x500B;&#x5225;&#xFF08;&#x74B0;&#x5883;&#x30C7;&#x30C3;&#x30AD;&#xFF09;</h4>
+<h4>デッキ個別（環境デッキ）</h4>
 <div class="footer-links">
-<a href="../meta/decks/purple-enel.html">&#x7D2B;&#x30A8;&#x30CD;&#x30EB;</a>
-<a href="../meta/decks/red-blue-lucy.html">&#x8D64;&#x9752;&#x30EB;&#x30FC;&#x30B7;&#x30FC;</a>
-<a href="../meta/decks/blue-yellow-nami.html">&#x9752;&#x9EC4;&#x30CA;&#x30DF;</a>
-<a href="../meta/decks/yellow-luffy-skypiea.html">&#x9EC4;&#x30EB;&#x30D5;&#x30A3;(&#x7A7A;&#x5CF6;)</a>
-<a href="../meta/decks/red-blue-ace.html">&#x8D64;&#x9752;&#x30A8;&#x30FC;&#x30B9;</a>
-<a href="../meta/decks/blue-yellow-hancock.html">&#x9752;&#x9EC4;&#x30CF;&#x30F3;&#x30B3;&#x30C3;&#x30AF;</a>
-<a href="../meta/decks/green-mihawk.html">&#x7DD1;&#x30DF;&#x30DB;&#x30FC;&#x30AF;</a>
-<a href="../meta/decks/black-imu.html">&#x9ED2;&#x30A4;&#x30E0;</a>
+<a href="../meta/decks/purple-enel.html">紫エネル</a>
+<a href="../meta/decks/red-blue-lucy.html">赤青ルーシー</a>
+<a href="../meta/decks/blue-yellow-nami.html">青黄ナミ</a>
+<a href="../meta/decks/yellow-luffy-skypiea.html">黄ルフィ(空島)</a>
+<a href="../meta/decks/red-blue-ace.html">赤青エース</a>
+<a href="../meta/decks/blue-yellow-hancock.html">青黄ハンコック</a>
+<a href="../meta/decks/green-mihawk.html">緑ミホーク</a>
+<a href="../meta/decks/black-imu.html">黒イム</a>
 </div>
 </section>
 <section class="footer-column footer-column-special">
@@ -3507,4 +3465,3 @@ body{
 </footer>
 </body>
 </html>
-

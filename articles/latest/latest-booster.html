@@ -8,6 +8,7 @@
 <title>【OP-16】決戦の刻の収録内容・注目カードまとめ｜ワンピースカード最新弾</title>
 <!-- Replace: Meta Description -->
 <meta content="ONE PIECEカードゲーム最新弾ブースターパック「決戦の刻【OP-16】」の基本情報、リーダー一覧、注目の収録カードを初心者向けに整理。発売日や価格、収録テーマもまとめています。" name="description"/>
+<link rel="stylesheet" href="../../assets/css/article-common.css"/>
 <style>
 
     :root{
@@ -3302,30 +3303,7 @@ body{
 
 
     /* latest booster rewrite parts */
-    .set-visual{
-      margin:0 0 18px;
-      border:1px solid rgba(209,170,61,.30);
-      border-radius:18px;
-      overflow:hidden;
-      background:linear-gradient(135deg,#232b63 0%,#101936 100%);
-      box-shadow:var(--shadow-soft);
-    }
-    .set-visual img{
-      width:100%;
-      height:auto;
-      aspect-ratio:16/9;
-      object-fit:cover;
-      background:#f3f4f6;
-    }
-    .set-visual figcaption{
-      padding:10px 14px;
-      color:#ffffff;
-      font-size:12px;
-      font-weight:700;
-      line-height:1.6;
-      background:rgba(16,25,54,.92);
-    }
-    .card-table .card-name{font-weight:800;color:var(--heading);}
+.card-table .card-name{font-weight:800;color:var(--heading);}
     .card-table .card-note{color:var(--muted);font-size:13px;}
 
 
@@ -3397,234 +3375,28 @@ body{
 }
 
 
-
-/* ===== まとめ：テーブル以外の見せ方 ===== */
-.summary-card-grid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:14px;
-  margin:0 0 16px;
-}
-.summary-card{
-  position:relative;
-  overflow:hidden;
-  padding:16px 16px 15px;
-  border:1px solid rgba(209,170,61,.26);
-  border-radius:16px;
-  background:linear-gradient(180deg,#ffffff 0%,#fffdfa 100%);
-  box-shadow:0 8px 18px rgba(18,24,48,.05);
-}
-.summary-card::before{
-  content:"";
-  position:absolute;
-  inset:0 auto 0 0;
-  width:5px;
-  background:linear-gradient(180deg,#d1aa3d,#f3d98a);
-}
-.summary-card .summary-label{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  margin:0 0 8px;
-  padding:4px 10px;
-  border-radius:999px;
-  background:#eeeeee;
-  border:1px solid #d7d7d7;
-  color:#232b63;
-  font-size:12px;
-  font-weight:800;
-  line-height:1;
-}
-.summary-card strong{
-  display:block;
-  margin:0 0 6px;
-  color:var(--heading);
-  font-size:17px;
-  line-height:1.45;
-}
-.summary-card p{
-  margin:0;
-  max-width:none;
-  font-size:14px;
-  line-height:1.9;
-}
-.summary-action-box{
-  margin:0 0 16px;
-  padding:16px 18px;
-  border:1px solid rgba(209,170,61,.28);
-  border-radius:16px;
-  background:linear-gradient(180deg,#fff9eb 0%,#faf6ea 100%);
-}
-.summary-action-box strong{
-  display:block;
-  margin:0 0 8px;
-  color:#232b63;
-  font-size:16px;
-  line-height:1.5;
-}
-.summary-action-list{
-  display:grid;
-  gap:8px;
-  margin:0;
-  padding:0;
-  list-style:none;
-}
-.summary-action-list li{
-  position:relative;
-  padding-left:24px;
-  font-size:14px;
-  line-height:1.8;
-  font-weight:600;
-}
-.summary-action-list li::before{
-  content:"✓";
-  position:absolute;
-  left:0;
-  top:0;
-  color:#166534;
-  font-weight:900;
-}
-@media (max-width:640px){
-  .summary-card-grid{grid-template-columns:1fr;}
-}
-
-
-/* article internal link buttons */
-.deck-rating-link-wrap,
-.price-ranking-link-wrap{
-  margin:14px 0 28px;
-}
-.deck-rating-link,
-.price-ranking-link{
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  width:100%;
-  min-height:52px;
-  padding:13px 18px;
-  border:1px solid #202a52;
-  border-radius:14px;
-  background:linear-gradient(180deg,#ffffff 0%,#f5f7ff 100%);
-  color:#17204a;
-  font-size:15px;
-  font-weight:800;
-  line-height:1.5;
-  text-align:center;
-  box-shadow:0 8px 18px rgba(18,24,48,.08);
-  overflow:hidden;
-}
-.deck-rating-link::before,
-.price-ranking-link::before{
-  content:none;
-}
-.deck-rating-link::after,
-.price-ranking-link::after{
-  content:"›";
-  position:absolute;
-  right:18px;
-  top:50%;
-  transform:translateY(-50%);
-  color:#232b63;
-  font-size:24px;
-  line-height:1;
-  font-weight:900;
-}
-.deck-rating-link:hover,
-.price-ranking-link:hover{
-  background:linear-gradient(180deg,#f9fbff 0%,#eef2ff 100%);
-  color:#101936;
-  border-color:#101936;
-  transform:translateY(-1px);
-  box-shadow:0 12px 22px rgba(18,24,48,.12);
-}
-
-
-/* ===== latest booster requested fixes: remove basic image caption / notable card ratio ===== */
-.article-rails-layout > .main .notable-card-table{
-  table-layout:fixed !important;
-}
-.article-rails-layout > .main .notable-card-table th:nth-child(1),
-.article-rails-layout > .main .notable-card-table td:nth-child(1){
-  width:30% !important;
-}
-.article-rails-layout > .main .notable-card-table th:nth-child(2),
-.article-rails-layout > .main .notable-card-table td:nth-child(2){
-  width:70% !important;
-}
-.article-rails-layout > .main .notable-card-table th:nth-child(3),
-.article-rails-layout > .main .notable-card-table td:nth-child(3){
-  width:auto !important;
-}
-
-.leader-table-scroll{
-  width:100%;
-  overflow-x:auto;
-  -webkit-overflow-scrolling:touch;
-  margin-bottom:20px;
-}
+/* リーダー一覧テーブル：リーダー名と色の間を詰める */
 .article-rails-layout > .main .leader-table{
-  display:table !important;
-  width:100% !important;
-  min-width:720px;
-  max-width:none !important;
-  table-layout:fixed !important;
-  white-space:normal !important;
-}
-.article-rails-layout > .main .leader-table th,
-.article-rails-layout > .main .leader-table td{
-  word-break:normal !important;
-  overflow-wrap:break-word !important;
-  white-space:normal !important;
+  table-layout:auto !important;
 }
 .article-rails-layout > .main .leader-table th:nth-child(1),
 .article-rails-layout > .main .leader-table td:nth-child(1){
-  width:24% !important;
+  width:1% !important;
   white-space:nowrap !important;
+  padding-right:8px !important;
 }
 .article-rails-layout > .main .leader-table th:nth-child(2),
 .article-rails-layout > .main .leader-table td:nth-child(2){
-  width:12% !important;
+  width:1% !important;
   white-space:nowrap !important;
-  text-align:center;
+  padding-left:8px !important;
+  padding-right:10px !important;
 }
 .article-rails-layout > .main .leader-table th:nth-child(3),
 .article-rails-layout > .main .leader-table td:nth-child(3){
-  width:64% !important;
+  width:auto !important;
 }
 
-
-/* 注目カード：コミックパラレル3枚横並び */
-.comic-parallel-gallery{
-  display:grid;
-  grid-template-columns:repeat(3, minmax(0, 1fr));
-  gap:12px;
-  margin:12px 0 16px;
-  align-items:start;
-}
-.comic-parallel-card{
-  margin:0;
-  min-width:0;
-}
-.comic-parallel-card img{
-  width:100%;
-  height:auto;
-  display:block;
-  border-radius:12px;
-  border:1px solid var(--line);
-  background:#fff;
-  box-shadow:0 6px 18px rgba(15,23,42,.08);
-}
-@media (max-width:640px){
-  .comic-parallel-gallery{
-    grid-template-columns:repeat(3, minmax(0, 1fr)) !important;
-    gap:6px;
-  }
-  .comic-parallel-card img{
-    border-radius:8px;
-  }
-}
 </style>
 </head>
 <body>
@@ -3688,7 +3460,7 @@ body{
 <tr><td>発売日</td><td>2026年5月30日（土）予定</td></tr>
 <tr><td>価格</td><td>1パック220円（税込） / 1BOX24パック入りで5,280円前後</td></tr>
 <tr><td>内容</td><td>1パック6枚入り</td></tr>
-<tr><td>収録種数</td><td>全126種+1種で案内されている情報が中心</td></tr>
+<tr><td>収録種数</td><td>全126種+1種</td></tr>
 <tr><td>テーマ</td><td>頂上決戦（マリンフォード編）、海軍、白ひげ海賊団、インペルダウン周辺</td></tr>
 
 </tbody>
@@ -3699,14 +3471,14 @@ body{
 <h2>注目の収録カード</h2>
 <h3>リーダー一覧</h3>
 <div class="leader-table-scroll"><table class="table card-table leader-table"><thead><tr><th>リーダー名</th><th>色</th><th>効果</th></tr></thead><tbody><tr><td>モンキー・D・ルフィ</td><td>緑/青</td><td>【起動メイン】【ターン1回】自分のキャラが特徴《インペルダウン》を持つキャラのみの場合、自分のドン!!2枚までを、アクティブにする。</td></tr><tr><td>ポートガス・D・エース</td><td>赤</td><td>【起動メイン】【ターン1回】自分のパワー8000以上の「モンキー・D・ルフィ」か『白ひげ海賊団』を含む特徴を持つキャラ1枚までは、このターン中【速攻】を得る。</td></tr><tr><td>バギー</td><td>青</td><td>【ドン!!×1】【ターン1回】自分の特徴《インペルダウン》を持つキャラが場を離れた時、自分の手札から「インペルダウンの囚人」1枚までを登場させる。</td></tr><tr><td>センゴク</td><td>紫</td><td>【起動メイン】自分のアクティブのドン!!8枚をドン!!デッキに戻す：手札からカード名の異なる特徴《大将》を持つキャラ3枚まで登場させる。</td></tr><tr><td>ヤマト</td><td>黒</td><td>自分のトラッシュから特徴《ワノ国》を持つキャラが登場した時、そのキャラはこのターン中【速攻】を得る。</td></tr><tr><td>マーシャル・D・ティーチ</td><td>黒/黄</td><td>【相手ターン中】自分のキャラすべてをコスト+1。【相手のアタック時】【ターン1回】手札のトリガーカード1枚を捨てることで攻撃対象を変更できる。</td></tr></tbody></table></div>
-<p>リーダーは発売前情報のため、色や効果の詳細が変わる可能性があります。記事内では断定しすぎず、公開済み情報に合わせて更新できる形にしておくのがおすすめです。</p>
+<p>最新弾「決戦の刻」のリーダーは頂上決戦に登場したキャラクターが中心となっています。新ギミックを搭載した黒の速攻軸である黒ヤマトや、相手の攻撃対象を変更できる黒黄ティーチなど多彩なリーダーが登場します。</p>
 <div class="deck-rating-link-wrap">
 <a class="deck-rating-link" href="../meta/new-set-deck-review.html">新弾デッキ評価</a>
 </div>
 <h3>注目カード</h3>
 <h4>コミックパラレル</h4><div class="comic-parallel-gallery"><figure class="comic-parallel-card"><img alt="サカズキ コミックパラレル" loading="lazy" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-booster/latest-booster-sakazuki-comic-parallel.png"/></figure><figure class="comic-parallel-card"><img alt="クザン コミックパラレル" loading="lazy" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-booster/latest-booster-kuzan-comic-parallel.png"/></figure><figure class="comic-parallel-card"><img alt="ボルサリーノ コミックパラレル" loading="lazy" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-booster/latest-booster-borsalino-comic-parallel.png"/></figure></div>
 <div class="price-ranking-link-wrap">
-<p>注目カードは、現時点では高レアリティ枠とテーマ強化カードを中心に見るのが分かりやすいです。特に三大将関連は見た目のインパクトが強く、発売前から話題になりやすいため、記事内でも優先して取り上げたいポイントです。</p><a class="price-ranking-link" href="../guides/featured/expensive-card-ranking.html">高額カードランキング</a>
+<p>最新弾「決戦の刻」の注目カードは、三大将のコミックパラレルです。イラストも頂上決戦の名シーンが使われており、コレクション需要が高まることも予想されます。</p><a class="price-ranking-link" href="../guides/featured/expensive-card-ranking.html">高額カードランキング</a>
 </div>
 </section>
 <section class="summary-section-fix" id="summary">
@@ -3722,26 +3494,16 @@ body{
 <strong>頂上決戦を中心にした注目弾</strong>
 <p>海軍、白ひげ海賊団、インペルダウン関連など、人気テーマの強化に期待できます。</p>
 </div>
-<div class="summary-card">
-<span class="summary-label">新リーダー</span>
-<strong>三大将スーパーパラレルに注目</strong>
-<p>コレクション需要が高く、発売前から話題になりやすい高レア枠として扱いやすいです。</p>
-</div>
-<div class="summary-card">
-<span class="summary-label">注目ポイント</span>
-<strong>公開情報に合わせて追記する構成</strong>
-<p>新カード公開、発売後の初動相場、大会結果に合わせて評価を更新していきましょう。</p>
-</div>
 </div>
 <div class="summary-action-box">
-<strong>発売前記事で特に押さえたいポイント</strong>
+<strong>この記事で特に押さえたいポイント</strong>
 <ul class="summary-action-list">
-<li>未確定情報は断定せず、「公開待ち」「予想」と分けて書く</li>
-<li>リーダー・高レア・テーマ強化の3軸で注目カードを整理する</li>
-<li>発売後は相場・当たりカード・環境入りカードを追記する</li>
+<li>海軍、白髭海賊団などの人気テーマの強化</li>
+<li>三大将のコミックパラレルが遂に登場</li>
+<li>黒のトラッシュ蘇生からの速攻といった新ギミックも登場か？</li>
 </ul>
 </div>
-<p>決戦の刻【OP-16】は、人気の高い頂上決戦テーマを扱う注目弾です。発売前の記事では、基本情報と注目カードをシンプルに整理し、未確定の部分は「予想」や「公開待ち」と分けて書くことで、読者にとって分かりやすい最新弾まとめになります。</p>
+<p>決戦の刻【OP-16】は、人気の高い頂上決戦テーマを扱う注目弾です。発売前の記事では、基本情報と注目カードをシンプルに整理し、最新情報や追加情報があれば随時更新していきます。</p>
 </section>
 </div>
 </article></main>

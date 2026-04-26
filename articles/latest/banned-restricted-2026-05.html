@@ -2806,6 +2806,113 @@ body{
   }
 }
 /* ===== /article rails layout final spec ===== */
+
+
+/* ===== banned/restricted table replacement: latest-booster based table layout ===== */
+.article-rails-layout > .main .ban-table-scroll{
+  width:100% !important;
+  max-width:100% !important;
+  overflow-x:auto !important;
+  overflow-y:hidden !important;
+  -webkit-overflow-scrolling:touch !important;
+  margin:0 0 20px !important;
+  border-radius:var(--r) !important;
+}
+
+.article-rails-layout > .main .ban-table-scroll::-webkit-scrollbar{
+  height:8px !important;
+}
+
+.article-rails-layout > .main .ban-table-scroll::-webkit-scrollbar-thumb{
+  background:rgba(35,43,99,.28) !important;
+  border-radius:999px !important;
+}
+
+.article-rails-layout > .main .ban-table-scroll .table,
+.article-rails-layout > .main .ban-table-scroll .card-table,
+.article-rails-layout > .main .ban-table-scroll .ban-table{
+  display:table !important;
+  width:100% !important;
+  min-width:560px !important;
+  max-width:none !important;
+  table-layout:auto !important;
+  border-collapse:separate !important;
+  border-spacing:0 !important;
+  white-space:normal !important;
+  overflow:visible !important;
+  margin:0 !important;
+  background:#fff !important;
+}
+
+.article-rails-layout > .main .ban-table-scroll .table th,
+.article-rails-layout > .main .ban-table-scroll .table td{
+  white-space:normal !important;
+  word-break:keep-all !important;
+  overflow-wrap:normal !important;
+  vertical-align:middle !important;
+}
+
+.article-rails-layout > .main .ban-table-1 th:nth-child(1),
+.article-rails-layout > .main .ban-table-1 td:nth-child(1){
+  min-width:260px !important;
+}
+.article-rails-layout > .main .ban-table-1 th:nth-child(2),
+.article-rails-layout > .main .ban-table-1 td:nth-child(2){
+  min-width:110px !important;
+}
+.article-rails-layout > .main .ban-table-1 th:nth-child(3),
+.article-rails-layout > .main .ban-table-1 td:nth-child(3){
+  min-width:260px !important;
+}
+
+.article-rails-layout > .main .ban-table-2 th:nth-child(1),
+.article-rails-layout > .main .ban-table-2 td:nth-child(1){
+  min-width:130px !important;
+}
+.article-rails-layout > .main .ban-table-2 th:nth-child(2),
+.article-rails-layout > .main .ban-table-2 td:nth-child(2){
+  min-width:220px !important;
+}
+.article-rails-layout > .main .ban-table-2 th:nth-child(3),
+.article-rails-layout > .main .ban-table-2 td:nth-child(3){
+  min-width:100px !important;
+}
+
+.article-rails-layout > .main .ban-table-3 th:nth-child(1),
+.article-rails-layout > .main .ban-table-3 td:nth-child(1){
+  min-width:420px !important;
+}
+.article-rails-layout > .main .ban-table-3 th:nth-child(2),
+.article-rails-layout > .main .ban-table-3 td:nth-child(2){
+  min-width:110px !important;
+}
+.article-rails-layout > .main .ban-table-3 th:nth-child(3),
+.article-rails-layout > .main .ban-table-3 td:nth-child(3){
+  min-width:180px !important;
+}
+
+@media (max-width:640px){
+  .article-rails-layout > .main .ban-table-scroll{
+    border:1px solid var(--line) !important;
+    box-shadow:var(--shadow-soft) !important;
+    background:#fff !important;
+  }
+  .article-rails-layout > .main .ban-table-scroll .table,
+  .article-rails-layout > .main .ban-table-scroll .card-table,
+  .article-rails-layout > .main .ban-table-scroll .ban-table{
+    display:table !important;
+    width:max-content !important;
+    min-width:560px !important;
+    border:0 !important;
+    border-radius:0 !important;
+    box-shadow:none !important;
+    white-space:normal !important;
+  }
+  .article-rails-layout > .main .ban-table-scroll .table th,
+  .article-rails-layout > .main .ban-table-scroll .table td{
+    padding:12px 14px !important;
+  }
+}
 </style>
 </head>
 <body class="deck-purple-enel">
@@ -2876,7 +2983,7 @@ body{
 <h2>最新の制限・禁止改定</h2>
 <p>2026年5月1日施行の改定では、黄色デッキで使われていた組み合わせに対して新たな禁止ペアが設定されました。どちらのカードも単体では使用可能ですが、同じデッキに同時採用はできません。</p>
 <h3>最新改定の内容</h3>
-<table class="table">
+<div class="leader-table-scroll ban-table-scroll"><table class="table card-table ban-table ban-table-1">
 <thead>
 <tr><th>カード</th><th>変更内容</th><th>補足</th></tr>
 </thead>
@@ -2887,7 +2994,7 @@ body{
 <td>同じデッキにこの2枚を同時に入れることはできません</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <div class="leader">
 <div class="leader-box">
 <strong>適用日</strong>
@@ -2899,7 +3006,7 @@ body{
 <h2>現行の禁止・制限一覧</h2>
 <p>最新の禁止ペアだけでなく、すでに施行されている常設リストもまとめて確認しておくと安心です。現行ルールでは禁止カードが複数設定されている一方、制限カードはありません。</p>
 <h3>禁止カード</h3>
-<table class="table">
+<div class="leader-table-scroll ban-table-scroll"><table class="table card-table ban-table ban-table-2">
 <thead>
 <tr><th>カード番号</th><th>カード名</th><th>区分</th></tr>
 </thead>
@@ -2910,9 +3017,9 @@ body{
 <tr><td>ST10-001</td><td>トラファルガー・ロー</td><td><span class="badge lose">禁止</span></td></tr>
 <tr><td>OP06-116</td><td>排撃</td><td><span class="badge lose">禁止</span></td></tr>
 </tbody>
-</table>
+</table></div>
 <h3>禁止ペア</h3>
-<table class="table">
+<div class="leader-table-scroll ban-table-scroll"><table class="table card-table ban-table ban-table-3">
 <thead>
 <tr><th>組み合わせ</th><th>区分</th><th>補足</th></tr>
 </thead>
@@ -2921,7 +3028,7 @@ body{
 <tr><td>OP11-040 モンキー・D・ルフィ × OP08-069 シャーロット・リンリン</td><td><span class="badge even">禁止ペア</span></td><td>同時採用不可</td></tr>
 <tr><td>OP07-115 助けてクエーサ～!!! × EB04-058 ボルサリーノ</td><td><span class="badge even">禁止ペア</span></td><td>2026年5月1日から追加</td></tr>
 </tbody>
-</table>
+</table></div>
 <div class="premium">
 <div class="premium-box">
 <strong>制限カード</strong>
@@ -2970,10 +3077,6 @@ body{
 <div class="head"><span class="badge win">Q</span><h4>制限カードは今ある？</h4></div>
 <p>現時点ではありません。公式の現行リストでは、制限カードは<strong>該当なし</strong>です。</p>
 </div>
-<div class="detail-card">
-<div class="head"><span class="badge win">Q</span><h4>フリー対戦では旧ルールで遊べる？</h4></div>
-<p>身内ルールで遊ぶこと自体は可能ですが、公認大会やショップ大会に出るなら最新の公式ルールに合わせる必要があります。</p>
-</div>
 </div>
 </section>
 </div>
@@ -2990,37 +3093,37 @@ body{
 <strong>PVランキング TOP5</strong>
 </div>
 <ol class="pv-ranking-list">
-<li><a href="../meta/decks/purple-enel.html"><span class="pv-rank">1</span><span class="pv-title">&#x7D2B;&#x30A8;&#x30CD;&#x30EB; &#x5B8C;&#x5168;&#x653B;&#x7565;&#x30AC;&#x30A4;&#x30C9;</span></a></li>
-<li><a href="../meta/decks/blue-green-luffy.html"><span class="pv-rank">2</span><span class="pv-title">&#x9752;&#x7DD1;&#x30EB;&#x30D5;&#x30A3; &#x5B8C;&#x5168;&#x653B;&#x7565;&#x30AC;&#x30A4;&#x30C9;</span></a></li>
-<li><a href="../meta/decks/red-ace.html"><span class="pv-rank">3</span><span class="pv-title">&#x8D64;&#x30A8;&#x30FC;&#x30B9; &#x5B8C;&#x5168;&#x653B;&#x7565;&#x30AC;&#x30A4;&#x30C9;</span></a></li>
-<li><a href="../meta/decks/blue-yellow-nami.html"><span class="pv-rank">4</span><span class="pv-title">&#x9752;&#x9EC4;&#x30CA;&#x30DF; &#x5B8C;&#x5168;&#x653B;&#x7565;&#x30AC;&#x30A4;&#x30C9;</span></a></li>
-<li><a href="../meta/decks/red-blue-lucy.html"><span class="pv-rank">5</span><span class="pv-title">&#x8D64;&#x9752;&#x30EB;&#x30FC;&#x30B7;&#x30FC; &#x5B8C;&#x5168;&#x653B;&#x7565;&#x30AC;&#x30A4;&#x30C9;</span></a></li>
+<li><a href="../meta/decks/purple-enel.html"><span class="pv-rank">1</span><span class="pv-title">紫エネル 完全攻略ガイド</span></a></li>
+<li><a href="../meta/decks/blue-green-luffy.html"><span class="pv-rank">2</span><span class="pv-title">青緑ルフィ 完全攻略ガイド</span></a></li>
+<li><a href="../meta/decks/red-ace.html"><span class="pv-rank">3</span><span class="pv-title">赤エース 完全攻略ガイド</span></a></li>
+<li><a href="../meta/decks/blue-yellow-nami.html"><span class="pv-rank">4</span><span class="pv-title">青黄ナミ 完全攻略ガイド</span></a></li>
+<li><a href="../meta/decks/red-blue-lucy.html"><span class="pv-rank">5</span><span class="pv-title">赤青ルーシー 完全攻略ガイド</span></a></li>
 </ol>
 </div>
 </div>
 </section>
 <section class="box section">
 <div class="section-title">
-<h3>&#x30C7;&#x30C3;&#x30AD;&#x4E00;&#x89A7;</h3>
+<h3>デッキ一覧</h3>
 </div>
 <div class="section-body">
 <div class="side-list">
-<div class="side-list-label">&lt;&#x6700;&#x65B0;&#x5F3E;&gt;</div>
-<a href="../meta/decks/blue-green-luffy.html">&#x9752;&#x7DD1;&#x30EB;&#x30D5;&#x30A3;</a>
-<a href="../meta/decks/red-ace.html">&#x8D64;&#x30A8;&#x30FC;&#x30B9;</a>
-<a href="../meta/decks/blue-buggy.html">&#x9752;&#x30D0;&#x30AE;&#x30FC;</a>
-<a href="../meta/decks/purple-sengoku.html">&#x7D2B;&#x30BB;&#x30F3;&#x30B4;&#x30AF;</a>
-<a href="../meta/decks/black-yamato.html">&#x9ED2;&#x30E4;&#x30DE;&#x30C8;</a>
-<a href="../meta/decks/black-yellow-teach.html">&#x9ED2;&#x9EC4;&#x30C6;&#x30A3;&#x30FC;&#x30C1;</a>
-<div class="side-list-label">&lt;&#x74B0;&#x5883;&#x30C7;&#x30C3;&#x30AD;&gt;</div>
-<a href="../meta/decks/purple-enel.html">&#x7D2B;&#x30A8;&#x30CD;&#x30EB;</a>
-<a href="../meta/decks/red-blue-lucy.html">&#x8D64;&#x9752;&#x30EB;&#x30FC;&#x30B7;&#x30FC;</a>
-<a href="../meta/decks/blue-yellow-nami.html">&#x9752;&#x9EC4;&#x30CA;&#x30DF;</a>
-<a href="../meta/decks/yellow-luffy-skypiea.html">&#x9EC4;&#x30EB;&#x30D5;&#x30A3;(&#x7A7A;&#x5CF6;)</a>
-<a href="../meta/decks/red-blue-ace.html">&#x8D64;&#x9752;&#x30A8;&#x30FC;&#x30B9;</a>
-<a href="../meta/decks/blue-yellow-hancock.html">&#x9752;&#x9EC4;&#x30CF;&#x30F3;&#x30B3;&#x30C3;&#x30AF;</a>
-<a href="../meta/decks/green-mihawk.html">&#x7DD1;&#x30DF;&#x30DB;&#x30FC;&#x30AF;</a>
-<a href="../meta/decks/black-imu.html">&#x9ED2;&#x30A4;&#x30E0;</a>
+<div class="side-list-label">&lt;最新弾&gt;</div>
+<a href="../meta/decks/blue-green-luffy.html">青緑ルフィ</a>
+<a href="../meta/decks/red-ace.html">赤エース</a>
+<a href="../meta/decks/blue-buggy.html">青バギー</a>
+<a href="../meta/decks/purple-sengoku.html">紫センゴク</a>
+<a href="../meta/decks/black-yamato.html">黒ヤマト</a>
+<a href="../meta/decks/black-yellow-teach.html">黒黄ティーチ</a>
+<div class="side-list-label">&lt;環境デッキ&gt;</div>
+<a href="../meta/decks/purple-enel.html">紫エネル</a>
+<a href="../meta/decks/red-blue-lucy.html">赤青ルーシー</a>
+<a href="../meta/decks/blue-yellow-nami.html">青黄ナミ</a>
+<a href="../meta/decks/yellow-luffy-skypiea.html">黄ルフィ(空島)</a>
+<a href="../meta/decks/red-blue-ace.html">赤青エース</a>
+<a href="../meta/decks/blue-yellow-hancock.html">青黄ハンコック</a>
+<a href="../meta/decks/green-mihawk.html">緑ミホーク</a>
+<a href="../meta/decks/black-imu.html">黒イム</a>
 </div>
 </div>
 </section>
@@ -3062,27 +3165,27 @@ body{
 </div>
 </section>
 <section class="footer-column footer-column-deck-new">
-<h4>&#x30C7;&#x30C3;&#x30AD;&#x500B;&#x5225;&#xFF08;&#x6700;&#x65B0;&#x5F3E;&#xFF09;</h4>
+<h4>デッキ個別（最新弾）</h4>
 <div class="footer-links">
-<a href="../meta/decks/blue-green-luffy.html">&#x9752;&#x7DD1;&#x30EB;&#x30D5;&#x30A3;</a>
-<a href="../meta/decks/red-ace.html">&#x8D64;&#x30A8;&#x30FC;&#x30B9;</a>
-<a href="../meta/decks/blue-buggy.html">&#x9752;&#x30D0;&#x30AE;&#x30FC;</a>
-<a href="../meta/decks/purple-sengoku.html">&#x7D2B;&#x30BB;&#x30F3;&#x30B4;&#x30AF;</a>
-<a href="../meta/decks/black-yamato.html">&#x9ED2;&#x30E4;&#x30DE;&#x30C8;</a>
-<a href="../meta/decks/black-yellow-teach.html">&#x9ED2;&#x9EC4;&#x30C6;&#x30A3;&#x30FC;&#x30C1;</a>
+<a href="../meta/decks/blue-green-luffy.html">青緑ルフィ</a>
+<a href="../meta/decks/red-ace.html">赤エース</a>
+<a href="../meta/decks/blue-buggy.html">青バギー</a>
+<a href="../meta/decks/purple-sengoku.html">紫センゴク</a>
+<a href="../meta/decks/black-yamato.html">黒ヤマト</a>
+<a href="../meta/decks/black-yellow-teach.html">黒黄ティーチ</a>
 </div>
 </section>
 <section class="footer-column footer-column-deck-meta">
-<h4>&#x30C7;&#x30C3;&#x30AD;&#x500B;&#x5225;&#xFF08;&#x74B0;&#x5883;&#x30C7;&#x30C3;&#x30AD;&#xFF09;</h4>
+<h4>デッキ個別（環境デッキ）</h4>
 <div class="footer-links">
-<a href="../meta/decks/purple-enel.html">&#x7D2B;&#x30A8;&#x30CD;&#x30EB;</a>
-<a href="../meta/decks/red-blue-lucy.html">&#x8D64;&#x9752;&#x30EB;&#x30FC;&#x30B7;&#x30FC;</a>
-<a href="../meta/decks/blue-yellow-nami.html">&#x9752;&#x9EC4;&#x30CA;&#x30DF;</a>
-<a href="../meta/decks/yellow-luffy-skypiea.html">&#x9EC4;&#x30EB;&#x30D5;&#x30A3;(&#x7A7A;&#x5CF6;)</a>
-<a href="../meta/decks/red-blue-ace.html">&#x8D64;&#x9752;&#x30A8;&#x30FC;&#x30B9;</a>
-<a href="../meta/decks/blue-yellow-hancock.html">&#x9752;&#x9EC4;&#x30CF;&#x30F3;&#x30B3;&#x30C3;&#x30AF;</a>
-<a href="../meta/decks/green-mihawk.html">&#x7DD1;&#x30DF;&#x30DB;&#x30FC;&#x30AF;</a>
-<a href="../meta/decks/black-imu.html">&#x9ED2;&#x30A4;&#x30E0;</a>
+<a href="../meta/decks/purple-enel.html">紫エネル</a>
+<a href="../meta/decks/red-blue-lucy.html">赤青ルーシー</a>
+<a href="../meta/decks/blue-yellow-nami.html">青黄ナミ</a>
+<a href="../meta/decks/yellow-luffy-skypiea.html">黄ルフィ(空島)</a>
+<a href="../meta/decks/red-blue-ace.html">赤青エース</a>
+<a href="../meta/decks/blue-yellow-hancock.html">青黄ハンコック</a>
+<a href="../meta/decks/green-mihawk.html">緑ミホーク</a>
+<a href="../meta/decks/black-imu.html">黒イム</a>
 </div>
 </section>
 <section class="footer-column footer-column-special">
