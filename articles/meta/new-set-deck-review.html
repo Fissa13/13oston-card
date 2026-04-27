@@ -5,10 +5,30 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- Replace: Meta Title -->
-<title>新弾デッキ評価｜注目デッキとカード考察</title>
+<title>新リーダーおすすめ評価｜どのデッキを組むべき？</title>
 <!-- Replace: Meta Description -->
-<meta content="新弾発売後のデッキ評価、注目カード、環境への影響を整理するための仮記事ページです。" name="description"/>
+<meta content="最新弾の新リーダーについて、組むべきデッキの優先度や初心者向け・環境向けの比較評価をまとめています。" name="description"/>
 <link rel="stylesheet" href="../../assets/css/article-common.css"/>
+<style>
+.article .leader-recommend-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:18px 0 30px}
+.article .leader-recommend-card{position:relative;display:grid;gap:10px;padding:16px;border:1px solid rgba(209,170,61,.28);border-radius:16px;background:linear-gradient(180deg,#fff 0%,#fffdfa 100%);box-shadow:var(--shadow-soft);overflow:hidden}
+.article .leader-recommend-card img{width:min(100%,210px);height:auto;margin:0 auto;border-radius:14px;border:1px solid rgba(209,170,61,.34);box-shadow:0 8px 18px rgba(15,23,42,.14)}
+.article .leader-recommend-rank{position:absolute;top:14px;right:14px;display:inline-flex;align-items:center;justify-content:center;min-width:42px;height:30px;padding:0 10px;border-radius:999px;background:#ffd66b;border:1px solid rgba(194,145,38,.8);color:#111827;font-size:13px;font-weight:900;line-height:1;box-shadow:0 6px 14px rgba(15,23,42,.12)}
+.article .leader-recommend-card h3{margin:0;color:var(--heading);font-size:17px;line-height:1.45}
+.article .leader-recommend-card p{margin:0;font-size:14px;line-height:1.85;font-weight:600}
+.article .leader-recommend-card a{position:relative;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:52px;margin-top:4px;padding:13px 42px 13px 18px;border:1px solid #202a52;border-radius:14px;background:linear-gradient(180deg,#ffffff 0%,#f5f7ff 100%);color:#17204a;font-size:15px;font-weight:800;line-height:1.5;text-align:center;box-shadow:0 8px 18px rgba(18,24,48,.08);overflow:hidden}
+.article .leader-recommend-card a::after{content:"›";position:absolute;right:18px;top:50%;transform:translateY(-50%);color:#232b63;font-size:24px;line-height:1;font-weight:900}
+.article .leader-recommend-card a:hover{background:linear-gradient(180deg,#f9fbff 0%,#eef2ff 100%);color:#101936;border-color:#101936;transform:translateY(-1px);box-shadow:0 12px 22px rgba(18,24,48,.12)}
+.article .leader-compare-wrap{width:100%;overflow-x:auto;margin:18px 0 8px;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow-soft);background:#fff}
+.article .leader-compare-table{width:100%;min-width:760px;border-collapse:separate;border-spacing:0;font-size:14px}
+.article .leader-compare-table th{padding:12px 14px;background:linear-gradient(135deg,#232b63,#101936);color:#fff;font-size:13px;font-weight:900;text-align:left;white-space:nowrap}
+.article .leader-compare-table td{padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.75;font-weight:600}
+.article .leader-compare-table tr:last-child td{border-bottom:0}
+.article .leader-compare-table tbody tr:nth-child(even){background:#fffdfa}
+.article .leader-compare-name{font-weight:900;color:var(--heading);white-space:nowrap}
+.article .leader-score{display:inline-flex;align-items:center;justify-content:center;min-width:44px;padding:4px 10px;border-radius:999px;background:#eef1fb;border:1px solid var(--blue-border);color:var(--blue);font-size:12px;font-weight:900}
+@media(max-width:760px){.article .leader-recommend-grid{grid-template-columns:1fr}.article .leader-recommend-card img{width:min(100%,220px)}}
+</style>
 </head>
 <body class="deck-purple-enel">
 <!-- Common Header Start -->
@@ -42,71 +62,67 @@
 <div class="breadcrumbs">
 <a href="../../index.html">トップページ</a><span class="sep">›</span>
 <span>環境・デッキ</span><span class="sep">›</span>
-<span>新弾デッキ評価</span>
+<span>新リーダー評価</span>
 </div><div class="layout article-rails-layout"><aside class="ad-rail ad-rail-left-1"><div class="ad-box"><div class="ad-badge">広告</div><strong>広告枠</strong><p>PC表示では本編を中央の細いカラムに寄せるための広告枠です。</p></div></aside><aside class="ad-rail ad-rail-left-2"><div class="ad-box"><div class="ad-badge">広告</div><strong>広告枠</strong><p>PC表示では本編を中央の細いカラムに寄せるための広告枠です。</p></div></aside><main class="main"><section class="box hero">
 <div class="hero-inner">
 <div class="hero-copy">
 <!-- Article Hero Start -->
 <div class="hero-meta">
 <!-- Replace: Hero Category -->
-<span class="pill">環境・デッキ</span><span class="pill">更新日: ここに更新日を入れる</span></div>
+<span class="pill">環境・デッキ</span><span class="pill">新リーダー比較</span></div>
 <!-- Replace: Hero Title -->
-<h1 class="hero-title">新弾デッキ評価</h1>
+<h1 class="hero-title">新リーダーおすすめ評価｜どれを組むべき？</h1>
 <!-- Replace: Hero Summary -->
-<p class="hero-summary">新弾後のデッキ評価や注目カードを整理するための仮ページです。評価本文、表、カード解説を差し替えて使います。</p>
-<div class="hero-tags"><span class="hero-tag">新弾</span><span class="hero-tag">デッキ評価</span><span class="hero-tag">準備中</span></div></div>
+<p class="hero-summary">最新弾の新リーダー6種を、組みやすさ・将来性・強みの分かりやすさで比較します。新弾全体情報を見たあと、どの個別デッキ記事へ進むかを決めるための中間ページです。</p>
+<div class="hero-tags"><span class="hero-tag">新弾</span><span class="hero-tag">リーダー比較</span><span class="hero-tag">デッキ選び</span></div></div>
 </div>
-</section><section class="box toc-box"><div class="box-head"><h2>目次</h2></div><div class="box-body"><!-- Replace: TOC Items -->
-<ol class="toc toc-simple"><li><a href="#overview">新弾の注目ポイント</a></li><li><a href="#decks">評価したいデッキ</a></li><li><a href="#cards">注目カード</a></li><li><a href="#summary">まとめ</a></li></ol></div></section><article class="box">
+</section><article class="box">
 <!-- Article Section Start -->
 <div class="article">
-<!-- 本文差し替えエリア: ここから下を記事ごとの本文に差し替えてください。 -->
-<section id="overview">
-<h2>新弾の注目ポイント</h2>
-<div class="note">
-<div class="note-box">
-<strong>ここに本文を入れる</strong>
-<ul>
-<li>この記事で最初に伝える要点を入れてください。</li>
-<li>必要なカード名、商品名、デッキ名、日付などをここに整理します。</li>
-<li>本文を書き換えるだけで、latest-booster.html と同じ記事レイアウトのまま公開できます。</li>
-</ul>
-</div>
-<div class="note-box">
-<strong>差し替えメモ</strong>
-<ul>
-<li>この枠は要点まとめや前提条件に使えます。</li>
-<li>不要な場合は本文に合わせて削除してかまいません。</li>
-</ul>
-</div>
-</div>
-<p>ここに導入文を入れます。ページ固有のテーマに合わせて、読者がこの記事で何を確認できるのかを短く説明してください。</p>
-</section>
-<section id="decks">
-<h2>評価したいデッキ</h2>
-<div class="card-grid two">
-<div class="card-item"><div class="label">仮セクション</div><h4>ここに小見出しを入れる</h4><p>カード、デッキ、手順、評価ポイントなどの本文を入れてください。</p></div>
-<div class="card-item"><div class="label">仮セクション</div><h4>ここに小見出しを入れる</h4><p>比較したい内容や補足説明を入れてください。</p></div>
+<section id="recommended-leaders">
+<h2>おすすめの新リーダー</h2>
+<p>迷ったら、まずは「動きの分かりやすさ」「既存カードとの噛み合い」「個別記事で深掘りしやすいか」を基準に選ぶのがおすすめです。現時点では、青緑ルフィ・黒ヤマト・黒黄ティーチの3つを優先候補として見ています。</p>
+<div class="leader-recommend-grid">
+<article class="leader-recommend-card">
+<span class="leader-recommend-rank">1</span>
+<img alt="青緑ルフィのリーダーカード画像" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-booster/latest-booster-leader-luffy.webp"/>
+<h3>青緑ルフィ</h3>
+<p>インペルダウン軸のカードを使いながら、ドン!!を起こしてテンポを作れるリーダー。展開と攻撃の流れが分かりやすく、最初に試す新リーダーとして扱いやすい候補です。</p>
+<a href="decks/blue-green-luffy.html">青緑ルフィの記事を見る</a>
+</article>
+<article class="leader-recommend-card">
+<span class="leader-recommend-rank">2</span>
+<img alt="黒ヤマトのリーダーカード画像" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-booster/latest-booster-leader-yamato.webp"/>
+<h3>黒ヤマト</h3>
+<p>ワノ国キャラに速攻を付けて攻め筋を作れる黒リーダー。トラッシュを使う黒らしい動きがあり、慣れるほど選択肢が増える中級者向けの有力候補です。</p>
+<a href="decks/black-yamato.html">黒ヤマトの記事を見る</a>
+</article>
+<article class="leader-recommend-card">
+<span class="leader-recommend-rank">3</span>
+<img alt="黒黄ティーチのリーダーカード画像" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-booster/latest-booster-leader-teach.webp"/>
+<h3>黒黄ティーチ</h3>
+<p>相手ターン中のコスト上昇と攻撃対象変更で粘り強く戦えるリーダー。防御寄りのゲームをしたい人や、相手の攻めを受けながら返すデッキが好きな人に向いています。</p>
+<a href="decks/black-yellow-teach.html">黒黄ティーチの記事を見る</a>
+</article>
 </div>
 </section>
-<section id="cards">
-<h2>注目カード</h2>
-<table class="table">
-<thead><tr><th>項目</th><th>ここに本文を入れる</th></tr></thead>
+<section id="leader-comparison">
+<h2>新リーダー比較評価</h2>
+<p>6リーダーを、組みやすさ・攻めやすさ・守りやすさ・伸びしろで比較しました。個別記事に進む前の判断材料として見てください。</p>
+<div class="leader-compare-wrap">
+<table class="leader-compare-table">
+<thead><tr><th>リーダー</th><th>おすすめ度</th><th>向いている人</th><th>評価ポイント</th></tr></thead>
 <tbody>
-<tr><td>ポイント1</td><td>記事ごとの具体的な説明を入れてください。</td></tr>
-<tr><td>ポイント2</td><td>必要に応じてカード名、デッキ名、価格、日付などを入れます。</td></tr>
-<tr><td>ポイント3</td><td>公開前に最新情報へ差し替えてください。</td></tr>
+<tr><td class="leader-compare-name">青緑ルフィ</td><td><span class="leader-score">S</span></td><td>新弾リーダーをまず触りたい人</td><td>インペルダウン軸で動きがまとまりやすく、攻めの流れも作りやすい。</td></tr>
+<tr><td class="leader-compare-name">赤エース</td><td><span class="leader-score">A</span></td><td>速攻で押し切るゲームが好きな人</td><td>高パワーキャラに速攻を付けて攻める形が明快。攻めの再現性が課題。</td></tr>
+<tr><td class="leader-compare-name">青バギー</td><td><span class="leader-score">B</span></td><td>展開や小回りを重視したい人</td><td>インペルダウン展開が魅力。デッキの完成度は追加カード次第で伸びる。</td></tr>
+<tr><td class="leader-compare-name">紫センゴク</td><td><span class="leader-score">A</span></td><td>ドン!!管理と大型展開が好きな人</td><td>大将キャラをまとめて使える派手さがある。手札とドン!!の管理が重要。</td></tr>
+<tr><td class="leader-compare-name">黒ヤマト</td><td><span class="leader-score">S</span></td><td>黒のトラッシュ活用を楽しみたい人</td><td>ワノ国キャラの速攻化で攻め筋がはっきりしている。構築の伸びしろも大きい。</td></tr>
+<tr><td class="leader-compare-name">黒黄ティーチ</td><td><span class="leader-score">S</span></td><td>受けの強いデッキを使いたい人</td><td>攻撃対象変更とコスト上昇で相手ターンに強い。守りながら勝ち筋を探せる。</td></tr>
 </tbody>
 </table>
-<p>ここに補足本文を入れます。表が不要な記事では、見出しやカード型のブロックに置き換えてください。</p>
+</div>
 </section>
-<section class="summary-section-fix" id="summary">
-<h2>まとめ</h2>
-<div class="note"><div class="note-box"><strong>この記事のまとめ</strong><ul><li>ここに結論を入れてください。</li><li>次に読む記事や関連デッキへの導線を入れてください。</li><li>本文差し替え後も、ヘッダー・広告レール・サイドバー・フッターは latest-booster.html と同じ構成です。</li></ul></div></div>
-<p>最後に、読者が次に取る行動や注意点を入れてください。</p>
-</section>
-<!-- 本文差し替えエリア: ここまで。 -->
 </div>
 </article></main>
 <!-- Related Articles Start -->

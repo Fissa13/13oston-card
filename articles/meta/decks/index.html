@@ -1,14 +1,28 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="ja">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- Replace: Meta Title -->
-<title>デッキ記事一覧｜ワンピースカード環境デッキ</title>
+<title>デッキ一覧｜ワンピースカード環境デッキ</title>
 <!-- Replace: Meta Description -->
-<meta content="個別デッキ記事への導線をまとめ、環境デッキや最新弾デッキを一覧化するための仮記事ページです。" name="description"/>
+<meta content="ワンピースカードの最新弾デッキと環境デッキの個別攻略記事リンクを一覧でまとめています。" name="description"/>
 <link rel="stylesheet" href="../../../assets/css/article-common.css"/>
+<style>
+.article .deck-link-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:18px 0 30px}
+.article .deck-link-card{position:relative;display:grid;grid-template-columns:150px minmax(0,1fr);grid-template-areas:"image name" "image feature";gap:7px 16px;align-items:start;padding:16px;border:1px solid rgba(209,170,61,.26);border-radius:16px;background:linear-gradient(180deg,#fff 0%,#fffdfa 100%);box-shadow:var(--shadow-soft);overflow:hidden;color:inherit;text-decoration:none}
+.article .deck-link-card:hover{transform:translateY(-1px);box-shadow:0 12px 22px rgba(18,24,48,.12)}
+.article .deck-link-image{grid-area:image;margin:0;padding:0}
+.article .deck-link-image img{display:block;width:100%;max-width:150px;height:auto;margin:0 auto;border-radius:14px;border:1px solid rgba(209,170,61,.34);background:#fff;box-shadow:0 8px 18px rgba(15,23,42,.14);object-fit:contain}
+.article .deck-link-name{grid-area:name;width:100%;padding:0 0 3px;color:var(--heading);font-size:16px;font-weight:900;line-height:1.45;border-bottom:1px solid rgba(209,170,61,.22)}
+.article .deck-link-feature{grid-area:feature;width:100%;margin-top:2px;padding:0;color:var(--text);font-size:13.5px;font-weight:700;line-height:1.72}
+.article .deck-link-name::before,
+.article .deck-link-feature::before{display:block;margin-bottom:3px;color:var(--muted);font-size:10.5px;font-weight:900;line-height:1.35;letter-spacing:.04em}
+.article .deck-link-name::before{content:"リーダー名"}
+.article .deck-link-feature::before{content:"特徴"}
+@media(max-width:760px){.article .deck-link-grid{grid-template-columns:1fr}.article .deck-link-card{grid-template-columns:1fr;grid-template-areas:"image" "name" "feature";gap:8px;padding:14px}.article .deck-link-image{margin-bottom:4px}.article .deck-link-image img{width:min(100%,220px);max-width:220px}.article .deck-link-feature{font-size:13px;line-height:1.72}}
+</style>
 </head>
 <body class="deck-purple-enel">
 <!-- Common Header Start -->
@@ -42,91 +56,54 @@
 <div class="breadcrumbs">
 <a href="../../../index.html">トップページ</a><span class="sep">›</span>
 <span>環境・デッキ</span><span class="sep">›</span>
-<span>デッキ記事一覧</span>
+<span>デッキ一覧</span>
 </div><div class="layout article-rails-layout"><aside class="ad-rail ad-rail-left-1"><div class="ad-box"><div class="ad-badge">広告</div><strong>広告枠</strong><p>PC表示では本編を中央の細いカラムに寄せるための広告枠です。</p></div></aside><aside class="ad-rail ad-rail-left-2"><div class="ad-box"><div class="ad-badge">広告</div><strong>広告枠</strong><p>PC表示では本編を中央の細いカラムに寄せるための広告枠です。</p></div></aside><main class="main"><section class="box hero">
 <div class="hero-inner">
 <div class="hero-copy">
 <!-- Article Hero Start -->
 <div class="hero-meta">
 <!-- Replace: Hero Category -->
-<span class="pill">環境・デッキ</span><span class="pill">更新日: ここに更新日を入れる</span></div>
+<span class="pill">環境・デッキ</span></div>
 <!-- Replace: Hero Title -->
-<h1 class="hero-title">デッキ記事一覧</h1>
+<h1 class="hero-title">デッキ一覧</h1>
 <!-- Replace: Hero Summary -->
-<p class="hero-summary">個別デッキ記事への導線をまとめる一覧ページです。紹介文やデッキ一覧の項目を本文エリアで更新できます。</p>
-<div class="hero-tags"><span class="hero-tag">デッキ一覧</span><span class="hero-tag">環境</span><span class="hero-tag">準備中</span></div></div>
+<p class="hero-summary">最新弾デッキと環境デッキの個別攻略記事をまとめた一覧ページです。</p>
+<div class="hero-tags"><span class="hero-tag">デッキ一覧</span><span class="hero-tag">最新弾</span><span class="hero-tag">環境デッキ</span></div></div>
 </div>
-</section><section class="box toc-box"><div class="box-head"><h2>目次</h2></div><div class="box-body"><!-- Replace: TOC Items -->
-<ol class="toc toc-simple"><li><a href="#new-decks">最新弾デッキ</a></li><li><a href="#meta-decks">環境デッキ</a></li><li><a href="#beginner">初心者向けデッキ</a></li><li><a href="#summary">まとめ</a></li></ol></div></section><article class="box">
+</section><article class="box">
 <!-- Article Section Start -->
 <div class="article">
-<!-- 本文差し替えエリア: ここから下を記事ごとの本文に差し替えてください。 -->
+<!-- Deck list only: start -->
 <section id="new-decks">
 <h2>最新弾デッキ</h2>
-<div class="note">
-<div class="note-box">
-<strong>ここに本文を入れる</strong>
-<ul>
-<li>この記事で最初に伝える要点を入れてください。</li>
-<li>必要なカード名、商品名、デッキ名、日付などをここに整理します。</li>
-<li>本文を書き換えるだけで、latest-booster.html と同じ記事レイアウトのまま公開できます。</li>
-</ul>
+<div class="deck-link-grid">
+<a class="deck-link-card" href="blue-green-luffy.html"><figure class="deck-link-image"><img alt="青緑ルフィ" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-booster/latest-booster-leader-luffy.webp"/></figure><div class="deck-link-name">青緑ルフィ</div><div class="deck-link-feature">インペルダウン軸でドン!!を起こし、テンポよく攻める最新弾デッキ。</div></a>
+<a class="deck-link-card" href="red-ace.html"><figure class="deck-link-image"><img alt="赤エース" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-booster/latest-booster-leader-ace.webp"/></figure><div class="deck-link-name">赤エース</div><div class="deck-link-feature">速攻付与を活かして高パワーキャラで押し込む赤系デッキ。</div></a>
+<a class="deck-link-card" href="blue-buggy.html"><figure class="deck-link-image"><img alt="青バギー" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-booster/latest-booster-leader-buggy.webp"/></figure><div class="deck-link-name">青バギー</div><div class="deck-link-feature">インペルダウンの展開力を使い、盤面を作り直しながら戦うデッキ。</div></a>
+<a class="deck-link-card" href="purple-sengoku.html"><figure class="deck-link-image"><img alt="紫センゴク" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-booster/latest-booster-leader-sengoku.webp"/></figure><div class="deck-link-name">紫センゴク</div><div class="deck-link-feature">ドン!!管理から大将キャラを展開し、一気に盤面を作る紫デッキ。</div></a>
+<a class="deck-link-card" href="black-yamato.html"><figure class="deck-link-image"><img alt="黒ヤマト" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-booster/latest-booster-leader-yamato.webp"/></figure><div class="deck-link-name">黒ヤマト</div><div class="deck-link-feature">ワノ国キャラの登場時速攻を活かし、トラッシュから攻め筋を作る黒デッキ。</div></a>
+<a class="deck-link-card" href="black-yellow-teach.html"><figure class="deck-link-image"><img alt="黒黄ティーチ" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-booster/latest-booster-leader-teach.webp"/></figure><div class="deck-link-name">黒黄ティーチ</div><div class="deck-link-feature">相手ターン中のコスト上昇と攻撃対象変更で粘り強く戦う黒黄デッキ。</div></a>
 </div>
-<div class="note-box">
-<strong>差し替えメモ</strong>
-<ul>
-<li>この枠は要点まとめや前提条件に使えます。</li>
-<li>不要な場合は本文に合わせて削除してかまいません。</li>
-</ul>
-</div>
-</div>
-<p>ここに導入文を入れます。ページ固有のテーマに合わせて、読者がこの記事で何を確認できるのかを短く説明してください。</p>
 </section>
 <section id="meta-decks">
 <h2>環境デッキ</h2>
-<div class="card-grid two">
-<div class="card-item"><div class="label">仮セクション</div><h4>ここに小見出しを入れる</h4><p>カード、デッキ、手順、評価ポイントなどの本文を入れてください。</p></div>
-<div class="card-item"><div class="label">仮セクション</div><h4>ここに小見出しを入れる</h4><p>比較したい内容や補足説明を入れてください。</p></div>
+<div class="deck-link-grid">
+<a class="deck-link-card" href="blue-yellow-nami.html"><figure class="deck-link-image"><img alt="青黄ナミ" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-01-blue-yellow-nami.png"/></figure><div class="deck-link-name">青黄ナミ</div><div class="deck-link-feature">守りの固さと終盤の詰め性能が高い最上位候補。</div></a>
+<a class="deck-link-card" href="red-blue-lucy.html"><figure class="deck-link-image"><img alt="赤青ルーシー" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-02-red-blue-lucy.png"/></figure><div class="deck-link-name">赤青ルーシー</div><div class="deck-link-feature">展開力と攻撃性能を両立した環境トップ級デッキ。</div></a>
+<a class="deck-link-card" href="purple-enel.html"><figure class="deck-link-image"><img alt="紫エネル" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-03-purple-enel.png"/></figure><div class="deck-link-name">紫エネル</div><div class="deck-link-feature">大型キャラとドン加速で押し込むパワー型デッキ。</div></a>
+<a class="deck-link-card" href="../tier-list.html#s-decks"><figure class="deck-link-image"><img alt="黒黄モリア" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-04-black-yellow-moria.png"/></figure><div class="deck-link-name">黒黄モリア</div><div class="deck-link-feature">トラッシュ活用と除去を軸にしたコントロール寄りデッキ。</div></a>
+<a class="deck-link-card" href="../tier-list.html#s-decks"><figure class="deck-link-image"><img alt="黒クロコダイル" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-05-black-crocodile.png"/></figure><div class="deck-link-name">黒クロコダイル</div><div class="deck-link-feature">除去と手札干渉で相手の動きを抑えながら戦うデッキ。</div></a>
+<a class="deck-link-card" href="red-blue-ace.html"><figure class="deck-link-image"><img alt="赤青エース" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-06-red-blue-ace.png"/></figure><div class="deck-link-name">赤青エース</div><div class="deck-link-feature">赤の攻撃力と青の手札調整を活かしたテンポデッキ。</div></a>
+<a class="deck-link-card" href="yellow-luffy-skypiea.html"><figure class="deck-link-image"><img alt="空島ルフィ" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-07-skypiea-luffy.png"/></figure><div class="deck-link-name">空島ルフィ</div><div class="deck-link-feature">空島ギミックを活かしてライフと盤面をコントロールするデッキ。</div></a>
+<a class="deck-link-card" href="green-mihawk.html"><figure class="deck-link-image"><img alt="緑ミホーク" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-08-green-mihawk.png"/></figure><div class="deck-link-name">緑ミホーク</div><div class="deck-link-feature">レストと盤面制圧を絡めて有利交換を積み重ねるデッキ。</div></a>
+<a class="deck-link-card" href="../tier-list.html#a-decks"><figure class="deck-link-image"><img alt="赤黒サボ" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-09-red-black-sabo.png"/></figure><div class="deck-link-name">赤黒サボ</div><div class="deck-link-feature">除去と攻撃を両立し、環境次第で上位を狙えるデッキ。</div></a>
+<a class="deck-link-card" href="../tier-list.html#a-decks"><figure class="deck-link-image"><img alt="赤黄ボニー" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-10-red-yellow-bonney.png"/></figure><div class="deck-link-name">赤黄ボニー</div><div class="deck-link-feature">赤の速攻性と黄のライフ干渉を活かす攻撃型デッキ。</div></a>
+<a class="deck-link-card" href="../tier-list.html#a-decks"><figure class="deck-link-image"><img alt="赤紫ロジャー" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-11-red-purple-roger.png"/></figure><div class="deck-link-name">赤紫ロジャー</div><div class="deck-link-feature">ドン操作と高パワー展開で押し切るデッキ。</div></a>
+<a class="deck-link-card" href="../tier-list.html#a-decks"><figure class="deck-link-image"><img alt="紫ドフラ" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-12-purple-doflamingo.png"/></figure><div class="deck-link-name">紫ドフラ</div><div class="deck-link-feature">ドン加速から大型展開につなげる中速デッキ。</div></a>
+<a class="deck-link-card" href="../tier-list.html#a-decks"><figure class="deck-link-image"><img alt="紫黄ロシナンテ" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-13-purple-yellow-rosinante.png"/></figure><div class="deck-link-name">紫黄ロシナンテ</div><div class="deck-link-feature">耐久と展開補助を組み合わせた粘り強いデッキ。</div></a>
 </div>
 </section>
-<section id="beginner">
-<h2>初心者向けデッキ</h2>
-<table class="table">
-<thead><tr><th>項目</th><th>ここに本文を入れる</th></tr></thead>
-<tbody>
-<tr><td>ポイント1</td><td>記事ごとの具体的な説明を入れてください。</td></tr>
-<tr><td>ポイント2</td><td>必要に応じてカード名、デッキ名、価格、日付などを入れます。</td></tr>
-<tr><td>ポイント3</td><td>公開前に最新情報へ差し替えてください。</td></tr>
-</tbody>
-</table>
-<p>ここに補足本文を入れます。表が不要な記事では、見出しやカード型のブロックに置き換えてください。</p>
-</section>
-<section class="summary-section-fix" id="summary">
-<h2>まとめ</h2>
-<div class="note"><div class="note-box"><strong>この記事のまとめ</strong><ul><li>ここに結論を入れてください。</li><li>次に読む記事や関連デッキへの導線を入れてください。</li><li>本文差し替え後も、ヘッダー・広告レール・サイドバー・フッターは latest-booster.html と同じ構成です。</li></ul></div></div>
-<p>最後に、読者が次に取る行動や注意点を入れてください。</p>
-</section><section id="deck-links"><h2>&#x30C7;&#x30C3;&#x30AD;&#x500B;&#x5225;&#x8A18;&#x4E8B;&#x30EA;&#x30F3;&#x30AF;</h2>
-<h3>&#x6700;&#x65B0;&#x5F3E;</h3>
-<div class="card-grid two">
-<div class="card-item"><div class="label">&#x6700;&#x65B0;&#x5F3E;</div><h4><a href="blue-green-luffy.html">&#x9752;&#x7DD1;&#x30EB;&#x30D5;&#x30A3;</a></h4><p>&#x9752;&#x7DD1;&#x30EB;&#x30D5;&#x30A3;&#x306E;&#x500B;&#x5225;&#x30C7;&#x30C3;&#x30AD;&#x8A18;&#x4E8B;&#x3078;&#x79FB;&#x52D5;&#x3057;&#x307E;&#x3059;&#x3002;</p></div>
-<div class="card-item"><div class="label">&#x6700;&#x65B0;&#x5F3E;</div><h4><a href="red-ace.html">&#x8D64;&#x30A8;&#x30FC;&#x30B9;</a></h4><p>&#x8D64;&#x30A8;&#x30FC;&#x30B9;&#x306E;&#x500B;&#x5225;&#x30C7;&#x30C3;&#x30AD;&#x8A18;&#x4E8B;&#x3078;&#x79FB;&#x52D5;&#x3057;&#x307E;&#x3059;&#x3002;</p></div>
-<div class="card-item"><div class="label">&#x6700;&#x65B0;&#x5F3E;</div><h4><a href="blue-buggy.html">&#x9752;&#x30D0;&#x30AE;&#x30FC;</a></h4><p>&#x9752;&#x30D0;&#x30AE;&#x30FC;&#x306E;&#x500B;&#x5225;&#x30C7;&#x30C3;&#x30AD;&#x8A18;&#x4E8B;&#x3078;&#x79FB;&#x52D5;&#x3057;&#x307E;&#x3059;&#x3002;</p></div>
-<div class="card-item"><div class="label">&#x6700;&#x65B0;&#x5F3E;</div><h4><a href="purple-sengoku.html">&#x7D2B;&#x30BB;&#x30F3;&#x30B4;&#x30AF;</a></h4><p>&#x7D2B;&#x30BB;&#x30F3;&#x30B4;&#x30AF;&#x306E;&#x500B;&#x5225;&#x30C7;&#x30C3;&#x30AD;&#x8A18;&#x4E8B;&#x3078;&#x79FB;&#x52D5;&#x3057;&#x307E;&#x3059;&#x3002;</p></div>
-<div class="card-item"><div class="label">&#x6700;&#x65B0;&#x5F3E;</div><h4><a href="black-yamato.html">&#x9ED2;&#x30E4;&#x30DE;&#x30C8;</a></h4><p>&#x9ED2;&#x30E4;&#x30DE;&#x30C8;&#x306E;&#x500B;&#x5225;&#x30C7;&#x30C3;&#x30AD;&#x8A18;&#x4E8B;&#x3078;&#x79FB;&#x52D5;&#x3057;&#x307E;&#x3059;&#x3002;</p></div>
-<div class="card-item"><div class="label">&#x6700;&#x65B0;&#x5F3E;</div><h4><a href="black-yellow-teach.html">&#x9ED2;&#x9EC4;&#x30C6;&#x30A3;&#x30FC;&#x30C1;</a></h4><p>&#x9ED2;&#x9EC4;&#x30C6;&#x30A3;&#x30FC;&#x30C1;&#x306E;&#x500B;&#x5225;&#x30C7;&#x30C3;&#x30AD;&#x8A18;&#x4E8B;&#x3078;&#x79FB;&#x52D5;&#x3057;&#x307E;&#x3059;&#x3002;</p></div>
-</div>
-<h3>&#x74B0;&#x5883;&#x30C7;&#x30C3;&#x30AD;</h3>
-<div class="card-grid two">
-<div class="card-item"><div class="label">&#x74B0;&#x5883;&#x30C7;&#x30C3;&#x30AD;</div><h4><a href="purple-enel.html">&#x7D2B;&#x30A8;&#x30CD;&#x30EB;</a></h4><p>&#x7D2B;&#x30A8;&#x30CD;&#x30EB;&#x306E;&#x500B;&#x5225;&#x30C7;&#x30C3;&#x30AD;&#x8A18;&#x4E8B;&#x3078;&#x79FB;&#x52D5;&#x3057;&#x307E;&#x3059;&#x3002;</p></div>
-<div class="card-item"><div class="label">&#x74B0;&#x5883;&#x30C7;&#x30C3;&#x30AD;</div><h4><a href="red-blue-lucy.html">&#x8D64;&#x9752;&#x30EB;&#x30FC;&#x30B7;&#x30FC;</a></h4><p>&#x8D64;&#x9752;&#x30EB;&#x30FC;&#x30B7;&#x30FC;&#x306E;&#x500B;&#x5225;&#x30C7;&#x30C3;&#x30AD;&#x8A18;&#x4E8B;&#x3078;&#x79FB;&#x52D5;&#x3057;&#x307E;&#x3059;&#x3002;</p></div>
-<div class="card-item"><div class="label">&#x74B0;&#x5883;&#x30C7;&#x30C3;&#x30AD;</div><h4><a href="blue-yellow-nami.html">&#x9752;&#x9EC4;&#x30CA;&#x30DF;</a></h4><p>&#x9752;&#x9EC4;&#x30CA;&#x30DF;&#x306E;&#x500B;&#x5225;&#x30C7;&#x30C3;&#x30AD;&#x8A18;&#x4E8B;&#x3078;&#x79FB;&#x52D5;&#x3057;&#x307E;&#x3059;&#x3002;</p></div>
-<div class="card-item"><div class="label">&#x74B0;&#x5883;&#x30C7;&#x30C3;&#x30AD;</div><h4><a href="yellow-luffy-skypiea.html">&#x9EC4;&#x30EB;&#x30D5;&#x30A3;(&#x7A7A;&#x5CF6;)</a></h4><p>&#x9EC4;&#x30EB;&#x30D5;&#x30A3;(&#x7A7A;&#x5CF6;)&#x306E;&#x500B;&#x5225;&#x30C7;&#x30C3;&#x30AD;&#x8A18;&#x4E8B;&#x3078;&#x79FB;&#x52D5;&#x3057;&#x307E;&#x3059;&#x3002;</p></div>
-<div class="card-item"><div class="label">&#x74B0;&#x5883;&#x30C7;&#x30C3;&#x30AD;</div><h4><a href="red-blue-ace.html">&#x8D64;&#x9752;&#x30A8;&#x30FC;&#x30B9;</a></h4><p>&#x8D64;&#x9752;&#x30A8;&#x30FC;&#x30B9;&#x306E;&#x500B;&#x5225;&#x30C7;&#x30C3;&#x30AD;&#x8A18;&#x4E8B;&#x3078;&#x79FB;&#x52D5;&#x3057;&#x307E;&#x3059;&#x3002;</p></div>
-<div class="card-item"><div class="label">&#x74B0;&#x5883;&#x30C7;&#x30C3;&#x30AD;</div><h4><a href="blue-yellow-hancock.html">&#x9752;&#x9EC4;&#x30CF;&#x30F3;&#x30B3;&#x30C3;&#x30AF;</a></h4><p>&#x9752;&#x9EC4;&#x30CF;&#x30F3;&#x30B3;&#x30C3;&#x30AF;&#x306E;&#x500B;&#x5225;&#x30C7;&#x30C3;&#x30AD;&#x8A18;&#x4E8B;&#x3078;&#x79FB;&#x52D5;&#x3057;&#x307E;&#x3059;&#x3002;</p></div>
-<div class="card-item"><div class="label">&#x74B0;&#x5883;&#x30C7;&#x30C3;&#x30AD;</div><h4><a href="green-mihawk.html">&#x7DD1;&#x30DF;&#x30DB;&#x30FC;&#x30AF;</a></h4><p>&#x7DD1;&#x30DF;&#x30DB;&#x30FC;&#x30AF;&#x306E;&#x500B;&#x5225;&#x30C7;&#x30C3;&#x30AD;&#x8A18;&#x4E8B;&#x3078;&#x79FB;&#x52D5;&#x3057;&#x307E;&#x3059;&#x3002;</p></div>
-<div class="card-item"><div class="label">&#x74B0;&#x5883;&#x30C7;&#x30C3;&#x30AD;</div><h4><a href="black-imu.html">&#x9ED2;&#x30A4;&#x30E0;</a></h4><p>&#x9ED2;&#x30A4;&#x30E0;&#x306E;&#x500B;&#x5225;&#x30C7;&#x30C3;&#x30AD;&#x8A18;&#x4E8B;&#x3078;&#x79FB;&#x52D5;&#x3057;&#x307E;&#x3059;&#x3002;</p></div>
-</div>
-</section>`n<!-- 本文差し替えエリア: ここまで。 -->
+<!-- Deck list only: end -->
 </div>
 </article></main>
 <!-- Related Articles Start -->
@@ -268,3 +245,4 @@
 </footer>
 </body>
 </html>
+
