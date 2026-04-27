@@ -3350,38 +3350,98 @@ body{
 }
 .leader-table-scroll {
   width: 100%;
-  overflow-x: auto;
+  overflow-x: visible;
   -webkit-overflow-scrolling: touch;
   margin-bottom: 20px;
 }
 .article-rails-layout > .main .leader-table {
-  display: table !important;
+  display: block !important;
   width: 100% !important;
-  min-width: 780px;
+  min-width: 0 !important;
   max-width: none !important;
-  table-layout: auto !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
   white-space: normal !important;
+}
+.article-rails-layout > .main .leader-table thead {
+  display: none !important;
+}
+.article-rails-layout > .main .leader-table tbody {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  width: 100%;
+}
+.article-rails-layout > .main .leader-table tr {
+  display: block !important;
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid rgba(209,170,61,.26);
+  border-radius: 16px;
+  background: linear-gradient(180deg, #ffffff 0%, #fffdfa 100%);
+  box-shadow: var(--shadow-soft);
 }
 .article-rails-layout > .main .leader-table th,
 .article-rails-layout > .main .leader-table td {
+  display: block !important;
+  width: 100% !important;
+  border-top: 0 !important;
+  padding: 6px 0 !important;
+  text-align: left;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.75;
   word-break: normal !important;
   overflow-wrap: break-word !important;
   white-space: normal !important;
 }
+.article-rails-layout > .main .leader-table td::before {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+.article-rails-layout > .main .leader-table td:nth-child(1)::before {
+  content: "リーダー名";
+}
+.article-rails-layout > .main .leader-table td:nth-child(2)::before {
+  content: "色";
+}
+.article-rails-layout > .main .leader-table td:nth-child(3)::before {
+  content: "効果";
+}
 .article-rails-layout > .main .leader-table th:nth-child(1),
 .article-rails-layout > .main .leader-table td:nth-child(1) {
-  width: 1% !important;
-  white-space: nowrap !important;
+  width: 100% !important;
+  color: var(--heading);
+  font-size: 16px;
+  font-weight: 800;
+  white-space: normal !important;
 }
 .article-rails-layout > .main .leader-table th:nth-child(2),
 .article-rails-layout > .main .leader-table td:nth-child(2) {
-  width: 1% !important;
-  white-space: nowrap !important;
-  text-align: center;
+  width: 100% !important;
+  color: var(--blue);
+  font-weight: 800;
+  white-space: normal !important;
+  text-align: left;
 }
 .article-rails-layout > .main .leader-table th:nth-child(3),
 .article-rails-layout > .main .leader-table td:nth-child(3) {
-  width: auto !important;
+  width: 100% !important;
+  margin-top: 6px;
+}
+@media (max-width: 640px) {
+  .article-rails-layout > .main .leader-table tbody {
+    grid-template-columns: 1fr;
+  }
+
+  .article-rails-layout > .main .leader-table tr {
+    padding: 14px;
+  }
 }
 .article-rails-layout > .main .notable-card-table {
   table-layout: fixed !important;
@@ -3428,6 +3488,173 @@ body{
   }
   .comic-parallel-card img {
     border-radius: 8px;
+  }
+}
+
+.influencer-card-list,
+.tournament-card-list {
+  display: grid;
+  gap: 16px;
+  margin: 18px 0 28px;
+}
+.influencer-card,
+.tournament-card {
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+  padding: 18px;
+  border: 1px solid rgba(209,170,61,.28);
+  border-radius: 16px;
+  background: linear-gradient(180deg,#ffffff 0%, #fffdfa 100%);
+  box-shadow: var(--shadow-soft);
+}
+.influencer-avatar,
+.tournament-avatar {
+  width: 88px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,0)),
+    linear-gradient(135deg,#232b63 0%,#101936 100%);
+  color: #f2c95c;
+  border: 2px solid rgba(209,170,61,.42);
+  font-size: 34px;
+  font-weight: 900;
+  line-height: 1;
+  box-shadow: 0 8px 18px rgba(18,24,48,.12);
+}
+.tournament-avatar {
+  font-size: 28px;
+}
+.influencer-card-body,
+.tournament-card-body {
+  min-width: 0;
+}
+.influencer-card-head,
+.tournament-card-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+.influencer-kicker,
+.tournament-kicker {
+  margin: 0 0 2px !important;
+  color: var(--muted) !important;
+  font-size: 11px !important;
+  font-weight: 900 !important;
+  line-height: 1.4 !important;
+}
+.influencer-card h3,
+.tournament-card h3 {
+  margin: 0;
+  color: var(--heading);
+  font-size: 20px;
+  line-height: 1.35;
+  letter-spacing: 0;
+}
+.influencer-status,
+.tournament-status {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: #eeeeee;
+  border: 1px solid #d7d7d7;
+  color: #232b63;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+.influencer-tags,
+.tournament-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0;
+}
+.influencer-tags span,
+.tournament-tags span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: #f5ecd2;
+  border: 1px solid rgba(209,170,61,.38);
+  color: #6f5211;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+.influencer-meta,
+.tournament-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+}
+.influencer-meta div,
+.tournament-meta div {
+  min-width: 0;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #faf8f2;
+  border: 1px solid rgba(216,210,195,.85);
+}
+.influencer-meta dt,
+.tournament-meta dt {
+  margin: 0 0 3px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 1.4;
+}
+.influencer-meta dd,
+.tournament-meta dd {
+  margin: 0;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.65;
+}
+@media (max-width: 640px) {
+  .influencer-card,
+  .tournament-card {
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 14px;
+    padding: 14px;
+  }
+  .influencer-avatar,
+  .tournament-avatar {
+    width: 64px;
+    font-size: 26px;
+  }
+  .tournament-avatar {
+    font-size: 21px;
+  }
+  .influencer-card-head,
+  .tournament-card-head {
+    display: grid;
+    gap: 8px;
+  }
+  .influencer-card h3,
+  .tournament-card h3 {
+    font-size: 18px;
+  }
+  .influencer-status,
+  .tournament-status {
+    width: max-content;
+  }
+  .influencer-meta,
+  .tournament-meta {
+    grid-template-columns: 1fr;
   }
 }
 /* ===== /normal article shared components ===== */
