@@ -743,6 +743,41 @@
       display: block;
       color: inherit;
       text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .sns-card.sns-card-link:hover {
+      transform: translateY(-2px);
+      border-color: rgba(209,170,61,0.52);
+      box-shadow: 0 12px 24px rgba(18,24,48,0.10);
+    }
+
+    .sns-card-content {
+      display: grid;
+      grid-template-columns: 72px minmax(0, 1fr);
+      gap: 14px;
+      align-items: center;
+    }
+
+    .sns-card-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 16px;
+      object-fit: cover;
+      box-shadow: 0 8px 18px rgba(18,24,48,0.14);
+      flex: 0 0 72px;
+    }
+
+    .sns-card-copy {
+      min-width: 0;
+    }
+
+    .sns-card-copy h4 {
+      margin-bottom: 6px;
+    }
+
+    .sns-card-copy p {
+      margin-bottom: 0;
     }
 
     .article-card img {
@@ -760,6 +795,14 @@
       border-radius: 8px;
       margin-bottom: 12px;
       background: var(--gray-soft);
+    }
+
+    .sns-card img.sns-card-icon {
+      width: 72px;
+      max-width: 72px;
+      aspect-ratio: 1 / 1;
+      margin-bottom: 0;
+      background: #0d1726;
     }
 
     .link-list,
@@ -1410,7 +1453,7 @@
 </div>
 <div class="content"><div class="badge">スタートデッキ</div>
 <h4>最新ST「ルフィ&amp;エース【ST-30】」が発売</h4>
-<p>収録内容や注目カード、相性のよいリーダー候補をまとめて確認できます。購入前のチェックや改造方針の整理にも役立ちます。</p>
+<p>デッキ評価や基本的な回し方、収録内容をまとめて確認できます。購入前のチェックや改造方針の整理にも役立ちます。</p>
 </div>
 </a><a class="news-card-large news-card-link" href="articles/latest/banned-restricted-2026-05.html">
 <div class="image-wrap">
@@ -1442,16 +1485,16 @@
 </div>
 <div class="tier-cards cols-3">
 <article class="tier-card">
-<img alt="青黄ナミ" class="tier-card-art" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-01-blue-yellow-nami.png"/>
-<div class="tier-card-body"><strong>青黄ナミ</strong><span></span></div>
-</article>
-<article class="tier-card">
-<img alt="赤青ルーシー" class="tier-card-art" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-02-red-blue-lucy.png"/>
-<div class="tier-card-body"><strong>赤青ルーシー</strong><span></span></div>
-</article>
-<article class="tier-card">
-<img alt="紫エネル" class="tier-card-art" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-03-purple-enel.png"/>
+<img alt="紫エネル" class="tier-card-art" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-01-purple-enel.png"/>
 <div class="tier-card-body"><strong>紫エネル</strong><span></span></div>
+</article>
+<article class="tier-card">
+<img alt="緑ミホーク" class="tier-card-art" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-02-green-mihawk.png"/>
+<div class="tier-card-body"><strong>緑ミホーク</strong><span></span></div>
+</article>
+<article class="tier-card">
+<img alt="青黄ナミ" class="tier-card-art" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-03-blue-yellow-nami.png"/>
+<div class="tier-card-body"><strong>青黄ナミ</strong><span></span></div>
 </article>
 </div>
 </div>
@@ -1462,24 +1505,24 @@
 </div>
 <div class="tier-cards">
 <article class="tier-card">
-<img alt="黒黄モリア" class="tier-card-art" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-04-black-yellow-moria.png"/>
-<div class="tier-card-body"><strong>黒黄モリア</strong><span></span></div>
+<img alt="赤青ルーシー" class="tier-card-art" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-04-red-blue-lucy.png"/>
+<div class="tier-card-body"><strong>赤青ルーシー</strong><span></span></div>
 </article>
 <article class="tier-card">
-<img alt="黒クロコダイル" class="tier-card-art" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-05-black-crocodile.png"/>
-<div class="tier-card-body"><strong>黒クロコダイル</strong><span></span></div>
+<img alt="青黄ハンコック" class="tier-card-art" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-05-blue-yellow-hancock.png"/>
+<div class="tier-card-body"><strong>青黄ハンコック</strong><span></span></div>
 </article>
 <article class="tier-card">
-<img alt="赤青エース" class="tier-card-art" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-06-red-blue-ace.png"/>
-<div class="tier-card-body"><strong>赤青エース</strong><span></span></div>
-</article>
-<article class="tier-card">
-<img alt="空島ルフィ" class="tier-card-art" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-07-skypiea-luffy.png"/>
+<img alt="空島ルフィ" class="tier-card-art" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-06-skypiea-luffy.png"/>
 <div class="tier-card-body"><strong>空島ルフィ</strong><span></span></div>
 </article>
 <article class="tier-card">
-<img alt="緑ミホーク" class="tier-card-art" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-08-green-mihawk.png"/>
-<div class="tier-card-body"><strong>緑ミホーク</strong><span></span></div>
+<img alt="赤青エース" class="tier-card-art" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-07-red-blue-ace.png"/>
+<div class="tier-card-body"><strong>赤青エース</strong><span></span></div>
+</article>
+<article class="tier-card">
+<img alt="黒イム" class="tier-card-art" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-08-black-imu.png"/>
+<div class="tier-card-body"><strong>黒イム</strong><span></span></div>
 </article>
 </div>
 </div>
@@ -1490,12 +1533,12 @@
 </div>
 <div class="tier-cards">
 <article class="tier-card">
-<img alt="赤黒サボ" class="tier-card-art" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-09-red-black-sabo.png"/>
-<div class="tier-card-body"><strong>赤黒サボ</strong><span></span></div>
+<img alt="黒クロコダイル" class="tier-card-art" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-09-black-crocodile.png"/>
+<div class="tier-card-body"><strong>黒クロコダイル</strong><span></span></div>
 </article>
 <article class="tier-card">
-<img alt="赤黄ボニー" class="tier-card-art" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-10-red-yellow-bonney.png"/>
-<div class="tier-card-body"><strong>赤黄ボニー</strong><span></span></div>
+<img alt="緑紫ルフィ" class="tier-card-art" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-10-green-purple-luffy.png"/>
+<div class="tier-card-body"><strong>緑紫ルフィ</strong><span></span></div>
 </article>
 <article class="tier-card">
 <img alt="赤紫ロジャー" class="tier-card-art" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-11-red-purple-roger.png"/>
@@ -1506,8 +1549,8 @@
 <div class="tier-card-body"><strong>紫ドフラ</strong><span></span></div>
 </article>
 <article class="tier-card">
-<img alt="紫黄ロシナンテ" class="tier-card-art" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-13-purple-yellow-rosinante.png"/>
-<div class="tier-card-body"><strong>紫黄ロシナンテ</strong><span></span></div>
+<img alt="黄エネル" class="tier-card-art" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-13-yellow-enel.png"/>
+<div class="tier-card-body"><strong>黄エネル</strong><span></span></div>
 </article>
 </div>
 </div>
@@ -1518,17 +1561,17 @@
 <a class="meta-panel meta-panel-link" href="articles/meta/tier-list.html">
 <h4 style="margin-bottom:6px;">最強デッキ</h4>
 <div class="meta-panel-icon"><div class="meta-panel-icon-frame"><img alt="最強デッキアイコン" src="https://ik.imagekit.io/opcard/onepiece/index/index-nav-tier-list.png"/></div></div>
-<p>Tier上位のリーダーを個別記事へつなぐ入口。相性表、採用候補、回し方まで詳しく確認できます。</p>
+<p>最新の環境や現在のTier上位リーダーをまとめて確認できます。</p>
 </a>
 <a class="meta-panel meta-panel-link" href="articles/meta/new-set-deck-review.html">
 <h4>新弾デッキ</h4>
 <div class="meta-panel-icon"><div class="meta-panel-icon-frame"><img alt="新弾デッキ評価アイコン" src="https://ik.imagekit.io/opcard/onepiece/index/index-nav-new-set-review.png"/></div></div>
-<p>最新弾で評価を上げたデッキや、新規リーダーの立ち位置をまとめて追える導線として配置します。</p>
+<p>最新弾のリーダー評価やおすすめデッキなど、新規リーダーの立ち位置をまとめて確認出来ます。</p>
 </a>
 <a class="meta-panel meta-panel-link" href="articles/meta/decks/index.html">
 <h4>デッキ個別</h4>
 <div class="meta-panel-icon"><div class="meta-panel-icon-frame"><img alt="デッキ個別アイコン" src="https://ik.imagekit.io/opcard/onepiece/index/index-nav-deck-guides.png"/></div></div>
-<p>各リーダーごとの構築、採用理由、入れ替え候補を整理して、Tier表からそのまま読みに行ける構成です。</p>
+<p>各リーダーの評価やどんなデッキがあるのかをまとめて確認することができる一覧です。</p>
 </a>
 </div>
 </div>
@@ -1545,7 +1588,7 @@
 <div style="display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:14px; flex-wrap:wrap;">
 <div>
 <h4 style="margin:0 0 6px; font-size:28px; color:#1d2238;">注目記事</h4>
-<p style="margin:0;">まず見てほしい基本記事や大会向け記事をまとめた導線です。</p>
+<p style="margin:0;">まず見てほしい基本記事や大会向け記事をまとめています。</p>
 </div>
 <span class="badge" style="margin-bottom:0;">注目記事</span>
 </div>
@@ -1554,17 +1597,17 @@
 <a class="article-card article-card-link" href="articles/guides/featured/expensive-card-ranking.html">
 <img alt="始め方記事イメージ" src="https://ik.imagekit.io/opcard/onepiece/index/index-guide-how-to-start.png"/>
 <h4>高騰カードランキング</h4>
-<p>価格が大きく動いているカードを、理由とあわせてチェックできるまとめ記事です。</p>
+<p>現在の高額カードや新弾の当たりカードをランキング形式で確認できるまとめ記事です。</p>
 </a>
 <a class="article-card article-card-link" href="articles/guides/featured/influencer-list.html">
 <img alt="商品選びイメージ" src="https://ik.imagekit.io/opcard/onepiece/index/index-guide-product-choice.jpg"/>
 <h4>注目インフルエンサー</h4>
-<p>デッキ研究や対戦考察を追いやすい、今注目の発信者を紹介します。</p>
+<p>有益な情報を発信しているプレイヤーや人気のインフルエンサーを紹介します。</p>
 </a>
 <a class="article-card article-card-link" href="articles/guides/featured/tournament-watch.html">
 <img alt="大会参加イメージ" src="https://ik.imagekit.io/opcard/onepiece/index/index-guide-tournament-entry.webp"/>
 <h4>注目の大会</h4>
-<p>大型大会や話題のイベントを一覧で確認できるように整理した導線です。</p>
+<p>今注目の大型大会や非公認大会を一覧で確認できます。</p>
 </a>
 </div>
 </div>
@@ -1572,7 +1615,7 @@
 <div style="display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:14px; flex-wrap:wrap;">
 <div>
 <h4 style="margin:0 0 6px; font-size:28px; color:#1d2238;">初心者おすすめ</h4>
-<p style="margin:0;">これから始める人が最初につまずきやすいポイントを、順番に読めるよう整理した導線です。</p>
+<p style="margin:0;">これから始める人が最初につまずきやすいポイントを、順番に読めるよう整理した記事です。</p>
 </div>
 <span class="badge" style="margin-bottom:0;">初心者おすすめ導線</span>
 </div>
@@ -1591,9 +1634,14 @@
 <div class="section-body">
 <div class="sns-single">
 <a class="sns-card sns-card-link" href="https://x.com/13OSTON_CARD" target="_blank" rel="noopener noreferrer">
+<div class="sns-card-content">
+<img alt="13OSTON CARD Xアイコン" class="sns-card-icon" src="https://ik.imagekit.io/opcard/onepiece/index/index-x-icon.png"/>
+<div class="sns-card-copy">
 <div class="badge">X連携</div>
-<h4>最新情報・更新告知・注目カードの短尺発信</h4>
-<p>速報や告知をXで届け、詳しい解説はブログで確認できます。</p>
+<h4>最新情報・更新告知はXで確認！</h4>
+<p>速報や告知をXでお届け中。最新情報をいち早く知りたい方はこちらからご確認ください。</p>
+</div>
+</div>
 </a>
 </div>
 </div>

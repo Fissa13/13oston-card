@@ -23,6 +23,9 @@
 .article .leader-recommend-body p{max-width:none;margin:0 0 12px}
 .article .leader-recommend-points{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:0;padding:0;list-style:none}
 .article .leader-recommend-points li{margin:0;padding:8px 10px;border-radius:10px;background:#faf8f2;border:1px solid rgba(216,210,195,.85);font-size:13px;line-height:1.6;font-weight:700}
+.article .leader-recommend-card a{position:relative;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:52px;margin-top:12px;padding:13px 42px 13px 18px;border:1px solid #202a52;border-radius:14px;background:linear-gradient(180deg,#ffffff 0%,#f5f7ff 100%);color:#17204a;font-size:15px;font-weight:800;line-height:1.5;text-align:center;box-shadow:0 8px 18px rgba(18,24,48,.08);overflow:hidden;text-decoration:none}
+.article .leader-recommend-card a::after{content:"›";position:absolute;right:18px;top:50%;transform:translateY(-50%);color:#232b63;font-size:24px;line-height:1;font-weight:900}
+.article .leader-recommend-card a:hover{background:linear-gradient(180deg,#f9fbff 0%,#eef2ff 100%);color:#101936;border-color:#101936;transform:translateY(-1px);box-shadow:0 12px 22px rgba(18,24,48,.12)}
 @media(max-width:640px){.article .leader-recommend-card{grid-template-columns:1fr}.article .leader-recommend-image img{width:min(100%,220px);max-width:220px}.article .leader-recommend-points{grid-template-columns:1fr}}
 </style>
 </head>
@@ -114,24 +117,24 @@
 <p>ここでは、初心者が使い始めやすく、対戦を通して上達しやすいデッキを3つ紹介します。どれも方向性がはっきりしているため、最初の練習用デッキとして選びやすい候補です。</p>
 <div class="leader-recommend-list">
 <article class="leader-recommend-card">
-<figure class="leader-recommend-image"><img alt="紫エネル" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-03-purple-enel.png"/></figure>
-<div class="leader-recommend-body"><div class="leader-recommend-head"><h3>紫エネル</h3><div class="label">おすすめ1</div></div><p>ドン!!を増やしながら大型キャラにつなげる、わかりやすいパワー型デッキです。中盤以降に強いカードを連打する動きが気持ちよく、初心者でも「勝ち筋」を実感しやすいのが魅力です。</p><ul class="leader-recommend-points"><li>大型キャラで押し込める</li><li>強い動きがわかりやすい</li><li>中盤以降のパワーが高い</li><li>環境デッキとして長く使いやすい</li></ul></div>
+<figure class="leader-recommend-image"><img alt="赤青ルーシー" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-04-red-blue-lucy.png"/></figure>
+<div class="leader-recommend-body"><div class="leader-recommend-head"><h3>赤青ルーシー</h3><div class="label">おすすめ1</div></div><p>イベントやステージを絡めながら、序盤からテンポよく攻められるデッキです。攻撃の流れが分かりやすく、手札管理や盤面処理も自然に練習できるため、最初の環境デッキとして扱いやすい候補です。</p><ul class="leader-recommend-points"><li>攻めの流れを覚えやすい</li><li>手札管理を練習できる</li><li>テンポよく試合を進めやすい</li><li>環境上位を目指せる</li></ul><a href="../../meta/decks/red-blue-lucy.html">赤青ルーシーの記事を見る</a></div>
 </article>
 <article class="leader-recommend-card">
-<figure class="leader-recommend-image"><img alt="赤青エース" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-06-red-blue-ace.png"/></figure>
-<div class="leader-recommend-body"><div class="leader-recommend-head"><h3>赤青エース</h3><div class="label">おすすめ2</div></div><p>赤の攻撃力と青の手札調整を活かして、テンポよく相手のライフを詰めるデッキです。攻撃順、手札管理、相手の盤面への触り方をまとめて練習できるため、上達したい初心者に向いています。</p><ul class="leader-recommend-points"><li>攻めの基本を覚えやすい</li><li>手札調整で動きが安定する</li><li>テンポよく試合を進められる</li><li>プレイングの伸びしろがある</li></ul></div>
+<figure class="leader-recommend-image"><img alt="空島ルフィ" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-06-skypiea-luffy.png"/></figure>
+<div class="leader-recommend-body"><div class="leader-recommend-head"><h3>空島ルフィ</h3><div class="label">おすすめ2</div></div><p>空島ギミックで盤面を守りながら戦えるデッキです。ライフ管理、キャラの残し方、攻めに転じるタイミングを学びやすく、守りと攻めのバランスを身につけたい初心者に向いています。</p><ul class="leader-recommend-points"><li>守り方を覚えやすい</li><li>盤面維持の練習になる</li><li>中盤以降も粘り強い</li><li>勝ち筋が見えやすい</li></ul><a href="../../meta/decks/yellow-luffy-skypiea.html">空島ルフィの記事を見る</a></div>
 </article>
 <article class="leader-recommend-card">
-<figure class="leader-recommend-image"><img alt="緑ミホーク" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-08-green-mihawk.png"/></figure>
-<div class="leader-recommend-body"><div class="leader-recommend-head"><h3>緑ミホーク</h3><div class="label">おすすめ3</div></div><p>相手のキャラをレストにしながら盤面を取り、有利交換を積み重ねるデッキです。カードゲームで大事な「盤面を処理してから攻める」感覚を覚えやすく、コスパ重視の最初の1デッキにも向いています。</p><ul class="leader-recommend-points"><li>盤面処理を練習しやすい</li><li>攻めと守りのバランスが良い</li><li>改造の方向性がわかりやすい</li><li>コスパ重視でも選びやすい</li></ul></div>
+<figure class="leader-recommend-image"><img alt="青黄ハンコック" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-05-blue-yellow-hancock.png"/></figure>
+<div class="leader-recommend-body"><div class="leader-recommend-head"><h3>青黄ハンコック</h3><div class="label">おすすめ3</div></div><p>トリガーやライフ干渉を活かしながら、粘り強く戦えるデッキです。相手の攻めを受けてから返す動きが分かりやすく、守備寄りのゲームを覚えたい初心者にもおすすめです。</p><ul class="leader-recommend-points"><li>受けの動きを学べる</li><li>ライフ管理を練習しやすい</li><li>トリガー展開が強力</li><li>長期戦に強い</li></ul><a href="../../meta/decks/blue-yellow-hancock.html">青黄ハンコックの記事を見る</a></div>
 </article>
 </div>
 <table class="table">
 <thead><tr><th>デッキ</th><th>初心者向けポイント</th></tr></thead>
 <tbody>
-<tr><td>紫エネル</td><td>やることがわかりやすく、大型キャラの強さを感じやすい。</td></tr>
-<tr><td>赤青エース</td><td>攻め方、手札管理、テンポの取り方をまとめて練習できる。</td></tr>
-<tr><td>緑ミホーク</td><td>盤面処理とアタック判断を学びやすく、対戦の基本が身につく。</td></tr>
+<tr><td>赤青ルーシー</td><td>攻め方、手札管理、テンポの取り方をまとめて練習できる。</td></tr>
+<tr><td>空島ルフィ</td><td>守りながら盤面を残す感覚を学びやすく、中盤以降の勝ち筋も作りやすい。</td></tr>
+<tr><td>青黄ハンコック</td><td>受け方、ライフ管理、トリガーを絡めた返し方を練習しやすい。</td></tr>
 </tbody>
 </table>
 <div class="deck-rating-link-wrap"><a class="deck-rating-link" href="../../meta/tier-list.html">環境デッキのTier表を見る</a></div>
@@ -150,6 +153,7 @@
 <li>緑のカード資産を残しやすい</li>
 <li>強化の優先順位を決めやすい</li>
 </ul>
+<a href="../../meta/decks/green-mihawk.html">緑ミホークの記事を見る</a>
 </div>
 </article>
 <table class="table">
@@ -166,7 +170,7 @@
 </section>
 <section class="summary-section-fix" id="summary">
 <h2>まとめ</h2>
-<div class="note"><div class="note-box"><strong>初心者デッキ選びのまとめ</strong><ul><li>デッキは値段・難易度・強さ・将来性で選ぶ。</li><li>おすすめは紫エネル、赤青エース、緑ミホークの3つ。</li><li>コスパ重視で1つ選ぶなら、緑ミホークがおすすめ。</li><li>最初は完璧な構築を目指さず、遊びながら少しずつ強化する。</li></ul></div></div>
+<div class="note"><div class="note-box"><strong>初心者デッキ選びのまとめ</strong><ul><li>デッキは値段・難易度・強さ・将来性で選ぶ。</li><li>おすすめは赤青ルーシー、空島ルフィ、青黄ハンコックの3つ。</li><li>コスパ重視で1つ選ぶなら、緑ミホークがおすすめ。</li><li>最初は完璧な構築を目指さず、遊びながら少しずつ強化する。</li></ul></div></div>
 <p>初心者にとって一番大事なのは、買って終わりではなく、何度も対戦して使い続けられるデッキを選ぶことです。気になるデッキが見つかったら、まずは基本構築を真似して遊び、慣れてきたら自分の好みに合わせて改造していきましょう。</p>
 <div class="deck-rating-link-wrap"><a class="deck-rating-link" href="deckbuilding-basics.html">デッキ構築の基本を読む</a></div>
 </section>
