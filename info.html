@@ -1,11 +1,12 @@
 ﻿<!DOCTYPE html>
-
 <html lang="ja">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>13OSTON CARD | ワンピースカード攻略サイト</title>
+<title>サイト情報｜13OSTON CARD</title>
+<meta content="13OSTON CARDの運営者情報、お問い合わせ、プライバシーポリシーを掲載しています。" name="description"/>
 <style>
+
     :root {
       --bg: #f4f3ef;
       --surface: #ffffff;
@@ -1407,6 +1408,69 @@
     }
   }
 
+
+.info-main {
+  display: block;
+  padding-top: 20px;
+}
+.info-content {
+  display: grid;
+  gap: 18px;
+  padding: 0 0 34px;
+}
+.info-card {
+  padding: 24px;
+  border: 1px solid rgba(209,170,61,0.22);
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: 0 8px 18px rgba(18,24,48,0.05);
+}
+.info-card h3 {
+  margin: 0 0 12px;
+  color: var(--heading);
+  font-size: 22px;
+  line-height: 1.35;
+}
+.info-card p {
+  margin: 0 0 12px;
+  font-weight: 600;
+  line-height: 1.9;
+}
+.info-card p:last-child { margin-bottom: 0; }
+.info-list {
+  display: grid;
+  gap: 10px;
+  margin: 0 0 12px;
+  padding: 0;
+  list-style: none;
+}
+.info-list li {
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--gray-soft);
+  font-weight: 700;
+}
+.mail-link {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 6px;
+  color: #1f4f9f;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+.policy-list {
+  margin: 0;
+  padding-left: 1.2em;
+}
+.policy-list li {
+  margin: 0 0 10px;
+  font-weight: 600;
+  line-height: 1.9;
+}
+@media (max-width: 680px) {
+  .info-card { padding: 20px; }
+}
 </style>
 </head>
 <body>
@@ -1424,7 +1488,6 @@
 </div>
 <nav aria-label="カテゴリナビゲーション" class="category-nav">
 <div class="wrap category-scroll">
-      <!-- カテゴリナビ：リンクを増やす場合は、この中の a 要素を複製・編集 -->
 <a href="index.html">トップページ</a>
 <a href="articles/meta/tier-list.html">最強デッキ</a>
 <a href="articles/meta/new-set-deck-review.html">新弾デッキ</a>
@@ -1432,287 +1495,37 @@
 </div>
 </nav>
 </header>
-<main class="wrap layout" id="top">
-<div class="main">
+<main class="wrap info-main" id="top">
 <section class="box hero">
 <div class="hero-visual">
-<h2>ワンピースカード攻略</h2>
-<p>
-            ワンピースカードの最新情報、環境デッキ、カード評価、お役立ち記事を見やすく整理。
-            初心者から上級者まで、必要な攻略情報にすぐアクセスできる総合メディアです。
-          </p>
-</div>
-<div class="hero-links">
-          <!-- ヒーロー下リンク：主要導線を増やす場合は、この中の a 要素を複製・編集 -->
-<a href="#news">最新情報</a>
-<a href="#meta">最強デッキ・Tier表</a>
-<a href="#articles">お役立ち記事</a>
-<a href="#sns-section">各種SNS</a></div>
-</section>
-<section class="box section" id="news">
-<div class="section-title">
-<h3>最新情報</h3>
-</div>
-<div class="section-body">
-<!-- 最新情報カード：article.news-card-large を複製・編集 -->
-        <div class="news-feature"><a class="news-card-large news-card-link" href="articles/latest/latest-booster.html">
-<div class="image-wrap">
-<img alt="最新弾「決戦の刻」イメージ" src="https://ik.imagekit.io/opcard/onepiece/index/index-latest-booster-op16.png"/>
-<span class="badge">最新弾</span>
-</div>
-<div class="content">
-<h4>最新弾「決戦の刻」が5月30日(土)に発売予定</h4>
-<p>5月30日(土)に発売予定。収録カードや注目デッキ候補など、最新情報を随時更新します。</p>
-</div>
-</a><a class="news-card-large news-card-link" href="articles/latest/latest-starter-deck.html">
-<div class="image-wrap">
-<img alt="最新ST「ルフィ&amp;エース【ST-30】」イメージ" src="https://ik.imagekit.io/opcard/onepiece/index/index-latest-starter-st30.png" style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: center;"/>
-<span class="badge">スタートデッキ</span>
-</div>
-<div class="content"><div class="badge">スタートデッキ</div>
-<h4>最新ST「ルフィ&amp;エース【ST-30】」が発売</h4>
-<p>デッキ評価や基本的な回し方、収録内容をまとめて確認できます。購入前のチェックや改造方針の整理にも役立ちます。</p>
-</div>
-</a><a class="news-card-large news-card-link" href="articles/latest/banned-restricted-2026-05.html">
-<div class="image-wrap">
-<img alt="制限改定イメージ" src="https://ik.imagekit.io/opcard/onepiece/index/index-banned-restricted.png" style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: center;"/>
-<span class="badge">NEWS</span>
-</div>
-<div class="content"><div class="badge">NEWS</div>
-<h4>2026年5月1日から新たな禁止・制限が施行</h4>
-<p>新たな禁止・制限カードや適用開始日をまとめて確認できます。大会前やデッキ調整前のチェックに役立ちます。</p></div>
-</a></div>
-</div></section>
-<section class="box section" id="meta">
-<div class="section-title">
-<h3>最強デッキ</h3>
-</div>
-<div class="section-body">
-<div class="meta-layout">
-<div>
-<div class="tier-board">
-<div class="tier-board-head">
-<div>
-<strong>最強デッキランキング / Tier表</strong>
-</div>
-</div>
-<div class="tier-row">
-<div class="tier-rank is-ss">
-<strong>SS</strong>
-<span>Tier 1</span>
-</div>
-<div class="tier-cards cols-3">
-<article class="tier-card">
-<img alt="紫エネル" class="tier-card-art" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-01-purple-enel.png"/>
-<div class="tier-card-body"><strong>紫エネル</strong><span></span></div>
-</article>
-<article class="tier-card">
-<img alt="緑ミホーク" class="tier-card-art" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-02-green-mihawk.png"/>
-<div class="tier-card-body"><strong>緑ミホーク</strong><span></span></div>
-</article>
-<article class="tier-card">
-<img alt="青黄ナミ" class="tier-card-art" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-03-blue-yellow-nami.png"/>
-<div class="tier-card-body"><strong>青黄ナミ</strong><span></span></div>
-</article>
-</div>
-</div>
-<div class="tier-row">
-<div class="tier-rank is-s">
-<strong>S</strong>
-<span>Tier 1.5</span>
-</div>
-<div class="tier-cards">
-<article class="tier-card">
-<img alt="赤青ルーシー" class="tier-card-art" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-04-red-blue-lucy.png"/>
-<div class="tier-card-body"><strong>赤青ルーシー</strong><span></span></div>
-</article>
-<article class="tier-card">
-<img alt="青黄ハンコック" class="tier-card-art" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-05-blue-yellow-hancock.png"/>
-<div class="tier-card-body"><strong>青黄ハンコック</strong><span></span></div>
-</article>
-<article class="tier-card">
-<img alt="空島ルフィ" class="tier-card-art" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-06-skypiea-luffy.png"/>
-<div class="tier-card-body"><strong>空島ルフィ</strong><span></span></div>
-</article>
-<article class="tier-card">
-<img alt="赤青エース" class="tier-card-art" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-07-red-blue-ace.png"/>
-<div class="tier-card-body"><strong>赤青エース</strong><span></span></div>
-</article>
-<article class="tier-card">
-<img alt="黒イム" class="tier-card-art" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-08-black-imu.png"/>
-<div class="tier-card-body"><strong>黒イム</strong><span></span></div>
-</article>
-</div>
-</div>
-<div class="tier-row">
-<div class="tier-rank is-a">
-<strong>A</strong>
-<span>Tier 2</span>
-</div>
-<div class="tier-cards">
-<article class="tier-card">
-<img alt="黒クロコダイル" class="tier-card-art" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-09-black-crocodile.png"/>
-<div class="tier-card-body"><strong>黒クロコダイル</strong><span></span></div>
-</article>
-<article class="tier-card">
-<img alt="緑紫ルフィ" class="tier-card-art" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-10-green-purple-luffy.png"/>
-<div class="tier-card-body"><strong>緑紫ルフィ</strong><span></span></div>
-</article>
-<article class="tier-card">
-<img alt="赤紫ロジャー" class="tier-card-art" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-11-red-purple-roger.png"/>
-<div class="tier-card-body"><strong>赤紫ロジャー</strong><span></span></div>
-</article>
-<article class="tier-card">
-<img alt="紫ドフラ" class="tier-card-art" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-12-purple-doflamingo.png"/>
-<div class="tier-card-body"><strong>紫ドフラ</strong><span></span></div>
-</article>
-<article class="tier-card">
-<img alt="黄エネル" class="tier-card-art" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-13-yellow-enel.png"/>
-<div class="tier-card-body"><strong>黄エネル</strong><span></span></div>
-</article>
-</div>
-</div>
-<div class="tier-note"></div>
-</div>
-<!-- 最強デッキ導線カード：article.meta-panel を複製・編集 -->
-<div class="meta-links-grid">
-<a class="meta-panel meta-panel-link" href="articles/meta/tier-list.html">
-<h4 style="margin-bottom:6px;">最強デッキ</h4>
-<div class="meta-panel-icon"><div class="meta-panel-icon-frame"><img alt="最強デッキアイコン" src="https://ik.imagekit.io/opcard/onepiece/index/index-nav-tier-list.png"/></div></div>
-<p>最新の環境や現在のTier上位リーダーをまとめて確認できます。</p>
-</a>
-<a class="meta-panel meta-panel-link" href="articles/meta/new-set-deck-review.html">
-<h4>新弾デッキ</h4>
-<div class="meta-panel-icon"><div class="meta-panel-icon-frame"><img alt="新弾デッキ評価アイコン" src="https://ik.imagekit.io/opcard/onepiece/index/index-nav-new-set-review.png"/></div></div>
-<p>最新弾のリーダー評価やおすすめデッキなど、新規リーダーの立ち位置をまとめて確認出来ます。</p>
-</a>
-<a class="meta-panel meta-panel-link" href="articles/meta/decks/index.html">
-<h4>デッキ個別</h4>
-<div class="meta-panel-icon"><div class="meta-panel-icon-frame"><img alt="デッキ個別アイコン" src="https://ik.imagekit.io/opcard/onepiece/index/index-nav-deck-guides.png"/></div></div>
-<p>各リーダーの評価やどんなデッキがあるのかをまとめて確認することができる一覧です。</p>
-</a>
-</div>
-</div>
-</div>
+<h2>サイト情報</h2>
+<p>13OSTON CARDの運営者情報、お問い合わせ、プライバシーポリシーをまとめたページです。</p>
 </div>
 </section>
-<section class="box section" id="articles">
-<div class="section-title">
-<h3>お役立ち記事</h3>
-<span></span>
-</div>
-<div class="section-body">
-<div class="meta-panel" style="margin-bottom:16px; padding:18px;">
-<div style="display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:14px; flex-wrap:wrap;">
-<div>
-<h4 style="margin:0 0 6px; font-size:28px; color:#1d2238;">注目記事</h4>
-<p style="margin:0;">まず見てほしい基本記事や大会向け記事をまとめています。</p>
-</div>
-<span class="badge" style="margin-bottom:0;">注目記事</span>
-</div>
-<!-- 注目記事カード：article.article-card を複製・編集 -->
-        <div class="dense-grid">
-<a class="article-card article-card-link" href="articles/guides/featured/expensive-card-ranking.html">
-<img alt="始め方記事イメージ" src="https://ik.imagekit.io/opcard/onepiece/index/index-guide-how-to-start.png"/>
-<h4>高騰カードランキング</h4>
-<p>現在の高額カードや新弾の当たりカードをランキング形式で確認できるまとめ記事です。</p>
-</a>
-<a class="article-card article-card-link" href="articles/guides/featured/influencer-list.html">
-<img alt="商品選びイメージ" src="https://ik.imagekit.io/opcard/onepiece/index/index-guide-product-choice.jpg"/>
-<h4>注目インフルエンサー</h4>
-<p>有益な情報を発信しているプレイヤーや人気のインフルエンサーを紹介します。</p>
-</a>
-<a class="article-card article-card-link" href="articles/guides/featured/tournament-watch.html">
-<img alt="大会参加イメージ" src="https://ik.imagekit.io/opcard/onepiece/index/index-guide-tournament-entry.webp"/>
-<h4>注目の大会</h4>
-<p>今注目の大型大会や非公認大会を一覧で確認できます。</p>
-</a>
-</div>
-</div>
-<div class="meta-panel" style="margin-top:16px; padding:18px;">
-<div style="display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:14px; flex-wrap:wrap;">
-<div>
-<h4 style="margin:0 0 6px; font-size:28px; color:#1d2238;">初心者おすすめ</h4>
-<p style="margin:0;">これから始める人が最初につまずきやすいポイントを、順番に読めるよう整理した記事です。</p>
-</div>
-<span class="badge" style="margin-bottom:0;">初心者おすすめ導線</span>
-</div>
-<div class="grid-2">
-<div class="link-list"><a href="articles/guides/beginners/how-to-start.html">ワンピースカードの始め方</a><a href="articles/guides/beginners/beginner-recommended-decks.html">初心者おすすめデッキ</a></div>
-<div class="link-list"><a href="articles/guides/beginners/deckbuilding-basics.html">デッキの組み方と考え方</a><a href="articles/guides/beginners/tournament-entry-guide.html">大会への応募方法</a></div>
-</div>
-</div>
-</div>
+<div class="info-content">
+<section class="info-card">
+<h3>運営者情報</h3>
+<ul class="info-list">
+<li>運営者名：13oston</li>
+</ul>
+<p>当サイトは、ONE PIECEカードゲームの初心者向け解説、デッキ解説、環境考察を掲載している個人サイトです。</p>
 </section>
-<section class="box section" id="sns-section">
-<div class="section-title">
-<h3>各種SNS</h3>
-<span></span>
-</div>
-<div class="section-body">
-<div class="sns-single">
-<a class="sns-card sns-card-link" href="https://x.com/13OSTON_CARD" target="_blank" rel="noopener noreferrer">
-<div class="sns-card-content">
-<img alt="13OSTON CARD Xアイコン" class="sns-card-icon" src="https://ik.imagekit.io/opcard/onepiece/index/index-x-icon.png"/>
-<div class="sns-card-copy">
-<div class="badge">X連携</div>
-<h4>最新情報・更新告知はXで確認！</h4>
-<p>速報や告知をXでお届け中。最新情報をいち早く知りたい方はこちらからご確認ください。</p>
-</div>
-</div>
-</a>
-</div>
-</div>
+<section class="info-card">
+<h3>お問い合わせ</h3>
+<p>お問い合わせは以下のメールアドレスまでお願いいたします。</p>
+<a class="mail-link" href="mailto:oyakodondesub@gmail.com">oyakodondesub@gmail.com</a>
+</section>
+<section class="info-card">
+<h3>プライバシーポリシー</h3>
+<ul class="policy-list">
+<li>当サイトでは、アクセス解析や広告配信のためCookieを使用する場合があります。</li>
+<li>当サイトでは、Google AdSenseなどの第三者配信広告サービスを利用する場合があります。</li>
+<li>第三者配信事業者がCookieを使用して、ユーザーの興味に応じた広告を表示する場合があります。</li>
+<li>ユーザーはGoogleの広告設定から、パーソナライズ広告を無効にできます。</li>
+<li>当サイトでは掲載情報の正確性に注意していますが、掲載内容の利用によって生じた損害等について責任を負いません。</li>
+</ul>
 </section>
 </div>
-<aside class="sidebar">
-<div class="sticky-box">
-<section class="box section">
-<div class="section-title">
-<h3>人気記事</h3>
-</div>
-<div class="section-body">
-<div aria-label="PV上位5記事" class="pv-ranking">
-<div class="pv-ranking-head">
-<strong>PVランキング TOP5</strong>
-</div>
-<ol class="pv-ranking-list">
-<li><a href="articles/meta/tier-list.html"><span class="pv-rank">1</span><span class="pv-title">最強デッキ｜Tier表</span></a></li>
-<li><a href="articles/latest/latest-booster.html"><span class="pv-rank">2</span><span class="pv-title">最新弾「決戦の刻」</span></a></li>
-<li><a href="articles/guides/featured/expensive-card-ranking.html"><span class="pv-rank">3</span><span class="pv-title">高騰カードランキング</span></a></li>
-<li><a href="articles/guides/beginners/tournament-entry-guide.html"><span class="pv-rank">4</span><span class="pv-title">大会への応募方法</span></a></li>
-<li><a href="articles/meta/decks/purple-enel.html"><span class="pv-rank">5</span><span class="pv-title">紫エネル 解説記事</span></a></li>
-</ol>
-</div>
-</div>
-</section>
-<section class="box section">
-<div class="section-title">
-<h3>&#x30C7;&#x30C3;&#x30AD;&#x4E00;&#x89A7;</h3>
-</div>
-<div class="section-body">
-<div class="side-list">
-<div class="side-list-label">&lt;&#x6700;&#x65B0;&#x5F3E;&gt;</div>
-<a href="articles/meta/decks/blue-green-luffy.html">&#x9752;&#x7DD1;&#x30EB;&#x30D5;&#x30A3;</a>
-<a href="articles/meta/decks/red-ace.html">&#x8D64;&#x30A8;&#x30FC;&#x30B9;</a>
-<a href="articles/meta/decks/blue-buggy.html">&#x9752;&#x30D0;&#x30AE;&#x30FC;</a>
-<a href="articles/meta/decks/purple-sengoku.html">&#x7D2B;&#x30BB;&#x30F3;&#x30B4;&#x30AF;</a>
-<a href="articles/meta/decks/black-yamato.html">&#x9ED2;&#x30E4;&#x30DE;&#x30C8;</a>
-<a href="articles/meta/decks/black-yellow-teach.html">&#x9ED2;&#x9EC4;&#x30C6;&#x30A3;&#x30FC;&#x30C1;</a>
-<div class="side-list-label">&lt;&#x74B0;&#x5883;&#x30C7;&#x30C3;&#x30AD;&gt;</div>
-<a href="articles/meta/decks/purple-enel.html">&#x7D2B;&#x30A8;&#x30CD;&#x30EB;</a>
-<a href="articles/meta/decks/red-blue-lucy.html">&#x8D64;&#x9752;&#x30EB;&#x30FC;&#x30B7;&#x30FC;</a>
-<a href="articles/meta/decks/blue-yellow-nami.html">&#x9752;&#x9EC4;&#x30CA;&#x30DF;</a>
-<a href="articles/meta/decks/yellow-luffy-skypiea.html">&#x9EC4;&#x30EB;&#x30D5;&#x30A3;(&#x7A7A;&#x5CF6;)</a>
-<a href="articles/meta/decks/red-blue-ace.html">&#x8D64;&#x9752;&#x30A8;&#x30FC;&#x30B9;</a>
-<a href="articles/meta/decks/blue-yellow-hancock.html">&#x9752;&#x9EC4;&#x30CF;&#x30F3;&#x30B3;&#x30C3;&#x30AF;</a>
-<a href="articles/meta/decks/green-mihawk.html">&#x7DD1;&#x30DF;&#x30DB;&#x30FC;&#x30AF;</a>
-<a href="articles/meta/decks/black-imu.html">&#x9ED2;&#x30A4;&#x30E0;</a>
-</div>
-</div>
-</section>
-</div>
-</aside>
 </main>
 <footer class="wrap footer">
 <div class="footer-site-map">
@@ -1726,7 +1539,7 @@
           </p>
 </div>
 <div class="footer-top-link">
-<a href="#top">トップへ戻る</a>
+<a href="index.html">トップへ戻る</a>
 <a href="info.html">サイト情報</a>
 </div>
 </div>
