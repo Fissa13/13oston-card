@@ -3336,8 +3336,11 @@ body{
     -webkit-overflow-scrolling:touch !important;
   }
   #matchups .matchup-table-scroll .matchup-table{
+    display:table !important;
     width:720px !important;
     min-width:720px !important;
+    max-width:none !important;
+    overflow:visible !important;
     table-layout:fixed !important;
     background:#fffdfa !important;
   }
@@ -3422,12 +3425,6 @@ body{
       </div>
       <div class="deck-rating-copy">
         <h3>イベントを防御・除去・ドローに変換して長期戦を制するコントロールデッキ</h3>
-        <p>
-          赤青ルーシーは、OP15-002「ルーシー」を軸にした赤青混色のドレスローザデッキです。ライフ4・パワー5000のリーダーで、アタック時に手札のイベントかステージを捨てることでリーダーのパワーを上げられ、さらに自分のターン中にコスト3以上のイベントを発動するとターン1回で1ドローできます。
-        </p>
-        <p>
-          イベントが除去札でありながら防御札にもなり、ドロー条件にもなるため、通常のイベント多め構築より手札の質を保ちやすいのが特徴です。2026年4月時点ではTier1〜Tier1.5付近の評価が多く、大会シェア上位にも入りやすいリーダーとされています。
-        </p>
       </div>
     </div>
 
@@ -3567,7 +3564,6 @@ body{
 </section>
 <section id="matchups">
 <h2>対面の有利不利と立ち回り</h2>
-<p class="matchups-intro">赤青ルーシーは除去とリソース回復で幅広い対面に対応できますが、相手の展開速度やリーダーの受け性能によってゲームプランが変わります。ここでは2026年4月時点で意識したい主要8対面を整理します。</p>
 <div class="matchup-table-scroll">
 <table class="table matchup-table">
 <thead><tr><th>対面リーダー</th><th>相性</th><th>主な理由</th></tr></thead>
@@ -3755,6 +3751,7 @@ body{
 </footer>
 </body>
 </html>
+
 
 
 

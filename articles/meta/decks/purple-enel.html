@@ -3331,8 +3331,11 @@ body{
     -webkit-overflow-scrolling:touch !important;
   }
   #matchups .matchup-table-scroll .matchup-table{
+    display:table !important;
     width:720px !important;
     min-width:720px !important;
+    max-width:none !important;
+    overflow:visible !important;
     table-layout:fixed !important;
     background:#fffdfa !important;
   }
@@ -3416,10 +3419,6 @@ body{
       </div>
       <div class="deck-rating-copy">
         <h3>6ドン制限を高出力に変える、速攻と大型展開を兼ねた特殊な紫デッキ</h3>
-        <p>
-          紫エネルは、ドンデッキが6枚に固定される代わりに、第2ターン以降のリーダー効果でアクティブドン1枚とレストドン4枚を追加できるリーダーです。
-          少ないドン枚数でも神官の6000連打、6コストエネルの10000ライン、ドンマイナス前提のイベントを同時に扱いやすく、2026年4月環境ではTier1候補として評価されています。
-        </p>
       </div>
     </div>
 
@@ -3549,7 +3548,6 @@ body{
 </section>
 <section id="matchups">
 <h2>対面の有利不利と立ち回り</h2>
-<p class="matchups-intro">2026年4月環境の紫エネルは、速攻気味の神官連打と6コストエネルの押し付けで多くのデッキに圧力をかけやすい一方、回復や長期戦性能の高い相手には削り切れない展開もあります。相性は先後や採用カードで変わるため、表では基本的な目安を整理しています。</p>
 <div class="matchup-table-scroll">
 <table class="table matchup-table">
 <thead><tr><th>対面リーダー</th><th>相性</th><th>主な理由</th></tr></thead>
@@ -3737,4 +3735,5 @@ body{
 </footer>
 </body>
 </html>
+
 
