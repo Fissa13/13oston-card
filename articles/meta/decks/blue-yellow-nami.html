@@ -3326,6 +3326,40 @@ body{
     margin-top:0 !important;
   }
 }
+
+/* ===== matchup table horizontal scroll ===== */
+@media (max-width:780px){
+  #matchups .matchup-table-scroll{
+    width:100% !important;
+    max-width:100% !important;
+    overflow-x:auto !important;
+    -webkit-overflow-scrolling:touch !important;
+  }
+  #matchups .matchup-table-scroll .matchup-table{
+    width:720px !important;
+    min-width:720px !important;
+    table-layout:fixed !important;
+    background:#fffdfa !important;
+  }
+  #matchups .matchup-table th:nth-child(1),
+  #matchups .matchup-table td:nth-child(1){
+    width:140px !important;
+    min-width:140px !important;
+  }
+  #matchups .matchup-table th:nth-child(2),
+  #matchups .matchup-table td:nth-child(2){
+    width:120px !important;
+    min-width:120px !important;
+    text-align:center !important;
+    white-space:nowrap !important;
+  }
+  #matchups .matchup-table th:nth-child(3),
+  #matchups .matchup-table td:nth-child(3){
+    width:460px !important;
+    min-width:460px !important;
+  }
+}
+/* ===== /matchup table horizontal scroll ===== */
 /* ===== /deck article mobile content layout ===== */
 /* ===== /article rails layout final spec ===== */
 </style>
@@ -3531,7 +3565,8 @@ body{
 <section id="matchups">
 <h2>対面の有利不利と立ち回り</h2>
 <p class="matchups-intro">青黄ナミは多くの対面で五分以上を取りやすい一方、青黄ナミのように神官連打の強みを消してくる相手には明確な対策が必要です。まずは一覧で相性を把握し、そのあと主要対面の考え方を押さえると読みやすいです。</p>
-<table class="table">
+<div class="matchup-table-scroll">
+<table class="table matchup-table">
 <thead><tr><th>対面リーダー</th><th>相性</th><th>主な理由</th></tr></thead>
 <tbody>
 <tr><td><a href="#croco">黒クロコダイル</a></td><td><span class="badge win">有利</span></td><td>6000連打への対抗手段が薄く、エネルの10000耐性も突破されにくい。</td></tr>
@@ -3545,6 +3580,7 @@ body{
 <tr><td><a href="#nami">青黄ナミ</a></td><td><span class="badge lose">不利</span></td><td>相手ターン7000になる効果が神官連打プランを根本から崩す。</td></tr>
 </tbody>
 </table>
+</div>
 <div class="detail-grid">
 
 
@@ -3717,3 +3753,6 @@ body{
 </footer>
 </body>
 </html>
+
+
+

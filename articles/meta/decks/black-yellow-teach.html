@@ -3326,6 +3326,40 @@ body{
     margin-top:0 !important;
   }
 }
+
+/* ===== matchup table horizontal scroll ===== */
+@media (max-width:780px){
+  #matchups .matchup-table-scroll{
+    width:100% !important;
+    max-width:100% !important;
+    overflow-x:auto !important;
+    -webkit-overflow-scrolling:touch !important;
+  }
+  #matchups .matchup-table-scroll .matchup-table{
+    width:720px !important;
+    min-width:720px !important;
+    table-layout:fixed !important;
+    background:#fffdfa !important;
+  }
+  #matchups .matchup-table th:nth-child(1),
+  #matchups .matchup-table td:nth-child(1){
+    width:140px !important;
+    min-width:140px !important;
+  }
+  #matchups .matchup-table th:nth-child(2),
+  #matchups .matchup-table td:nth-child(2){
+    width:120px !important;
+    min-width:120px !important;
+    text-align:center !important;
+    white-space:nowrap !important;
+  }
+  #matchups .matchup-table th:nth-child(3),
+  #matchups .matchup-table td:nth-child(3){
+    width:460px !important;
+    min-width:460px !important;
+  }
+}
+/* ===== /matchup table horizontal scroll ===== */
 /* ===== /deck article mobile content layout ===== */
 /* ===== /article rails layout final spec ===== */
 </style>
@@ -3671,3 +3705,4 @@ body{
 </footer>
 </body>
 </html>
+

@@ -3,6 +3,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="紫エネルの2026年4月時点のデッキ評価、代表構築、基本的な回し方、マリガン、主要対面の考え方を整理した攻略記事です。" name="description"/>
 <link rel="stylesheet" href="../../../assets/css/article-common.css"/>
 <style>
@@ -748,7 +749,7 @@
       .header-nav a{padding:9px 12px}
     }
   
-    body.deck-purple-enel{
+    body.deck-black-imu{
       --hero-start:#4b1d95;
       --hero-mid:#6d28d9;
       --hero-end:#8b5cf6;
@@ -768,7 +769,7 @@
       pointer-events:none;
     }
 
-    body.deck-purple-enel .hero:before{
+    body.deck-black-imu .hero:before{
       content:"";position:absolute;inset:0;background:
       radial-gradient(circle at 50% 42%, rgba(255,255,255,.16) 0, rgba(255,255,255,.07) 18%, rgba(255,255,255,0) 36%),
       repeating-linear-gradient(135deg, rgba(255,255,255,.08) 0 2px, transparent 2px 34px);
@@ -3277,8 +3278,6 @@ body{
   }
 }
 
-
-
 /* ===== deck article mobile content layout ===== */
 @media (max-width:780px){
   #builds .card-grid.two{
@@ -3325,41 +3324,37 @@ body{
     grid-row:2 !important;
     margin-top:0 !important;
   }
+  #matchups .matchup-table-scroll{
+    width:100% !important;
+    max-width:100% !important;
+    overflow-x:auto !important;
+    -webkit-overflow-scrolling:touch !important;
+  }
+  #matchups .matchup-table-scroll .matchup-table{
+    width:720px !important;
+    min-width:720px !important;
+    table-layout:fixed !important;
+    background:#fffdfa !important;
+  }
+  #matchups .matchup-table th:nth-child(1),
+  #matchups .matchup-table td:nth-child(1){
+    width:140px !important;
+    min-width:140px !important;
+  }
+  #matchups .matchup-table th:nth-child(2),
+  #matchups .matchup-table td:nth-child(2){
+    width:120px !important;
+    min-width:120px !important;
+    text-align:center !important;
+    white-space:nowrap !important;
+  }
+  #matchups .matchup-table th:nth-child(3),
+  #matchups .matchup-table td:nth-child(3){
+    width:460px !important;
+    min-width:460px !important;
+  }
 }
 /* ===== /deck article mobile content layout ===== */
-#matchups .matchup-table th:nth-child(2),
-#matchups .matchup-table td:nth-child(2){
-  width:90px !important;
-  text-align:center;
-  white-space:nowrap !important;
-}
-#matchups .matchup-table .badge{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  white-space:nowrap !important;
-  min-width:56px;
-  padding:6px 12px;
-  line-height:1;
-  flex-shrink:0;
-}
-@media (max-width:768px){
-  #matchups .matchup-table .badge{
-    min-width:52px;
-    padding:5px 10px;
-    font-size:12px;
-  }
-}
-@media (max-width:780px){
-  body.deck-purple-enel .article-rails-layout > .main .article p,
-  body.deck-purple-enel .article-rails-layout > .main .note-link-copy p,
-  body.deck-purple-enel .article-rails-layout > .main .deck-rating-copy p,
-  body.deck-purple-enel .article-rails-layout > .main .deck-rating-pointbox p{
-    font-size:14px !important;
-    font-weight:400 !important;
-    line-height:1.82 !important;
-  }
-}
 /* ===== /article rails layout final spec ===== */
 </style>
 </head>
@@ -3555,6 +3550,7 @@ body{
 <section id="matchups">
 <h2>対面の有利不利と立ち回り</h2>
 <p class="matchups-intro">2026年4月環境の紫エネルは、速攻気味の神官連打と6コストエネルの押し付けで多くのデッキに圧力をかけやすい一方、回復や長期戦性能の高い相手には削り切れない展開もあります。相性は先後や採用カードで変わるため、表では基本的な目安を整理しています。</p>
+<div class="matchup-table-scroll">
 <table class="table matchup-table">
 <thead><tr><th>対面リーダー</th><th>相性</th><th>主な理由</th></tr></thead>
 <tbody>
@@ -3568,6 +3564,7 @@ body{
 <tr><td><a href="#kalgara">青黄ナミ</a></td><td><span class="badge lose">微不利〜不利</span></td><td>回復と長期戦性能で削り切れない展開がある。序盤からライフを詰めたい。</td></tr>
 </tbody>
 </table>
+</div>
 <div class="detail-list">
 <article class="detail-card" id="ace"><div class="head"><span class="badge win">有利</span><h4>赤青エース対面</h4></div><div class="matchup-media"><img alt="赤青エース（OP13-002）のリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/purple-enel/purple-enel-matchup-01-ace-v2.png"/><div class="card-copy"><p>赤青エース側は紫エネルの高打点と除去耐性を同時に処理しにくく、有利寄りに見られる対面です。序盤からライフを詰め、6エネルで盤面を固定できると押し切りやすくなります。</p><div class="tip"><strong>対面のポイント</strong><p>相手のパワーマイナスや除去に合わせて、6コストエネルを連続で置ける手札を目指します。神官を並べすぎて手札を細くしないように、サーチとドローの順番を意識します。</p></div></div></div></article>
 <article class="detail-card" id="lucy"><div class="head"><span class="badge win">微有利〜有利</span><h4>赤青ルーシー対面</h4></div><div class="matchup-media"><img alt="赤青ルーシー（OP15-002）のリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/purple-enel/purple-enel-matchup-02-lucy-v2.png"/><div class="card-copy"><p>赤青ルーシー対面は、紫エネル側の盤面圧力が通りやすいとされる対面です。6コストエネルを着地させると、相手は処理とライフ受けの両立が難しくなりやすいです。</p><div class="tip"><strong>対面のポイント</strong><p>序盤は神官でライフを削り、相手のイベント干渉を受けても次の6エネルにつながる手札を残します。雷獣や神の裁きで打点ラインを調整し、相手の受け札を削ってから詰めます。</p></div></div></div></article>
@@ -3740,3 +3737,4 @@ body{
 </footer>
 </body>
 </html>
+
