@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Replace: Meta Title -->
+<title>ワンピースカード最強デッキTierリスト｜環境デッキランキング</title>
+<!-- Replace: Meta Description -->
+<meta content="ワンピースカードの最強デッキをTier表で整理。SS・S・Aランクの注目デッキ、SS・S・Aランクの注目デッキをまとめています。" name="description"/>
+<link href="../../assets/css/article-common.css" rel="stylesheet"/>
+<style>
+.article .tier-hero-note{margin-bottom:18px}.article .tier-table td:first-child{width:92px;font-weight:800;text-align:center}.article .tier-table .tier-badge{display:inline-flex;align-items:center;justify-content:center;min-width:56px;padding:6px 10px;border-radius:999px;background:#111;color:#fff;font-weight:800}.article .tier-deck-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.article .tier-mini-deck{display:flex;align-items:center;gap:10px}.article .tier-mini-deck img{width:56px;height:56px;object-fit:cover;border-radius:14px;box-shadow:0 4px 14px rgba(0,0,0,.12)}.article .tier-mini-deck span{font-weight:700}.article .deck-card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:14px 0 24px}.article .deck-card{border:1px solid rgba(0,0,0,.08);border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 8px 24px rgba(0,0,0,.06)}.article .deck-card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}.article .deck-card-body{padding:14px}.article .deck-card-head{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:8px}.article .deck-card h3{margin:0;font-size:1.08rem}.article .deck-card p{margin:.45rem 0}.article .deck-card .label{display:inline-block;margin:6px 0 2px}@media(max-width:760px){.article .tier-deck-list,.article .deck-card-grid{grid-template-columns:1fr}.article .tier-mini-deck img{width:48px;height:48px}}
+
+/* Imported top-page Tier table layout */
+.article .tier-table{display:none}
+.article .home-tier-board{background:linear-gradient(180deg,#171e2b 0%,#0d1424 100%);border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.08);box-shadow:0 14px 30px rgba(0,0,0,.18);margin:10px 0 22px;color:#fff}
+.article .home-tier-board *{box-sizing:border-box}
+.article .home-tier-title{padding:20px 18px 22px;font-size:1.15rem;font-weight:900;letter-spacing:.01em;border-bottom:2px solid rgba(214,31,40,.72)}
+.article .home-tier-row{display:grid;grid-template-columns:128px 1fr;min-height:162px;border-bottom:2px solid rgba(214,31,40,.72)}
+.article .home-tier-row:last-child{border-bottom:0}
+.article .home-tier-label{display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.015));border-right:1px solid rgba(255,255,255,.08);gap:6px}
+.article .home-tier-rank{font-size:3.25rem;line-height:1;font-weight:900;letter-spacing:.02em}
+.article .home-tier-rank.ss{color:#ffd66b}.article .home-tier-rank.s{color:#ff86a5}.article .home-tier-rank.a{color:#8bb5ff}
+.article .home-tier-sub{font-size:.86rem;font-weight:800;color:#fff}
+.article .home-tier-decks{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));align-items:center;gap:14px;padding:16px 16px;background:rgba(9,15,28,.42)}
+.article .home-tier-card{width:100%;display:block;text-decoration:none;color:#111;border-radius:10px;overflow:hidden;background:#fff;box-shadow:0 6px 16px rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.24)}
+.article .home-tier-card img{width:100%;height:100px;display:block;object-fit:cover;object-position:top center;background:#182033}
+.article .home-tier-card-name{display:block;background:rgba(255,255,255,.94);color:#111;text-align:center;font-weight:900;font-size:.78rem;line-height:1.2;padding:5px 4px 7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media(max-width:760px){.article .home-tier-board{border-radius:12px;overflow-x:auto}.article .home-tier-row{grid-template-columns:86px minmax(520px,1fr);min-width:606px;min-height:132px}.article .home-tier-title{font-size:1rem;padding:16px 14px;min-width:606px}.article .home-tier-rank{font-size:2.4rem}.article .home-tier-sub{font-size:.74rem}.article .home-tier-decks{gap:10px;padding:12px;grid-template-columns:repeat(5,96px)}.article .home-tier-card{width:96px}.article .home-tier-card img{height:78px}.article .home-tier-card-name{font-size:.7rem}}
+
+/* Meta matchup matrix */
+.article .matchup-matrix-section{margin:28px 0 32px}
+.article .matchup-matrix-section>p{font-size:.9rem;color:var(--muted);font-weight:700;line-height:1.8}
+.article .matchup-matrix-wrap{margin-top:14px;overflow-x:auto}
+.article .matchup-matrix{width:100%;min-width:820px;border-collapse:collapse;font-size:.75rem;line-height:1.45;background:#1a1916;border-radius:12px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.24)}
+.article .matchup-matrix th,.article .matchup-matrix td{min-width:88px;padding:9px 12px;border:1px solid #2a2824;text-align:center;white-space:nowrap}
+.article .matchup-matrix th{background:#232118;color:#8d897f;font-size:.7rem;font-weight:800}
+.article .matchup-matrix .axis{min-width:132px;text-align:left;color:#8d897f}
+.article .matchup-matrix tbody th{min-width:132px;text-align:left;background:#232118;color:#d4d1cb;font-weight:800}
+.article .matchup-matrix td.win{background:rgba(39,174,96,.12);color:#69db7c;font-weight:800}
+.article .matchup-matrix td.even{background:transparent;color:#8d897f;font-weight:700}
+.article .matchup-matrix td.lose{background:rgba(231,76,60,.09);color:#ff6b6b;font-weight:800}
+.article .matchup-matrix td.mirror{background:#232118;color:#5f5b53;font-weight:800}
+.article .matchup-note{margin:.65rem 0 0;color:var(--muted);font-size:12px;font-weight:700}
+@media(max-width:760px){.article .matchup-matrix-section{margin:24px 0 28px}.article .matchup-matrix-section>p{font-size:.82rem}.article .matchup-matrix{min-width:760px;font-size:.7rem}.article .matchup-matrix th,.article .matchup-matrix td{min-width:78px;padding:8px 10px}.article .matchup-matrix .axis,.article .matchup-matrix tbody th{min-width:116px}}
+
+/* Tier deck leader cards */
+.article .deck-card-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:18px 0 28px}
+.article .deck-card{position:relative;display:grid;grid-template-columns:150px minmax(0,1fr);grid-template-areas:"image name" "image effect";gap:7px 16px;align-items:start;padding:16px;border:1px solid rgba(209,170,61,.26);border-radius:16px;background:linear-gradient(180deg,#fff 0%,#fffdfa 100%);box-shadow:var(--shadow-soft);overflow:hidden}
+.article .deck-card .leader-card-image{grid-area:image;margin:0;padding:0}
+.article .deck-card .leader-card-image img{display:block;width:100%;max-width:150px;height:auto;margin:0 auto;border-radius:14px;border:1px solid rgba(209,170,61,.34);background:#fff;box-shadow:0 8px 18px rgba(15,23,42,.14);aspect-ratio:auto;object-fit:contain}
+.article .deck-card .leader-name{grid-area:name;width:100%;padding:0 58px 3px 0;color:var(--heading);font-size:16px;font-weight:900;line-height:1.45;border-bottom:1px solid rgba(209,170,61,.22)}
+.article .deck-card .leader-effect{grid-area:effect;width:100%;margin-top:2px;padding:0;color:var(--text);font-size:13.5px;font-weight:700;line-height:1.72}
+.article .deck-card .tier-tag{position:absolute;top:14px;right:14px;display:inline-flex;align-items:center;justify-content:center;min-width:42px;height:30px;padding:0 10px;border-radius:999px;color:#111827;font-size:13px;font-weight:900;line-height:1;box-shadow:0 6px 14px rgba(15,23,42,.12)}
+.article .deck-card .tier-tag.ss{background:#ffd66b;border:1px solid rgba(194,145,38,.8)}
+.article .deck-card .tier-tag.s{background:#ff86a5;border:1px solid rgba(190,58,95,.55)}
+.article .deck-card .tier-tag.a{background:#8bb5ff;border:1px solid rgba(57,103,184,.55)}
+.article .deck-card .leader-name::before,
+.article .deck-card .leader-effect::before{display:block;margin-bottom:3px;color:var(--muted);font-size:10.5px;font-weight:900;line-height:1.35;letter-spacing:.04em}
+.article .deck-card .leader-name::before{content:"リーダー名"}
+.article .deck-card .leader-effect::before{content:"特徴"}
+.article a.deck-card{color:inherit;text-decoration:none;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.article a.deck-card:hover{transform:translateY(-2px);border-color:rgba(209,170,61,.58);box-shadow:0 12px 26px rgba(15,23,42,.12)}
+@media(max-width:760px){.article .deck-card-grid{grid-template-columns:1fr}.article .deck-card{grid-template-columns:1fr;grid-template-areas:"image" "name" "effect";gap:8px;padding:14px}.article .deck-card .leader-card-image{margin-bottom:4px}.article .deck-card .leader-card-image img{width:min(100%,220px);max-width:220px}.article .deck-card .leader-name{padding-right:58px}.article .deck-card .leader-effect{font-size:13px;line-height:1.72}}
+</style>
+</head>
+<body class="deck-purple-enel">
+<!-- Common Header Start -->
+<header class="topbar">
+<div class="wrap topbar-inner"></div>
+</header>
+<header class="site-header">
+<div class="brand-row">
+<div class="wrap brand-inner">
+<div class="brand">
+<div class="logo"><img alt="13OSTON CARDロゴ" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/tier-list/tier-list-site-logo.png"/></div>
+<div>
+<h1>13OSTON CARD</h1>
+<p>ワンピースカードの最新情報、環境デッキ、初心者向けガイドをまとめた総合攻略メディア</p>
+</div>
+</div>
+</div>
+</div>
+<nav aria-label="カテゴリナビゲーション" class="category-nav">
+<div class="wrap category-scroll">
+<a href="../../index.html">トップページ</a>
+<a href="../../articles/meta/tier-list.html">最強デッキ</a>
+<a href="../../articles/meta/new-set-deck-review.html">新弾デッキ</a>
+<a href="../../articles/meta/decks/index.html">デッキ一覧</a>
+</div>
+</nav>
+</header>
+<!-- Common Header End -->
+<div class="wrap page" id="top">
+<!-- Replace: Breadcrumbs -->
+<div class="breadcrumbs">
+<a href="../../index.html">トップページ</a><span class="sep">›</span>
+<span>環境・デッキ</span><span class="sep">›</span>
+<span>Tierリスト</span>
+</div><div class="layout article-rails-layout"><aside class="ad-rail ad-rail-left-1"><div class="ad-box"><div class="ad-badge">広告</div><strong>広告枠</strong><p>PC表示では本編を中央の細いカラムに寄せるための広告枠です。</p></div></aside><aside class="ad-rail ad-rail-left-2"><div class="ad-box"><div class="ad-badge">広告</div><strong>広告枠</strong><p>PC表示では本編を中央の細いカラムに寄せるための広告枠です。</p></div></aside><main class="main"><section class="box hero">
+<div class="hero-inner">
+<div class="hero-copy">
+<!-- Article Hero Start -->
+<div class="hero-meta"><span class="pill">環境・デッキ</span><span class="pill">更新日: 2026年4月26日</span></div>
+<!-- Replace: Hero Title -->
+<h1 class="hero-title">最強デッキランキング｜Tier表</h1>
+<!-- Replace: Hero Summary -->
+<p class="hero-summary">ワンピースカードの環境上位デッキをTier表で整理し、SS・S・Aランクごとに特徴をまとめています。デッキ選びや大会前の確認に活用してください。</p>
+<div class="hero-tags"><span class="hero-tag">Tier表</span><span class="hero-tag">環境デッキ</span><span class="hero-tag">デッキ選び</span></div></div>
+</div>
+</section><section class="box toc-box"><div class="box-head"><h2>目次</h2></div><div class="box-body"><ol class="toc toc-simple"><li><a href="#tier">最強デッキTier</a></li><li><a href="#matchup-matrix">環境デッキの相性表</a></li><li><a href="#ss-decks">SSデッキ</a></li><li><a href="#s-decks">Sデッキ</a></li><li><a href="#a-decks">Aデッキ</a></li></ol></div></section><article class="box">
+<!-- Article Section Start -->
+<div class="article">
+<section id="tier"><h2>最強デッキTier</h2><div aria-label="最強デッキランキング Tier表" class="home-tier-board"><div class="home-tier-title">最強デッキランキング / Tier表</div><div class="home-tier-row"><div class="home-tier-label"><div class="home-tier-rank ss">SS</div><div class="home-tier-sub">Tier 1</div></div><div class="home-tier-decks"><a class="home-tier-card" href="decks/purple-enel.html" aria-label="紫エネルの個別記事へ"><img alt="紫エネル" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/tier-list/tier-list-01-purple-enel.png"/><span class="home-tier-card-name">紫エネル</span></a><a class="home-tier-card" href="decks/green-mihawk.html" aria-label="緑ミホークの個別記事へ"><img alt="緑ミホーク" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/tier-list/tier-list-02-green-mihawk.png"/><span class="home-tier-card-name">緑ミホーク</span></a><a class="home-tier-card" href="decks/blue-yellow-nami.html" aria-label="青黄ナミの個別記事へ"><img alt="青黄ナミ" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/tier-list/tier-list-03-blue-yellow-nami.png"/><span class="home-tier-card-name">青黄ナミ</span></a></div></div><div class="home-tier-row"><div class="home-tier-label"><div class="home-tier-rank s">S</div><div class="home-tier-sub">Tier 1.5</div></div><div class="home-tier-decks"><a class="home-tier-card" href="decks/red-blue-lucy.html" aria-label="赤青ルーシーの個別記事へ"><img alt="赤青ルーシー" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/tier-list/tier-list-04-red-blue-lucy.png"/><span class="home-tier-card-name">赤青ルーシー</span></a><a class="home-tier-card" href="decks/blue-yellow-hancock.html" aria-label="青黄ハンコックの個別記事へ"><img alt="青黄ハンコック" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/tier-list/tier-list-05-blue-yellow-hancock.png"/><span class="home-tier-card-name">青黄ハンコック</span></a><a class="home-tier-card" href="decks/yellow-luffy-skypiea.html" aria-label="空島ルフィの個別記事へ"><img alt="空島ルフィ" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/tier-list/tier-list-06-skypiea-luffy.png"/><span class="home-tier-card-name">空島ルフィ</span></a><a class="home-tier-card" href="decks/red-blue-ace.html" aria-label="赤青エースの個別記事へ"><img alt="赤青エース" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/tier-list/tier-list-07-red-blue-ace.png"/><span class="home-tier-card-name">赤青エース</span></a><a class="home-tier-card" href="decks/black-imu.html" aria-label="黒イムの個別記事へ"><img alt="黒イム" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/tier-list/tier-list-08-black-imu.png"/><span class="home-tier-card-name">黒イム</span></a></div></div><div class="home-tier-row"><div class="home-tier-label"><div class="home-tier-rank a">A</div><div class="home-tier-sub">Tier 2</div></div><div class="home-tier-decks"><div class="home-tier-card"><img alt="黒クロコダイル" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/tier-list/tier-list-09-black-crocodile.png"/><span class="home-tier-card-name">黒クロコダイル</span></div><div class="home-tier-card"><img alt="緑紫ルフィ" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/tier-list/tier-list-10-green-purple-luffy.png"/><span class="home-tier-card-name">緑紫ルフィ</span></div><div class="home-tier-card"><img alt="赤紫ロジャー" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/tier-list/tier-list-11-red-purple-roger.png"/><span class="home-tier-card-name">赤紫ロジャー</span></div><div class="home-tier-card"><img alt="紫ドフラ" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/tier-list/tier-list-12-purple-doflamingo.png"/><span class="home-tier-card-name">紫ドフラ</span></div><div class="home-tier-card"><img alt="黄エネル" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/tier-list/tier-list-13-yellow-enel.png"/><span class="home-tier-card-name">黄エネル</span></div></div></div></div><div class="note tier-hero-note"><div class="note-box"><strong>デッキ選びの目安</strong><ul><li>勝ちやすさ重視ならSSデッキから選ぶのがおすすめ</li><li>使いやすさや好みのプレイ感も加味して選ぶと続けやすい</li></ul></div></div><p>ワンピースカードの環境デッキを、対戦での安定感・パワー・対応力をもとにTier表で整理しています。迷った場合は、まずSSデッキの中から自分のプレイスタイルに合うものを選ぶのがおすすめです。</p></section><section id="matchup-matrix" class="matchup-matrix-section"><h2>環境デッキの相性表</h2><p>2026年5月中旬のスタンダード環境をもとに、使用側から見た主要8デッキの相性を一覧化しています。</p><div class="matchup-matrix-wrap" aria-label="環境デッキの相性表"><table class="matchup-matrix"><thead><tr><th class="axis">↓使用 / 対面→</th><th>紫<br>エネル</th><th>緑<br>ミホーク</th><th>青黄<br>ナミ</th><th>赤青<br>ルーシー</th><th>青黄<br>ハンコック</th><th>空島<br>ルフィ</th><th>赤青<br>エース</th><th>黒<br>イム</th></tr></thead><tbody><tr><th>紫エネル</th><td class="mirror">－</td><td class="even">五分</td><td class="lose">微不利</td><td class="even">五分</td><td class="even">五分</td><td class="lose">微不利</td><td class="win">有利</td><td class="win">微有利</td></tr><tr><th>緑ミホーク</th><td class="even">五分</td><td class="mirror">－</td><td class="win">微有利</td><td class="lose">不利</td><td class="lose">微不利</td><td class="win">微有利</td><td class="win">微有利</td><td class="win">微有利</td></tr><tr><th>青黄ナミ</th><td class="win">微有利</td><td class="lose">微不利</td><td class="mirror">－</td><td class="lose">微不利</td><td class="win">有利</td><td class="win">有利</td><td class="even">五分</td><td class="even">五分</td></tr><tr><th>赤青ルーシー</th><td class="even">五分</td><td class="win">有利</td><td class="win">微有利</td><td class="mirror">－</td><td class="even">五分</td><td class="even">五分</td><td class="even">五分</td><td class="even">五分</td></tr><tr><th>青黄ハンコック</th><td class="even">五分</td><td class="win">微有利</td><td class="lose">不利</td><td class="even">五分</td><td class="mirror">－</td><td class="even">五分</td><td class="win">有利</td><td class="win">有利</td></tr><tr><th>空島ルフィ</th><td class="win">微有利</td><td class="lose">微不利</td><td class="lose">不利</td><td class="even">五分</td><td class="even">五分</td><td class="mirror">－</td><td class="even">五分</td><td class="even">五分</td></tr><tr><th>赤青エース</th><td class="lose">不利</td><td class="lose">微不利</td><td class="even">五分</td><td class="even">五分</td><td class="lose">不利</td><td class="even">五分</td><td class="mirror">－</td><td class="even">五分</td></tr><tr><th>黒イム</th><td class="lose">微不利</td><td class="lose">微不利</td><td class="even">五分</td><td class="even">五分</td><td class="lose">不利</td><td class="even">五分</td><td class="even">五分</td><td class="mirror">－</td></tr></tbody></table></div><p class="matchup-note">※大まかな目安です。先後、構築、採用カード、プレイングで変動します。</p></section><section id="ss-decks"><h2>SSデッキ</h2><p>SSデッキは、環境で特に勝ちやすく、デッキ選びで最初に候補にしたいランクです。</p><div class="deck-card-grid"><a class="deck-card" href="decks/purple-enel.html"><span class="tier-tag ss">SS</span><figure class="leader-card-image"><img alt="紫エネル" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/tier-list/tier-list-01-purple-enel.png"/></figure><div class="leader-name">紫エネル</div><div class="leader-effect">ドン加速から大型展開へつなげる現環境トップ候補。高い再現性と押し込み性能が魅力。</div></a><a class="deck-card" href="decks/green-mihawk.html"><span class="tier-tag ss">SS</span><figure class="leader-card-image"><img alt="緑ミホーク" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/tier-list/tier-list-02-green-mihawk.png"/></figure><div class="leader-name">緑ミホーク</div><div class="leader-effect">レストと展開制限を絡めて盤面を取り、テンポ差を広げる上位デッキ。</div></a><a class="deck-card" href="decks/blue-yellow-nami.html"><span class="tier-tag ss">SS</span><figure class="leader-card-image"><img alt="青黄ナミ" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/tier-list/tier-list-03-blue-yellow-nami.png"/></figure><div class="leader-name">青黄ナミ</div><div class="leader-effect">守りの固さと終盤の詰め性能が高く、幅広い対面で安定して戦える最上位候補。</div></a></div></section><section id="s-decks"><h2>Sデッキ</h2><p>Sデッキは、SSに次ぐ実力を持ち、対面や構築次第で十分に上位を狙えるデッキです。</p><div class="deck-card-grid"><a class="deck-card" href="decks/red-blue-lucy.html"><span class="tier-tag s">S</span><figure class="leader-card-image"><img alt="赤青ルーシー" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/tier-list/tier-list-04-red-blue-lucy.png"/></figure><div class="leader-name">赤青ルーシー</div><div class="leader-effect">展開力と攻撃性能を両立したテンポデッキ。序盤から圧力をかけやすい。</div></a><a class="deck-card" href="decks/blue-yellow-hancock.html"><span class="tier-tag s">S</span><figure class="leader-card-image"><img alt="青黄ハンコック" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/tier-list/tier-list-05-blue-yellow-hancock.png"/></figure><div class="leader-name">青黄ハンコック</div><div class="leader-effect">トリガー展開とライフ干渉で粘り強く戦う、受け性能の高いデッキ。</div></a><a class="deck-card" href="decks/yellow-luffy-skypiea.html"><span class="tier-tag s">S</span><figure class="leader-card-image"><img alt="空島ルフィ" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/tier-list/tier-list-06-skypiea-luffy.png"/></figure><div class="leader-name">空島ルフィ</div><div class="leader-effect">空島ギミックを活かしてライフと盤面をコントロールするデッキ。</div></a><a class="deck-card" href="decks/red-blue-ace.html"><span class="tier-tag s">S</span><figure class="leader-card-image"><img alt="赤青エース" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/tier-list/tier-list-07-red-blue-ace.png"/></figure><div class="leader-name">赤青エース</div><div class="leader-effect">赤の攻撃力と青の手札調整を活かしたテンポデッキ。</div></a><a class="deck-card" href="decks/black-imu.html"><span class="tier-tag s">S</span><figure class="leader-card-image"><img alt="黒イム" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/tier-list/tier-list-08-black-imu.png"/></figure><div class="leader-name">黒イム</div><div class="leader-effect">トラッシュ活用と五老星展開で終盤の制圧力を狙う黒デッキ。</div></a></div></section><section id="a-decks"><h2>Aデッキ</h2><p>Aデッキは、環境上位に食い込む可能性があり、プレイングや環境読みで差を出せるデッキです。</p><div class="deck-card-grid"><article class="deck-card"><span class="tier-tag a">A</span><figure class="leader-card-image"><img alt="黒クロコダイル" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/tier-list/tier-list-09-black-crocodile.png"/></figure><div class="leader-name">黒クロコダイル</div><div class="leader-effect">除去と手札干渉で相手の動きを抑えながら戦うコントロール寄りのデッキ。</div></article><article class="deck-card"><span class="tier-tag a">A</span><figure class="leader-card-image"><img alt="緑紫ルフィ" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/tier-list/tier-list-10-green-purple-luffy.png"/></figure><div class="leader-name">緑紫ルフィ</div><div class="leader-effect">ドン操作と展開補助を使い、盤面形成から中盤以降の攻めへつなげるデッキ。</div></article><article class="deck-card"><span class="tier-tag a">A</span><figure class="leader-card-image"><img alt="赤紫ロジャー" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/tier-list/tier-list-11-red-purple-roger.png"/></figure><div class="leader-name">赤紫ロジャー</div><div class="leader-effect">ドン操作と高パワー展開で押し切る攻撃的なデッキ。</div></article><article class="deck-card"><span class="tier-tag a">A</span><figure class="leader-card-image"><img alt="紫ドフラ" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/tier-list/tier-list-12-purple-doflamingo.png"/></figure><div class="leader-name">紫ドフラ</div><div class="leader-effect">ドン加速から大型展開につなげる中速デッキ。</div></article><article class="deck-card"><span class="tier-tag a">A</span><figure class="leader-card-image"><img alt="黄エネル" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/tier-list/tier-list-13-yellow-enel.png"/></figure><div class="leader-name">黄エネル</div><div class="leader-effect">ライフ回復と高耐久を活かして長期戦に持ち込む黄色デッキ。</div></article></div></section>
+</div>
+</article></main>
+<!-- Related Articles Start -->
+<!-- Sidebar Start -->
+<aside class="sidebar">
+<div class="sticky-box">
+<section class="box section">
+<div class="section-title">
+<h3>人気記事</h3>
+</div>
+<div class="section-body">
+<div aria-label="PV上位5記事" class="pv-ranking">
+<div class="pv-ranking-head">
+<strong>PVランキング TOP5</strong>
+</div>
+<ol class="pv-ranking-list">
+<li><a href="tier-list.html"><span class="pv-rank">1</span><span class="pv-title">最強デッキ｜Tier表</span></a></li>
+<li><a href="../latest/latest-booster.html"><span class="pv-rank">2</span><span class="pv-title">最新弾「決戦の刻」</span></a></li>
+<li><a href="../guides/featured/expensive-card-ranking.html"><span class="pv-rank">3</span><span class="pv-title">高騰カードランキング</span></a></li>
+<li><a href="../guides/beginners/tournament-entry-guide.html"><span class="pv-rank">4</span><span class="pv-title">大会への応募方法</span></a></li>
+<li><a href="decks/purple-enel.html"><span class="pv-rank">5</span><span class="pv-title">紫エネル 解説記事</span></a></li>
+</ol>
+</div>
+</div>
+</section>
+<section class="box section">
+<div class="section-title">
+<h3>デッキ一覧</h3>
+</div>
+<div class="section-body">
+<div class="side-list">
+<div class="side-list-label">&lt;最新弾&gt;</div>
+<a href="decks/blue-green-luffy.html">青緑ルフィ</a>
+<a href="decks/red-ace.html">赤エース</a>
+<a href="decks/blue-buggy.html">青バギー</a>
+<a href="decks/purple-sengoku.html">紫センゴク</a>
+<a href="decks/black-yamato.html">黒ヤマト</a>
+<a href="decks/black-yellow-teach.html">黒黄ティーチ</a>
+<div class="side-list-label">&lt;環境デッキ&gt;</div>
+<a href="decks/purple-enel.html">紫エネル</a>
+<a href="decks/red-blue-lucy.html">赤青ルーシー</a>
+<a href="decks/blue-yellow-nami.html">青黄ナミ</a>
+<a href="decks/yellow-luffy-skypiea.html">黄ルフィ(空島)</a>
+<a href="decks/red-blue-ace.html">赤青エース</a>
+<a href="decks/blue-yellow-hancock.html">青黄ハンコック</a>
+<a href="decks/green-mihawk.html">緑ミホーク</a>
+<a href="decks/black-imu.html">黒イム</a>
+</div>
+</div>
+</section>
+</div>
+</aside><aside class="ad-rail ad-rail-right"><div class="ad-box"><div class="ad-badge">広告</div><strong>広告枠</strong><p>PC表示では本編を中央の細いカラムに寄せるための広告枠です。</p></div></aside></div>
+</div>
+<!-- Common Footer Start -->
+<footer class="wrap footer">
+<div class="footer-site-map">
+<div class="footer-site-map-inner">
+<div class="footer-head">
+<div class="footer-brand">
+<strong>ワンピースカード攻略</strong>
+<p>
+            ワンピースカードの最新情報・環境デッキ・各デッキ解説を
+            すぐ辿れるサイトマップ
+          </p>
+</div>
+<div class="footer-top-link">
+<a href="../../index.html">トップへ戻る</a>
+<a href="../../info.html">サイト情報</a>
+<a href="../../info.html#contact">お問い合わせ</a>
+</div>
+</div>
+<div class="footer-grid">
+<section class="footer-column footer-column-latest">
+<div class="footer-subgroup">
+<h4>最新情報</h4>
+<div class="footer-links">
+<a href="../../articles/latest/latest-booster.html">最新弾</a>
+<a href="../../articles/latest/latest-starter-deck.html">最新ST</a>
+<a href="../../articles/latest/banned-restricted-2026-05.html">制限禁止</a>
+</div>
+</div>
+<div class="footer-subgroup">
+<h4>最強・環境</h4>
+<div class="footer-links">
+<a href="../../articles/meta/tier-list.html">最強デッキ</a>
+<a href="../../articles/meta/new-set-deck-review.html">最新弾デッキ</a>
+<a href="../../articles/meta/decks/index.html">デッキ一覧</a>
+</div>
+</div>
+</section>
+<section class="footer-column footer-column-deck-new">
+<h4>デッキ個別（最新弾）</h4>
+<div class="footer-links">
+<a href="decks/blue-green-luffy.html">青緑ルフィ</a>
+<a href="decks/red-ace.html">赤エース</a>
+<a href="decks/blue-buggy.html">青バギー</a>
+<a href="decks/purple-sengoku.html">紫センゴク</a>
+<a href="decks/black-yamato.html">黒ヤマト</a>
+<a href="decks/black-yellow-teach.html">黒黄ティーチ</a>
+</div>
+</section>
+<section class="footer-column footer-column-deck-meta">
+<h4>デッキ個別（環境デッキ）</h4>
+<div class="footer-links">
+<a href="decks/purple-enel.html">紫エネル</a>
+<a href="decks/red-blue-lucy.html">赤青ルーシー</a>
+<a href="decks/blue-yellow-nami.html">青黄ナミ</a>
+<a href="decks/yellow-luffy-skypiea.html">黄ルフィ(空島)</a>
+<a href="decks/red-blue-ace.html">赤青エース</a>
+<a href="decks/blue-yellow-hancock.html">青黄ハンコック</a>
+<a href="decks/green-mihawk.html">緑ミホーク</a>
+<a href="decks/black-imu.html">黒イム</a>
+</div>
+</section>
+<section class="footer-column footer-column-special">
+<h4>特集・初心者</h4>
+<div class="footer-subgroup">
+<p class="footer-subgroup-title">注目記事</p>
+<div class="footer-links">
+<a href="../../articles/guides/featured/expensive-card-ranking.html">高騰カードランキング</a>
+<a href="../../articles/guides/featured/influencer-list.html">注目インフルエンサー</a>
+<a href="../../articles/guides/featured/tournament-watch.html">注目の大会</a>
+</div>
+</div>
+<div class="footer-subgroup">
+<p class="footer-subgroup-title">初心者おすすめ</p>
+<div class="footer-links">
+<a href="../../articles/guides/beginners/how-to-start.html">ワンピカードの始め方</a>
+<a href="../../articles/guides/beginners/beginner-recommended-decks.html">初心者おすすめデッキ</a>
+<a href="../../articles/guides/beginners/deckbuilding-basics.html">デッキの組み方と考え方</a>
+<a href="../../articles/guides/beginners/tournament-entry-guide.html">大会への応募方法</a>
+</div>
+</div>
+</section>
+</div>
+<div class="footer-bottom">
+        <div>© 13OSTON CARD</div>
+        <p class="footer-rights">当サイトで使用しているカード画像等の著作権は、各権利者に帰属します。<br>©尾田栄一郎／集英社・フジテレビ・東映アニメーション<br>©BANDAI<br>当サイトは非公式のONE PIECEカードゲーム攻略サイトです。<br>当サイトは広告・アフィリエイトを含む場合があります。</p>
+      </div>
+</div>
+</div>
+</footer>
+</body>
+</html>
+
+
+
+

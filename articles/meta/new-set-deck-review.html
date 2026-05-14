@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Replace: Meta Title -->
+<title>新リーダーおすすめ評価｜どのデッキを組むべき？</title>
+<!-- Replace: Meta Description -->
+<meta content="最新弾の新リーダーについて、組むべきデッキの優先度や初心者向け・環境向けの比較評価をまとめています。" name="description"/>
+<link rel="stylesheet" href="../../assets/css/article-common.css"/>
+<style>
+.article .leader-recommend-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:18px 0 30px}
+.article .leader-recommend-card{position:relative;display:grid;gap:10px;padding:16px;border:1px solid rgba(209,170,61,.28);border-radius:16px;background:linear-gradient(180deg,#fff 0%,#fffdfa 100%);box-shadow:var(--shadow-soft);overflow:hidden}
+.article .leader-recommend-card img{width:min(100%,210px);height:auto;margin:0 auto;border-radius:14px;border:1px solid rgba(209,170,61,.34);box-shadow:0 8px 18px rgba(15,23,42,.14)}
+.article .leader-recommend-rank{position:absolute;top:14px;right:14px;display:inline-flex;align-items:center;justify-content:center;min-width:42px;height:30px;padding:0 10px;border-radius:999px;background:#ffd66b;border:1px solid rgba(194,145,38,.8);color:#111827;font-size:13px;font-weight:900;line-height:1;box-shadow:0 6px 14px rgba(15,23,42,.12)}
+.article .leader-recommend-card h3{margin:0;color:var(--heading);font-size:17px;line-height:1.45}
+.article .leader-recommend-card p{margin:0;font-size:14px;line-height:1.85;font-weight:600}
+.article .leader-recommend-card a{position:relative;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:52px;margin-top:4px;padding:13px 42px 13px 18px;border:1px solid #202a52;border-radius:14px;background:linear-gradient(180deg,#ffffff 0%,#f5f7ff 100%);color:#17204a;font-size:15px;font-weight:800;line-height:1.5;text-align:center;box-shadow:0 8px 18px rgba(18,24,48,.08);overflow:hidden}
+.article .leader-recommend-card a::after{content:"›";position:absolute;right:18px;top:50%;transform:translateY(-50%);color:#232b63;font-size:24px;line-height:1;font-weight:900}
+.article .leader-recommend-card a:hover{background:linear-gradient(180deg,#f9fbff 0%,#eef2ff 100%);color:#101936;border-color:#101936;transform:translateY(-1px);box-shadow:0 12px 22px rgba(18,24,48,.12)}
+.article .leader-compare-wrap{width:100%;overflow-x:auto;margin:18px 0 8px;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow-soft);background:#fff}
+.article .leader-compare-table{width:100%;min-width:760px;border-collapse:separate;border-spacing:0;font-size:14px}
+.article .leader-compare-table th{padding:12px 14px;background:linear-gradient(135deg,#232b63,#101936);color:#fff;font-size:13px;font-weight:900;text-align:left;white-space:nowrap}
+.article .leader-compare-table td{padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.75;font-weight:600}
+.article .leader-compare-table tr:last-child td{border-bottom:0}
+.article .leader-compare-table tbody tr:nth-child(even){background:#fffdfa}
+.article .leader-compare-name{font-weight:900;color:var(--heading);white-space:nowrap}
+.article .leader-score{display:inline-flex;align-items:center;justify-content:center;min-width:44px;padding:4px 10px;border-radius:999px;background:#eef1fb;border:1px solid var(--blue-border);color:var(--blue);font-size:12px;font-weight:900}
+.article .deck-link-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:18px 0 30px}
+.article .deck-link-card{position:relative;display:grid;grid-template-columns:150px minmax(0,1fr);grid-template-areas:"image name" "image feature";gap:7px 16px;align-items:start;padding:16px;border:1px solid rgba(209,170,61,.26);border-radius:16px;background:linear-gradient(180deg,#fff 0%,#fffdfa 100%);box-shadow:var(--shadow-soft);overflow:hidden;color:inherit;text-decoration:none}
+.article .deck-link-card:hover{transform:translateY(-1px);box-shadow:0 12px 22px rgba(18,24,48,.12)}
+.article .deck-link-image{grid-area:image;margin:0;padding:0}
+.article .deck-link-image img{display:block;width:100%;max-width:150px;height:auto;margin:0 auto;border-radius:14px;border:1px solid rgba(209,170,61,.34);background:#fff;box-shadow:0 8px 18px rgba(15,23,42,.14);object-fit:contain}
+.article .deck-link-name{grid-area:name;width:100%;padding:0 0 3px;color:var(--heading);font-size:16px;font-weight:900;line-height:1.45;border-bottom:1px solid rgba(209,170,61,.22)}
+.article .deck-link-feature{grid-area:feature;width:100%;margin-top:2px;padding:0;color:var(--text);font-size:13.5px;font-weight:700;line-height:1.72}
+.article .deck-link-name::before,
+.article .deck-link-feature::before{display:block;margin-bottom:3px;color:var(--muted);font-size:10.5px;font-weight:900;line-height:1.35;letter-spacing:.04em}
+.article .deck-link-name::before{content:"リーダー名"}
+.article .deck-link-feature::before{content:"特徴"}
+@media(max-width:760px){.article .leader-recommend-grid{grid-template-columns:1fr}.article .leader-recommend-card img{width:min(100%,220px)}.article .deck-link-grid{grid-template-columns:1fr}.article .deck-link-card{grid-template-columns:1fr;grid-template-areas:"image" "name" "feature";gap:8px;padding:14px}.article .deck-link-image{margin-bottom:4px}.article .deck-link-image img{width:min(100%,220px);max-width:220px}.article .deck-link-feature{font-size:13px;line-height:1.72}}
+</style>
+</head>
+<body class="deck-purple-enel">
+<!-- Common Header Start -->
+<header class="topbar">
+<div class="wrap topbar-inner"></div>
+</header>
+<header class="site-header">
+<div class="brand-row">
+<div class="wrap brand-inner">
+<div class="brand">
+<div class="logo"><img alt="13OSTON CARDロゴ" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/new-set-deck-review/new-set-deck-review-site-logo.png"/></div>
+<div>
+<h1>13OSTON CARD</h1>
+<p>ワンピースカードの最新情報、環境デッキ、初心者向けガイドをまとめた総合攻略メディア</p>
+</div>
+</div>
+</div>
+</div>
+<nav aria-label="カテゴリナビゲーション" class="category-nav">
+<div class="wrap category-scroll">
+<a href="../../index.html">トップページ</a>
+<a href="../../articles/meta/tier-list.html">最強デッキ</a>
+<a href="../../articles/meta/new-set-deck-review.html">新弾デッキ</a>
+<a href="../../articles/meta/decks/index.html">デッキ一覧</a>
+</div>
+</nav>
+</header>
+<!-- Common Header End -->
+<div class="wrap page" id="top">
+<!-- Replace: Breadcrumbs -->
+<div class="breadcrumbs">
+<a href="../../index.html">トップページ</a><span class="sep">›</span>
+<span>環境・デッキ</span><span class="sep">›</span>
+<span>新リーダー評価</span>
+</div><div class="layout article-rails-layout"><aside class="ad-rail ad-rail-left-1"><div class="ad-box"><div class="ad-badge">広告</div><strong>広告枠</strong><p>PC表示では本編を中央の細いカラムに寄せるための広告枠です。</p></div></aside><aside class="ad-rail ad-rail-left-2"><div class="ad-box"><div class="ad-badge">広告</div><strong>広告枠</strong><p>PC表示では本編を中央の細いカラムに寄せるための広告枠です。</p></div></aside><main class="main"><section class="box hero">
+<div class="hero-inner">
+<div class="hero-copy">
+<!-- Article Hero Start -->
+<div class="hero-meta">
+<!-- Replace: Hero Category -->
+<span class="pill">環境・デッキ</span><span class="pill">新リーダー比較</span></div>
+<!-- Replace: Hero Title -->
+<h1 class="hero-title">新リーダーおすすめ評価｜どれを組むべき？</h1>
+<!-- Replace: Hero Summary -->
+<p class="hero-summary">最新弾の新リーダー6種を、組みやすさ・将来性・強みの分かりやすさで比較します。新弾全体情報を見たあと、どの個別デッキ記事へ進むかを決めるための中間ページです。</p>
+<div class="hero-tags"><span class="hero-tag">新弾</span><span class="hero-tag">リーダー比較</span><span class="hero-tag">デッキ選び</span></div></div>
+</div>
+</section><article class="box">
+<!-- Article Section Start -->
+<div class="article">
+<section id="recommended-leaders">
+<h2>おすすめの新リーダー</h2>
+<p>迷ったら、まずは「環境での伸びしろ」「デッキのまとまりやすさ」「勝ち筋の分かりやすさ」を基準に選ぶのがおすすめです。現時点では、青緑ルフィ・黒黄ティーチ・赤エースの3つを優先候補として見ています。</p>
+<div class="leader-recommend-grid">
+<article class="leader-recommend-card">
+<span class="leader-recommend-rank">1</span>
+<img alt="青緑ルフィのリーダーカード画像" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-booster/latest-booster-leader-luffy.webp"/>
+<h3>青緑ルフィ</h3>
+<p>インペルダウン軸のカードを使いながら、ドン!!を起こしてテンポを作れるリーダー。展開と攻撃の流れが分かりやすく、最初に試す新リーダーとして扱いやすい候補です。</p>
+<a href="decks/blue-green-luffy.html">青緑ルフィの記事を見る</a>
+</article>
+<article class="leader-recommend-card">
+<span class="leader-recommend-rank">2</span>
+<img alt="黒黄ティーチのリーダーカード画像" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-booster/latest-booster-leader-teach.webp"/>
+<h3>黒黄ティーチ</h3>
+<p>相手ターン中のコスト上昇と攻撃対象変更で粘り強く戦えるリーダー。防御寄りのゲームをしたい人や、相手の攻めを受けながら返すデッキが好きな人に向いています。</p>
+<a href="decks/black-yellow-teach.html">黒黄ティーチの記事を見る</a>
+</article>
+<article class="leader-recommend-card">
+<span class="leader-recommend-rank">3</span>
+<img alt="赤エースのリーダーカード画像" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-booster/latest-booster-leader-ace.webp"/>
+<h3>赤エース</h3>
+<p>高パワーキャラに速攻を付けて、着地ターンから圧力をかける赤単リーダー。攻め筋が分かりやすく、テンポよく押し切るゲームをしたい人におすすめです。</p>
+<a href="decks/red-ace.html">赤エースの記事を見る</a>
+</article>
+</div>
+</section>
+<section id="leader-comparison">
+<h2>新リーダー比較評価</h2>
+<p>6リーダーを、現時点のおすすめ度とデッキとしてのまとまりやすさで比較しました。個別記事に進む前の判断材料として見てください。</p>
+<div class="leader-compare-wrap">
+<table class="leader-compare-table">
+<thead><tr><th>リーダー</th><th>おすすめ度</th><th>向いている人</th><th>評価ポイント</th></tr></thead>
+<tbody>
+<tr><td class="leader-compare-name">青緑ルフィ</td><td><span class="leader-score">S</span></td><td>新弾リーダーをまず触りたい人</td><td>インペルダウン軸で動きがまとまりやすく、攻めの流れも作りやすい。</td></tr>
+<tr><td class="leader-compare-name">赤エース</td><td><span class="leader-score">A</span></td><td>速攻で押し切るゲームが好きな人</td><td>高パワーキャラに速攻を付けて攻める形が明快。攻めの再現性が課題。</td></tr>
+<tr><td class="leader-compare-name">青バギー</td><td><span class="leader-score">B</span></td><td>展開や小回りを重視したい人</td><td>インペルダウン展開は魅力だが、条件がそろわない時の出力と決定力に課題が残る。</td></tr>
+<tr><td class="leader-compare-name">紫センゴク</td><td><span class="leader-score">B</span></td><td>ドン!!管理と大型展開が好きな人</td><td>大将キャラをまとめて使える上振れはあるが、準備の重さと手札要求が気になる。</td></tr>
+<tr><td class="leader-compare-name">黒ヤマト</td><td><span class="leader-score">B</span></td><td>黒のトラッシュ活用を楽しみたい人</td><td>ワノ国キャラを活かす攻め筋はあるものの、上位候補と比べると安定感と決定力に課題が残る。</td></tr>
+<tr><td class="leader-compare-name">黒黄ティーチ</td><td><span class="leader-score">S</span></td><td>受けの強いデッキを使いたい人</td><td>攻撃対象変更とコスト上昇で相手ターンに強い。守りながら勝ち筋を探せる。</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="new-decks">
+<h2>最新弾デッキ</h2>
+<div class="deck-link-grid">
+<a class="deck-link-card" href="decks/blue-green-luffy.html"><figure class="deck-link-image"><img alt="青緑ルフィ" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-booster/latest-booster-leader-luffy.webp"/></figure><div class="deck-link-name">青緑ルフィ</div><div class="deck-link-feature">インペルダウン軸でドン!!を起こし、テンポよく攻める最新弾デッキ。</div></a>
+<a class="deck-link-card" href="decks/red-ace.html"><figure class="deck-link-image"><img alt="赤エース" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-booster/latest-booster-leader-ace.webp"/></figure><div class="deck-link-name">赤エース</div><div class="deck-link-feature">速攻付与を活かして高パワーキャラで押し込む赤系デッキ。</div></a>
+<a class="deck-link-card" href="decks/blue-buggy.html"><figure class="deck-link-image"><img alt="青バギー" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-booster/latest-booster-leader-buggy.webp"/></figure><div class="deck-link-name">青バギー</div><div class="deck-link-feature">インペルダウンの展開力を使い、盤面を作り直しながら戦うデッキ。</div></a>
+<a class="deck-link-card" href="decks/purple-sengoku.html"><figure class="deck-link-image"><img alt="紫センゴク" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-booster/latest-booster-leader-sengoku.webp"/></figure><div class="deck-link-name">紫センゴク</div><div class="deck-link-feature">ドン!!管理から大将キャラを展開し、一気に盤面を作る紫デッキ。</div></a>
+<a class="deck-link-card" href="decks/black-yamato.html"><figure class="deck-link-image"><img alt="黒ヤマト" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-booster/latest-booster-leader-yamato.webp"/></figure><div class="deck-link-name">黒ヤマト</div><div class="deck-link-feature">ワノ国キャラの登場時速攻を活かし、トラッシュから攻め筋を作る黒デッキ。</div></a>
+<a class="deck-link-card" href="decks/black-yellow-teach.html"><figure class="deck-link-image"><img alt="黒黄ティーチ" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-booster/latest-booster-leader-teach.webp"/></figure><div class="deck-link-name">黒黄ティーチ</div><div class="deck-link-feature">相手ターン中のコスト上昇と攻撃対象変更で粘り強く戦う黒黄デッキ。</div></a>
+</div>
+</section>
+</div>
+</article></main>
+<!-- Related Articles Start -->
+<!-- Sidebar Start -->
+<aside class="sidebar">
+<div class="sticky-box">
+<section class="box section">
+<div class="section-title">
+<h3>人気記事</h3>
+</div>
+<div class="section-body">
+<div aria-label="PV上位5記事" class="pv-ranking">
+<div class="pv-ranking-head">
+<strong>PVランキング TOP5</strong>
+</div>
+<ol class="pv-ranking-list">
+<li><a href="tier-list.html"><span class="pv-rank">1</span><span class="pv-title">最強デッキ｜Tier表</span></a></li>
+<li><a href="../latest/latest-booster.html"><span class="pv-rank">2</span><span class="pv-title">最新弾「決戦の刻」</span></a></li>
+<li><a href="../guides/featured/expensive-card-ranking.html"><span class="pv-rank">3</span><span class="pv-title">高騰カードランキング</span></a></li>
+<li><a href="../guides/beginners/tournament-entry-guide.html"><span class="pv-rank">4</span><span class="pv-title">大会への応募方法</span></a></li>
+<li><a href="decks/purple-enel.html"><span class="pv-rank">5</span><span class="pv-title">紫エネル 解説記事</span></a></li>
+</ol>
+</div>
+</div>
+</section>
+<section class="box section">
+<div class="section-title">
+<h3>&#x30C7;&#x30C3;&#x30AD;&#x4E00;&#x89A7;</h3>
+</div>
+<div class="section-body">
+<div class="side-list">
+<div class="side-list-label">&lt;&#x6700;&#x65B0;&#x5F3E;&gt;</div>
+<a href="decks/blue-green-luffy.html">&#x9752;&#x7DD1;&#x30EB;&#x30D5;&#x30A3;</a>
+<a href="decks/red-ace.html">&#x8D64;&#x30A8;&#x30FC;&#x30B9;</a>
+<a href="decks/blue-buggy.html">&#x9752;&#x30D0;&#x30AE;&#x30FC;</a>
+<a href="decks/purple-sengoku.html">&#x7D2B;&#x30BB;&#x30F3;&#x30B4;&#x30AF;</a>
+<a href="decks/black-yamato.html">&#x9ED2;&#x30E4;&#x30DE;&#x30C8;</a>
+<a href="decks/black-yellow-teach.html">&#x9ED2;&#x9EC4;&#x30C6;&#x30A3;&#x30FC;&#x30C1;</a>
+<div class="side-list-label">&lt;&#x74B0;&#x5883;&#x30C7;&#x30C3;&#x30AD;&gt;</div>
+<a href="decks/purple-enel.html">&#x7D2B;&#x30A8;&#x30CD;&#x30EB;</a>
+<a href="decks/red-blue-lucy.html">&#x8D64;&#x9752;&#x30EB;&#x30FC;&#x30B7;&#x30FC;</a>
+<a href="decks/blue-yellow-nami.html">&#x9752;&#x9EC4;&#x30CA;&#x30DF;</a>
+<a href="decks/yellow-luffy-skypiea.html">&#x9EC4;&#x30EB;&#x30D5;&#x30A3;(&#x7A7A;&#x5CF6;)</a>
+<a href="decks/red-blue-ace.html">&#x8D64;&#x9752;&#x30A8;&#x30FC;&#x30B9;</a>
+<a href="decks/blue-yellow-hancock.html">&#x9752;&#x9EC4;&#x30CF;&#x30F3;&#x30B3;&#x30C3;&#x30AF;</a>
+<a href="decks/green-mihawk.html">&#x7DD1;&#x30DF;&#x30DB;&#x30FC;&#x30AF;</a>
+<a href="decks/black-imu.html">&#x9ED2;&#x30A4;&#x30E0;</a>
+</div>
+</div>
+</section>
+</div>
+</aside><aside class="ad-rail ad-rail-right"><div class="ad-box"><div class="ad-badge">広告</div><strong>広告枠</strong><p>PC表示では本編を中央の細いカラムに寄せるための広告枠です。</p></div></aside></div>
+</div>
+<!-- Common Footer Start -->
+<footer class="wrap footer">
+<div class="footer-site-map">
+<div class="footer-site-map-inner">
+<div class="footer-head">
+<div class="footer-brand">
+<strong>ワンピースカード攻略</strong>
+<p>
+            ワンピースカードの最新情報・環境デッキ・各デッキ解説を
+            すぐ辿れるサイトマップ
+          </p>
+</div>
+<div class="footer-top-link">
+<a href="../../index.html">トップへ戻る</a>
+<a href="../../info.html">サイト情報</a>
+<a href="../../info.html#contact">お問い合わせ</a>
+</div>
+</div>
+<div class="footer-grid">
+<section class="footer-column footer-column-latest">
+<div class="footer-subgroup">
+<h4>最新情報</h4>
+<div class="footer-links">
+<a href="../../articles/latest/latest-booster.html">最新弾</a>
+<a href="../../articles/latest/latest-starter-deck.html">最新ST</a>
+<a href="../../articles/latest/banned-restricted-2026-05.html">制限禁止</a>
+</div>
+</div>
+<div class="footer-subgroup">
+<h4>最強・環境</h4>
+<div class="footer-links">
+<a href="../../articles/meta/tier-list.html">最強デッキ</a>
+<a href="../../articles/meta/new-set-deck-review.html">最新弾デッキ</a>
+<a href="../../articles/meta/decks/index.html">デッキ一覧</a>
+</div>
+</div>
+</section>
+<section class="footer-column footer-column-deck-new">
+<h4>&#x30C7;&#x30C3;&#x30AD;&#x500B;&#x5225;&#xFF08;&#x6700;&#x65B0;&#x5F3E;&#xFF09;</h4>
+<div class="footer-links">
+<a href="decks/blue-green-luffy.html">&#x9752;&#x7DD1;&#x30EB;&#x30D5;&#x30A3;</a>
+<a href="decks/red-ace.html">&#x8D64;&#x30A8;&#x30FC;&#x30B9;</a>
+<a href="decks/blue-buggy.html">&#x9752;&#x30D0;&#x30AE;&#x30FC;</a>
+<a href="decks/purple-sengoku.html">&#x7D2B;&#x30BB;&#x30F3;&#x30B4;&#x30AF;</a>
+<a href="decks/black-yamato.html">&#x9ED2;&#x30E4;&#x30DE;&#x30C8;</a>
+<a href="decks/black-yellow-teach.html">&#x9ED2;&#x9EC4;&#x30C6;&#x30A3;&#x30FC;&#x30C1;</a>
+</div>
+</section>
+<section class="footer-column footer-column-deck-meta">
+<h4>&#x30C7;&#x30C3;&#x30AD;&#x500B;&#x5225;&#xFF08;&#x74B0;&#x5883;&#x30C7;&#x30C3;&#x30AD;&#xFF09;</h4>
+<div class="footer-links">
+<a href="decks/purple-enel.html">&#x7D2B;&#x30A8;&#x30CD;&#x30EB;</a>
+<a href="decks/red-blue-lucy.html">&#x8D64;&#x9752;&#x30EB;&#x30FC;&#x30B7;&#x30FC;</a>
+<a href="decks/blue-yellow-nami.html">&#x9752;&#x9EC4;&#x30CA;&#x30DF;</a>
+<a href="decks/yellow-luffy-skypiea.html">&#x9EC4;&#x30EB;&#x30D5;&#x30A3;(&#x7A7A;&#x5CF6;)</a>
+<a href="decks/red-blue-ace.html">&#x8D64;&#x9752;&#x30A8;&#x30FC;&#x30B9;</a>
+<a href="decks/blue-yellow-hancock.html">&#x9752;&#x9EC4;&#x30CF;&#x30F3;&#x30B3;&#x30C3;&#x30AF;</a>
+<a href="decks/green-mihawk.html">&#x7DD1;&#x30DF;&#x30DB;&#x30FC;&#x30AF;</a>
+<a href="decks/black-imu.html">&#x9ED2;&#x30A4;&#x30E0;</a>
+</div>
+</section>
+<section class="footer-column footer-column-special">
+<h4>特集・初心者</h4>
+<div class="footer-subgroup">
+<p class="footer-subgroup-title">注目記事</p>
+<div class="footer-links">
+<a href="../../articles/guides/featured/expensive-card-ranking.html">高騰カードランキング</a>
+<a href="../../articles/guides/featured/influencer-list.html">注目インフルエンサー</a>
+<a href="../../articles/guides/featured/tournament-watch.html">注目の大会</a>
+</div>
+</div>
+<div class="footer-subgroup">
+<p class="footer-subgroup-title">初心者おすすめ</p>
+<div class="footer-links">
+<a href="../../articles/guides/beginners/how-to-start.html">ワンピカードの始め方</a>
+<a href="../../articles/guides/beginners/beginner-recommended-decks.html">初心者おすすめデッキ</a>
+<a href="../../articles/guides/beginners/deckbuilding-basics.html">デッキの組み方と考え方</a>
+<a href="../../articles/guides/beginners/tournament-entry-guide.html">大会への応募方法</a>
+</div>
+</div>
+</section>
+</div>
+<div class="footer-bottom">
+        <div>© 13OSTON CARD</div>
+        <p class="footer-rights">当サイトで使用しているカード画像等の著作権は、各権利者に帰属します。<br>©尾田栄一郎／集英社・フジテレビ・東映アニメーション<br>©BANDAI<br>当サイトは非公式のONE PIECEカードゲーム攻略サイトです。<br>当サイトは広告・アフィリエイトを含む場合があります。</p>
+      </div>
+</div>
+</div>
+</footer>
+</body>
+</html>
