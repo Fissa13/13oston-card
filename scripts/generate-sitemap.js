@@ -3,19 +3,16 @@ const path = require('path');
 
 const BASE_URL = 'https://www.13ostoncard.com';
 const ROOT = path.resolve(__dirname, '..');
-const PUBLIC_DIR = path.join(ROOT, 'public');
 
 const OUTPUTS = [
   path.join(ROOT, 'sitemap.xml'),
-  path.join(PUBLIC_DIR, 'sitemap.xml'),
 ];
 
 const ROBOTS_OUTPUTS = [
   path.join(ROOT, 'robots.txt'),
-  path.join(PUBLIC_DIR, 'robots.txt'),
 ];
 
-const SKIP_DIRS = new Set(['.git', 'node_modules', 'public', 'scripts']);
+const SKIP_DIRS = new Set(['.git', 'node_modules', 'scripts']);
 
 function walk(dir) {
   return fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
@@ -85,8 +82,6 @@ const robots = [
   `${'Sitemap'}: ${BASE_URL}/sitemap.xml`,
   '',
 ].join('\n');
-
-fs.mkdirSync(PUBLIC_DIR, { recursive: true });
 
 for (const output of OUTPUTS) {
   fs.writeFileSync(output, sitemap, 'utf8');
