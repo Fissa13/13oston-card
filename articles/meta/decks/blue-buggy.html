@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="ja">
 <head>
@@ -2148,7 +2148,8 @@
 .article-rails-layout > .main .detail-card p,
 .article-rails-layout > .main .card-item p,
 .article-rails-layout > .main .build-card p{
-  text-wrap: pretty;
+  text-wrap: wrap;
+  line-break: normal;
 }
 
 /* さらに狭いときは段組維持のまま文字だけ少し縮小 */
@@ -2695,7 +2696,8 @@
 .article-rails-layout > .main .article li{
   font-size: 14px !important;
   line-height: 1.82 !important;
-  text-wrap: pretty !important;
+  text-wrap: wrap !important;
+  line-break: normal !important;
 }
 .article-rails-layout > .main .article p{
   margin: 0 0 12px !important;
@@ -3386,6 +3388,21 @@ body{
 }
 /* ===== /matchup table horizontal scroll ===== */
 /* ===== /deck article mobile content layout ===== */
+
+@media (max-width:780px){
+  .article-rails-layout > .main .article p,
+  .article-rails-layout > .main .detail-card p,
+  .article-rails-layout > .main .card-item p,
+  .article-rails-layout > .main .build-card p,
+  .article-rails-layout > .main .note-link-copy p{
+    text-wrap:wrap !important;
+    line-break:normal !important;
+    word-break:normal !important;
+    overflow-wrap:normal !important;
+    -webkit-text-size-adjust:100% !important;
+    text-size-adjust:100% !important;
+  }
+}
 /* ===== /article rails layout final spec ===== */
 
 /* image zoom modal */
