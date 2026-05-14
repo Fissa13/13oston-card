@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>サイト情報｜13OSTON CARD</title>
-<meta content="13OSTON CARDの運営者情報、お問い合わせ、プライバシーポリシーを掲載しています。" name="description"/>
+<title>サイト情報・広告表記・お問い合わせ｜13OSTON CARD</title>
+<meta content="13OSTON CARDの運営者情報、広告・アフィリエイト、アクセス解析、免責事項、権利表記、お問い合わせを掲載しています。" name="description"/>
 <style>
 
     :root {
@@ -1418,6 +1418,25 @@
   gap: 18px;
   padding: 0 0 34px;
 }
+.info-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: -4px 0 18px;
+}
+.info-nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 13px;
+  border: 1px solid rgba(209,170,61,0.34);
+  border-radius: 999px;
+  background: linear-gradient(180deg, #fffdf7 0%, #f3ead2 100%);
+  color: var(--heading);
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.4;
+}
 .info-card {
   padding: 24px;
   border: 1px solid rgba(209,170,61,0.22);
@@ -1437,6 +1456,25 @@
   line-height: 1.9;
 }
 .info-card p:last-child { margin-bottom: 0; }
+.info-card h4 {
+  margin: 18px 0 8px;
+  color: var(--heading);
+  font-size: 17px;
+  line-height: 1.45;
+}
+.info-card h4:first-child {
+  margin-top: 0;
+}
+.info-note {
+  padding: 12px 14px;
+  border: 1px solid rgba(209,170,61,0.28);
+  border-radius: 12px;
+  background: #fffaf0;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.8;
+}
 .info-list {
   display: grid;
   gap: 10px;
@@ -1470,6 +1508,13 @@
 }
 @media (max-width: 680px) {
   .info-card { padding: 20px; }
+  .info-nav {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .info-nav a {
+    justify-content: flex-start;
+  }
 }
 </style>
 </head>
@@ -1499,31 +1544,58 @@
 <section class="box hero">
 <div class="hero-visual">
 <h2>サイト情報</h2>
-<p>13OSTON CARDの運営者情報、お問い合わせ、プライバシーポリシーをまとめたページです。</p>
+<p>13OSTON CARDの運営者情報、広告・アクセス解析、免責事項、権利表記、お問い合わせをまとめたページです。</p>
 </div>
 </section>
+<nav class="info-nav" aria-label="サイト情報ページ内メニュー">
+<a href="#about">このサイトについて</a>
+<a href="#ads-analytics">広告・アクセス解析について</a>
+<a href="#disclaimer">免責事項</a>
+<a href="#rights">著作権について</a>
+<a href="#contact">お問い合わせ</a>
+</nav>
 <div class="info-content">
-<section class="info-card">
-<h3>運営者情報</h3>
+<section class="info-card" id="about">
+<h3>このサイトについて</h3>
 <ul class="info-list">
 <li>運営者名：13oston</li>
 </ul>
-<p>当サイトは、ONE PIECEカードゲームの初心者向け解説、デッキ解説、環境考察を掲載している個人サイトです。</p>
+<p>13OSTON CARDは、ONE PIECEカードゲームの初心者向け解説、デッキ解説、環境考察、カード価格に関する参考情報を掲載している個人運営の攻略サイトです。</p>
+<p>掲載内容はプレイヤー目線で分かりやすく整理することを大切にしていますが、公式情報ではありません。当サイトは非公式のファンサイトであり、株式会社バンダイおよび関連各社とは関係ありません。</p>
 </section>
-<section class="info-card">
+<section class="info-card" id="ads-analytics" data-policy-section="privacy">
+<h3>広告・アクセス解析について</h3>
+<h4>広告・アフィリエイトについて</h4>
+<p>当サイトでは、第三者配信の広告サービス（Google AdSense等）や、アフィリエイトプログラムを利用する場合があります。</p>
+<p>広告配信事業者は、ユーザーの興味に応じた広告を表示するため、Cookieを使用することがあります。また、記事内のリンクから商品・サービスを購入した場合、当サイトが報酬を受け取る場合があります。</p>
+<p>広告・PR・アフィリエイトを含むコンテンツについては、必要に応じて分かりやすく表示します。</p>
+<h4>アクセス解析について</h4>
+<p>当サイトでは、サイト改善や記事品質の向上を目的として、Google Analytics等のアクセス解析ツールを利用する場合があります。</p>
+<p>これらのツールでは、トラフィックデータ収集のためにCookieを使用する場合があります。収集されるデータは匿名であり、個人を特定するものではありません。</p>
+<p>Cookieの使用を望まない場合、ブラウザの設定から無効にできます。</p>
+</section>
+<section class="info-card" id="disclaimer">
+<h3>免責事項</h3>
+<p>当サイトに掲載している情報は、可能な限り正確な内容になるよう努めていますが、正確性・完全性・最新性を保証するものではありません。</p>
+<p>カードの価格・相場・買取価格・販売価格などは、時期や店舗、在庫状況によって変動します。価格や高騰予想に関する情報は、購入・売却をすすめるものではなく、あくまで参考情報としてご確認ください。</p>
+<p>当サイトの情報をもとにした購入・売却・デッキ選択・大会参加などの判断は、ユーザー自身の責任でお願いいたします。当サイトの利用によって生じた損害等について、当サイト運営者は責任を負いかねます。</p>
+</section>
+<section class="info-card" id="rights">
+<h3>著作権・権利表記について</h3>
+<p>当サイトに掲載しているカード画像・カード名・商品名・ロゴ・各種データ等の権利は、各権利所有者に帰属します。</p>
+<p>当サイトは非公式のファンサイトであり、株式会社バンダイおよび関連各社とは関係ありません。</p>
+<p>掲載内容に問題がある場合は、お問い合わせフォームよりご連絡ください。確認後、必要に応じて速やかに対応します。</p>
+<p class="info-note">当サイトで使用しているカード画像等の著作権は、各権利者に帰属します。<br>©尾田栄一郎／集英社・フジテレビ・東映アニメーション<br>©BANDAI</p>
+</section>
+<section class="info-card" id="external-links">
+<h3>外部リンクについて</h3>
+<p>当サイトから外部サイトへ移動した場合、移動先サイトで提供される情報・サービス等について、当サイトは責任を負いません。</p>
+<p>外部サイトの利用にあたっては、各サイトの利用規約・プライバシーポリシーをご確認ください。</p>
+</section>
+<section class="info-card" id="contact">
 <h3>お問い合わせ</h3>
-<p>お問い合わせは以下のメールアドレスまでお願いいたします。</p>
-<a class="mail-link" href="mailto:oyakodondesub@gmail.com">oyakodondesub@gmail.com</a>
-</section>
-<section class="info-card">
-<h3>プライバシーポリシー</h3>
-<ul class="policy-list">
-<li>当サイトでは、アクセス解析や広告配信のためCookieを使用する場合があります。</li>
-<li>当サイトでは、Google AdSenseなどの第三者配信広告サービスを利用する場合があります。</li>
-<li>第三者配信事業者がCookieを使用して、ユーザーの興味に応じた広告を表示する場合があります。</li>
-<li>ユーザーはGoogleの広告設定から、パーソナライズ広告を無効にできます。</li>
-<li>当サイトでは掲載情報の正確性に注意していますが、掲載内容の利用によって生じた損害等について責任を負いません。</li>
-</ul>
+<p>記事内容の修正依頼、掲載内容に関するご連絡、広告掲載・カードショップ提携などのお問い合わせは、以下のメールアドレスまでお願いいたします。</p>
+<a class="mail-link" href="mailto:oyakodondesub@gmail.com">お問い合わせはこちら：oyakodondesub@gmail.com</a>
 </section>
 </div>
 </main>
@@ -1541,6 +1613,7 @@
 <div class="footer-top-link">
 <a href="index.html">トップへ戻る</a>
 <a href="info.html">サイト情報</a>
+<a href="info.html#contact">お問い合わせ</a>
 </div>
 </div>
 <!-- フッターリンク：各 footer-column 内の a 要素を編集 -->
@@ -1610,7 +1683,7 @@
 </div>
 <div class="footer-bottom">
         <div>© 13OSTON CARD</div>
-        <p class="footer-rights">当サイトで使用しているカード画像等の著作権は、各権利者に帰属します。<br>©尾田栄一郎／集英社・フジテレビ・東映アニメーション<br>©BANDAI<br>当サイトは非公式のONE PIECEカードゲーム攻略サイトです。</p>
+        <p class="footer-rights">当サイトで使用しているカード画像等の著作権は、各権利者に帰属します。<br>©尾田栄一郎／集英社・フジテレビ・東映アニメーション<br>©BANDAI<br>当サイトは非公式のONE PIECEカードゲーム攻略サイトです。<br>当サイトは広告・アフィリエイトを含む場合があります。</p>
       </div>
 </div>
 </div>
