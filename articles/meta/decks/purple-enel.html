@@ -3359,6 +3359,162 @@ body{
 }
 /* ===== /deck article mobile content layout ===== */
 /* ===== /article rails layout final spec ===== */
+
+/* matchup leader image links */
+#matchups .matchup-card-link{
+  display:block;
+  width:max-content;
+  max-width:100%;
+  border-radius:14px;
+  text-decoration:none;
+}
+#matchups .matchup-card-link .card-thumb{
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+#matchups .matchup-card-link:hover .card-thumb,
+#matchups .matchup-card-link:focus-visible .card-thumb{
+  transform:translateY(-2px);
+  box-shadow:0 12px 24px rgba(15,23,42,.18) !important;
+}
+.matchup-image-modal[hidden]{
+  display:none;
+}
+.matchup-image-modal{
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  display:grid;
+  place-items:center;
+  padding:24px;
+  background:rgba(15,23,42,.72);
+}
+.matchup-image-modal__panel{
+  position:relative;
+  width:min(92vw, 520px);
+  max-height:92vh;
+  display:grid;
+  gap:12px;
+  justify-items:center;
+}
+.matchup-image-modal__image{
+  display:block;
+  max-width:100%;
+  max-height:82vh;
+  width:auto;
+  height:auto;
+  border-radius:16px;
+  background:#fff;
+  box-shadow:0 24px 60px rgba(0,0,0,.34);
+}
+.matchup-image-modal__caption{
+  color:#fff;
+  font-size:14px;
+  font-weight:800;
+  line-height:1.5;
+  text-align:center;
+}
+.matchup-image-modal__close{
+  position:absolute;
+  top:-14px;
+  right:-14px;
+  display:grid;
+  place-items:center;
+  width:40px;
+  height:40px;
+  border:1px solid rgba(255,255,255,.55);
+  border-radius:999px;
+  background:#fff;
+  color:#17204a;
+  font-size:24px;
+  font-weight:900;
+  line-height:1;
+  cursor:pointer;
+  box-shadow:0 12px 28px rgba(0,0,0,.22);
+}
+.matchup-image-modal__close:hover,
+.matchup-image-modal__close:focus-visible{
+  transform:translateY(-1px);
+  background:#f5f7ff;
+}
+#builds .decklist-figure img,
+#builds .card-item.has-side-thumb > img,
+#play .flow-visuals img{
+  cursor:zoom-in;
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+#builds .decklist-figure img:hover,
+#builds .decklist-figure img:focus-visible,
+#builds .card-item.has-side-thumb > img:hover,
+#builds .card-item.has-side-thumb > img:focus-visible,
+#play .flow-visuals img:hover,
+#play .flow-visuals img:focus-visible{
+  transform:translateY(-2px);
+  box-shadow:0 12px 24px rgba(15,23,42,.18) !important;
+}
+#matchups .matchup-deck-cta{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  margin:0 0 14px;
+  padding:13px 14px;
+  border:1px solid rgba(125,91,213,.18);
+  border-radius:12px;
+  background:linear-gradient(135deg, rgba(255,255,255,.96), rgba(248,246,255,.92));
+}
+#matchups .matchup-deck-cta .cta-kicker{
+  color:#6b7280;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.04em;
+}
+#matchups .matchup-deck-cta .cta-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  width:100%;
+  color:#232b63;
+  font-size:15px;
+  font-weight:900;
+  line-height:1.45;
+  text-decoration:none;
+}
+#matchups .matchup-deck-cta .cta-link::after{
+  content:">";
+  display:grid;
+  place-items:center;
+  width:24px;
+  height:24px;
+  flex:0 0 24px;
+  border-radius:999px;
+  color:#fff;
+  background:#7d5bd5;
+  font-size:14px;
+  line-height:1;
+}
+#matchups .matchup-deck-cta .cta-link:hover,
+#matchups .matchup-deck-cta .cta-link:focus-visible{
+  color:#7d5bd5;
+}
+@media (max-width:780px){
+  #matchups .matchup-media .card-copy > .matchup-deck-cta{
+    grid-column:2 !important;
+    grid-row:1 !important;
+  }
+  #matchups .matchup-deck-cta{
+    padding:11px 12px;
+  }
+  #matchups .matchup-deck-cta .cta-link{
+    font-size:14px;
+  }
+  .matchup-image-modal{
+    padding:18px;
+  }
+  .matchup-image-modal__close{
+    top:-10px;
+    right:-10px;
+  }
+}
 </style>
 </head>
 <body class="deck-purple-enel">
@@ -3424,7 +3580,7 @@ body{
 
     <div class="deck-rating-pills">
       <span class="rating-pill">🧩 難易度: ★★★★☆ 高め</span>
-      <span class="rating-pill">⚡ デッキの速さ: ★★★★☆ 速め</span>
+      <span class="rating-pill">💴 値段: ★★★★☆ 約3.3万円</span>
       <span class="rating-pill">🛡️ 安定感: ★★★★☆ 高い</span>
     </div>
 
@@ -3540,26 +3696,26 @@ body{
 <table class="table matchup-table">
 <thead><tr><th>対面リーダー</th><th>相性</th><th>主な理由</th></tr></thead>
 <tbody>
-<tr><td><a href="#ace">赤青エース</a></td><td><span class="badge win">有利</span></td><td>相手側が大型処理と盤面維持を両立しづらく、紫エネルの高打点が通りやすい。</td></tr>
-<tr><td><a href="#lucy">赤青ルーシー</a></td><td><span class="badge win">微有利〜有利</span></td><td>紫エネル側の盤面圧力が通りやすく、6エネル着地後に主導権を取りやすい。</td></tr>
-<tr><td><a href="#enel">紫エネル（ミラー）</a></td><td><span class="badge win">先攻有利</span></td><td>6コストエネルとホーリーの通り方が勝敗を左右する。先に盤面を作りたい。</td></tr>
-<tr><td><a href="#croco">黒イム</a></td><td><span class="badge even">五分〜微有利</span></td><td>先後差が出やすく、後攻選択も候補。6エネル着地までの手札管理が重要。</td></tr>
-<tr><td><a href="#mihawk">緑ミホーク</a></td><td><span class="badge even">五分〜微有利</span></td><td>コスト指定除去に注意は必要だが、先攻時は6000連打で押し込みやすい。</td></tr>
-<tr><td><a href="#hancock">青黄ハンコック</a></td><td><span class="badge even">五分〜微有利</span></td><td>回復コンボを許す前にライフを詰めたい。序盤の神官連打が通るかが鍵。</td></tr>
-<tr><td><a href="#dofla">空島ルフィ</a></td><td><span class="badge lose">微不利</span></td><td>空島側の展開と打点が強く、序盤のテンポを取られると押し返しにくい。</td></tr>
-<tr><td><a href="#kalgara">青黄ナミ</a></td><td><span class="badge lose">微不利〜不利</span></td><td>回復と長期戦性能で削り切れない展開がある。序盤からライフを詰めたい。</td></tr>
+<tr><td><a href="#ace">赤青エース</a></td><td><span class="badge win">有利</span></td><td>赤青エース側は高打点と除去耐性を同時に処理しにくく、6エネル定着後に押し切りやすい。</td></tr>
+<tr><td><a href="#croco">黒イム</a></td><td><span class="badge win">微有利</span></td><td>10ドン到達前に圧をかけやすく、6エネルとホーリーで黒イム側の準備を崩しやすい。</td></tr>
+<tr><td><a href="#lucy">赤青ルーシー</a></td><td><span class="badge even">五分</span></td><td>ルーシー側の除去は強いが、6エネルの押し付けも通るため、主導権の取り合いになりやすい。</td></tr>
+<tr><td><a href="#enel">紫エネル（ミラー）</a></td><td><span class="badge even">先行有利</span></td><td>6コストエネルとホーリーの通り方が勝敗を左右する。先に盤面を作りたい。</td></tr>
+<tr><td><a href="#mihawk">緑ミホーク</a></td><td><span class="badge even">五分</span></td><td>レスト制圧と6エネルの耐性がぶつかるため、先後と中盤の盤面形成で揺れやすい。</td></tr>
+<tr><td><a href="#hancock">青黄ハンコック</a></td><td><span class="badge even">五分</span></td><td>回復と受けは重いが、序盤の神官連打が通ると紫エネル側も押し込める。</td></tr>
+<tr><td><a href="#dofla">空島ルフィ</a></td><td><span class="badge lose">微不利</span></td><td>空島側の横展開と打点が速く、序盤のテンポを取られると押し返しにくい。</td></tr>
+<tr><td><a href="#kalgara">青黄ナミ</a></td><td><span class="badge lose">微不利</span></td><td>ナミ側の7000ラインと回復で長期戦にされやすく、序盤に削れないと苦しくなる。</td></tr>
 </tbody>
 </table>
 </div>
 <div class="detail-list">
-<article class="detail-card" id="ace"><div class="head"><span class="badge win">有利</span><h4>赤青エース対面</h4></div><div class="matchup-media"><img alt="赤青エース（OP13-002）のリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/purple-enel/purple-enel-matchup-01-ace-v2.png"/><div class="card-copy"><p>赤青エース側は紫エネルの高打点と除去耐性を同時に処理しにくく、有利寄りに見られる対面です。序盤からライフを詰め、6エネルで盤面を固定できると押し切りやすくなります。</p><div class="tip"><strong>対面のポイント</strong><p>相手のパワーマイナスや除去に合わせて、6コストエネルを連続で置ける手札を目指します。神官を並べすぎて手札を細くしないように、サーチとドローの順番を意識します。</p></div></div></div></article>
-<article class="detail-card" id="lucy"><div class="head"><span class="badge win">微有利〜有利</span><h4>赤青ルーシー対面</h4></div><div class="matchup-media"><img alt="赤青ルーシー（OP15-002）のリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/purple-enel/purple-enel-matchup-02-lucy-v2.png"/><div class="card-copy"><p>赤青ルーシー対面は、紫エネル側の盤面圧力が通りやすいとされる対面です。6コストエネルを着地させると、相手は処理とライフ受けの両立が難しくなりやすいです。</p><div class="tip"><strong>対面のポイント</strong><p>序盤は神官でライフを削り、相手のイベント干渉を受けても次の6エネルにつながる手札を残します。雷獣や神の裁きで打点ラインを調整し、相手の受け札を削ってから詰めます。</p></div></div></div></article>
-<article class="detail-card" id="enel"><div class="head"><span class="badge win">先攻有利</span><h4>紫エネル対面</h4></div><div class="matchup-media"><img alt="紫エネル（OP15-058）のリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/purple-enel/purple-enel-matchup-03-enel-v2.png"/><div class="card-copy"><p>ミラーは先攻側が神官連打と6コストエネルの着地で先に主導権を取りやすい対面です。ホーリーの通り方や、エネル（OP15-118）へ触れる枚数が勝敗に直結しやすいです。</p><div class="tip"><strong>対面のポイント</strong><p>1ターン目の初動と3ターン目の6エネルが特に重要です。相手の6エネルを処理しきれない場合は、無理に盤面処理へ寄せず、ホーリーや万雷で先にリーサルを組む判断も必要になります。</p></div></div></div></article>
-<article class="detail-card" id="croco"><div class="head"><span class="badge even">五分〜微有利</span><h4>黒イム対面</h4></div><div class="matchup-media"><img alt="黒イム（OP13-079）のリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/purple-enel/purple-enel-matchup-04-imu-v2.png"/><div class="card-copy"><p>黒イム対面は先後差が出やすく、後攻選択も候補になります。紫エネル側は6コストエネルへつなぐまでに手札を細くしすぎず、神官で早めにライフを詰める意識が大切です。</p><div class="tip"><strong>対面のポイント</strong><p>序盤は1コスト神官で手札を整えながら圧をかけ、3ターン目以降はエネル（OP15-118）の着地を優先します。相手の除去に合わせて、ホーリーやイベントをどこまで温存するかを見極めたい対面です。</p></div></div></div></article>
-<article class="detail-card" id="mihawk"><div class="head"><span class="badge even">五分〜微有利</span><h4>緑ミホーク対面</h4></div><div class="matchup-media"><img alt="緑ミホーク（OP14-020）のリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/purple-enel/purple-enel-matchup-05-mihawk-v2.png"/><div class="card-copy"><p>緑ミホークはコスト指定除去への注意が必要ですが、先攻時は紫エネルの6000連打で押し込みやすい対面です。放電や雷獣で処理ラインをずらせると、中盤のテンポを取りやすくなります。</p><div class="tip"><strong>対面のポイント</strong><p>序盤からライフを詰め、相手の除去ターンに6コストエネルを残せる形を目指します。レイジュや放電の採用有無で守り方が変わるため、調整カードの意図が出やすい対面です。</p></div></div></div></article>
-<article class="detail-card" id="hancock"><div class="head"><span class="badge even">五分〜微有利</span><h4>青黄ハンコック対面</h4></div><div class="matchup-media"><img alt="青黄ハンコック（OP14-041）のリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/purple-enel/purple-enel-matchup-06-hancock-v2.png"/><div class="card-copy"><p>青黄ハンコックは回復コンボを許すと長期戦に寄りやすいため、早い段階でライフを詰める必要があります。序盤の神官連打が通れば、紫エネル側がやや押し込みやすい展開になります。</p><div class="tip"><strong>対面のポイント</strong><p>トリガーや回復を見越して、盤面を残しながら複数打点を作るのが重要です。焦ってリーサルに行くより、ホーリーや万雷で通しやすいターンを作ります。</p></div></div></div></article>
-<article class="detail-card" id="dofla"><div class="head"><span class="badge lose">微不利</span><h4>空島ルフィ対面</h4></div><div class="matchup-media"><img alt="空島ルフィ（OP15-098）のリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/purple-enel/purple-enel-matchup-07-skypiea-luffy-v2.png"/><div class="card-copy"><p>空島ルフィは展開力と打点が高く、紫エネル側が序盤の主導権を取れないと押し返されやすい対面です。神官連打で先にライフを詰め、6コストエネルへつなげる流れを作りたいです。</p><div class="tip"><strong>対面のポイント</strong><p>相手の盤面を完全に処理しようとしすぎるより、ライフレースで遅れないことを優先します。雷龍や万雷は、ブロッカーやリーサルを止める場面まで意識して使います。</p></div></div></div></article>
-<article class="detail-card" id="kalgara"><div class="head"><span class="badge lose">微不利〜不利</span><h4>青黄ナミ対面</h4></div><div class="matchup-media"><img alt="青黄ナミ（OP11-041）のリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/purple-enel/purple-enel-matchup-08-nami-v2.png"/><div class="card-copy"><p>青黄ナミは回復と長期戦性能が高く、紫エネル側が序盤に削り切れないと不利になりやすい対面です。6000連打の通り方と、6コストエネルをどれだけ早く押し付けられるかが重要です。</p><div class="tip"><strong>対面のポイント</strong><p>序盤からライフを詰め、相手の回復ターンを遅らせる意識で攻めます。イベントは守りに使いすぎず、リーサルを通すための万雷や神の裁きの使いどころを残したいです。</p></div></div></div></article>
+<article class="detail-card" id="ace"><div class="head"><span class="badge win">有利</span><h4>赤青エース対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="red-blue-ace.html" aria-label="赤青エースのデッキ個別記事へ"><img alt="赤青エース（OP13-002）のリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/purple-enel/purple-enel-matchup-01-ace-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="red-blue-ace.html">赤青エースの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>相手のパワーマイナスや除去に合わせて、6コストエネルを連続で置ける手札を目指します。神官を並べすぎて手札を細くしないように、サーチとドローの順番を意識します。</p></div></div></div></article>
+<article class="detail-card" id="croco"><div class="head"><span class="badge win">微有利</span><h4>黒イム対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="black-imu.html" aria-label="黒イムのデッキ個別記事へ"><img alt="黒イム（OP13-079）のリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/purple-enel/purple-enel-matchup-04-imu-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="black-imu.html">黒イムの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>序盤は1コスト神官で手札を整えながら圧をかけ、3ターン目以降はエネル（OP15-118）の着地を優先します。相手の除去に合わせて、ホーリーやイベントをどこまで温存するかを見極めたい対面です。</p></div></div></div></article>
+<article class="detail-card" id="lucy"><div class="head"><span class="badge even">五分</span><h4>赤青ルーシー対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="red-blue-lucy.html" aria-label="赤青ルーシーのデッキ個別記事へ"><img alt="赤青ルーシー（OP15-002）のリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/purple-enel/purple-enel-matchup-02-lucy-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="red-blue-lucy.html">赤青ルーシーの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>序盤は神官でライフを削り、相手のイベント干渉を受けても次の6エネルにつながる手札を残します。雷獣や神の裁きで打点ラインを調整し、相手の受け札を削ってから詰めます。</p></div></div></div></article>
+<article class="detail-card" id="enel"><div class="head"><span class="badge even">先行有利</span><h4>紫エネル対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="purple-enel.html" aria-label="紫エネルのデッキ個別記事へ"><img alt="紫エネル（OP15-058）のリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/purple-enel/purple-enel-matchup-03-enel-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">ミラー構築を確認</span><a class="cta-link" href="purple-enel.html">紫エネルの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>1ターン目の初動と3ターン目の6エネルが特に重要です。相手の6エネルを処理しきれない場合は、無理に盤面処理へ寄せず、ホーリーや万雷で先にリーサルを組む判断も必要になります。</p></div></div></div></article>
+<article class="detail-card" id="mihawk"><div class="head"><span class="badge even">五分</span><h4>緑ミホーク対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="green-mihawk.html" aria-label="緑ミホークのデッキ個別記事へ"><img alt="緑ミホーク（OP14-020）のリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/purple-enel/purple-enel-matchup-05-mihawk-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="green-mihawk.html">緑ミホークの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>序盤からライフを詰め、相手の除去ターンに6コストエネルを残せる形を目指します。レイジュや放電の採用有無で守り方が変わるため、調整カードの意図が出やすい対面です。</p></div></div></div></article>
+<article class="detail-card" id="hancock"><div class="head"><span class="badge even">五分</span><h4>青黄ハンコック対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="blue-yellow-hancock.html" aria-label="青黄ハンコックのデッキ個別記事へ"><img alt="青黄ハンコック（OP14-041）のリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/purple-enel/purple-enel-matchup-06-hancock-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="blue-yellow-hancock.html">青黄ハンコックの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>トリガーや回復を見越して、盤面を残しながら複数打点を作るのが重要です。焦ってリーサルに行くより、ホーリーや万雷で通しやすいターンを作ります。</p></div></div></div></article>
+<article class="detail-card" id="dofla"><div class="head"><span class="badge lose">微不利</span><h4>空島ルフィ対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="yellow-luffy-skypiea.html" aria-label="空島ルフィのデッキ個別記事へ"><img alt="空島ルフィ（OP15-098）のリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/purple-enel/purple-enel-matchup-07-skypiea-luffy-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="yellow-luffy-skypiea.html">空島ルフィの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>相手の盤面を完全に処理しようとしすぎるより、ライフレースで遅れないことを優先します。雷龍や万雷は、ブロッカーやリーサルを止める場面まで意識して使います。</p></div></div></div></article>
+<article class="detail-card" id="kalgara"><div class="head"><span class="badge lose">微不利</span><h4>青黄ナミ対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="blue-yellow-nami.html" aria-label="青黄ナミのデッキ個別記事へ"><img alt="青黄ナミ（OP11-041）のリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/purple-enel/purple-enel-matchup-08-nami-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="blue-yellow-nami.html">青黄ナミの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>序盤からライフを詰め、相手の回復ターンを遅らせる意識で攻めます。イベントは守りに使いすぎず、リーサルを通すための万雷や神の裁きの使いどころを残したいです。</p></div></div></div></article>
 </div>
 </section>
 </div></article>
@@ -3721,6 +3877,63 @@ body{
 </div>
 </div>
 </footer>
+<div class="matchup-image-modal" id="matchup-image-modal" aria-hidden="true" hidden>
+<div class="matchup-image-modal__panel" role="dialog" aria-modal="true" aria-label="リーダーカード画像の拡大表示">
+<button class="matchup-image-modal__close" type="button" aria-label="拡大画像を閉じる">×</button>
+<img class="matchup-image-modal__image" alt=""/>
+<div class="matchup-image-modal__caption"></div>
+</div>
+</div>
+<script>
+(() => {
+  const modal = document.getElementById('matchup-image-modal');
+  if (!modal) return;
+  const image = modal.querySelector('.matchup-image-modal__image');
+  const caption = modal.querySelector('.matchup-image-modal__caption');
+  const closeButton = modal.querySelector('.matchup-image-modal__close');
+  const openModal = (thumb) => {
+    image.src = thumb.currentSrc || thumb.src;
+    image.alt = thumb.alt || 'リーダーカード画像';
+    caption.textContent = thumb.alt || '';
+    modal.hidden = false;
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    closeButton.focus();
+  };
+  const closeModal = () => {
+    modal.hidden = true;
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    image.removeAttribute('src');
+  };
+  document.querySelectorAll('#matchups .matchup-card-link').forEach((link) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      const thumb = link.querySelector('img');
+      if (thumb) openModal(thumb);
+    });
+  });
+  document.querySelectorAll('#builds .decklist-figure img, #builds .card-item.has-side-thumb > img, #play .flow-visuals img').forEach((thumb) => {
+    thumb.tabIndex = 0;
+    thumb.setAttribute('role', 'button');
+    thumb.setAttribute('aria-label', `${thumb.alt || 'カード画像'}を拡大表示`);
+    thumb.addEventListener('click', () => openModal(thumb));
+    thumb.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openModal(thumb);
+      }
+    });
+  });
+  closeButton.addEventListener('click', closeModal);
+  modal.addEventListener('click', (event) => {
+    if (event.target === modal) closeModal();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !modal.hidden) closeModal();
+  });
+})();
+</script>
 </body>
 </html>
 

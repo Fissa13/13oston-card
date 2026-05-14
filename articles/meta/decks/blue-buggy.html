@@ -3365,6 +3365,92 @@ body{
 /* ===== /matchup table horizontal scroll ===== */
 /* ===== /deck article mobile content layout ===== */
 /* ===== /article rails layout final spec ===== */
+
+/* image zoom modal */
+.matchup-image-modal[hidden]{
+  display:none;
+}
+.matchup-image-modal{
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  display:grid;
+  place-items:center;
+  padding:24px;
+  background:rgba(15,23,42,.72);
+}
+.matchup-image-modal__panel{
+  position:relative;
+  width:min(92vw, 520px);
+  max-height:92vh;
+  display:grid;
+  gap:12px;
+  justify-items:center;
+}
+.matchup-image-modal__image{
+  display:block;
+  max-width:100%;
+  max-height:82vh;
+  width:auto;
+  height:auto;
+  border-radius:16px;
+  background:#fff;
+  box-shadow:0 24px 60px rgba(0,0,0,.34);
+}
+.matchup-image-modal__caption{
+  color:#fff;
+  font-size:14px;
+  font-weight:800;
+  line-height:1.5;
+  text-align:center;
+}
+.matchup-image-modal__close{
+  position:absolute;
+  top:-14px;
+  right:-14px;
+  display:grid;
+  place-items:center;
+  width:40px;
+  height:40px;
+  border:1px solid rgba(255,255,255,.55);
+  border-radius:999px;
+  background:#fff;
+  color:#17204a;
+  font-size:24px;
+  font-weight:900;
+  line-height:1;
+  cursor:pointer;
+  box-shadow:0 12px 28px rgba(0,0,0,.22);
+}
+.matchup-image-modal__close:hover,
+.matchup-image-modal__close:focus-visible{
+  transform:translateY(-1px);
+  background:#f5f7ff;
+}
+#builds .decklist-figure img,
+#builds .card-item.has-side-thumb > img,
+#play .flow-visuals img{
+  cursor:zoom-in;
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+#builds .decklist-figure img:hover,
+#builds .decklist-figure img:focus-visible,
+#builds .card-item.has-side-thumb > img:hover,
+#builds .card-item.has-side-thumb > img:focus-visible,
+#play .flow-visuals img:hover,
+#play .flow-visuals img:focus-visible{
+  transform:translateY(-2px);
+  box-shadow:0 12px 24px rgba(15,23,42,.18) !important;
+}
+@media (max-width:780px){
+  .matchup-image-modal{
+    padding:18px;
+  }
+  .matchup-image-modal__close{
+    top:-10px;
+    right:-10px;
+  }
+}
 </style>
 </head>
 <body class="deck-blue-buggy">
@@ -3421,7 +3507,7 @@ body{
   <div class="deck-rating-compact">
     <div class="deck-rating-head">
       <div class="deck-rating-rank">
-        <strong>A</strong>
+        <strong>B</strong>
       </div>
       <div class="deck-rating-copy">
         <h3>インペルダウンの場離れを展開に変える、小回り重視の青単リーダー</h3>
@@ -3430,7 +3516,7 @@ body{
 
     <div class="deck-rating-pills">
       <span class="rating-pill">🧩 難易度: ★★★☆☆ 中</span>
-      <span class="rating-pill">⚡ デッキの速さ: ★★★★☆ 中速〜やや速い</span>
+      <span class="rating-pill">💴 値段: ☆☆☆☆☆ 発売前・相場未定</span>
       <span class="rating-pill">🛡️ 安定感: ★★★☆☆ 発売前評価</span>
     </div>
 
@@ -3457,7 +3543,7 @@ body{
     <div class="deck-rating-pointbox">
       <strong>評価のポイント</strong>
       <p>
-        青バギーは、特徴《インペルダウン》のキャラが場を離れた時に手札から「インペルダウンの囚人」を登場させるリーダーです。新弾評価ではA評価で、小型展開からテンポを作れる点は魅力ですが、手札条件と最終的な決定力には課題が残ります。発売後は、場を離れる効果を能動的に使えるカードと、詰めに使える青のカードがどれだけ噛み合うかが評価の分かれ目になりそうです。
+        青バギーは、特徴《インペルダウン》のキャラが場を離れた時に手札から「インペルダウンの囚人」を登場させるリーダーです。新弾評価ではB評価で、小型展開からテンポを作れる点は魅力ですが、手札条件と最終的な決定力には課題が残ります。発売後は、場を離れる効果を能動的に使えるカードと、詰めに使える青のカードがどれだけ噛み合うかが評価の分かれ目になりそうです。
       </p>
     </div>
   </div>
@@ -3683,6 +3769,63 @@ body{
 </div>
 </div>
 </footer>
+<div class="matchup-image-modal" id="matchup-image-modal" aria-hidden="true" hidden>
+<div class="matchup-image-modal__panel" role="dialog" aria-modal="true" aria-label="カード画像の拡大表示">
+<button class="matchup-image-modal__close" type="button" aria-label="拡大画像を閉じる">×</button>
+<img class="matchup-image-modal__image" alt=""/>
+<div class="matchup-image-modal__caption"></div>
+</div>
+</div>
+<script>
+(() => {
+  const modal = document.getElementById('matchup-image-modal');
+  if (!modal) return;
+  const image = modal.querySelector('.matchup-image-modal__image');
+  const caption = modal.querySelector('.matchup-image-modal__caption');
+  const closeButton = modal.querySelector('.matchup-image-modal__close');
+  const openModal = (thumb) => {
+    image.src = thumb.currentSrc || thumb.src;
+    image.alt = thumb.alt || 'カード画像';
+    caption.textContent = thumb.alt || '';
+    modal.hidden = false;
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    closeButton.focus();
+  };
+  const closeModal = () => {
+    modal.hidden = true;
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    image.removeAttribute('src');
+  };
+  document.querySelectorAll('#matchups .matchup-card-link').forEach((link) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      const thumb = link.querySelector('img');
+      if (thumb) openModal(thumb);
+    });
+  });
+  document.querySelectorAll('#builds .decklist-figure img, #builds .card-item.has-side-thumb > img, #play .flow-visuals img').forEach((thumb) => {
+    thumb.tabIndex = 0;
+    thumb.setAttribute('role', 'button');
+    thumb.setAttribute('aria-label', (thumb.alt || 'カード画像') + 'を拡大表示');
+    thumb.addEventListener('click', () => openModal(thumb));
+    thumb.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openModal(thumb);
+      }
+    });
+  });
+  closeButton.addEventListener('click', closeModal);
+  modal.addEventListener('click', (event) => {
+    if (event.target === modal) closeModal();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !modal.hidden) closeModal();
+  });
+})();
+</script>
 </body>
 </html>
 

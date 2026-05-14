@@ -3365,6 +3365,167 @@ body{
 /* ===== /matchup table horizontal scroll ===== */
 /* ===== /deck article mobile content layout ===== */
 /* ===== /article rails layout final spec ===== */
+
+/* matchup leader image links */
+#matchups .matchup-card-link{
+  display:block;
+  width:max-content;
+  max-width:100%;
+  border-radius:14px;
+  text-decoration:none;
+}
+#matchups .matchup-card-link .card-thumb{
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+#matchups .matchup-card-link:hover .card-thumb,
+#matchups .matchup-card-link:focus-visible .card-thumb{
+  transform:translateY(-2px);
+  box-shadow:0 12px 24px rgba(15,23,42,.18) !important;
+}
+#matchups .matchup-deck-cta{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  margin:0 0 14px;
+  padding:13px 14px;
+  border:1px solid rgba(125,91,213,.18);
+  border-radius:12px;
+  background:linear-gradient(135deg, rgba(255,255,255,.96), rgba(248,246,255,.92));
+}
+#matchups .matchup-deck-cta .cta-kicker{
+  color:#6b7280;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.04em;
+}
+#matchups .matchup-deck-cta .cta-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  width:100%;
+  color:#232b63;
+  font-size:15px;
+  font-weight:900;
+  line-height:1.45;
+  text-decoration:none;
+}
+#matchups .matchup-deck-cta .cta-link::after{
+  content:">";
+  display:grid;
+  place-items:center;
+  width:24px;
+  height:24px;
+  flex:0 0 24px;
+  border-radius:999px;
+  color:#fff;
+  background:#7d5bd5;
+  font-size:14px;
+  line-height:1;
+}
+#matchups .matchup-deck-cta .cta-link:hover,
+#matchups .matchup-deck-cta .cta-link:focus-visible{
+  color:#7d5bd5;
+}
+@media (max-width:780px){
+  #matchups .matchup-media .card-copy > .matchup-deck-cta{
+    grid-column:2 !important;
+    grid-row:1 !important;
+  }
+  #matchups .matchup-deck-cta{
+    padding:11px 12px;
+  }
+  #matchups .matchup-deck-cta .cta-link{
+    font-size:14px;
+  }
+}
+
+
+/* image zoom modal */
+.matchup-image-modal[hidden]{
+  display:none;
+}
+.matchup-image-modal{
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  display:grid;
+  place-items:center;
+  padding:24px;
+  background:rgba(15,23,42,.72);
+}
+.matchup-image-modal__panel{
+  position:relative;
+  width:min(92vw, 520px);
+  max-height:92vh;
+  display:grid;
+  gap:12px;
+  justify-items:center;
+}
+.matchup-image-modal__image{
+  display:block;
+  max-width:100%;
+  max-height:82vh;
+  width:auto;
+  height:auto;
+  border-radius:16px;
+  background:#fff;
+  box-shadow:0 24px 60px rgba(0,0,0,.34);
+}
+.matchup-image-modal__caption{
+  color:#fff;
+  font-size:14px;
+  font-weight:800;
+  line-height:1.5;
+  text-align:center;
+}
+.matchup-image-modal__close{
+  position:absolute;
+  top:-14px;
+  right:-14px;
+  display:grid;
+  place-items:center;
+  width:40px;
+  height:40px;
+  border:1px solid rgba(255,255,255,.55);
+  border-radius:999px;
+  background:#fff;
+  color:#17204a;
+  font-size:24px;
+  font-weight:900;
+  line-height:1;
+  cursor:pointer;
+  box-shadow:0 12px 28px rgba(0,0,0,.22);
+}
+.matchup-image-modal__close:hover,
+.matchup-image-modal__close:focus-visible{
+  transform:translateY(-1px);
+  background:#f5f7ff;
+}
+#builds .decklist-figure img,
+#builds .card-item.has-side-thumb > img,
+#play .flow-visuals img{
+  cursor:zoom-in;
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+#builds .decklist-figure img:hover,
+#builds .decklist-figure img:focus-visible,
+#builds .card-item.has-side-thumb > img:hover,
+#builds .card-item.has-side-thumb > img:focus-visible,
+#play .flow-visuals img:hover,
+#play .flow-visuals img:focus-visible{
+  transform:translateY(-2px);
+  box-shadow:0 12px 24px rgba(15,23,42,.18) !important;
+}
+@media (max-width:780px){
+  .matchup-image-modal{
+    padding:18px;
+  }
+  .matchup-image-modal__close{
+    top:-10px;
+    right:-10px;
+  }
+}
 </style>
 </head>
 <body class="deck-black-imu">
@@ -3430,7 +3591,7 @@ body{
 
     <div class="deck-rating-pills">
       <span class="rating-pill">🧩 難易度: ★★★☆☆ 中程度</span>
-      <span class="rating-pill">⚡ デッキの速さ: ★★☆☆☆ 低速</span>
+      <span class="rating-pill">💴 値段: ★☆☆☆☆ 約3千円</span>
       <span class="rating-pill">🛡️ 安定感: ★★★★☆ 高い</span>
     </div>
 
@@ -3551,14 +3712,14 @@ body{
 <table class="table matchup-table">
 <thead><tr><th>対面リーダー</th><th>相性</th><th>主な理由</th></tr></thead>
 <tbody>
-<tr><td><a href="#ace">赤青エース</a></td><td><span class="badge win">有利</span></td><td>5面展開の高パワー盤面をエース側が処理しきりにくい。</td></tr>
-<tr><td><a href="#nami">青黄ナミ</a></td><td><span class="badge win">有利〜微有利</span></td><td>10ドン以降の五老星展開が通ると、ナミ側は盤面処理が追いつきにくい。</td></tr>
-<tr><td><a href="#lucy">赤青ルーシー</a></td><td><span class="badge win">微有利〜有利</span></td><td>ルーシー側の除去を受けても、終盤の5面展開で再度盤面を作り直せる。</td></tr>
-<tr><td><a href="#skypiea">空島ルフィ</a></td><td><span class="badge win">微有利</span></td><td>五老星の耐性と展開量が空島側の処理範囲を超えやすい。</td></tr>
-<tr><td><a href="#mihawk">緑ミホーク</a></td><td><span class="badge even">五分</span></td><td>ミホーク側も除去とテンポで戦えるため、10ドンまでの受け方が重要。</td></tr>
-<tr><td><a href="#imu">黒イム</a></td><td><span class="badge even">先攻有利</span></td><td>ステージ選択と先に五老星を通せるかで差がつきやすいミラー。</td></tr>
-<tr><td><a href="#hancock">青黄ハンコック</a></td><td><span class="badge lose">五分〜微不利</span></td><td>回復が間に合うと押し切りにくく、長期戦で粘られやすい。</td></tr>
-<tr><td><a href="#enel">紫エネル</a></td><td><span class="badge lose">微不利〜五分</span></td><td>序盤の高打点と万雷によるレスト展開で、10ドン前に崩されやすい。</td></tr>
+<tr><td><a href="#ace">赤青エース</a></td><td><span class="badge even">五分</span></td><td>赤青エースの大型打点と黒イムの五老星展開がぶつかり、五分の押し合いになりやすい。</td></tr>
+<tr><td><a href="#nami">青黄ナミ</a></td><td><span class="badge even">五分</span></td><td>ナミ側の耐久と黒イム側の終盤展開がぶつかり、長期戦の管理で差が出る。</td></tr>
+<tr><td><a href="#lucy">赤青ルーシー</a></td><td><span class="badge even">五分</span></td><td>ルーシー側の除去と黒イム側の再展開がぶつかり、五分のリソース勝負になりやすい。</td></tr>
+<tr><td><a href="#skypiea">空島ルフィ</a></td><td><span class="badge even">五分</span></td><td>空島側の序盤打点を受け切れるかが焦点で、終盤まで届けば五分に戻しやすい。</td></tr>
+<tr><td><a href="#imu">黒イム</a></td><td><span class="badge even">先行有利</span></td><td>ステージ選択と先に五老星を通せるかで差がつきやすいミラー。</td></tr>
+<tr><td><a href="#mihawk">緑ミホーク</a></td><td><span class="badge lose">微不利</span></td><td>レストロックで五老星の攻撃参加を遅らせられやすく、微不利に進みやすい。</td></tr>
+<tr><td><a href="#enel">紫エネル</a></td><td><span class="badge lose">微不利</span></td><td>紫エネルの序盤高打点とレスト干渉で10ドン前に崩されやすい。</td></tr>
+<tr><td><a href="#hancock">青黄ハンコック</a></td><td><span class="badge lose">不利</span></td><td>ハンコック側の回復と受けで展開を耐えられやすく、長期戦で不利になりやすい。</td></tr>
 </tbody>
 </table>
 </div>
@@ -3571,7 +3732,14 @@ body{
 
 
 </div>
-<article class="detail-card" id="ace"><div class="head"><span class="badge win">有利</span><h4>赤青エース対面</h4></div><div class="matchup-media"><img alt="赤青エースのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/black-imu/black-imu-matchup-ace-v2.png"/><div class="card-copy"><p>赤青エースは後半の継続力が高いものの、黒イムの五老星5面展開を一度に処理しきるのは難しい対面です。10ドンまで耐えれば、高パワー盤面を押し付けて主導権を握りやすくなります。</p><div class="tip"><strong>対面のポイント</strong><p>序盤はライフを守りすぎず、サーチとトラッシュ準備を優先します。10ドン後はピーター聖の7000ラインを意識し、エース側の大型処理を要求し続けます。</p></div></div></div></article><article class="detail-card" id="nami"><div class="head"><span class="badge win">有利〜微有利</span><h4>青黄ナミ対面</h4></div><div class="matchup-media"><img alt="青黄ナミのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/black-imu/black-imu-matchup-nami-v2.png"/><div class="card-copy"><p>青黄ナミは防御力が高いデッキですが、黒イムの10ドン以降の5面展開を毎ターン受け続けるのは簡単ではありません。序盤に大きく崩されなければ、盤面量で押し切りやすい対面です。</p><div class="tip"><strong>対面のポイント</strong><p>相手の回復と手札枚数を見ながら、五老星展開後に一気に打点をまとめます。通常打点だけで無理に詰めず、ナス寿郎聖の速攻やピーター聖のバフを絡めてリーサルを作ります。</p></div></div></div></article><article class="detail-card" id="lucy"><div class="head"><span class="badge win">微有利〜有利</span><h4>赤青ルーシー対面</h4></div><div class="matchup-media"><img alt="赤青ルーシーのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/black-imu/black-imu-matchup-lucy-v2.png"/><div class="card-copy"><p>赤青ルーシーはイベントで盤面を崩してきますが、黒イムは五老星の再展開で盤面を作り直せます。ルーシー側が長期戦に入る前に、10ドン後の圧力を継続できると有利に進みます。</p><div class="tip"><strong>対面のポイント</strong><p>7サボや火拳を意識し、序盤は必要以上に手札を減らさないようにします。五老星を通した後はサターン聖で次の五老星を確保し、1回の展開で終わらないゲームを作ります。</p></div></div></div></article><article class="detail-card" id="skypiea"><div class="head"><span class="badge win">微有利</span><h4>空島ルフィ対面</h4></div><div class="matchup-media"><img alt="空島ルフィのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/black-imu/black-imu-matchup-skypiea-v2.png"/><div class="card-copy"><p>空島ルフィは序盤からテンポよく攻められますが、黒イム側が10ドンまで到達すると五老星の耐性と盤面量が重くのしかかります。空島側の処理札だけでは、毎ターンの再展開を受けきりにくくなります。</p><div class="tip"><strong>対面のポイント</strong><p>序盤はライフを詰められすぎないことを優先し、ウォーキュリー聖やカウンターイベントで受けます。10ドン後はナス寿郎聖の速攻を絡め、相手のライフを早めに詰め返します。</p></div></div></div></article><article class="detail-card" id="mihawk"><div class="head"><span class="badge even">五分</span><h4>緑ミホーク対面</h4></div><div class="matchup-media"><img alt="緑ミホークのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/black-imu/black-imu-matchup-mihawk-v2.png"/><div class="card-copy"><p>緑ミホークはレストや除去で中盤の五老星を触れるため、黒イム側が一方的に押し切れる対面ではありません。10ドンまでの受け方と、最初の五老星展開をどれだけ強く使えるかが焦点です。</p><div class="tip"><strong>対面のポイント</strong><p>基本は後攻を選び、早く10ドンへ到達することを意識します。中盤はマーズ聖やナス寿郎聖を無理に消費しすぎず、終盤の5面展開に必要な名前をトラッシュへ揃えます。</p></div></div></div></article><article class="detail-card" id="imu"><div class="head"><span class="badge even">先攻有利</span><h4>黒イム対面</h4></div><div class="matchup-media"><img alt="黒イムのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/black-imu/black-imu-matchup-imu-v2.png"/><div class="card-copy"><p>ミラーはステージ選択と先に五老星を通せるかが勝敗に直結します。虚の玉座は元々…ないではないか…で割られるため、ゲーム開始時は聖地マリージョアを置く進行が基本になります。</p><div class="tip"><strong>対面のポイント</strong><p>相手の虚の玉座を割れる札を意識しながら、先に10コスト五老星へ到達するルートを作ります。サターン聖で次の五老星を確保し、展開の継続回数で上回ることが重要です。</p></div></div></div></article><article class="detail-card" id="hancock"><div class="head"><span class="badge lose">五分〜微不利</span><h4>青黄ハンコック対面</h4></div><div class="matchup-media"><img alt="青黄ハンコックのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/black-imu/black-imu-matchup-hancock-v2.png"/><div class="card-copy"><p>青黄ハンコックは回復とトリガー展開で長期戦に持ち込みやすく、黒イム側が一度展開しても粘られることがあります。禁止改定後はデッキパワーが落ちる見込みですが、回復が間に合う展開は注意が必要です。</p><div class="tip"><strong>対面のポイント</strong><p>相手の9ハンコック着地前にライフを詰めるか、五老星の再展開で盤面差を作り続けます。回復を前提に、1ターンで決め切るより継続して圧をかける進行を選びます。</p></div></div></div></article><article class="detail-card" id="enel"><div class="head"><span class="badge lose">微不利〜五分</span><h4>紫エネル対面</h4></div><div class="matchup-media"><img alt="紫エネルのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/black-imu/black-imu-matchup-enel-v2.png"/><div class="card-copy"><p>紫エネルは序盤から高打点を押し付け、10ドン到達前に黒イムのライフを詰めてきます。万雷で盤面をレストにされると守りが崩れやすく、現在の環境で特に意識したい対面です。</p><div class="tip"><strong>対面のポイント</strong><p>序盤は無理に攻め返すより、カウンターとブロッカーで10ドンまでつなぐことを優先します。五老星展開後はピーター聖の7000ラインを作り、相手のレスト干渉を受けても返しに盤面を作り直せるようにします。</p></div></div></div></article></section>
+<article class="detail-card" id="ace"><div class="head"><span class="badge even">五分</span><h4>赤青エース対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="red-blue-ace.html" aria-label="赤青エースのデッキ個別記事へ"><img alt="赤青エースのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/black-imu/black-imu-matchup-ace-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="red-blue-ace.html">赤青エースの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>序盤はライフを守りすぎず、サーチとトラッシュ準備を優先します。10ドン後はピーター聖の7000ラインを意識し、エース側の大型処理を要求し続けます。</p></div></div></div></article>
+<article class="detail-card" id="nami"><div class="head"><span class="badge even">五分</span><h4>青黄ナミ対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="blue-yellow-nami.html" aria-label="青黄ナミのデッキ個別記事へ"><img alt="青黄ナミのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/black-imu/black-imu-matchup-nami-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="blue-yellow-nami.html">青黄ナミの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>相手の回復と手札枚数を見ながら、五老星展開後に一気に打点をまとめます。通常打点だけで無理に詰めず、ナス寿郎聖の速攻やピーター聖のバフを絡めてリーサルを作ります。</p></div></div></div></article>
+<article class="detail-card" id="lucy"><div class="head"><span class="badge even">五分</span><h4>赤青ルーシー対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="red-blue-lucy.html" aria-label="赤青ルーシーのデッキ個別記事へ"><img alt="赤青ルーシーのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/black-imu/black-imu-matchup-lucy-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="red-blue-lucy.html">赤青ルーシーの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>7サボや火拳を意識し、序盤は必要以上に手札を減らさないようにします。五老星を通した後はサターン聖で次の五老星を確保し、1回の展開で終わらないゲームを作ります。</p></div></div></div></article>
+<article class="detail-card" id="skypiea"><div class="head"><span class="badge even">五分</span><h4>空島ルフィ対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="yellow-luffy-skypiea.html" aria-label="空島ルフィのデッキ個別記事へ"><img alt="空島ルフィのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/black-imu/black-imu-matchup-skypiea-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="yellow-luffy-skypiea.html">空島ルフィの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>序盤はライフを詰められすぎないことを優先し、ウォーキュリー聖やカウンターイベントで受けます。10ドン後はナス寿郎聖の速攻を絡め、相手のライフを早めに詰め返します。</p></div></div></div></article>
+<article class="detail-card" id="imu"><div class="head"><span class="badge even">先行有利</span><h4>黒イム対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="black-imu.html" aria-label="黒イムのデッキ個別記事へ"><img alt="黒イムのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/black-imu/black-imu-matchup-imu-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">ミラー構築を確認</span><a class="cta-link" href="black-imu.html">黒イムの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>相手の虚の玉座を割れる札を意識しながら、先に10コスト五老星へ到達するルートを作ります。サターン聖で次の五老星を確保し、展開の継続回数で上回ることが重要です。</p></div></div></div></article>
+<article class="detail-card" id="mihawk"><div class="head"><span class="badge lose">微不利</span><h4>緑ミホーク対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="green-mihawk.html" aria-label="緑ミホークのデッキ個別記事へ"><img alt="緑ミホークのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/black-imu/black-imu-matchup-mihawk-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="green-mihawk.html">緑ミホークの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>基本は後攻を選び、早く10ドンへ到達することを意識します。中盤はマーズ聖やナス寿郎聖を無理に消費しすぎず、終盤の5面展開に必要な名前をトラッシュへ揃えます。</p></div></div></div></article>
+<article class="detail-card" id="enel"><div class="head"><span class="badge lose">微不利</span><h4>紫エネル対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="purple-enel.html" aria-label="紫エネルのデッキ個別記事へ"><img alt="紫エネルのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/black-imu/black-imu-matchup-enel-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="purple-enel.html">紫エネルの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>序盤は無理に攻め返すより、カウンターとブロッカーで10ドンまでつなぐことを優先します。五老星展開後はピーター聖の7000ラインを作り、相手のレスト干渉を受けても返しに盤面を作り直せるようにします。</p></div></div></div></article>
+<article class="detail-card" id="hancock"><div class="head"><span class="badge lose">不利</span><h4>青黄ハンコック対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="blue-yellow-hancock.html" aria-label="青黄ハンコックのデッキ個別記事へ"><img alt="青黄ハンコックのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/black-imu/black-imu-matchup-hancock-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="blue-yellow-hancock.html">青黄ハンコックの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>相手の9ハンコック着地前にライフを詰めるか、五老星の再展開で盤面差を作り続けます。回復を前提に、1ターンで決め切るより継続して圧をかける進行を選びます。</p></div></div></div></article></section>
 </div></article>
 <section class="box premium-box">
 <div class="box-head">
@@ -3731,6 +3899,63 @@ body{
 </div>
 </div>
 </footer>
+<div class="matchup-image-modal" id="matchup-image-modal" aria-hidden="true" hidden>
+<div class="matchup-image-modal__panel" role="dialog" aria-modal="true" aria-label="カード画像の拡大表示">
+<button class="matchup-image-modal__close" type="button" aria-label="拡大画像を閉じる">×</button>
+<img class="matchup-image-modal__image" alt=""/>
+<div class="matchup-image-modal__caption"></div>
+</div>
+</div>
+<script>
+(() => {
+  const modal = document.getElementById('matchup-image-modal');
+  if (!modal) return;
+  const image = modal.querySelector('.matchup-image-modal__image');
+  const caption = modal.querySelector('.matchup-image-modal__caption');
+  const closeButton = modal.querySelector('.matchup-image-modal__close');
+  const openModal = (thumb) => {
+    image.src = thumb.currentSrc || thumb.src;
+    image.alt = thumb.alt || 'カード画像';
+    caption.textContent = thumb.alt || '';
+    modal.hidden = false;
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    closeButton.focus();
+  };
+  const closeModal = () => {
+    modal.hidden = true;
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    image.removeAttribute('src');
+  };
+  document.querySelectorAll('#matchups .matchup-card-link').forEach((link) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      const thumb = link.querySelector('img');
+      if (thumb) openModal(thumb);
+    });
+  });
+  document.querySelectorAll('#builds .decklist-figure img, #builds .card-item.has-side-thumb > img, #play .flow-visuals img').forEach((thumb) => {
+    thumb.tabIndex = 0;
+    thumb.setAttribute('role', 'button');
+    thumb.setAttribute('aria-label', (thumb.alt || 'カード画像') + 'を拡大表示');
+    thumb.addEventListener('click', () => openModal(thumb));
+    thumb.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openModal(thumb);
+      }
+    });
+  });
+  closeButton.addEventListener('click', closeModal);
+  modal.addEventListener('click', (event) => {
+    if (event.target === modal) closeModal();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !modal.hidden) closeModal();
+  });
+})();
+</script>
 </body>
 </html>
 

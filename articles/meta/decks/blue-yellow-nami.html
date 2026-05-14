@@ -3365,6 +3365,167 @@ body{
 /* ===== /matchup table horizontal scroll ===== */
 /* ===== /deck article mobile content layout ===== */
 /* ===== /article rails layout final spec ===== */
+
+/* matchup leader image links */
+#matchups .matchup-card-link{
+  display:block;
+  width:max-content;
+  max-width:100%;
+  border-radius:14px;
+  text-decoration:none;
+}
+#matchups .matchup-card-link .card-thumb{
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+#matchups .matchup-card-link:hover .card-thumb,
+#matchups .matchup-card-link:focus-visible .card-thumb{
+  transform:translateY(-2px);
+  box-shadow:0 12px 24px rgba(15,23,42,.18) !important;
+}
+#matchups .matchup-deck-cta{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  margin:0 0 14px;
+  padding:13px 14px;
+  border:1px solid rgba(125,91,213,.18);
+  border-radius:12px;
+  background:linear-gradient(135deg, rgba(255,255,255,.96), rgba(248,246,255,.92));
+}
+#matchups .matchup-deck-cta .cta-kicker{
+  color:#6b7280;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.04em;
+}
+#matchups .matchup-deck-cta .cta-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  width:100%;
+  color:#232b63;
+  font-size:15px;
+  font-weight:900;
+  line-height:1.45;
+  text-decoration:none;
+}
+#matchups .matchup-deck-cta .cta-link::after{
+  content:">";
+  display:grid;
+  place-items:center;
+  width:24px;
+  height:24px;
+  flex:0 0 24px;
+  border-radius:999px;
+  color:#fff;
+  background:#7d5bd5;
+  font-size:14px;
+  line-height:1;
+}
+#matchups .matchup-deck-cta .cta-link:hover,
+#matchups .matchup-deck-cta .cta-link:focus-visible{
+  color:#7d5bd5;
+}
+@media (max-width:780px){
+  #matchups .matchup-media .card-copy > .matchup-deck-cta{
+    grid-column:2 !important;
+    grid-row:1 !important;
+  }
+  #matchups .matchup-deck-cta{
+    padding:11px 12px;
+  }
+  #matchups .matchup-deck-cta .cta-link{
+    font-size:14px;
+  }
+}
+
+
+/* image zoom modal */
+.matchup-image-modal[hidden]{
+  display:none;
+}
+.matchup-image-modal{
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  display:grid;
+  place-items:center;
+  padding:24px;
+  background:rgba(15,23,42,.72);
+}
+.matchup-image-modal__panel{
+  position:relative;
+  width:min(92vw, 520px);
+  max-height:92vh;
+  display:grid;
+  gap:12px;
+  justify-items:center;
+}
+.matchup-image-modal__image{
+  display:block;
+  max-width:100%;
+  max-height:82vh;
+  width:auto;
+  height:auto;
+  border-radius:16px;
+  background:#fff;
+  box-shadow:0 24px 60px rgba(0,0,0,.34);
+}
+.matchup-image-modal__caption{
+  color:#fff;
+  font-size:14px;
+  font-weight:800;
+  line-height:1.5;
+  text-align:center;
+}
+.matchup-image-modal__close{
+  position:absolute;
+  top:-14px;
+  right:-14px;
+  display:grid;
+  place-items:center;
+  width:40px;
+  height:40px;
+  border:1px solid rgba(255,255,255,.55);
+  border-radius:999px;
+  background:#fff;
+  color:#17204a;
+  font-size:24px;
+  font-weight:900;
+  line-height:1;
+  cursor:pointer;
+  box-shadow:0 12px 28px rgba(0,0,0,.22);
+}
+.matchup-image-modal__close:hover,
+.matchup-image-modal__close:focus-visible{
+  transform:translateY(-1px);
+  background:#f5f7ff;
+}
+#builds .decklist-figure img,
+#builds .card-item.has-side-thumb > img,
+#play .flow-visuals img{
+  cursor:zoom-in;
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+#builds .decklist-figure img:hover,
+#builds .decklist-figure img:focus-visible,
+#builds .card-item.has-side-thumb > img:hover,
+#builds .card-item.has-side-thumb > img:focus-visible,
+#play .flow-visuals img:hover,
+#play .flow-visuals img:focus-visible{
+  transform:translateY(-2px);
+  box-shadow:0 12px 24px rgba(15,23,42,.18) !important;
+}
+@media (max-width:780px){
+  .matchup-image-modal{
+    padding:18px;
+  }
+  .matchup-image-modal__close{
+    top:-10px;
+    right:-10px;
+  }
+}
 </style>
 </head>
 <body class="deck-blue-yellow-nami">
@@ -3430,7 +3591,7 @@ body{
 
     <div class="deck-rating-pills">
       <span class="rating-pill">🧩 難易度: ★★★★☆ 中〜高</span>
-      <span class="rating-pill">⚡ デッキの速さ: ★★★☆☆ 中速</span>
+      <span class="rating-pill">💴 値段: ★★★★☆ 約3.5万円</span>
       <span class="rating-pill">🛡️ 安定感: ★★★★☆ 高い</span>
     </div>
 
@@ -3551,14 +3712,14 @@ body{
 <table class="table matchup-table">
 <thead><tr><th>対面リーダー</th><th>相性</th><th>主な理由</th></tr></thead>
 <tbody>
-<tr><td><a href="#skypiea">空島ルフィ</a></td><td><span class="badge win">有利〜大有利</span></td><td>7000ラインで面攻撃を受けやすく、相手の主力プランを止めやすい。</td></tr>
-<tr><td><a href="#hancock">青黄ハンコック</a></td><td><span class="badge win">微有利〜有利</span></td><td>ライフ受けが安定し、トリガー強襲にも対応しやすい。</td></tr>
-<tr><td><a href="#enel">紫エネル</a></td><td><span class="badge win">五分〜微有利</span></td><td>7000ラインと耐久コンボで、相手の高打点を受け続けやすい。</td></tr>
-<tr><td><a href="#mihawk">緑ミホーク</a></td><td><span class="badge win">五分〜微有利</span></td><td>中型展開にゼウスや大型の上踏みを合わせやすい。</td></tr>
-<tr><td><a href="#ace">赤青エース</a></td><td><span class="badge even">五分〜微有利</span></td><td>大型展開まで耐えられるかが焦点で、極端な有利不利はつきにくい。</td></tr>
-<tr><td><a href="#nami">青黄ナミ</a></td><td><span class="badge even">五分</span></td><td>ライフ操作とドン付与の管理精度で差がつくミラー。</td></tr>
-<tr><td><a href="#imu">黒イム</a></td><td><span class="badge even">五分</span></td><td>ライフ耐久で粘れるが、大型連打には押し切られるリスクがある。</td></tr>
-<tr><td><a href="#lucy">赤青ルーシー</a></td><td><span class="badge lose">微不利〜不利</span></td><td>除去コントロールと継続ドローで長期戦を制されやすい。</td></tr>
+<tr><td><a href="#skypiea">空島ルフィ</a></td><td><span class="badge win">有利</span></td><td>7000ラインで面攻撃を受けやすく、空島側の中型連打を耐久で受け止めやすい。</td></tr>
+<tr><td><a href="#hancock">青黄ハンコック</a></td><td><span class="badge win">有利</span></td><td>同じ耐久系でもナミ側の7000ラインと回復が通りやすく、受け合いで優位を作りやすい。</td></tr>
+<tr><td><a href="#enel">紫エネル</a></td><td><span class="badge win">微有利</span></td><td>紫エネルの高打点に対して7000ラインと回復で受け続けやすい。</td></tr>
+<tr><td><a href="#ace">赤青エース</a></td><td><span class="badge even">五分</span></td><td>大型展開まで耐えられるかが焦点で、互いに押し付けるターンがある。</td></tr>
+<tr><td><a href="#nami">青黄ナミ</a></td><td><span class="badge even">先行有利</span></td><td>ライフ操作とドン付与の管理精度で差がつくミラー。</td></tr>
+<tr><td><a href="#imu">黒イム</a></td><td><span class="badge even">五分</span></td><td>黒イムの終盤展開とナミ側の耐久がぶつかり、長期戦の管理で差が出る。</td></tr>
+<tr><td><a href="#mihawk">緑ミホーク</a></td><td><span class="badge lose">微不利</span></td><td>レスト固定で攻撃回数を削られると、ナミ側の耐久プランが崩れやすい。</td></tr>
+<tr><td><a href="#lucy">赤青ルーシー</a></td><td><span class="badge lose">微不利</span></td><td>ルーシー側の除去と継続ドローで主力を処理され続けると押し返しにくい。</td></tr>
 </tbody>
 </table>
 </div>
@@ -3572,7 +3733,14 @@ body{
 
 
 </div>
-<article class="detail-card" id="skypiea"><div class="head"><span class="badge win">有利〜大有利</span><h4>空島ルフィ対面</h4></div><div class="matchup-media"><img alt="空島ルフィのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/blue-yellow-nami/blue-yellow-nami-matchup-01-v2.png"/><div class="card-copy"><p>青黄ナミがかなり戦いやすいとされる対面です。リーダーにドンを付けて7000ラインを維持できると、空島ルフィ側の6000ラインの面攻撃を受け止めやすくなります。</p><div class="tip"><strong>対面のポイント</strong><p>序盤からドン付与を欠かさず、日和やゼウスで受け札を整えます。中盤以降は7ロビンや白ひげでライフと盤面を固め、相手の横展開を一度止めてから反撃に移ります。</p></div></div></div></article><article class="detail-card" id="hancock"><div class="head"><span class="badge win">微有利〜有利</span><h4>青黄ハンコック対面</h4></div><div class="matchup-media"><img alt="青黄ハンコックのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/blue-yellow-nami/blue-yellow-nami-matchup-02-v2.png"/><div class="card-copy"><p>ハンコックのトリガー強襲に対して、ナミ側は7000ラインで受けを作りやすい対面です。ライフ操作でトリガーを仕込みながら、無理な詰めを避けて大型までつなげます。</p><div class="tip"><strong>対面のポイント</strong><p>キッドで相手ライフをトラッシュに送れると、黄色系の受けを崩しやすくなります。相手の展開ターンをゼウスや大型で受け流し、白ひげ連打までゲームを伸ばします。</p></div></div></div></article><article class="detail-card" id="enel"><div class="head"><span class="badge win">五分〜微有利</span><h4>紫エネル対面</h4></div><div class="matchup-media"><img alt="紫エネルのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/blue-yellow-nami/blue-yellow-nami-matchup-03-v2.png"/><div class="card-copy"><p>紫エネルの早い高打点に対して、ナミ側は7000ラインで受け続けやすい対面です。ボルサリーノ＋クエーサーが使える4月環境では、相手の打点不足を誘いやすい点も強みです。</p><div class="tip"><strong>対面のポイント</strong><p>リーダーへのドン付与が途切れると一気に厳しくなるため、毎ターンのドン管理を最優先にします。中盤はゼウスで小型を処理し、7ロビンや白ひげで耐久ラインを引き上げます。</p></div></div></div></article><article class="detail-card" id="mihawk"><div class="head"><span class="badge win">五分〜微有利</span><h4>緑ミホーク対面</h4></div><div class="matchup-media"><img alt="緑ミホークのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/blue-yellow-nami/blue-yellow-nami-matchup-04-v2.png"/><div class="card-copy"><p>中型の面展開をどう処理するかが中心になる対面です。ゼウスでテンポを返し、大型キャラで上から踏める形を作れるとナミ側が戦いやすくなります。</p><div class="tip"><strong>対面のポイント</strong><p>序盤に無理にライフを守りすぎず、必要なライフ操作で手札を整えます。相手の主力が並ぶ前に5ナミと7ロビンへつなぎ、白ひげで盤面を固定します。</p></div></div></div></article><article class="detail-card" id="ace"><div class="head"><span class="badge even">五分〜微有利</span><h4>赤青エース対面</h4></div><div class="matchup-media"><img alt="赤青エースのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/blue-yellow-nami/blue-yellow-nami-matchup-05-v2.png"/><div class="card-copy"><p>赤青エースとは大型展開まで耐えられるかが焦点です。序盤から中盤で押し込まれすぎなければ、7ロビンや白ひげで盤面を返す展開を作れます。</p><div class="tip"><strong>対面のポイント</strong><p>リーダー効果の7000ラインを維持しながら、相手の主力にゼウスや大型を合わせます。詰めのターンはキッドでトリガーを避けるルートも意識します。</p></div></div></div></article><article class="detail-card" id="nami"><div class="head"><span class="badge even">五分</span><h4>青黄ナミ対面</h4></div><div class="matchup-media"><img alt="青黄ナミのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/blue-yellow-nami/blue-yellow-nami-matchup-06-v2.png"/><div class="card-copy"><p>ミラーはライフ操作、リーダーへのドン付与、ドロー条件の管理精度がそのまま差になります。先攻側が5ナミと7ロビンへ素直につなげやすく、やや主導権を取りやすい展開もあります。</p><div class="tip"><strong>対面のポイント</strong><p>相手のライフを不用意に動かしてドローを与えすぎないようにしつつ、自分のドロー条件は確実に満たします。白ひげやキッドの着地ターンを強く使えるよう手札を整えます。</p></div></div></div></article><article class="detail-card" id="imu"><div class="head"><span class="badge even">五分</span><h4>黒イム対面</h4></div><div class="matchup-media"><img alt="黒イムのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/blue-yellow-nami/blue-yellow-nami-matchup-07-v2.png"/><div class="card-copy"><p>黒イムの盤面干渉に対して、ナミ側はライフ耐久で粘り勝つ展開を目指します。ただし大型連打が始まると受けが追いつかないこともあるため、回復と盤面処理の順番が重要です。</p><div class="tip"><strong>対面のポイント</strong><p>5ナミのKO時効果や7ロビンの回復で相手の除去に付き合い、白ひげまでゲームを伸ばします。手札を抱えすぎてリーダードロー条件を逃さないよう、枚数管理も意識します。</p></div></div></div></article><article class="detail-card" id="lucy"><div class="head"><span class="badge lose">微不利〜不利</span><h4>赤青ルーシー対面</h4></div><div class="matchup-media"><img alt="赤青ルーシーのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/blue-yellow-nami/blue-yellow-nami-matchup-08-v2.png"/><div class="card-copy"><p>赤青ルーシーは除去コントロールと継続ドローで長期戦を作れるため、ナミ側にとって苦手寄りとされる対面です。5ナミや7ロビンを処理され続けると、耐久だけでは押し返しにくくなります。</p><div class="tip"><strong>対面のポイント</strong><p>序盤からリーダーへのドン付与を維持し、相手の7サボ＋イベントに合わせてライフと手札を残します。白ひげやキッドを通せるターンまで、ゼウスや日和でテンポをつなぐ意識が大切です。</p></div></div></div></article></section>
+<article class="detail-card" id="skypiea"><div class="head"><span class="badge win">有利</span><h4>空島ルフィ対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="yellow-luffy-skypiea.html" aria-label="空島ルフィのデッキ個別記事へ"><img alt="空島ルフィのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/blue-yellow-nami/blue-yellow-nami-matchup-01-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="yellow-luffy-skypiea.html">空島ルフィの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>序盤からドン付与を欠かさず、日和やゼウスで受け札を整えます。中盤以降は7ロビンや白ひげでライフと盤面を固め、相手の横展開を一度止めてから反撃に移ります。</p></div></div></div></article>
+<article class="detail-card" id="hancock"><div class="head"><span class="badge win">有利</span><h4>青黄ハンコック対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="blue-yellow-hancock.html" aria-label="青黄ハンコックのデッキ個別記事へ"><img alt="青黄ハンコックのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/blue-yellow-nami/blue-yellow-nami-matchup-02-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="blue-yellow-hancock.html">青黄ハンコックの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>キッドで相手ライフをトラッシュに送れると、黄色系の受けを崩しやすくなります。相手の展開ターンをゼウスや大型で受け流し、白ひげ連打までゲームを伸ばします。</p></div></div></div></article>
+<article class="detail-card" id="enel"><div class="head"><span class="badge win">微有利</span><h4>紫エネル対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="purple-enel.html" aria-label="紫エネルのデッキ個別記事へ"><img alt="紫エネルのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/blue-yellow-nami/blue-yellow-nami-matchup-03-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="purple-enel.html">紫エネルの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>リーダーへのドン付与が途切れると一気に厳しくなるため、毎ターンのドン管理を最優先にします。中盤はゼウスで小型を処理し、7ロビンや白ひげで耐久ラインを引き上げます。</p></div></div></div></article>
+<article class="detail-card" id="ace"><div class="head"><span class="badge even">五分</span><h4>赤青エース対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="red-blue-ace.html" aria-label="赤青エースのデッキ個別記事へ"><img alt="赤青エースのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/blue-yellow-nami/blue-yellow-nami-matchup-05-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="red-blue-ace.html">赤青エースの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>リーダー効果の7000ラインを維持しながら、相手の主力にゼウスや大型を合わせます。詰めのターンはキッドでトリガーを避けるルートも意識します。</p></div></div></div></article>
+<article class="detail-card" id="nami"><div class="head"><span class="badge even">先行有利</span><h4>青黄ナミ対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="blue-yellow-nami.html" aria-label="青黄ナミのデッキ個別記事へ"><img alt="青黄ナミのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/blue-yellow-nami/blue-yellow-nami-matchup-06-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">ミラー構築を確認</span><a class="cta-link" href="blue-yellow-nami.html">青黄ナミの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>相手のライフを不用意に動かしてドローを与えすぎないようにしつつ、自分のドロー条件は確実に満たします。白ひげやキッドの着地ターンを強く使えるよう手札を整えます。</p></div></div></div></article>
+<article class="detail-card" id="imu"><div class="head"><span class="badge even">五分</span><h4>黒イム対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="black-imu.html" aria-label="黒イムのデッキ個別記事へ"><img alt="黒イムのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/blue-yellow-nami/blue-yellow-nami-matchup-07-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="black-imu.html">黒イムの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>5ナミのKO時効果や7ロビンの回復で相手の除去に付き合い、白ひげまでゲームを伸ばします。手札を抱えすぎてリーダードロー条件を逃さないよう、枚数管理も意識します。</p></div></div></div></article>
+<article class="detail-card" id="mihawk"><div class="head"><span class="badge lose">微不利</span><h4>緑ミホーク対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="green-mihawk.html" aria-label="緑ミホークのデッキ個別記事へ"><img alt="緑ミホークのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/blue-yellow-nami/blue-yellow-nami-matchup-04-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="green-mihawk.html">緑ミホークの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>序盤に無理にライフを守りすぎず、必要なライフ操作で手札を整えます。相手の主力が並ぶ前に5ナミと7ロビンへつなぎ、白ひげで盤面を固定します。</p></div></div></div></article>
+<article class="detail-card" id="lucy"><div class="head"><span class="badge lose">微不利</span><h4>赤青ルーシー対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="red-blue-lucy.html" aria-label="赤青ルーシーのデッキ個別記事へ"><img alt="赤青ルーシーのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/blue-yellow-nami/blue-yellow-nami-matchup-08-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="red-blue-lucy.html">赤青ルーシーの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>序盤からリーダーへのドン付与を維持し、相手の7サボ＋イベントに合わせてライフと手札を残します。白ひげやキッドを通せるターンまで、ゼウスや日和でテンポをつなぐ意識が大切です。</p></div></div></div></article></section>
 </div></article>
 <section class="box premium-box">
 <div class="box-head">
@@ -3732,6 +3900,63 @@ body{
 </div>
 </div>
 </footer>
+<div class="matchup-image-modal" id="matchup-image-modal" aria-hidden="true" hidden>
+<div class="matchup-image-modal__panel" role="dialog" aria-modal="true" aria-label="カード画像の拡大表示">
+<button class="matchup-image-modal__close" type="button" aria-label="拡大画像を閉じる">×</button>
+<img class="matchup-image-modal__image" alt=""/>
+<div class="matchup-image-modal__caption"></div>
+</div>
+</div>
+<script>
+(() => {
+  const modal = document.getElementById('matchup-image-modal');
+  if (!modal) return;
+  const image = modal.querySelector('.matchup-image-modal__image');
+  const caption = modal.querySelector('.matchup-image-modal__caption');
+  const closeButton = modal.querySelector('.matchup-image-modal__close');
+  const openModal = (thumb) => {
+    image.src = thumb.currentSrc || thumb.src;
+    image.alt = thumb.alt || 'カード画像';
+    caption.textContent = thumb.alt || '';
+    modal.hidden = false;
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    closeButton.focus();
+  };
+  const closeModal = () => {
+    modal.hidden = true;
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    image.removeAttribute('src');
+  };
+  document.querySelectorAll('#matchups .matchup-card-link').forEach((link) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      const thumb = link.querySelector('img');
+      if (thumb) openModal(thumb);
+    });
+  });
+  document.querySelectorAll('#builds .decklist-figure img, #builds .card-item.has-side-thumb > img, #play .flow-visuals img').forEach((thumb) => {
+    thumb.tabIndex = 0;
+    thumb.setAttribute('role', 'button');
+    thumb.setAttribute('aria-label', (thumb.alt || 'カード画像') + 'を拡大表示');
+    thumb.addEventListener('click', () => openModal(thumb));
+    thumb.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openModal(thumb);
+      }
+    });
+  });
+  closeButton.addEventListener('click', closeModal);
+  modal.addEventListener('click', (event) => {
+    if (event.target === modal) closeModal();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !modal.hidden) closeModal();
+  });
+})();
+</script>
 </body>
 </html>
 

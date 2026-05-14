@@ -3365,6 +3365,167 @@ body{
 /* ===== /matchup table horizontal scroll ===== */
 /* ===== /deck article mobile content layout ===== */
 /* ===== /article rails layout final spec ===== */
+
+/* matchup leader image links */
+#matchups .matchup-card-link{
+  display:block;
+  width:max-content;
+  max-width:100%;
+  border-radius:14px;
+  text-decoration:none;
+}
+#matchups .matchup-card-link .card-thumb{
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+#matchups .matchup-card-link:hover .card-thumb,
+#matchups .matchup-card-link:focus-visible .card-thumb{
+  transform:translateY(-2px);
+  box-shadow:0 12px 24px rgba(15,23,42,.18) !important;
+}
+#matchups .matchup-deck-cta{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  margin:0 0 14px;
+  padding:13px 14px;
+  border:1px solid rgba(125,91,213,.18);
+  border-radius:12px;
+  background:linear-gradient(135deg, rgba(255,255,255,.96), rgba(248,246,255,.92));
+}
+#matchups .matchup-deck-cta .cta-kicker{
+  color:#6b7280;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.04em;
+}
+#matchups .matchup-deck-cta .cta-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  width:100%;
+  color:#232b63;
+  font-size:15px;
+  font-weight:900;
+  line-height:1.45;
+  text-decoration:none;
+}
+#matchups .matchup-deck-cta .cta-link::after{
+  content:">";
+  display:grid;
+  place-items:center;
+  width:24px;
+  height:24px;
+  flex:0 0 24px;
+  border-radius:999px;
+  color:#fff;
+  background:#7d5bd5;
+  font-size:14px;
+  line-height:1;
+}
+#matchups .matchup-deck-cta .cta-link:hover,
+#matchups .matchup-deck-cta .cta-link:focus-visible{
+  color:#7d5bd5;
+}
+@media (max-width:780px){
+  #matchups .matchup-media .card-copy > .matchup-deck-cta{
+    grid-column:2 !important;
+    grid-row:1 !important;
+  }
+  #matchups .matchup-deck-cta{
+    padding:11px 12px;
+  }
+  #matchups .matchup-deck-cta .cta-link{
+    font-size:14px;
+  }
+}
+
+
+/* image zoom modal */
+.matchup-image-modal[hidden]{
+  display:none;
+}
+.matchup-image-modal{
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  display:grid;
+  place-items:center;
+  padding:24px;
+  background:rgba(15,23,42,.72);
+}
+.matchup-image-modal__panel{
+  position:relative;
+  width:min(92vw, 520px);
+  max-height:92vh;
+  display:grid;
+  gap:12px;
+  justify-items:center;
+}
+.matchup-image-modal__image{
+  display:block;
+  max-width:100%;
+  max-height:82vh;
+  width:auto;
+  height:auto;
+  border-radius:16px;
+  background:#fff;
+  box-shadow:0 24px 60px rgba(0,0,0,.34);
+}
+.matchup-image-modal__caption{
+  color:#fff;
+  font-size:14px;
+  font-weight:800;
+  line-height:1.5;
+  text-align:center;
+}
+.matchup-image-modal__close{
+  position:absolute;
+  top:-14px;
+  right:-14px;
+  display:grid;
+  place-items:center;
+  width:40px;
+  height:40px;
+  border:1px solid rgba(255,255,255,.55);
+  border-radius:999px;
+  background:#fff;
+  color:#17204a;
+  font-size:24px;
+  font-weight:900;
+  line-height:1;
+  cursor:pointer;
+  box-shadow:0 12px 28px rgba(0,0,0,.22);
+}
+.matchup-image-modal__close:hover,
+.matchup-image-modal__close:focus-visible{
+  transform:translateY(-1px);
+  background:#f5f7ff;
+}
+#builds .decklist-figure img,
+#builds .card-item.has-side-thumb > img,
+#play .flow-visuals img{
+  cursor:zoom-in;
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+#builds .decklist-figure img:hover,
+#builds .decklist-figure img:focus-visible,
+#builds .card-item.has-side-thumb > img:hover,
+#builds .card-item.has-side-thumb > img:focus-visible,
+#play .flow-visuals img:hover,
+#play .flow-visuals img:focus-visible{
+  transform:translateY(-2px);
+  box-shadow:0 12px 24px rgba(15,23,42,.18) !important;
+}
+@media (max-width:780px){
+  .matchup-image-modal{
+    padding:18px;
+  }
+  .matchup-image-modal__close{
+    top:-10px;
+    right:-10px;
+  }
+}
 </style>
 </head>
 <body class="deck-green-mihawk">
@@ -3430,7 +3591,7 @@ body{
 
     <div class="deck-rating-pills">
       <span class="rating-pill">🧩 難易度: ★★★★☆ 高め</span>
-      <span class="rating-pill">⚡ デッキの速さ: ★★★☆☆ 中速</span>
+      <span class="rating-pill">💴 値段: ★★★☆☆ 約1.3万円</span>
       <span class="rating-pill">🛡️ 安定感: ★★★★☆ 高い</span>
     </div>
 
@@ -3438,7 +3599,7 @@ body{
       <article class="deck-rating-card">
         <h4>強み</h4>
         <ul>
-          <li>6ローやロー＆ベポで相手キャラをレストに固定し、攻撃とブロックを止めやすい</li>
+          <li>ロー＆ベポやレスト系イベントで相手キャラを止めつつ、6ローで中型展開と登場時効果の再利用を狙える</li>
           <li>リーダー効果で3ドンを戻し、全開やエレクトリカルルナなどのイベントを構えやすい</li>
           <li>ペローナやボニー系のサーチが多く、必要札へアクセスしやすい</li>
         </ul>
@@ -3481,7 +3642,7 @@ body{
 <img alt="トラファルガー・ロー（OP13-031）のカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/green-mihawk/green-mihawk-key-law-op13-031.png"/>
 <div class="card-copy">
 <h4>トラファルガー・ロー（OP13-031）</h4>
-<p>登場時に相手の5コスト以下をレストにし、次の相手ターンもアクティブにさせない主力カードです。相手のアタッカーやブロッカーを盤面に残したまま機能停止させ、打点差を作る中心になります。</p>
+<p>ライフ1以下でブロッカーを得る6コストキャラです。登場時に自分のキャラ1体を手札に戻すことで、手札から5コスト以下のキャラをレストで登場させられます。ペローナなどの登場時効果を再利用しながら盤面を増やし、リーダー効果の条件になる5コスト以上のキャラを用意できる点が強みです。</p>
 </div>
 </div>
 </div>
@@ -3491,8 +3652,8 @@ body{
 <div class="prio">
 <h3>マリガン基準</h3>
 <div class="prio-item"><span class="rank">最優先キープ</span><p>棺船、ラブーン、ペローナ、ボニー系のように、序盤からサーチやリーダー効果のコストを用意できるカードを探します。棺船＋ペローナがある手札は理想に近いスタートです。</p></div>
-<div class="prio-item"><span class="rank">妥協キープ</span><p>低コストの動きがあり、6ローやロー＆ベポへつながる見通しがある手札はキープ候補です。10ミホークや8ゾロなど重いカードだけの手札は返しやすいです。</p></div>
-<div class="prio-item"><span class="rank">先後選択</span><p>基本は後攻寄りです。後攻のほうが棺船やサーチから中型へつながりやすく、6ローやロー＆ベポを早めに使えます。紫エネル対面は展開次第で先攻も検討します。</p></div>
+<div class="prio-item"><span class="rank">妥協キープ</span><p>低コストの動きがあり、ロー＆ベポや6ローへつながる見通しがある手札はキープ候補です。10ミホークや8ゾロなど重いカードだけの手札は返しやすいです。</p></div>
+<div class="prio-item"><span class="rank">先後選択</span><p>基本は後攻寄りです。後攻のほうが棺船やサーチから中型へつながりやすく、ロー＆ベポや6ローを早めに使えます。紫エネル対面は展開次第で先攻も検討します。</p></div>
 </div>
 <div class="flow">
 <div class="flow-item">
@@ -3504,7 +3665,7 @@ body{
 <img alt="棺船（OP14-039）のカード画像" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/green-mihawk/green-mihawk-flow-coffin-ship-op14-039.png"/>
 <img alt="ジュエリー・ボニー（OP07-026）のカード画像" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/green-mihawk/green-mihawk-flow-bonney-op07-026.png"/>
 </div>
-<p>序盤は棺船や低コストキャラを用意し、リーダー効果のコストに困らない盤面を作ります。棺船があれば毎ターンカードをレストにする条件を満たしやすく、ボニーやペローナで中盤の6ローを探しにいけます。</p>
+<p>序盤は棺船や低コストキャラを用意し、リーダー効果のコストに困らない盤面を作ります。棺船があれば毎ターンカードをレストにする条件を満たしやすく、ボニーやペローナで中盤のロー＆ベポや6ローを探しにいけます。</p>
 </div>
 </div>
 <div class="flow-item">
@@ -3516,7 +3677,7 @@ body{
 <img alt="トラファルガー・ロー（OP13-031）のカード画像" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/green-mihawk/green-mihawk-key-law-op13-031.png"/>
 <img alt="スモーカー（OP10-030）のカード画像" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/green-mihawk/green-mihawk-flow-smoker-op10-030.png"/>
 </div>
-<p>リーダー効果はコスト5以上のキャラが場にいることが条件です。6ローやスモーカーを着地させた後、棺船やラブーンをレストにして3ドンを戻し、イベントや追加打点に回します。</p>
+<p>リーダー効果はコスト5以上のキャラが場にいることが条件です。6ローやスモーカーを着地させた後、棺船やラブーンをレストにして3ドンを戻し、イベントや追加打点に回します。6ローは自分のキャラを戻して5コスト以下をレスト登場させ、登場時効果の再利用や盤面追加につなげます。</p>
 </div>
 </div>
 <div class="flow-item">
@@ -3528,7 +3689,7 @@ body{
 <img alt="ロー＆ベポ（ST24-004）のカード画像" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/green-mihawk/green-mihawk-flow-law-bepo-st24-004.png"/>
 <img alt="強ェとわかってんだから…始めから全開だ!!!（OP13-040）のカード画像" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/green-mihawk/green-mihawk-flow-fullpower-op13-040.png"/>
 </div>
-<p>終盤はロー＆ベポや6ローで相手キャラをレストにし、返しの攻撃を止めます。リーダー効果で戻したドンから全開を構えると、相手ターン中のパワーマイナスで攻撃を受けやすくなります。</p>
+<p>終盤はロー＆ベポやイベントで相手キャラをレストにし、返しの攻撃を止めます。6ローはペローナなどを戻して再利用したり、手札の5コスト以下キャラを追加したりする役割です。リーダー効果で戻したドンから全開を構えると、相手ターン中のパワーマイナスで攻撃を受けやすくなります。</p>
 </div>
 </div>
 <div class="flow-item">
@@ -3551,14 +3712,14 @@ body{
 <table class="table matchup-table">
 <thead><tr><th>対面リーダー</th><th>相性</th><th>主な理由</th></tr></thead>
 <tbody>
-<tr><td><a href="#skypiea">空島ルフィ</a></td><td><span class="badge win">微有利</span></td><td>6ローのレスト封印で空島側の中型を止めやすい。</td></tr>
-<tr><td><a href="#nami">青黄ナミ</a></td><td><span class="badge win">五分〜微有利</span></td><td>7000ラインは厄介だが、盤面をレストで封じる展開が機能しやすい。</td></tr>
-<tr><td><a href="#lucy">赤青ルーシー</a></td><td><span class="badge win">五分〜微有利</span></td><td>ルーシーの速いテンポに対して、レスト制圧で打点を削りやすい。</td></tr>
-<tr><td><a href="#ace">赤青エース</a></td><td><span class="badge win">五分〜微有利</span></td><td>大型着地の競争になるが、レストで相手の攻撃回数を減らせる。</td></tr>
-<tr><td><a href="#imu">黒イム</a></td><td><span class="badge win">五分〜微有利</span></td><td>大型展開に対してレスト封印を合わせられると打点を通しやすい。</td></tr>
-<tr><td><a href="#mihawk">緑ミホーク</a></td><td><span class="badge even">五分</span></td><td>棺船やリーダー効果を安定させた側が主導権を取りやすいミラー。</td></tr>
-<tr><td><a href="#hancock">青黄ハンコック</a></td><td><span class="badge lose">微不利〜不利</span></td><td>回復とトリガー展開が絡むと、レスト制圧だけでは押し切りにくい。</td></tr>
-<tr><td><a href="#enel">紫エネル</a></td><td><span class="badge lose">微不利〜不利</span></td><td>高打点と6エネルの耐性が重く、明確な苦手対面とされることが多い。</td></tr>
+<tr><td><a href="#skypiea">空島ルフィ</a></td><td><span class="badge win">微有利</span></td><td>ロー＆ベポやイベントで空島側の中型を止めやすく、攻撃回数を減らしやすい。</td></tr>
+<tr><td><a href="#nami">青黄ナミ</a></td><td><span class="badge win">微有利</span></td><td>ナミ側の受けは固いが、レスト固定で攻撃回数を削れると微有利に進みやすい。</td></tr>
+<tr><td><a href="#ace">赤青エース</a></td><td><span class="badge win">微有利</span></td><td>大型着地の競争になるが、レストで攻撃回数を減らせるため微有利に寄る。</td></tr>
+<tr><td><a href="#imu">黒イム</a></td><td><span class="badge win">微有利</span></td><td>10ドン前に盤面を整え、五老星の攻撃参加をレストで遅らせられると戦いやすい。</td></tr>
+<tr><td><a href="#mihawk">緑ミホーク</a></td><td><span class="badge even">先行有利</span></td><td>棺船やリーダー効果を安定させた側が主導権を取りやすいミラー。</td></tr>
+<tr><td><a href="#enel">紫エネル</a></td><td><span class="badge even">五分</span></td><td>6エネルの耐性は重いが、レストロックとイベントの使い方次第で五分に持ち込める。</td></tr>
+<tr><td><a href="#hancock">青黄ハンコック</a></td><td><span class="badge lose">微不利</span></td><td>回復とトリガー展開で粘られやすく、レスト制圧だけでは押し切りにくい。</td></tr>
+<tr><td><a href="#lucy">赤青ルーシー</a></td><td><span class="badge lose">不利</span></td><td>ルーシー側の除去とリソース継続が重く、レスト制圧だけではテンポを返されやすい。</td></tr>
 </tbody>
 </table>
 </div>
@@ -3571,7 +3732,14 @@ body{
 
 
 </div>
-<article class="detail-card" id="skypiea"><div class="head"><span class="badge win">微有利</span><h4>空島ルフィ対面</h4></div><div class="matchup-media"><img alt="空島ルフィのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/green-mihawk/green-mihawk-matchup-skypiea-v2.png"/><div class="card-copy"><p>空島ルフィはテンポよく盤面を作るデッキですが、緑ミホーク側は6ローのレスト封印で中型キャラを止めやすい対面です。相手の攻撃回数を減らせれば、終盤の大型までつなぎやすくなります。</p><div class="tip"><strong>対面のポイント</strong><p>序盤はライフを受けすぎず、6ローやロー＆ベポへつなげます。相手の主力をレスト状態で固定し、エレクトリカルルナや全開で返しの打点を抑える意識が大切です。</p></div></div></div></article><article class="detail-card" id="nami"><div class="head"><span class="badge win">五分〜微有利</span><h4>青黄ナミ対面</h4></div><div class="matchup-media"><img alt="青黄ナミのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/green-mihawk/green-mihawk-matchup-nami-v2.png"/><div class="card-copy"><p>青黄ナミの7000ラインは厄介ですが、緑ミホークはキャラをレストに固定して盤面から圧をかけられます。長期戦になりやすいものの、相手の攻撃回数を減らせると有利に寄ります。</p><div class="tip"><strong>対面のポイント</strong><p>通常打点だけで無理に詰めず、盤面を止めてから大型で圧をかけます。ナミ側の手札が増える前に、亡者戯やレスト封印を絡めたリーサルを狙います。</p></div></div></div></article><article class="detail-card" id="lucy"><div class="head"><span class="badge win">五分〜微有利</span><h4>赤青ルーシー対面</h4></div><div class="matchup-media"><img alt="赤青ルーシーのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/green-mihawk/green-mihawk-matchup-lucy-v2.png"/><div class="card-copy"><p>赤青ルーシーはイベントでリソースを伸ばしながら攻めてきますが、緑ミホークのレスト制圧で攻撃回数を削れる対面です。先に盤面ロックへ入れると、ルーシー側のテンポを落とせます。</p><div class="tip"><strong>対面のポイント</strong><p>キャベンディッシュや7サボを意識し、6ローやロー＆ベポで攻撃参加を止めます。イベントを構えられるドンを残し、返しの大きな攻撃を全開で受けやすくします。</p></div></div></div></article><article class="detail-card" id="ace"><div class="head"><span class="badge win">五分〜微有利</span><h4>赤青エース対面</h4></div><div class="matchup-media"><img alt="赤青エースのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/green-mihawk/green-mihawk-matchup-ace-v2.png"/><div class="card-copy"><p>赤青エースは大型連打で後半の圧が強いデッキですが、緑ミホークはレストでテンポを削りながら大型着地の競争に持ち込めます。盤面を触る順番が重要な五分寄りの対面です。</p><div class="tip"><strong>対面のポイント</strong><p>序盤から無理にライフを詰めるより、相手の中型を止めて手札と盤面を整えます。終盤は亡者戯でブロッカーを寝かせ、少ない攻撃回数で確実に通す形を作ります。</p></div></div></div></article><article class="detail-card" id="imu"><div class="head"><span class="badge win">五分〜微有利</span><h4>黒イム対面</h4></div><div class="matchup-media"><img alt="黒イムのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/green-mihawk/green-mihawk-matchup-imu-v2.png"/><div class="card-copy"><p>黒イムは10ドン以降の五老星展開が強力ですが、緑ミホークはレスト封印で大型の攻撃参加を遅らせられます。五老星を出された後も、返しの打点を減らせれば戦いやすくなります。</p><div class="tip"><strong>対面のポイント</strong><p>黒イムが10ドンへ届く前に盤面を整え、6ローや10ミホークで行動を止めます。相手の展開ターンにイベントを構え、次ターンのリーサルを見据えます。</p></div></div></div></article><article class="detail-card" id="mihawk"><div class="head"><span class="badge even">五分</span><h4>緑ミホーク対面</h4></div><div class="matchup-media"><img alt="緑ミホークのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/green-mihawk/green-mihawk-matchup-mihawk-v2.png"/><div class="card-copy"><p>ミラーは棺船やラブーンでリーダー効果を安定させた側が主導権を取りやすい対面です。お互いにレスト制圧を狙うため、先に5コスト以上を置けるかが重要になります。</p><div class="tip"><strong>対面のポイント</strong><p>棺船を早めに用意し、リーダー効果のコストに困らない盤面を作ります。相手の大型をレストで止めるタイミングと、亡者戯を使うリーサルターンを見極めます。</p></div></div></div></article><article class="detail-card" id="hancock"><div class="head"><span class="badge lose">微不利〜不利</span><h4>青黄ハンコック対面</h4></div><div class="matchup-media"><img alt="青黄ハンコックのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/green-mihawk/green-mihawk-matchup-hancock-v2.png"/><div class="card-copy"><p>青黄ハンコックはトリガー展開と回復で粘りやすく、緑ミホーク側がレストで止めても押し切れない展開があります。長期戦になるほど、相手の回復量と9ハンコックが重くなります。</p><div class="tip"><strong>対面のポイント</strong><p>先攻選択も視野に入れ、相手の回復が間に合う前に盤面とライフを詰めます。トリガー展開を想定し、レスト封印で次ターンの攻撃参加を止める進行を選びます。</p></div></div></div></article><article class="detail-card" id="enel"><div class="head"><span class="badge lose">微不利〜不利</span><h4>紫エネル対面</h4></div><div class="matchup-media"><img alt="紫エネルのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/green-mihawk/green-mihawk-matchup-enel-v2.png"/><div class="card-copy"><p>紫エネルは序盤から高打点を作り、6エネルの除去耐性でレスト制圧を受けにくい場面があります。緑ミホークにとって、明確な苦手対面とされることが多い組み合わせです。</p><div class="tip"><strong>対面のポイント</strong><p>エレクトリカルルナで1コスト神官群をまとめて処理できるかが重要です。6エネルに対しては無理に処理を狙いすぎず、攻撃回数を抑えながらリーサルターンを作ります。</p></div></div></div></article></section>
+<article class="detail-card" id="skypiea"><div class="head"><span class="badge win">微有利</span><h4>空島ルフィ対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="yellow-luffy-skypiea.html" aria-label="空島ルフィのデッキ個別記事へ"><img alt="空島ルフィのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/green-mihawk/green-mihawk-matchup-skypiea-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="yellow-luffy-skypiea.html">空島ルフィの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>序盤はライフを受けすぎず、ロー＆ベポやイベントへつなげます。相手の主力をレスト状態で止め、6ローは自分の登場時効果再利用や中型展開に使って、返しの打点を抑える意識が大切です。</p></div></div></div></article>
+<article class="detail-card" id="nami"><div class="head"><span class="badge win">微有利</span><h4>青黄ナミ対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="blue-yellow-nami.html" aria-label="青黄ナミのデッキ個別記事へ"><img alt="青黄ナミのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/green-mihawk/green-mihawk-matchup-nami-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="blue-yellow-nami.html">青黄ナミの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>通常打点だけで無理に詰めず、盤面を止めてから大型で圧をかけます。ナミ側の手札が増える前に、亡者戯やレストロックを絡めたリーサルを狙います。</p></div></div></div></article>
+<article class="detail-card" id="ace"><div class="head"><span class="badge win">微有利</span><h4>赤青エース対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="red-blue-ace.html" aria-label="赤青エースのデッキ個別記事へ"><img alt="赤青エースのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/green-mihawk/green-mihawk-matchup-ace-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="red-blue-ace.html">赤青エースの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>序盤から無理にライフを詰めるより、相手の中型を止めて手札と盤面を整えます。終盤は亡者戯でブロッカーを寝かせ、少ない攻撃回数で確実に通す形を作ります。</p></div></div></div></article>
+<article class="detail-card" id="imu"><div class="head"><span class="badge win">微有利</span><h4>黒イム対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="black-imu.html" aria-label="黒イムのデッキ個別記事へ"><img alt="黒イムのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/green-mihawk/green-mihawk-matchup-imu-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="black-imu.html">黒イムの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>黒イムが10ドンへ届く前に盤面を整え、ロー＆ベポや10ミホークで行動を止めます。6ローはペローナ再利用や5コスト以下の追加展開に使い、相手の展開ターンにはイベントを構えます。</p></div></div></div></article>
+<article class="detail-card" id="mihawk"><div class="head"><span class="badge even">先行有利</span><h4>緑ミホーク対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="green-mihawk.html" aria-label="緑ミホークのデッキ個別記事へ"><img alt="緑ミホークのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/green-mihawk/green-mihawk-matchup-mihawk-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">ミラー構築を確認</span><a class="cta-link" href="green-mihawk.html">緑ミホークの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>棺船を早めに用意し、リーダー効果のコストに困らない盤面を作ります。相手の大型をレストで止めるタイミングと、亡者戯を使うリーサルターンを見極めます。</p></div></div></div></article>
+<article class="detail-card" id="enel"><div class="head"><span class="badge even">五分</span><h4>紫エネル対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="purple-enel.html" aria-label="紫エネルのデッキ個別記事へ"><img alt="紫エネルのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/green-mihawk/green-mihawk-matchup-enel-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="purple-enel.html">紫エネルの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>エレクトリカルルナで1コスト神官群をまとめて処理できるかが重要です。6エネルに対しては無理に処理を狙いすぎず、攻撃回数を抑えながらリーサルターンを作ります。</p></div></div></div></article>
+<article class="detail-card" id="hancock"><div class="head"><span class="badge lose">微不利</span><h4>青黄ハンコック対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="blue-yellow-hancock.html" aria-label="青黄ハンコックのデッキ個別記事へ"><img alt="青黄ハンコックのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/green-mihawk/green-mihawk-matchup-hancock-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="blue-yellow-hancock.html">青黄ハンコックの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>先攻選択も視野に入れ、相手の回復が間に合う前に盤面とライフを詰めます。トリガー展開を想定し、レストロックで次ターンの攻撃参加を止める進行を選びます。</p></div></div></div></article>
+<article class="detail-card" id="lucy"><div class="head"><span class="badge lose">不利</span><h4>赤青ルーシー対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="red-blue-lucy.html" aria-label="赤青ルーシーのデッキ個別記事へ"><img alt="赤青ルーシーのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/green-mihawk/green-mihawk-matchup-lucy-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="red-blue-lucy.html">赤青ルーシーの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>キャベンディッシュや7サボを意識し、ロー＆ベポやイベントで攻撃参加を止めます。6ローで自分の登場時効果再利用や中型展開を行い、リソースを整えながら次の返し札につなげます。</p></div></div></div></article></section>
 </div></article>
 <section class="box premium-box">
 <div class="box-head">
@@ -3731,6 +3899,63 @@ body{
 </div>
 </div>
 </footer>
+<div class="matchup-image-modal" id="matchup-image-modal" aria-hidden="true" hidden>
+<div class="matchup-image-modal__panel" role="dialog" aria-modal="true" aria-label="カード画像の拡大表示">
+<button class="matchup-image-modal__close" type="button" aria-label="拡大画像を閉じる">×</button>
+<img class="matchup-image-modal__image" alt=""/>
+<div class="matchup-image-modal__caption"></div>
+</div>
+</div>
+<script>
+(() => {
+  const modal = document.getElementById('matchup-image-modal');
+  if (!modal) return;
+  const image = modal.querySelector('.matchup-image-modal__image');
+  const caption = modal.querySelector('.matchup-image-modal__caption');
+  const closeButton = modal.querySelector('.matchup-image-modal__close');
+  const openModal = (thumb) => {
+    image.src = thumb.currentSrc || thumb.src;
+    image.alt = thumb.alt || 'カード画像';
+    caption.textContent = thumb.alt || '';
+    modal.hidden = false;
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    closeButton.focus();
+  };
+  const closeModal = () => {
+    modal.hidden = true;
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    image.removeAttribute('src');
+  };
+  document.querySelectorAll('#matchups .matchup-card-link').forEach((link) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      const thumb = link.querySelector('img');
+      if (thumb) openModal(thumb);
+    });
+  });
+  document.querySelectorAll('#builds .decklist-figure img, #builds .card-item.has-side-thumb > img, #play .flow-visuals img').forEach((thumb) => {
+    thumb.tabIndex = 0;
+    thumb.setAttribute('role', 'button');
+    thumb.setAttribute('aria-label', (thumb.alt || 'カード画像') + 'を拡大表示');
+    thumb.addEventListener('click', () => openModal(thumb));
+    thumb.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openModal(thumb);
+      }
+    });
+  });
+  closeButton.addEventListener('click', closeModal);
+  modal.addEventListener('click', (event) => {
+    if (event.target === modal) closeModal();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !modal.hidden) closeModal();
+  });
+})();
+</script>
 </body>
 </html>
 
