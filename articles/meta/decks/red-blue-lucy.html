@@ -844,11 +844,13 @@
       border:1px solid rgba(0,0,0,.08);
       background:#f3f3f3;
       margin-bottom:14px;
+      max-width:100%;
     }
     .note-image-link img{
       display:block;
       width:100%;
       height:auto;
+      object-fit:contain;
     }
     .note-link-copy h3{
       margin:0 0 8px;
@@ -869,6 +871,14 @@
       font-size:14px;
       line-height:1.85;
       color:#4b5563;
+    }
+
+    @media (max-width: 520px){
+      .article-rails-layout > .main .premium-box .note-image-link{
+        width:min(100%, calc(100vw - 64px));
+        margin-left:auto;
+        margin-right:auto;
+      }
     }
 
 
@@ -3681,7 +3691,7 @@ body{
 <img alt="キャベンディッシュ（OP10-045）のカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/red-blue-lucy/red-blue-lucy-key-cavendish-op10-045.png"/>
 <div class="card-copy">
 <h4>キャベンディッシュ</h4>
-<p>序盤から中盤のリソース源です。アタック時に2枚引いて1枚捨てるため、イベントやサボへ触りやすくなります。守られることを嫌って攻撃しないとデッキの回転が鈍るため、基本は毎ターン攻撃して手札を整えます。</p>
+<p>序盤から中盤のリソース源です。アタック時に2枚引いて1枚捨てるため、イベントやサボへ触りやすくなります。基本は毎ターン攻撃して手札を整えます。</p>
 </div>
 </div>
 </div>
@@ -3777,10 +3787,10 @@ body{
 <article class="detail-card" id="mihawk"><div class="head"><span class="badge win">有利</span><h4>緑ミホーク対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="green-mihawk.html" aria-label="緑ミホークのデッキ個別記事へ"><img alt="緑ミホークのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/red-blue-lucy/red-blue-lucy-matchup-02-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="green-mihawk.html">緑ミホークの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>中盤まではキャベンディッシュで手札を整え、相手の主力に火拳やバリバリの銃を合わせます。レストになったキャラを無理に追いすぎず、次ターンのサボ着地まで含めて処理順を考えます。</p></div></div></div></article>
 <article class="detail-card" id="nami"><div class="head"><span class="badge win">微有利</span><h4>青黄ナミ対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="blue-yellow-nami.html" aria-label="青黄ナミのデッキ個別記事へ"><img alt="青黄ナミのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/red-blue-lucy/red-blue-lucy-matchup-01-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="blue-yellow-nami.html">青黄ナミの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>キャベンディッシュを軸に引き込みを増やし、7サボ＋火拳やバリバリの銃でテンポを返します。無理な早詰めより、手札差を作ってからリーサルを組む意識が大切です。</p></div></div></div></article>
 <article class="detail-card" id="lucy"><div class="head"><span class="badge even">後攻有利</span><h4>赤青ルーシー対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="red-blue-lucy.html" aria-label="赤青ルーシーのデッキ個別記事へ"><img alt="赤青ルーシーのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/red-blue-lucy/red-blue-lucy-matchup-05-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">ミラー構築を確認</span><a class="cta-link" href="red-blue-lucy.html">赤青ルーシーの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>キャベンディッシュを守りながら毎ターン攻撃し、手札差を作ります。サボは早出しせず、火拳やバリバリの銃を合わせて相手の盤面を返せるタイミングまで待つ判断も大切です。</p></div></div></div></article>
-<article class="detail-card" id="hancock"><div class="head"><span class="badge even">五分</span><h4>青黄ハンコック対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="blue-yellow-hancock.html" aria-label="青黄ハンコックのデッキ個別記事へ"><img alt="青黄ハンコックのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/red-blue-lucy/red-blue-lucy-matchup-03-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="blue-yellow-hancock.html">青黄ハンコックの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>6ジョズなどを採用している場合は、5コスト帯の処理を節約しやすくなります。相手ターンの展開を想定して、盤面処理とリーダーへの圧力を両立させます。</p></div></div></div></article>
+<article class="detail-card" id="hancock"><div class="head"><span class="badge even">五分</span><h4>青黄ハンコック対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="blue-yellow-hancock.html" aria-label="青黄ハンコックのデッキ個別記事へ"><img alt="青黄ハンコックのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/red-blue-lucy/red-blue-lucy-matchup-03-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="blue-yellow-hancock.html">青黄ハンコックの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>バリバリの銃によるボトム送りを使えば、相手キャラをKOせずに処理できるため、青黄ハンコックのリーダー効果誘発を回避できます。相手ターンの展開を想定して、盤面処理とリーダーへの圧力を両立させます。</p></div></div></div></article>
 <article class="detail-card" id="ace"><div class="head"><span class="badge even">五分</span><h4>赤青エース対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="red-blue-ace.html" aria-label="赤青エースのデッキ個別記事へ"><img alt="赤青エースのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/red-blue-lucy/red-blue-lucy-matchup-04-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="red-blue-ace.html">赤青エースの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>7サボを通すターンに火拳やバリバリの銃までつなげ、相手の盤面を残さない展開を狙います。長期戦ではイベントの使いすぎで守りが薄くならないよう、リーダー効果の防御も計算に入れます。</p></div></div></div></article>
 <article class="detail-card" id="imu"><div class="head"><span class="badge even">五分</span><h4>黒イム対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="black-imu.html" aria-label="黒イムのデッキ個別記事へ"><img alt="黒イムのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/red-blue-lucy/red-blue-lucy-matchup-06-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="black-imu.html">黒イムの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>序盤は手札を整え、中盤以降は7サボの着地ターンを強く使うことを意識します。相手の除去を受けてもリソースが切れないよう、キャベンディッシュとリーダードローを丁寧に積み重ねます。</p></div></div></div></article>
-<article class="detail-card" id="enel"><div class="head"><span class="badge even">五分</span><h4>紫エネル対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="purple-enel.html" aria-label="紫エネルのデッキ個別記事へ"><img alt="紫エネルのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/red-blue-lucy/red-blue-lucy-matchup-07-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="purple-enel.html">紫エネルの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>序盤は縦引きで必要札を探し、6エネルや大型の着地を遅らせる意識でイベントを構えます。ホーリーからの連続打点を受ける前に、7サボ＋除去イベントで主導権を返したい対面です。</p></div></div></div></article>
+<article class="detail-card" id="enel"><div class="head"><span class="badge even">五分</span><h4>紫エネル対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="purple-enel.html" aria-label="紫エネルのデッキ個別記事へ"><img alt="紫エネルのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/red-blue-lucy/red-blue-lucy-matchup-07-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="purple-enel.html">紫エネルの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>序盤はサーチで必要札を探し、6エネルの着地に備える意識でイベントを構えます。ホーリーからの連続打点を受ける前に、7サボ＋除去イベントで主導権を返したい対面です。</p></div></div></div></article>
 <article class="detail-card" id="skypiea"><div class="head"><span class="badge even">五分</span><h4>空島ルフィ対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="yellow-luffy-skypiea.html" aria-label="空島ルフィのデッキ個別記事へ"><img alt="空島ルフィのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/red-blue-lucy/red-blue-lucy-matchup-08-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="yellow-luffy-skypiea.html">空島ルフィの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>序盤からサーチで除去札を探し、相手の展開をまとめて処理できるターンを作ります。盤面を無視してリーダーへ行きすぎると押し返されやすいため、守るターンと詰めるターンをはっきり分けます。</p></div></div></div></article></section>
 </div></article>
 <section class="box premium-box" id="more-note">
