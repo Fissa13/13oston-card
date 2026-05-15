@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">掲載note募集中</title>
+  <desc id="desc">デッキ解説note掲載枠を案内する仮画像です。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7f3ff"/>
+      <stop offset="0.52" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#eef5ff"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7d5bd5"/>
+      <stop offset="1" stop-color="#2f68d8"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#2b1f5f" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" rx="34" fill="url(#bg)"/>
+  <rect x="46" y="46" width="1108" height="538" rx="28" fill="none" stroke="#d9d2f0" stroke-width="2"/>
+  <circle cx="1020" cy="120" r="90" fill="#f0e9ff"/>
+  <circle cx="170" cy="500" r="120" fill="#eaf2ff"/>
+  <g filter="url(#shadow)">
+    <rect x="130" y="125" width="940" height="380" rx="30" fill="#ffffff"/>
+    <rect x="130" y="125" width="940" height="92" rx="30" fill="url(#accent)"/>
+    <path d="M130 187h940v42H130z" fill="url(#accent)"/>
+  </g>
+  <text x="600" y="183" text-anchor="middle" font-family="'Noto Sans JP','Yu Gothic',Meiryo,sans-serif" font-size="34" font-weight="800" fill="#ffffff">13OSTON CARD</text>
+  <text x="600" y="305" text-anchor="middle" font-family="'Noto Sans JP','Yu Gothic',Meiryo,sans-serif" font-size="64" font-weight="900" fill="#232b63">掲載note 募集中</text>
+  <text x="600" y="370" text-anchor="middle" font-family="'Noto Sans JP','Yu Gothic',Meiryo,sans-serif" font-size="30" font-weight="800" fill="#5f6475">実戦解説・構築解説を募集しています</text>
+  <g transform="translate(366 418)">
+    <rect width="468" height="54" rx="27" fill="#f4f1ff" stroke="#d9d2f0"/>
+    <text x="234" y="36" text-anchor="middle" font-family="'Noto Sans JP','Yu Gothic',Meiryo,sans-serif" font-size="22" font-weight="800" fill="#7d5bd5">お問い合わせよりご連絡ください</text>
+  </g>
+</svg>
