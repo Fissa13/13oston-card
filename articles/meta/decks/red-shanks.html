@@ -4,13 +4,13 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>【OP-15】黄ルフィ(空島) 完全攻略ガイド｜デッキ解説・構築・対面立ち回り</title>
-<meta content="黄ルフィ(空島)のデッキ評価、デッキ構築、基本的な回し方、対面の考え方を2026年4月環境向けに整理した攻略記事です。" name="description"/>
-<link href="https://www.13ostoncard.com/articles/meta/decks/yellow-luffy-skypiea.html" rel="canonical"/>
+<title>【OP-09/ST-23】赤シャンクス デッキ解説｜構築・回し方・対面立ち回り</title>
+<meta content="赤シャンクスの2026年5月環境におけるデッキ評価、代表構築、基本的な回し方、マリガン、主要対面の立ち回りを整理します。" name="description"/>
+<link href="https://www.13ostoncard.com/articles/meta/decks/red-shanks.html" rel="canonical"/>
 <meta content="article" property="og:type"/>
-<meta content="【OP-15】黄ルフィ(空島) 完全攻略ガイド｜デッキ解説・構築・対面立ち回り" property="og:title"/>
-<meta content="黄ルフィ(空島)のデッキ評価、デッキ構築、基本的な回し方、対面の考え方を2026年4月環境向けに整理した攻略記事です。" property="og:description"/>
-<meta content="https://www.13ostoncard.com/articles/meta/decks/yellow-luffy-skypiea.html" property="og:url"/>
+<meta content="【OP-09/ST-23】赤シャンクス デッキ解説｜構築・回し方・対面立ち回り" property="og:title"/>
+<meta content="赤シャンクスの2026年5月環境におけるデッキ評価、代表構築、基本的な回し方、マリガン、主要対面の立ち回りを整理します。" property="og:description"/>
+<meta content="https://www.13ostoncard.com/articles/meta/decks/red-shanks.html" property="og:url"/>
 <meta content="https://www.13ostoncard.com/assets/images/ogp/ogp-20260516-blue.png" property="og:image"/>
 <meta content="13OSTON CARD ワンピースカード攻略サイトのOGP画像" property="og:image:alt"/>
 <meta content="1672" property="og:image:width"/>
@@ -19,8 +19,8 @@
 <meta content="ja_JP" property="og:locale"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="@13OSTON_CARD" name="twitter:site"/>
-<meta content="【OP-15】黄ルフィ(空島) 完全攻略ガイド｜デッキ解説・構築・対面立ち回り" name="twitter:title"/>
-<meta content="黄ルフィ(空島)のデッキ評価、デッキ構築、基本的な回し方、対面の考え方を2026年4月環境向けに整理した攻略記事です。" name="twitter:description"/>
+<meta content="【OP-09/ST-23】赤シャンクス デッキ解説｜構築・回し方・対面立ち回り" name="twitter:title"/>
+<meta content="赤シャンクスの2026年5月環境におけるデッキ評価、代表構築、基本的な回し方、マリガン、主要対面の立ち回りを整理します。" name="twitter:description"/>
 <meta content="https://www.13ostoncard.com/assets/images/ogp/ogp-20260516-blue.png" name="twitter:image"/>
 <meta content="13OSTON CARD ワンピースカード攻略サイトのOGP画像" name="twitter:image:alt"/>
 <link rel="stylesheet" href="../../../assets/css/article-common.css"/>
@@ -767,7 +767,7 @@
       .header-nav a{padding:9px 12px}
     }
   
-    body.deck-yellow-luffy-skypiea{
+    body.deck-red-blue-ace{
       --hero-start:#4b1d95;
       --hero-mid:#6d28d9;
       --hero-end:#8b5cf6;
@@ -787,7 +787,7 @@
       pointer-events:none;
     }
 
-    body.deck-yellow-luffy-skypiea .hero:before{
+    body.deck-red-blue-ace .hero:before{
       content:"";position:absolute;inset:0;background:
       radial-gradient(circle at 50% 42%, rgba(255,255,255,.16) 0, rgba(255,255,255,.07) 18%, rgba(255,255,255,0) 36%),
       repeating-linear-gradient(135deg, rgba(255,255,255,.08) 0 2px, transparent 2px 34px);
@@ -3343,7 +3343,7 @@ body{
     grid-column:1 / -1 !important;
     grid-row:2 !important;
     margin-top:0 !important;
-      width:100% !important;
+    width:100% !important;
     min-width:0 !important;
   }
   #matchups .matchup-media .tip p{
@@ -3374,6 +3374,8 @@ body{
     overflow:visible !important;
     table-layout:fixed !important;
     background:#fffdfa !important;
+    -webkit-text-size-adjust:100% !important;
+    text-size-adjust:100% !important;
   }
   #matchups .matchup-table th:nth-child(1),
   #matchups .matchup-table td:nth-child(1){
@@ -3582,9 +3584,68 @@ body{
     right:-10px;
   }
 }
+.topic-section > h2{
+  margin-bottom:16px;
+}
+.topic-feature{
+  display:grid;
+  grid-template-columns:minmax(150px,220px) minmax(0,1fr);
+  gap:22px;
+  align-items:center;
+  padding:22px;
+  border:1px solid rgba(210,44,44,.18);
+  border-radius:14px;
+  background:linear-gradient(135deg,rgba(255,247,247,.98),rgba(255,255,255,.98));
+  box-shadow:0 14px 34px rgba(120,24,24,.08);
+}
+.topic-feature-image{
+  display:flex;
+  justify-content:center;
+}
+.topic-feature-image img{
+  width:min(100%,180px);
+  max-height:250px;
+  object-fit:contain;
+  border-radius:10px;
+  box-shadow:0 12px 28px rgba(0,0,0,.16);
+  background:#fff;
+}
+.topic-feature-copy{
+  min-width:0;
+}
+.topic-feature-label{
+  display:inline-flex;
+  align-items:center;
+  width:max-content;
+  margin-bottom:8px;
+  padding:5px 10px;
+  border-radius:999px;
+  background:#b91c1c;
+  color:#fff;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:0;
+}
+.topic-feature-copy h3{
+  margin:0 0 10px;
+  font-size:1.28rem;
+  line-height:1.45;
+}
+.topic-feature-copy p{
+  margin:.55rem 0 0;
+}
+@media(max-width:760px){
+  .topic-feature{
+    grid-template-columns:1fr;
+    padding:18px;
+  }
+  .topic-feature-image img{
+    width:min(100%,170px);
+  }
+}
 </style>
 </head>
-<body class="deck-yellow-luffy-skypiea">
+<body class="deck-red-blue-ace">
 <!-- Common Header Start -->
 <header class="topbar">
 <div class="wrap topbar-inner"></div>
@@ -3593,7 +3654,7 @@ body{
 <div class="brand-row">
 <div class="wrap brand-inner">
 <div class="brand">
-<div class="logo"><img alt="13OSTON CARDロゴ" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/yellow-luffy-skypiea/yellow-luffy-skypiea-site-logo.png"/></div>
+<div class="logo"><img alt="13OSTON CARDロゴ" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/red-blue-ace/red-blue-ace-site-logo.png"/></div>
 <div>
 <h1>13OSTON CARD</h1>
 <p>ワンピースカードの最新情報、環境デッキ、初心者向けガイドをまとめた総合攻略メディア</p>
@@ -3616,208 +3677,8 @@ body{
 <div class="breadcrumbs">
 <a href="../../../index.html">トップページ</a><span class="sep">›</span>
 <span>デッキ解説</span><span class="sep">›</span>
-<span>黄ルフィ(空島)</span>
-</div><div class="layout article-rails-layout"><aside class="ad-rail ad-rail-left-1"><div class="ad-box"><div class="ad-badge">広告</div><strong>広告枠</strong><p>PC表示では本編を中央の細いカラムに寄せるための広告枠です。</p></div></aside><aside class="ad-rail ad-rail-left-2"><div class="ad-box"><div class="ad-badge">広告</div><strong>広告枠</strong><p>PC表示では本編を中央の細いカラムに寄せるための広告枠です。</p></div></aside><main class="main"><section class="box hero">
-<div class="hero-inner">
-<div class="hero-copy">
-<div class="hero-meta">
-<span class="pill">各デッキ個別記事</span>
-<span class="pill">更新日: 2026年5月16日</span>
-</div>
-<h1 class="hero-title">黄ルフィ(空島) 完全攻略ガイド</h1>
-<p class="hero-summary">盤面に残り続ける空島キャラと速攻ルフィでテンポを取り、ライフ回復で粘りながら押し切る黄単色ミッドレンジ。2026年4月環境の構築と主要対面を整理しました。</p>
-<div class="hero-tags">
-<span class="hero-tag">🟡 黄単色</span><span class="hero-tag">👑 Tier 1〜1.5</span><span class="hero-tag">🃏 OP-15</span><span class="hero-tag">⚡ 空島</span><span class="hero-tag">✨ 難易度: 低め</span>
-</div>
-</div>
-</div>
-</section><section class="box toc-box"><div class="box-head"><h2>目次</h2></div><div class="box-body"><ol class="toc toc-simple"><li><a href="#overview">デッキ評価</a></li><li><a href="#builds">デッキ構築</a></li><li><a href="#play">基本的な回し方</a></li><li><a href="#matchups">対面の有利不利と立ち回り</a></li><li><a href="#more-note">さらに詳しく知りたい方はこちら</a></li></ol></div></section><article class="box"><div class="article">
-<section id="overview" class="deck-rating-section">
-  <h2>デッキ評価</h2>
-
-  <div class="deck-rating-compact">
-    <div class="deck-rating-head">
-      <div class="deck-rating-rank">
-        <strong>S</strong>
-      </div>
-      <div class="deck-rating-copy">
-        <h3>盤面維持と速攻ルフィで押し切るテンポ型ミッドレンジ</h3>
-      </div>
-    </div>
-
-    <div class="deck-rating-pills">
-      <span class="rating-pill">🧩 難易度: ★★☆☆☆ 低め</span>
-      <span class="rating-pill">🛡️ 安定感: ★★★☆☆ 中</span>
-      <span class="rating-pill">💴 値段: ★★★★★ 約4.3万円</span>    </div>
-
-    <div class="deck-rating-grid">
-      <article class="deck-rating-card">
-        <h4>強み</h4>
-        <ul>
-          <li>リーダー効果で空島キャラが場に残りやすく、盤面を維持しやすい</li>
-          <li>5ルフィの速攻と7ロビンの追加展開で中盤の打点が強い</li>
-          <li>サーチ枚数が多く、7ロビンや速攻ルフィへアクセスしやすい</li>
-        </ul>
-      </article>
-
-      <article class="deck-rating-card">
-        <h4>弱み</h4>
-        <ul>
-          <li>青黄ナミの7000ラインと大型耐久にはライフレースで苦しくなりやすい</li>
-          <li>速攻ルフィのドン条件を見落とすとテンポを失いやすい</li>
-          <li>リーダー効果でライフを使いすぎると、終盤の耐久ラインを読み違えやすい</li>
-        </ul>
-      </article>
-    </div>
-
-    <div class="deck-rating-pointbox">
-      <strong>評価のポイント</strong>
-      <p>
-        黄ルフィ(空島)は、空島コントロールではなく盤面テンポで押すデッキです。紫エネルや赤青ルーシーなど上位候補に強く出やすい一方、青黄ナミのような耐久型には不利がつきやすいとされています。5月1日以降はボルサリーノ禁止の影響で、回復枠の見直しが必要になる見込みです。
-      </p>
-    </div>
-  </div>
-</section>
-<section id="builds">
-<h2>デッキ構築</h2>
-<h3>デッキリスト</h3>
-<figure class="decklist-figure">
-<img alt="黄ルフィ(空島)のデッキリスト" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/yellow-luffy-skypiea/yellow-luffy-skypiea-decklist-v2.png"/>
-</figure>
-<h3>キーカード解説</h3>
-<div class="card-grid two">
-<div class="card-item has-side-thumb">
-<img alt="モンキー・D・ルフィ（OP15-119）のカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/yellow-luffy-skypiea/yellow-luffy-skypiea-key-luffy-op15-119.png"/>
-<div class="card-copy">
-<h4>モンキー・D・ルフィ（OP15-119）</h4>
-<p>デッキの最重要テンポカードです。ドン6枚以上で速攻を得るため、先攻4ターン目から即打点を追加できます。イベントやブロッカーに反応してパワーを伸ばせるため、相手の受けを崩しながらライフを詰めやすいカードです。</p>
-</div>
-</div>
-<div class="card-item has-side-thumb">
-<img alt="ニコ・ロビン（OP15-109）のカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/yellow-luffy-skypiea/yellow-luffy-skypiea-key-robin-op15-109.png"/>
-<div class="card-copy">
-<h4>ニコ・ロビン（OP15-109）</h4>
-<p>ライフ回復と追加展開を同時に行う7コストの要です。手札から5コスト以下の《空島》キャラを出せるため、5ルフィや5ワイパーを展開して一気に盤面と打点を増やせます。</p>
-</div>
-</div>
-</div>
-</section>
-<section id="play">
-<h2>基本的な回し方</h2>
-<div class="prio">
-<h3>マリガン基準</h3>
-<div class="prio-item"><span class="rank">最優先キープ</span><p>7ロビンを最優先で探します。4ターン目の7ロビンから5ルフィや5ワイパーへつなげる展開が、空島ルフィの一番強い押し付けになりやすいです。</p></div>
-<div class="prio-item"><span class="rank">妥協キープ</span><p>速攻ルフィ、1ナミ、2シュラがある手札はキープ候補です。サーチカードが1枚あれば、7ロビンや必要な5コスト帯へ触りやすくなります。</p></div>
-<div class="prio-item"><span class="rank">先後選択</span><p>基本は先攻選択です。先攻4ターン目の7ロビンと速攻ルフィのテンポを最大化しやすく、序盤から盤面を作って押し切るプランに合っています。</p></div>
-</div>
-<div class="flow">
-<div class="flow-item">
-<div class="step">1</div>
-<div>
-<span class="label">序盤</span>
-<h4>1ナミと2シュラでキーパーツを探す</h4>
-<div class="flow-visuals">
-<img alt="ナミ（OP15-108）のカード画像" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/yellow-luffy-skypiea/yellow-luffy-skypiea-key-nami-op15-108.png"/>
-<img alt="シュラ（OP05-106）のカード画像" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/yellow-luffy-skypiea/yellow-luffy-skypiea-key-shura-op05-106.png"/>
-</div>
-<p>序盤はサーチで7ロビン、速攻ルフィ、5ワイパーなどを集めます。1ナミは2000カウンターとしても使えるため、序盤に出すか手札に残すかは対面と手札の形で判断します。</p>
-</div>
-</div>
-<div class="flow-item">
-<div class="step">2</div>
-<div>
-<span class="label">中盤</span>
-<h4>5ワイパーや4ゾロで盤面とライフを整える</h4>
-<div class="flow-visuals">
-<img alt="ワイパー（OP15-114）のカード画像" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/yellow-luffy-skypiea/yellow-luffy-skypiea-key-wyper-op15-114.png"/>
-<img alt="ロロノア・ゾロ（OP15-113）のカード画像" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/yellow-luffy-skypiea/yellow-luffy-skypiea-key-zoro-op15-113.png"/>
-</div>
-<p>中盤は5ワイパーや4ゾロで盤面を作ります。ワイパーは小型をまとめて処理しやすく、ゾロはライフを増やして耐久に寄せられます。表向きになったライフは黄金回転弾で入れ替える動きも意識します。</p>
-</div>
-</div>
-<div class="flow-item">
-<div class="step">3</div>
-<div>
-<span class="label">終盤</span>
-<h4>7ロビンから5ルフィを展開して打点を増やす</h4>
-<div class="flow-visuals">
-<img alt="ニコ・ロビン（OP15-109）のカード画像" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/yellow-luffy-skypiea/yellow-luffy-skypiea-key-robin-op15-109.png"/>
-<img alt="モンキー・D・ルフィ（OP15-119）のカード画像" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/yellow-luffy-skypiea/yellow-luffy-skypiea-key-luffy-op15-119.png"/>
-</div>
-<p>終盤は7ロビンから5ルフィを展開し、速攻で一気にライフへ圧力をかけます。5ルフィはドン6枚以上で速攻を得るため、ドン条件を満たしているタイミングで出すことが重要です。</p>
-</div>
-</div>
-<div class="flow-item">
-<div class="step">4</div>
-<div>
-<span class="label">リーサル</span>
-<h4>黄金回転弾と10エネルで詰めと耐久を両立する</h4>
-<div class="flow-visuals">
-<img alt="ゴムゴムの黄金回転弾（OP15-116）のカード画像" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/yellow-luffy-skypiea/yellow-luffy-skypiea-key-golden-rifle-op15-116.png"/>
-<img alt="エネル（EB02-052）のカード画像" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/yellow-luffy-skypiea/yellow-luffy-skypiea-key-enel-eb02-052.png"/>
-</div>
-<p>リーサルでは盤面に残った空島キャラで相手の手札を削り、黄金回転弾の+4000カウンターやライフ入れ替えで受けを作ります。10エネルはライフが少ない場面から復帰できるため、詰め切れない対面での保険になります。</p>
-</div>
-</div>
-</div>
-</section>
-<section id="matchups">
-<h2>対面の有利不利と立ち回り</h2>
-<div class="matchup-table-scroll">
-<table class="table matchup-table">
-<thead><tr><th>対面リーダー</th><th>相性</th><th>主な理由</th></tr></thead>
-<tbody>
-
-
-<tr><td><a href="#enel">紫エネル</a></td><td><span class="badge win">微有利</span></td><td>展開力と打点で序盤の主導権を取りやすく、紫エネルに対して微有利に進めやすい。</td></tr>
-<tr><td><a href="#mirror">黄ルフィ(空島)</a></td><td><span class="badge even">先行有利</span></td><td>7ロビンと速攻ルフィを先に通す側が主導権を取りやすい。</td></tr>
-<tr><td><a href="#lucy">赤青ルーシー</a></td><td><span class="badge even">五分</span></td><td>横展開とルーシー側の除去がぶつかり、処理札の噛み合いで五分に寄りやすい。</td></tr>
-<tr><td><a href="#imu">黒イム</a></td><td><span class="badge even">五分</span></td><td>10ドン前に押し込める展開もあるが、五老星展開後は受けが必要になり五分。</td></tr>
-<tr><td><a href="#hancock">青黄ハンコック</a></td><td><span class="badge even">五分</span></td><td>空島側の打点とハンコック側の回復がぶつかり、ライフ管理で差が出る。</td></tr>
-<tr><td><a href="#ace">赤青エース</a></td><td><span class="badge even">五分</span></td><td>赤青エースの大型と空島側の展開速度がぶつかり、五分の押し合いになりやすい。</td></tr>
-<tr><td><a href="#mihawk">緑ミホーク</a></td><td><span class="badge lose">微不利</span></td><td>レストロックで攻撃回数を削られやすく、盤面テンポを失うと微不利になる。</td></tr>
-<tr><td><a href="#nami">青黄ナミ</a></td><td><span class="badge lose">不利</span></td><td>ナミ側の7000ラインと回復でライフレースを止められやすく、不利になりやすい。</td></tr>
-</tbody>
-</table>
-</div>
-<div class="detail-grid">
-
-
-
-
-
-
-
-
-</div>
-<article class="detail-card" id="enel"><div class="head"><span class="badge win">微有利</span><h4>紫エネル対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="purple-enel.html" aria-label="紫エネルのデッキ個別記事へ"><img alt="紫エネルのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/yellow-luffy-skypiea/yellow-luffy-skypiea-matchup-02-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="purple-enel.html">紫エネルの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>5ワイパーを優先して探し、ホーリーや神官群をまとめて処理できるターンを作ります。相手の6エネルに触るルートも見ながら、ライフを守りすぎず打点を返します。</p></div></div></div></article>
-<article class="detail-card" id="mirror"><div class="head"><span class="badge even">先行有利</span><h4>黄ルフィ(空島)対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="yellow-luffy-skypiea.html" aria-label="黄ルフィ(空島)のデッキ個別記事へ"><img alt="黄ルフィ(空島)のリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/yellow-luffy-skypiea/yellow-luffy-skypiea-matchup-05-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">ミラー構築を確認</span><a class="cta-link" href="yellow-luffy-skypiea.html">黄ルフィ(空島)の個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>先攻時は最速ロビンを意識し、後攻時は4ゾロなどでライフと盤面を整えます。黄金回転弾の+4000を計算に入れてリーサルを組みます。</p></div></div></div></article>
-<article class="detail-card" id="lucy"><div class="head"><span class="badge even">五分</span><h4>赤青ルーシー対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="red-blue-lucy.html" aria-label="赤青ルーシーのデッキ個別記事へ"><img alt="赤青ルーシーのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/yellow-luffy-skypiea/yellow-luffy-skypiea-matchup-01-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="red-blue-lucy.html">赤青ルーシーの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>5ルフィを単体で不用意に寝かせすぎず、7サボ前は縦置きも選択肢にします。2体以上並んだタイミングから一気にアタックし、相手のイベント枚数を削ります。</p></div></div></div></article>
-<article class="detail-card" id="imu"><div class="head"><span class="badge even">五分</span><h4>黒イム対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="black-imu.html" aria-label="黒イムのデッキ個別記事へ"><img alt="黒イムのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/yellow-luffy-skypiea/yellow-luffy-skypiea-matchup-03-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="black-imu.html">黒イムの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>除去されてもリーダー効果で盤面を維持し、複数体で毎ターン手札を削ります。黒イム側の大型連打が始まる前に、速攻ルフィでライフを詰めておくことが重要です。</p></div></div></div></article>
-<article class="detail-card" id="hancock"><div class="head"><span class="badge even">五分</span><h4>青黄ハンコック対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="blue-yellow-hancock.html" aria-label="青黄ハンコックのデッキ個別記事へ"><img alt="青黄ハンコックのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/yellow-luffy-skypiea/yellow-luffy-skypiea-matchup-06-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="blue-yellow-hancock.html">青黄ハンコックの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>4ゾロから5ルフィへつなげ、序中盤のライフレースで先行します。トリガーを踏む前提で、盤面を残しながら複数ターンに分けて詰める意識が大切です。</p></div></div></div></article>
-<article class="detail-card" id="ace"><div class="head"><span class="badge even">五分</span><h4>赤青エース対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="red-blue-ace.html" aria-label="赤青エースのデッキ個別記事へ"><img alt="赤青エースのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/yellow-luffy-skypiea/yellow-luffy-skypiea-matchup-07-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="red-blue-ace.html">赤青エースの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>序盤から打点を通し、10エネルを補強札として意識します。リーダー効果でキャラを残す場面と、ライフを守る場面の切り替えが重要です。</p></div></div></div></article>
-<article class="detail-card" id="mihawk"><div class="head"><span class="badge lose">微不利</span><h4>緑ミホーク対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="green-mihawk.html" aria-label="緑ミホークのデッキ個別記事へ"><img alt="緑ミホークのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/yellow-luffy-skypiea/yellow-luffy-skypiea-matchup-04-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="green-mihawk.html">緑ミホークの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>盤面を広げすぎて止められるより、通る打点を確実に作ります。7ロビンからの展開で攻撃回数を増やし、相手に処理を強要します。</p></div></div></div></article>
-<article class="detail-card" id="nami"><div class="head"><span class="badge lose">不利</span><h4>青黄ナミ対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="blue-yellow-nami.html" aria-label="青黄ナミのデッキ個別記事へ"><img alt="青黄ナミのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/yellow-luffy-skypiea/yellow-luffy-skypiea-matchup-08-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="blue-yellow-nami.html">青黄ナミの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>4ゾロ、5ルフィ、7ロビンからの攻撃回数で相手の手札を削り、長期戦に入り切る前に詰める意識が必要です。10エネルで耐久するプランもありますが、基本は早めのライフレースを目指します。</p></div></div></div></article></section>
-</div></article>
-<section class="box premium-box" id="more-note">
-<div class="box-head">
-<h2>さらに詳しく知りたい方はこちら</h2>
-</div>
-<div class="box-body">
-<a class="note-image-link" href="https://x.com/13OSTON_CARD" rel="noopener" target="_blank">
-<img alt="黄ルフィ(空島)の掲載note募集中" src="../../../assets/images/decks/note-placeholder.svg"/>
-</a>
-<div class="note-link-copy">
-<h3><a href="https://x.com/13OSTON_CARD" rel="noopener" target="_blank">黄ルフィ(空島)の掲載noteを募集中です</a></h3>
-<p>黄ルフィ(空島)の構築、採用カード、各対面の立ち回りなどを深掘りしたnoteを掲載できる枠として仮置きしています。掲載を希望される方は、13OSTON CARDのXへDMでご連絡ください。</p>
-<div class="note-author">
-<span class="note-author-label">掲載枠</span>
-<a href="https://x.com/13OSTON_CARD" rel="noopener" target="_blank">13OSTON CARDのXへDMで連絡する</a>
-</div>
-</div>
-</div>
-</section>
-</main></main>
+<span>赤シャンクス</span>
+</div><div class="layout article-rails-layout"><aside class="ad-rail ad-rail-left-1"><div class="ad-box"><div class="ad-badge">広告</div><strong>広告枠</strong><p>PC表示では本編を中央の細いカラムに寄せるための広告枠です。</p></div></aside><aside class="ad-rail ad-rail-left-2"><div class="ad-box"><div class="ad-badge">広告</div><strong>広告枠</strong><p>PC表示では本編を中央の細いカラムに寄せるための広告枠です。</p></div></aside><main class="main"><section class="box hero"><div class="hero-inner"><div class="hero-copy"><div class="hero-meta"><span class="pill">デッキ個別記事</span><span class="pill">更新日: 2026年5月18日</span></div><h1 class="hero-title">赤シャンクス デッキ解説</h1><p class="hero-summary">赤シャンクスは、相手のアタック時にパワーを下げるリーダー効果で受けを固めながら、《赤髪海賊団》の中型・大型キャラで押し返す赤単デッキです。ST-23で追加されたカードも含め、2026年5月時点の構築、回し方、主要対面の考え方を整理します。</p><div class="hero-tags"><span class="hero-tag">🔴 赤単色</span><span class="hero-tag">👑 話題のデッキ</span><span class="hero-tag">🃏 OP-09/ST-23</span><span class="hero-tag">赤髪海賊団</span><span class="hero-tag">✨ 難易度: 中</span></div></div></div></section><section class="box toc-box"><div class="box-head"><h2>目次</h2></div><div class="box-body"><ol class="toc toc-simple"><li><a href="#topic">注目の話題</a></li><li><a href="#overview">デッキ評価</a></li><li><a href="#builds">デッキ構築</a></li><li><a href="#play">基本的な回し方</a></li><li><a href="#matchups">対面の有利不利と立ち回り</a></li><li><a href="#more-note">さらに詳しく知りたい方はこちら</a></li></ol></div></section><article class="box"><div class="article"><section id="topic" class="topic-section"><h2>注目の話題</h2><div class="topic-feature"><div class="topic-feature-image"><img alt="ベン・ベックマン（OP16-012）のカード画像" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/red-shanks/red-shanks-topic-beckman-op16-012.jpg"/></div><div class="topic-feature-copy"><span class="topic-feature-label">新カード情報</span><h3>新規ベン・ベックマンで10ドン以降の展開力が向上</h3><p>新規ベン・ベックマンの追加により、10ドンターン以降に6コストでブロッカーを置きながら、手札から10コストのシャンクスへつなげる動きが可能になりました。</p><p>残ったドン!!でイベントを構えたり、追加のブロッカーを展開したりできるため、従来よりも終盤の選択肢が広がっています。防御札を構えながら大型シャンクスを押し付けられる点は赤シャンクスにとって大きく、環境での研究にも期待が高まっている注目カードです。</p></div></div></section><section id="overview" class="deck-rating-section"><h2>デッキ評価</h2><div class="deck-rating-compact"><div class="deck-rating-head"><div class="deck-rating-rank"><strong>A</strong></div><div class="deck-rating-copy"><h3>防御補助とパワーマイナスで粘り、赤の大型で勝ち切る中速デッキ</h3></div></div><div class="deck-rating-pills"><span class="rating-pill">🧩 難易度: ★★★☆☆ 中</span><span class="rating-pill">🛡️ 安定感: ★★★☆☆ 中</span><span class="rating-pill">💴 値段: ★★★☆☆ 約1万8千円前後</span></div><div class="deck-rating-grid"><article class="deck-rating-card"><h4>強み</h4><ul><li>リーダー効果で毎ターン相手の攻撃ラインをずらし、手札のカウンター消費を抑えやすい</li><li>ホンゴウ、ヤソップ、ベン・ベックマンでパワーマイナスと除去を組み合わせられる</li><li>ST23-002シャンクスやOP09-004シャンクスなど、大型の着地後にゲームを締めやすい</li></ul></article><article class="deck-rating-card"><h4>弱み</h4><ul><li>序盤のサーチや中型が噛み合わないと手札の質が落ちやすい</li><li>除去耐性の高い大型や、回復で打点をずらすデッキには押し切りにくい</li><li>受けに寄せすぎると勝ち筋が遅くなり、終盤の連続展開に巻き返されやすい</li></ul></article></div><div class="deck-rating-pointbox"><strong>評価のポイント</strong><p>公式のOP09時点の赤シャンクス紹介では、リーダー効果による毎ターンのパワー-1000を防御の軸にし、《赤髪海賊団》のパワーマイナスと除去を重ねて終盤へつなぐ方針が示されています。ST-23では赤シャンクスのスターターが登場し、リーダーの防御補助を活かしながら赤髪海賊団の強力なキャラで勝利を目指すテーマが追加されました。</p><p>現在の位置づけは、Tier表上位に常駐するトップデッキというより、赤髪海賊団の追加カードで研究が進んでいる話題枠です。大会で使う場合は、環境上位への回答を入れつつ、受け札と大型フィニッシャーの枚数を絞り込むのが重要です。</p></div></div></section><section id="builds"><h2>デッキ構築</h2><h3>デッキリスト</h3><figure class="decklist-figure"><img alt="赤シャンクスのデッキリスト" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/red-shanks/red-shanks-decklist.png"/></figure><h3>キーカード解説</h3><div class="card-grid two"><div class="card-item has-side-thumb"><img alt="ベン・ベックマン（OP09-009）のカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/red-shanks/red-shanks-key-ben-beckman-op09-009.png"/><div class="card-copy"><h4>ベン・ベックマン（OP09-009）</h4><p>赤シャンクスの中盤以降を支える除去札です。ホンゴウやライムジュースなどのパワーマイナスと組み合わせることで処理できる範囲が広がり、相手の大型・厄介なシステムキャラを盤面から退かしながら攻めのターンを作れます。単体で雑に使うより、次の大型着地やリーサルにつながる盤面を作るタイミングで使いたいカードです。</p></div></div><div class="card-item has-side-thumb"><img alt="シャンクス（ST23-002）のカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/red-shanks/red-shanks-key-shanks-st23-002.png"/><div class="card-copy"><h4>シャンクス（ST23-002）</h4><p>終盤の押し込みを担当する大型フィニッシャーです。リーダー効果で相手の攻撃をいなし、ラッキー・ルウやウタで時間を作った後に着地させると、相手に盤面処理とライフ防御の両方を要求できます。手札が薄い状態で出すと返しが弱くなりやすいため、出す前のターンにカウンター値とブロッカーをどれだけ残せるかが重要です。</p></div></div></div></section><section id="play"><h2>基本的な回し方</h2><div class="prio"><h3>マリガン基準</h3><div class="prio-item"><span class="rank">最優先</span><p>1コストのウタを最優先します。序盤から手札を整えながら赤髪海賊団の動きにつなげやすく、ホンゴウ、ラッキー・ルウ、ヤソップ、大型シャンクスへアクセスする起点になります。</p></div><div class="prio-item"><span class="rank">キープ候補</span><p>ホンゴウ、ラッキー・ルウ、ヤソップ、ベン・ベックマンのように中盤の受けと除去につながるカードはキープ候補です。大型だけの手札は事故になりやすいため、低中コストとセットで判断します。</p></div><div class="prio-item"><span class="rank">先後選択</span><p>基本は後攻寄りで、2ターン目の4コスト帯や4ターン目以降の大型につなげる流れを作ります。速い対面では先攻で先にホンゴウやブロッカーを置く選択もあります。</p></div></div><div class="flow"><div class="flow-item"><div class="step">1</div><div><span class="label">序盤</span><h4>サーチで手札を整え、無理にライフを詰めすぎない</h4><div class="flow-visuals"><img alt="ウタ（OP09-002）のカード画像" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/red-shanks/red-shanks-flow-uta-op09-002.png"/><img alt="ホンゴウのカード画像" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/red-shanks/red-shanks-key-hongo-op09-011.png"/></div><p>序盤は赤髪海賊団の必要札を集め、リーダー効果で相手の攻撃をいなしながら中盤に備えます。相手の展開速度を見て、ホンゴウを置くかカウンターとして残すかを選びます。</p></div></div><div class="flow-item"><div class="step">2</div><div><span class="label">中盤</span><h4>パワーマイナスと除去で盤面を取り返す</h4><div class="flow-visuals"><img alt="ラッキー・ルウ（PRB02-003）のカード画像" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/red-shanks/red-shanks-flow-lucky-roux-prb02-003.png"/><img alt="ヤソップのカード画像" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/red-shanks/red-shanks-key-yasopp-op09-013.png"/></div><p>ラッキー・ルウ、ヤソップ、ホンゴウを絡めて相手キャラのパワーを下げ、除去ラインに入れます。リーダー効果も含めて、相手の攻撃回数を減らしながら手札を守ることが大切です。</p></div></div><div class="flow-item"><div class="step">3</div><div><span class="label">終盤</span><h4>大型シャンクスで受け切れない盤面を作る</h4><div class="flow-visuals"><img alt="ST23-002 シャンクスのカード画像" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/red-shanks/red-shanks-key-shanks-st23-002.png"/><img alt="シャンクス（OP06-007）のカード画像" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/red-shanks/red-shanks-flow-shanks-op06-007.png"/></div><p>終盤は大型シャンクスを着地させ、相手に盤面処理とライフ防御の両方を迫ります。大型を出すターンに手札が薄くなりやすいため、前のターンまでにブロッカーやカウンターを残しておきたいです。</p></div></div></div></section><section id="matchups"><h2>対面の有利不利と立ち回り</h2><div class="matchup-table-scroll"><table class="table matchup-table"><thead><tr><th>対面リーダー</th><th>相性</th><th>主な理由</th></tr></thead><tbody><tr><td><a href="#nami">青黄ナミ</a></td><td><span class="badge win">微有利</span></td><td>大型を除去で返しやすく、KO時効果持ちもベックマンでトラッシュへ送れる。</td></tr><tr><td><a href="#lucy">赤青ルーシー</a></td><td><span class="badge even">五分</span></td><td>7サボを10シャンクスで返せる一方、レオや展開次第で除去が止まり、押し合いになりやすい。</td></tr><tr><td><a href="#enel">紫エネル</a></td><td><span class="badge lose">微不利</span></td><td>6エネルに除去が通らない場面が厳しく、リーダーパンプで受けながら戦う必要がある。</td></tr><tr><td><a href="#mihawk">緑ミホーク</a></td><td><span class="badge lose">不利</span></td><td>斬属性リーダーのため実質6000リーダーとして攻められ、ラブーン絡みで除去も通しにくい。</td></tr></tbody></table></div><div class="detail-grid"></div><article class="detail-card" id="nami"><div class="head"><span class="badge win">微有利</span><h4>青黄ナミ対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="blue-yellow-nami.html" aria-label="青黄ナミのデッキ個別記事へ"><img alt="青黄ナミのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-03-blue-yellow-nami.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="blue-yellow-nami.html">青黄ナミの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>相手の大型は除去札で返し、盤面に残さないことを意識します。KO時効果を持つキャラは通常のKOで処理すると損をしやすいため、ベン・ベックマンでトラッシュへ送れると理想です。回復やトリガーで長引きやすい対面なので、除去でテンポを取りながら、終盤は大型シャンクスやブロッカー無効を絡めて複数打点をまとめて通します。</p></div></div></div></article><article class="detail-card" id="lucy"><div class="head"><span class="badge even">五分</span><h4>赤青ルーシー対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="red-blue-lucy.html" aria-label="赤青ルーシーのデッキ個別記事へ"><img alt="赤青ルーシーのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-04-red-blue-lucy.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="red-blue-lucy.html">赤青ルーシーの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>相手の7サボは、10シャンクスの除去で返すのが基本です。7サボを処理できると相手の大型ターンを受け流しやすい一方、相手の手札や後続次第では再展開で押し返されるため、五分の押し合いになります。ただし、相手の場にレオがいる場合は除去できないため注意が必要です。レオが見えている時は、先にレオを処理するか、除去に頼らず攻撃順とカウンター要求で崩すプランを取ります。</p></div></div></div></article><article class="detail-card" id="enel"><div class="head"><span class="badge lose">微不利</span><h4>紫エネル対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="purple-enel.html" aria-label="紫エネルのデッキ個別記事へ"><img alt="紫エネルのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-01-purple-enel.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="purple-enel.html">紫エネルの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>6エネルに除去が通らない点が厳しい対面です。レストになった6エネルは、ホンゴウなどでパワーを下げてから攻撃で処理するルートを意識します。正面から受け切るのが難しいため、7ゾロや9シャンクスなどのリーダーパンプで相手の攻撃をしのぎながら戦い、こちらの大型が残るターンを作って押し返します。</p></div></div></div></article><article class="detail-card" id="mihawk"><div class="head"><span class="badge lose">不利</span><h4>緑ミホーク対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="green-mihawk.html" aria-label="緑ミホークのデッキ個別記事へ"><img alt="緑ミホークのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/index/index-tier-02-green-mihawk.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="green-mihawk.html">緑ミホークの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>ミホークはリーダーが斬属性なので、常に相手が6000リーダーとして攻めてくるのが厳しい対面です。ラブーンがいなければこちらの除去が通りやすいため、そこを突いて主力を処理します。ラブーンが絡むと除去が止まりやすいので、ラブーンを除去できるカードを採用して対策するのも有効です。攻める時は単体の大型に頼りすぎず、複数面で攻撃回数を作ります。</p></div></div></div></article></section></div></article><section class="box premium-box" id="more-note"><div class="box-head"><h2>さらに詳しく知りたい方はこちら</h2></div><div class="box-body"><a class="note-image-link" href="https://x.com/13OSTON_CARD" rel="noopener" target="_blank"><img alt="赤シャンクスの掲載note募集中" src="../../../assets/images/decks/note-placeholder.svg"/></a><div class="note-link-copy"><h3><a href="https://x.com/13OSTON_CARD" rel="noopener" target="_blank">赤シャンクスの掲載noteを募集中です</a></h3><p>赤シャンクスの構築、採用カード、各対面の立ち回りなどを深掘りしたnoteを掲載できる枠として仮置きしています。掲載を希望される方は、13OSTON CARDのXへDMでご連絡ください。</p><div class="note-author"><span class="note-author-label">掲載相談</span><a href="https://x.com/13OSTON_CARD" rel="noopener" target="_blank">13OSTON CARDのXへDMで連絡する</a></div></div></div></section></main></main>
 <!-- Related Articles Start -->
 <!-- Sidebar Start -->
 <aside class="sidebar">
@@ -4019,6 +3880,8 @@ body{
 </script>
 </body>
 </html>
+
+
 
 
 
