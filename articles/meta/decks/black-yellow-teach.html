@@ -3498,7 +3498,62 @@ body{
   transform:translateY(-2px);
   box-shadow:0 12px 24px rgba(15,23,42,.18) !important;
 }
+#matchups .matchup-deck-cta{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  margin:0 0 14px;
+  padding:13px 14px;
+  border:1px solid rgba(209,170,61,.30);
+  border-radius:12px;
+  background:linear-gradient(135deg, rgba(255,255,255,.96), rgba(248,246,255,.92));
+}
+#matchups .matchup-deck-cta .cta-kicker{
+  color:#6b7280;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.04em;
+}
+#matchups .matchup-deck-cta .cta-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  width:100%;
+  color:#232b63;
+  font-size:15px;
+  font-weight:900;
+  line-height:1.45;
+  text-decoration:none;
+}
+#matchups .matchup-deck-cta .cta-link::after{
+  content:">";
+  display:grid;
+  place-items:center;
+  width:24px;
+  height:24px;
+  flex:0 0 24px;
+  border-radius:999px;
+  background:#232b63;
+  color:#fff;
+  font-size:14px;
+  line-height:1;
+}
+#matchups .matchup-deck-cta .cta-link:hover,
+#matchups .matchup-deck-cta .cta-link:focus-visible{
+  color:#7d5bd5;
+}
 @media (max-width:780px){
+  #matchups .matchup-media .card-copy > .matchup-deck-cta{
+    grid-column:2 !important;
+    grid-row:1 !important;
+  }
+  #matchups .matchup-deck-cta{
+    padding:11px 12px;
+  }
+  #matchups .matchup-deck-cta .cta-link{
+    font-size:14px;
+  }
   .matchup-image-modal{
     padding:18px;
   }
@@ -3556,7 +3611,7 @@ body{
 </div>
 </div>
 </div>
-</section><section class="box toc-box" hidden><div class="box-head"><h2>目次</h2></div><div class="box-body"><ol class="toc toc-simple"><li><a href="#overview">デッキ評価</a></li><li><a href="#builds">デッキ構築</a></li><li><a href="#play">基本的な回し方</a></li><li><a href="#more-note">さらに詳しく知りたい方はこちら</a></li></ol></div></section><article class="box"><div class="article">
+</section><section class="box toc-box" hidden><div class="box-head"><h2>目次</h2></div><div class="box-body"><ol class="toc toc-simple"><li><a href="#overview">デッキ評価</a></li><li><a href="#builds">デッキ構築</a></li><li><a href="#play">基本的な回し方</a></li><li><a href="#matchups">対面の有利不利と立ち回り</a></li><li><a href="#more-note">さらに詳しく知りたい方はこちら</a></li></ol></div></section><article class="box"><div class="article">
 <section id="overview" class="deck-rating-section">
   <h2>デッキ評価</h2>
 
@@ -3628,60 +3683,70 @@ body{
 </div>
 </div>
 </section>
-<section id="play" hidden>
+<section id="play">
 <h2>基本的な回し方</h2>
 <div class="prio">
 <h3>マリガン基準</h3>
-<div class="prio-item"><span class="rank">最優先キープ</span><p>サーチ6エネル（シクエネル）+ ドロー神官（サトリ / ゲダツ）。全対面共通で「シクエネルがなければ基本マリガン」。例外はサトリが2枚ある場合のみキープ可。</p></div>
-<div class="prio-item"><span class="rank">妥協キープ</span><p>シクエネル単体 or ドロー神官3枚。6エネルへの到達ルートが見えていればOKです。</p></div>
-<div class="prio-item"><span class="rank">先後選択</span><p>黒イム対面のみ後攻、それ以外は全て先攻。基本は先攻で6000連打の主導権を取りにいきます。</p></div>
+<div class="prio-item"><span class="rank">最優先キープ</span><p>ハチノスや黒の1コストのラフィットなどのサーチ札を優先します。序盤から手札と除去先を整え、6シリュウや8ティーチにつながる土台を作れる手札が理想です。</p></div>
+<div class="prio-item"><span class="rank">セットで見たい札</span><p>中盤の6シリュウ、8ティーチ、終盤のゼハハ!!!、10ティーチまで見えている手札は評価が上がります。序盤札だけで終わらず、5〜10ドン帯の着地点があるかを確認します。</p></div>
+<div class="prio-item"><span class="rank">ゲーム方針</span><p>序盤はライフを守りすぎず、トリガー札を手札に残しながら相手の攻撃先をずらします。中盤以降は盤面処理と大型の押し付けを両立し、10ティーチで相手の返しを縛って詰めます。</p></div>
 </div>
 <div class="flow">
 <div class="flow-item">
 <div class="step">1</div>
 <div>
 <span class="label">序盤</span>
-<h4>プリン or サトリを展開してドロー加速</h4>
+<h4>ハチノス / 黒ラフィットでサーチ初動を作る</h4>
 <div class="flow-visuals">
-<img alt="シャーロット・プリンのカード画像" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/black-yellow-teach/black-yellow-teach-key-card-02.png"/>
-<img alt="サトリのカード画像" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/black-yellow-teach/black-yellow-teach-key-card-03.png"/>
+<img alt="ハチノスのカード画像" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/black-yellow-teach/black-yellow-teach-hachinosu.png"/>
+<img alt="黒ラフィットのカード画像" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/black-yellow-teach/black-yellow-teach-laffitte-black.png"/>
 </div>
-<p>プリンはイベントをサーチしながら1コスト要員として機能。先攻時は「プリン → 2ターン目シュラ」の動きで2ターン目から5000×3回攻撃が可能になります。サトリはデッキトップ2枚を操作してエネルを引き込みやすくします。</p>
+<p>1ターン目はハチノスや黒の1コストラフィットで、特徴《黒ひげ海賊団》のカードを探します。ハチノスはステージとして残り、以降もサーチの起点になります。ラフィットはドン!!1枚と自身をレストにしてデッキ上5枚を見られるため、6シリュウ、8ティーチ、ゼハハ!!!、10ティーチへつながる札を集める初動として優先します。</p>
 </div>
 </div>
 <div class="flow-item">
 <div class="step">2</div>
 <div>
 <span class="label">中盤</span>
-<h4>リーダー効果＋神官で6000連打スタート</h4>
+<h4>6シリュウ / 8ティーチで盤面とライフを整える</h4>
 <div class="flow-visuals">
-<img alt="シュラのカード画像" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/black-yellow-teach/black-yellow-teach-key-card-04.png"/>
+<img alt="シリュウのカード画像" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/black-yellow-teach/black-yellow-teach-shiryu-6.png"/>
+<img alt="8コスト マーシャル・D・ティーチのカード画像" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/black-yellow-teach/black-yellow-teach-teach-8.png"/>
 </div>
-<p>中盤はリーダー効果を起動し、アクティブ1ドン追加 + レスト4ドンを神官に乗せて6000アタッカーを作ります。シュラがあればプリンと合わせて5000×3回攻撃が実現し、序盤からライフと手札を同時に削れます。</p>
+<p>中盤は6シリュウで手札を切りながらトラッシュの黒ひげ海賊団をライフ上に戻し、受けの厚みを作ります。8ティーチは登場時にデッキ上3枚から1枚をライフ上へ加えられるため、守りを伸ばしつつトリガーで相手キャラを無効化・KOする展開を狙えます。</p>
 </div>
 </div>
 <div class="flow-item">
 <div class="step">3</div>
 <div>
 <span class="label">終盤</span>
-<h4>シクエネル連打で盤面を制圧</h4>
+<h4>ゼハハ!!!から10ティーチにつなぐ</h4>
 <div class="flow-visuals">
-<img alt="エネルのカード画像" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/black-yellow-teach/black-yellow-teach-key-card-05.png"/>
+<img alt="ゼハハハハハ!!!のカード画像" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/black-yellow-teach/black-yellow-teach-zehaha.png"/>
+<img alt="10コスト マーシャル・D・ティーチのカード画像" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/black-yellow-teach/black-yellow-teach-teach-10.png"/>
 </div>
-<p>終盤は毎ターンシクエネルを着地させ、登場時サーチで次のエネルやイベントを確保します。3ターン連続でエネルを並べるのが理想ラインで、4〜5ターン目にブロッカーエネルも追加して盤面を固めます。</p>
-</div>
-</div>
-<div class="flow-item">
-<div class="step">4</div>
-<div>
-<span class="label">リーサル</span>
-<h4>11ドンを最大活用してリーサルを組む</h4>
-<div class="flow-visuals">
-<img alt="万雷のカード画像" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/black-yellow-teach/black-yellow-teach-key-card-06.png"/>
-</div>
-<p>リーサルでは盤面のエネル複数体 + 神官 + イベントで11ドンを振り分けてリーサルを計算します。神の裁きは終盤まで温存して打点を底上げし、万雷で相手ブロッカーをレストにしてから通すのが基本です。</p>
+<p>10ドン到達後はゼハハ!!!で10ティーチを踏み倒し、相手のライフ上から1枚を手札に加えます。10ティーチは登場ターンに相手リーダーを無効化できるため、相手の防御・反撃プランを崩しながら、大型とリーダーで安全に詰める形を作ります。</p>
 </div>
 </div>
+</div>
+</section>
+<section id="matchups">
+<h2>対面の有利不利と立ち回り</h2>
+<p>黒黄ティーチは、ライフ上への仕込みと相手ターン中の攻撃先変更でゲームを長く使えるデッキです。相手の速度に合わせて序盤の受け方を変え、6シリュウ、8ティーチ、ゼハハ!!!、10ティーチまでつなげることを意識します。</p>
+<div class="matchup-table-scroll">
+<table class="table matchup-table">
+<thead><tr><th>対面</th><th>相性</th><th>ポイント</th></tr></thead>
+<tbody>
+<tr><td><a href="#nami">青黄ナミ</a></td><td><span class="badge win">微有利</span></td><td>大型まで到達できると、10ティーチで相手の受けを崩しながら詰めやすい。</td></tr>
+<tr><td><a href="#enel">紫エネル</a></td><td><span class="badge even">五分</span></td><td>互いに中盤以降が強く、8ティーチと10ティーチの着地タイミングで差が出る。</td></tr>
+<tr><td><a href="#luffy">青緑ルフィ</a></td><td><span class="badge lose">微不利</span></td><td>相手の展開速度と盤面維持が重く、序盤の処理遅れがそのまま負け筋になりやすい。</td></tr>
+</tbody>
+</table>
+</div>
+<div class="detail-list">
+<article class="detail-card" id="nami"><div class="head"><span class="badge win">微有利</span><h4>青黄ナミ対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="blue-yellow-nami.html" aria-label="青黄ナミのデッキ個別記事へ"><img alt="青黄ナミのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/blue-yellow-nami/blue-yellow-nami-matchup-06-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="blue-yellow-nami.html">青黄ナミの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>序盤はラフィットやヴァン・オーガーで相手の小型展開に付き合い、無理にライフを詰めすぎないようにします。中盤以降は8ティーチでライフを整え、10ティーチのリーダー無効化を絡めて、相手の回復や受けのターンをずらして詰めます。</p></div></div></div></article>
+<article class="detail-card" id="enel"><div class="head"><span class="badge even">五分</span><h4>紫エネル対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="purple-enel.html" aria-label="紫エネルのデッキ個別記事へ"><img alt="紫エネルのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/meta/decks/purple-enel/purple-enel-matchup-03-enel-v2.png"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="purple-enel.html">紫エネルの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>紫エネル側の大型連打に対して、こちらも6シリュウと8ティーチでライフと盤面を維持します。相手のリーサルが見えるターンはトリガー札を手札に残し、リーダー効果で攻撃先をずらせる状態を優先します。</p></div></div></div></article>
+<article class="detail-card" id="luffy"><div class="head"><span class="badge lose">微不利</span><h4>青緑ルフィ対面</h4></div><div class="matchup-media"><a class="matchup-card-link" href="blue-green-luffy.html" aria-label="青緑ルフィのデッキ個別記事へ"><img alt="青緑ルフィのリーダーカード画像" class="card-thumb" src="https://ik.imagekit.io/opcard/onepiece/articles/latest/latest-booster/latest-booster-leader-luffy.webp"/></a><div class="card-copy"><div class="matchup-deck-cta"><span class="cta-kicker">相手デッキを確認</span><a class="cta-link" href="blue-green-luffy.html">青緑ルフィの個別解説へ</a></div><div class="tip"><strong>対面のポイント</strong><p>青緑ルフィは展開後にテンポを伸ばしてくるため、序盤のキャラを放置しすぎないことが重要です。ラフィットやヴァン・オーガーで小型に触り、6シリュウでライフを整えながら、10ティーチまでに盤面差を広げられないようにします。</p></div></div></div></article>
 </div>
 </section>
 </div></article>
